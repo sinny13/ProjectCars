@@ -79,11 +79,11 @@
 	</style>
 
 	<body style="background-color:#111; color:#fff">
-    <div class="container p-3 my-5 bg-secondary text-white">
+    <div class="container p-3 my-5 text-white" style="background: #ffffff10; border-radius: 10px;">
         <h1>렌트 예약</h1>
     </div>
-    <div class="container">
-        <table class="table" style="color: #fff;">
+    <div class="container" style="width:900px;">
+        <table class="table" style="color: #BBBBBB; width:700px;">
             <thead>
                 <tr class="table-dark">
                     <th>1일렌트</th>
@@ -92,16 +92,16 @@
             <tbody>
                 <tr>
                     <td>이름</td>
-                    <td><input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Input Name"></td>
+                    <td><input type="name" class="form-control" id="exampleFormControlInput1" placeholder="" style="width:120px;"></td>
                 </tr>
                 <tr>
                     <td>주민번호</td>
-                    <td><input type="rrn_first" class="form-control" id="exampleFormControlInput" placeholder="Input rrn"></td>
-                    <td><input type="rrn_second" class="form-control" id="exampleFormControlInput" placeholder="Input rrn"></td>
+                    <td class="d-flex"><input type="rrn_first" class="form-control" id="exampleFormControlInput" placeholder="" style="width:120px;">＿<input type="rrn_second" class="form-control" id="exampleFormControlInput" placeholder="" style="width:120px;"></td>
+                    
                 </tr>
                 <tr>
                     <td>연락처</td>
-                    <td><input type="phone" class="form-control" id="exampleFormControlInput1" placeholder="010-xxxx-xxxx"></td>
+                    <td class="d-flex"><input type="phone" class="form-control" id="exampleFormControlInput1" placeholder="010" style="width:60px;">＿<input type="phone" class="form-control" id="exampleFormControlInput1" placeholder="" style="width:80px;">＿<input type="phone" class="form-control" id="exampleFormControlInput1" placeholder="" style="width:80px;"></td>
                 </tr>
                 <tr>
                     <td>렌트지역</td>
@@ -126,12 +126,12 @@
                 </tr>
                 <tr>
                     <td>사용일시</td>
-                    <td><input class="datepicker"></td>
+                    <td><input class="datepicker" style="width:130px;"></td>
                 </tr>
             </tbody>
         </table> 
         <div class="container" style="margin-top: 100px; color: slategray;">
-            <h2 style="color: #FFF;"> 개인정보 수집 및 이용에 대한 동의 </h2>
+            <h2 style="color: #BBBBBB;"> 개인정보 수집 및 이용에 대한 동의 </h2>
             개인정보 수집 이용에 대한 본인 동의가 필요한 항목입니다.
                 
                 개인정보의 수집 및 이용 목적
@@ -148,14 +148,14 @@
         
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault" style="color: #BBBBBB;">
             이용약관에 동의합니다(필수)
             </label>
         </div>
         
             <div colspan='2' align='center'>               
-                <a href="myPayment.do">
-                	<input type='submit' value='예약하기' class='btn btn-primary'/>
+                <a href="myPayment.do" style="background-color:black">
+                	<input type='submit' value='예약하기' class='btn btn-primary' style="background: #0f4c81;"/>
                 </a>    
                 <input type='reset' value='취소' class='btn btn-danger'/>    
             </div>   
