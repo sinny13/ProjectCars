@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-   
+    
 <%@ include file="../inc/header.jsp" %>
 
+<link href="https://fonts.googleapis.com/css?family=Muli:400,700,800,900" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="${ctx}/resources/css/myPayment.css">
 <link rel="stylesheet" href="${ctx}/resources/js/myPayment.js">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 <div id="myPayment">
 <!-- partial:index.partial.html -->
@@ -386,8 +388,8 @@
             <label for="payment-paypal" class="control block">
               <input type="radio" name="payment" id="payment-paypal" class="control__input" />
               <div class="control__label">
-                신용/체크카드
-                <div class="microcopy">credit / check card</div>
+                신용/체크카드/페이결제
+                <div class="microcopy">credit / check card / pay</div>
               </div>
               <span class="control__extra">
                 <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
@@ -428,13 +430,16 @@
             </div>
           </div>
           
+
+          <!-- jQuery -->
+          <script type="text/javascript"
+          src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+          <script type="text/javascript"
+          src="https://cdn.iamport.kr/js/iamport.payment-1.1.2.js"></script>
+
           <div class="form__footer">
-            <button class="btn btn-primary btn-sm js-goto" data-page="4">
-            
-              <a href="myBankPayment.do">
-              	결제하기
-              </a>
-              
+            <button class="btn btn--primary js-goto" onclick="requestPay()"">
+              <span class="btn__label">결제하기</span>
               <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
             </button>
             <button class="btn btn--transparent secondary js-goto" data-page="2">
@@ -447,11 +452,58 @@
         </div>
         <div class="page page--4">
           
-          <header class="header">
+          <!-- <header class="header">
             <h2>Order review</h2>
           </header>
-          <p class="microcopy">Please review and make sure your order is correct.</p>
+          <p class="microcopy">Please review and make sure your order is correct.</p> -->
           
+            <!-- <button onclick="requestPay()">결제하기</button> -->
+            <!-- <button class="btn btn--primary js-goto" onclick="requestPay()">
+              <span class="btn__label">결제하기</span>
+              <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
+            </button> -->
+
+
+          <script>
+            var IMP = window.IMP; // 생략가능
+            IMP.init('imp52074203'); 
+          
+            function requestPay() {
+            IMP.init('iamport'); //iamport 대신 자신의 "가맹점 식별코드"를 사용
+            IMP.request_pay({
+              pg: "inicis",
+              pay_method: "card",
+              merchant_uid : 'merchant_'+new Date().getTime(),
+              name : '결제테스트',
+              amount : 100,
+              buyer_email : 'iamport@siot.do',
+              buyer_name : '구매자',
+              buyer_tel : '010-1234-5678',
+              buyer_addr : '서울특별시 강남구 삼성동',
+              buyer_postcode : '123-456'
+            }, function (rsp) {
+              console.log(rsp);
+              if (rsp.success) {
+                var msg = '결제가 완료되었습니다.';
+                alert(msg);
+                location.href = "결제 완료 후 이동할 페이지 url"
+              } else {
+                var msg = '결제에 실패하였습니다.';
+                msg += '에러내용 : ' + rsp.error_msg;
+                alert(msg);
+              }
+            
+            });
+          }
+          </script>
+          
+
+
+
+
+
+
+
           <div class="form__footer">
             <button class="btn btn--primary js-goto" data-page="4">
               <span class="btn__label">Place my order</span>
@@ -646,7 +698,7 @@
       <table class="pricing">
         <tbody>
           <tr>
-            <img src="${ctx}/resources/image/cars/람보르기니  가야도르.jpg" alt="">
+            <img src="images/car.jpg" alt="">
             <!-- <td class="pricing__label">Custom Throw Pillow (18" x 18")</td> -->
             <td class="pricing__label">람보르기니 우라칸</td>
             <td class="pricing__price">￦300,000,000</td>
@@ -732,6 +784,7 @@
 </div>
 </div>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="./script.js"></script>
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="./script.js"></script> -->
+
 
 <%@ include file="../inc/footer.jsp" %>
