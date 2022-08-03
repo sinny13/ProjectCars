@@ -3,8 +3,11 @@
     
 <%@ include file="../inc/header.jsp" %>
 
+<link href="https://fonts.googleapis.com/css?family=Muli:400,700,800,900" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="${ctx}/resources/css/myPayment.css">
 <link rel="stylesheet" href="${ctx}/resources/js/myPayment.js">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
 <div id="myPayment">
 <!-- partial:index.partial.html -->
 <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
