@@ -84,6 +84,12 @@ public class MyPageController {
 		return "mypage/myBankPayment";
 	}	
 	
+	// 결제 완료창
+	@RequestMapping("/myPaymentOk.do")
+	public String myPaymentOk() {
+
+		return "mypage/myPaymentOk";
+	}
 	
 	
 

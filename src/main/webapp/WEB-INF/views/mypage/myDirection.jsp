@@ -24,22 +24,23 @@
 
 <body style="background-color: #111">
     <div class="card" style="background-color:#111; color:#fff;">
-        <div class="card-body">
-            <div class="container p-3 my-5 bg-secondary text-white">
-                <h1>지점안내</h1>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    5조 프로젝트 서구점
-                  </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body"><code>Address : ${Address} Tel : ${tel} </code> </div>
-                  </div>    
-              </div>
-              <div id="map" style="width: 100%; height:450px;"></div>
-
+	        <div class="card-body">
+	            <div class="container p-3 my-5 bg-secondary text-white">
+	                <h1>지점안내</h1>
+	            </div>
+	            <div class="accordion-item">
+	                <h2 class="accordion-header" id="flush-headingOne">
+	                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+	                    5조 프로젝트 서구점
+	                  </button>
+	                </h2>
+	                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+	                    <div class="accordion-body"><code>Address : ${Address} Tel : ${tel} </code> </div>
+	                 </div>    
+	              </div>
+	             <div id="map" style="width: 100%; height:450px;"></div>
+			</div>
+		</div>
               <!-- <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">

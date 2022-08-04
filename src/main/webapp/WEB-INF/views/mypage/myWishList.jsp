@@ -36,17 +36,15 @@
 				</div>
 
 				<footer class="content">
-					<span class="qt-minus">-</span>
-					<span class="qt">2</span>
-					<span class="qt-plus">+</span>
-
+					
 					<h2 class="full-price">
-						2,000,000
+						<a href="myDayReserv.do">예약하기</a>
 					</h2>
 
 					<h2 class="price">
 						1,000,000
 					</h2>
+					
 				</footer>
 			</article>
 
@@ -68,18 +66,15 @@
 				</div>
 
 				<footer class="content">
-					
-					<span class="qt-minus">-</span>
-					<span class="qt">1</span>
-					<span class="qt-plus">+</span>
 
 					<h2 class="full-price">
-						1,000,000
+						<a href="myDayReserv.do">예약하기</a>
 					</h2>
 
 					<h2 class="price">
 						1,000,000
 					</h2>
+					
 				</footer>
 			</article>
 
@@ -101,18 +96,16 @@
 				</div>
 
 				<footer class="content">
-					
-					<span class="qt-minus">-</span>
-					<span class="qt">3</span>
-					<span class="qt-plus">+</span>
 
 					<h2 class="full-price">
-						3,000,000
+						<a href="myDayReserv.do">예약하기</a>
 					</h2>
 
 					<h2 class="price">
 						1,000,000
 					</h2>
+
+
 				</footer>
 			</article>
 

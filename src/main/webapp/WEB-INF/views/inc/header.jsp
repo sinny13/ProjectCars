@@ -181,7 +181,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
               <a class="dropdown-item" href="myPageList.do">마이페이지</a>
             </li>
             <li>
-              <a class="dropdown-item" href="#">주문배송조회</a>
+              <a class="dropdown-item" href="myPaymentOk.do">결재완료창(테스트)</a>
             </li>
             <li><hr class="dropdown-divider"/></li>
             <li>
