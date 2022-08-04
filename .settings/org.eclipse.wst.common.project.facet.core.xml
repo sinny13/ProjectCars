@@ -2,6 +2,11 @@
 <faceted-project>
   <fixed facet="jst.web"/>
   <fixed facet="jst.java"/>
+<<<<<<< HEAD
   <installed facet="jst.web" version="2.5"/>
   <installed facet="jst.java" version="1.6"/>
+=======
+  <installed facet="jst.java" version="11"/>
+  <installed facet="jst.web" version="3.1"/>
+>>>>>>> branch 'dev' of https://github.com/sinny13/ProjectCars.git
 </faceted-project>

@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: STEINS-GATE
+=======
+Built-By: 302-20
+>>>>>>> branch 'dev' of https://github.com/sinny13/ProjectCars.git
 Build-Jdk: 11.0.15.1
 Created-By: Maven Integration for Eclipse
 

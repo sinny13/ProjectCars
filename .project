@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>springTest_3</name>
+=======
+	<name>ProjectCars</name>
+>>>>>>> branch 'dev' of https://github.com/sinny13/ProjectCars.git
 	<comment></comment>
 	<projects>
 	</projects>
