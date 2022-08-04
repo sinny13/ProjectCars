@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.inner{
+	margin:auto;
+}
+
+.table th{
+	color:#fff;
+	font-size: 1.6em;
+	padding: 30px;
+}
+
+
+.image{
+	width: 60%;
+}
+
+/* .btn_reserv{
+	color: #fff;
+	background-repeat: 10px;
+	background-color: rgba(0, 255, 255, 0.400);
+	border-radius: 10px;
+	font-size: 1.8em;
+	margin-right: 20px;
+	padding: 5px 20px;
+}
+
+.btn_del{
+	color: #fff;
+
+	background-color: rgba(139, 0, 0, 0.400);
+	border-radius: 10px;
+	font-size: 1.8em;
+	padding: 5px 20px;
+} */
+
+a{
+	text-decoration: none;
+}
