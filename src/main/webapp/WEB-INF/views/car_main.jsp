@@ -19,6 +19,10 @@
 	<link rel="stylesheet" href="${ctx}/resources/css/font.css">
     <link rel="stylesheet" href="${ctx}/resources/css/car_main.css">
 	<link rel="stylesheet" href="${ctx}/resources/css/main.css">
+<<<<<<< HEAD
+=======
+	
+>>>>>>> branch 'new2' of https://github.com/sinny13/ProjectCars.git
 
 <!-- 슬라이더 -->
 
