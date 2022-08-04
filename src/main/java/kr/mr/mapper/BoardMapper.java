@@ -8,7 +8,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.mr.model.BoardVO;
-
+// tssss
 //springMVC 구조 : Controller > Service > DAO > DateBase
 @Mapper
 public interface BoardMapper {
