@@ -19,11 +19,11 @@
 }
 
 #myWishList a:hover {
-	color: #53b5aa;
+	color: #555;
 }
 
 #myWishList #site-header h1 span {
-	color: #53b5aa;
+	color: #555;
 }
 
 #myWishList #site-header h1 span.last-span {
@@ -64,7 +64,7 @@
 }
 
 #myWishList #cart a {
-	color: #53b5aa;
+	color: #555;
 	text-decoration: none;
 
 	-webkit-transition: color .2s linear;
@@ -132,7 +132,7 @@
 }
 
 #myWishList .product header h3 {
-	background: #53b5aa;
+	background: #555;
 	color: #fff;
 	font-size: 22px;
 	font-weight: 300;
@@ -164,7 +164,7 @@
 }
 
 #myWishList .product h1 {
-	color: #53b5aa;
+	color: #555;
 	font-size: 25px;
 	font-weight: 300;
 	margin: 17px 0 20px 0;
@@ -234,7 +234,7 @@
 }
 
 #myWishList .qt-plus:hover, .qt-minus:hover {
-	background: #53b5aa;
+	background: rgba(51, 46, 46, 0.400);
 	color: #fff;
 	cursor: pointer;
 }
@@ -287,7 +287,7 @@
 }
 
 #myWishList .btn {
-	background: #53b5aa;
+	background: #555;
 	border: 1px solid #999;
 	border-style: none none solid none;
 	cursor: pointer;

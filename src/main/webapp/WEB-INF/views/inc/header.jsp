@@ -180,12 +180,12 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
             <li>
               <a class="dropdown-item" href="myPageList.do">마이페이지</a>
             </li>
-            <li>
-              <a class="dropdown-item" href="myPaymentOk.do">결재완료창(테스트)</a>
-            </li>
             <li><hr class="dropdown-divider"/></li>
             <li>
               <a class="dropdown-item" href="myWishList.do">위시리스트(임시)</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="myInvoice.do">Invoice(임시)</a>
             </li>
           </ul>
         </li>
