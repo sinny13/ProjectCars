@@ -70,6 +70,9 @@ public class VehicleController {
 			}
 			
 			dto.setFileName(fileName);
+			
+
+			
 			dto.setCategoty_fk(category_fk);
 			
 			int n = vehicleMapper.vehicleInsert(dto);

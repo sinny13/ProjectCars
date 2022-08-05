@@ -91,6 +91,7 @@ $(document).ready(function(){
 				<td>
 					<a href="javaScript:updateVehicle('${vDto.cNum}','${vDto.category_fk}')" class="btn btn-primary btn-sm mb-2" >수정</a>
 					<a href="javaScript:deleteVehicle('${vDto.cNum}','${vDto.fileName}')" class="btn btn-danger btn-sm">삭제</a>
+					<a href="imageInput.do?cNum=${vDto.cNum}" class="btn btn-danger btn-sm">이미지업로드</a>
 				</td>
 		</c:forEach>
 			<tr>
