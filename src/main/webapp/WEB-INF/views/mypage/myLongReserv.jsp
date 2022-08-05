@@ -79,7 +79,7 @@
 	</style>
 
 	<body style="background-color:#111; color:#fff">
-    <div class="container p-3 my-5 bg-secondary text-white">
+    <div class="container p-3 my-5 text-white" style="background-color: rgba(70, 70, 70, 0.5)">
         <h1>렌트 예약</h1>
     </div>
     <div class="container">

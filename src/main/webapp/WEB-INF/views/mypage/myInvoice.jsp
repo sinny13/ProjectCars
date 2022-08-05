@@ -9,8 +9,8 @@
 <div id="myInvoice">
 <div class="container_body">
     <div class="container mt-3">
-        <div class="mt-3 mb-3 p-3 bg-secondary text-white rounded">
-             <h1><i class="xi-emoticon-happy-o"></i>&nbsp;Invoce</h1> 
+        <div class="mt-3 mb-3 p-3 text-white rounded" style="background-color: rgba(70, 70, 70, 0.5)">
+             <h1><i class="xi-barcode"></i>&nbsp;Invoce</h1> 
         </div>
     </div>
     <div class="container">
@@ -20,7 +20,6 @@
                     <div class="card-body p-0">
                         <div class="invoice-container">
                             <div class="invoice-header">
-                                
 
                                 <!-- Row start -->
                                 <div class="row gutters">
@@ -133,12 +132,11 @@
                                 <!-- Row end -->
         
                             </div>
-        
-                            <div class="invoice-footer">
-                                Thank you for your Business.
-                            </div>
-        
-                        </div>
+        				
+                        <div class="invoice-footer">
+                            Thank you for your Business.
+                        </div>  
+                        </div> 
                     </div>
                 </div>
             </div>

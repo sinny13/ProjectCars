@@ -4,13 +4,15 @@
 #myInvoice .container_body{
     margin: 0;
     padding: 0;
-    position: relative;
+/*     position: relative; */
     height: 100%;
+
 }
 
 
 #myInvoice .invoice-container {
     padding: 1rem;
+    
 }
 #myInvoice .invoice-container .invoice-header .invoice-logo {
     margin: 0.8rem 0 0 0;
@@ -141,4 +143,9 @@
 
 #myInvoice h1{
     text-align: center;
+}
+
+#myInvoice .table-responsive{
+/* 	border: 1px solid red; */
+
 }

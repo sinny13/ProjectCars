@@ -13,7 +13,7 @@
 <body>
   <div class="container">
     <div class="container mt-3">
-        <div class="mt-3 mb-3 p-3 bg-secondary text-white rounded">
+        <div class="mt-3 mb-3 p-3 text-white rounded" style="background-color: rgba(70, 70, 70, 0.5)">
           <h1>보험/유의사항</h1>
         </div>
     </div>
