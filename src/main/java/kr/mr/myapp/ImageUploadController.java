@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -53,11 +54,14 @@ public class ImageUploadController {
 
 	@RequestMapping("/uploadImage.do")
 	public String upload(ImageDTO idto,MultipartHttpServletRequest multipartRequest, 
-			HttpServletRequest request, Model model) throws IOException {
+			HttpServletRequest request, Model model , HttpSession session) throws IOException {
 		
+		int cno = 0;
+		
+		String ResourceFolder = "\\resources\\";
 		String UPLOAD_DIR = "file_repo";
 		
-		String uploadPath = request.getServletContext().getRealPath("")+File.separator+UPLOAD_DIR;
+		String uploadPath = request.getServletContext().getRealPath("")+File.separator+ResourceFolder+UPLOAD_DIR;
 		
 		// 파라미터명과 해당 파라미터값을 담기위해서 map을 사용
 		Map map = new HashMap();
@@ -67,19 +71,27 @@ public class ImageUploadController {
 //		String name = multipartRequest.getParameter("name");
 //		System.out.println(id + ":" + name);
 		
-		// input의 name속성에 있는 "id", "name" 파라미터명을 가져온다.
+		// input의 name속성에 있는 "cNum" 파라미터명을 가져온다.
 		Enumeration<String> enu = multipartRequest.getParameterNames();
 		
 		while(enu.hasMoreElements()) {
 			//파라미터명을 가져오기
-			String name = enu.nextElement(); 
+			String cNum = enu.nextElement(); 
+
 			
 			// 파라미터값을 가져오기
-			String paramValue = multipartRequest.getParameter(name);
-			System.out.println(name + ":" + paramValue);
+			String paramValue = multipartRequest.getParameter(cNum);
+			
+			System.out.println(cNum + ":" + paramValue);
+
+			cno = Integer.parseInt(paramValue);
+
+			
+			idto.setcNum(cno);
+			
 			
 			// 일반 파라미터의 파라미터명(key)과 파라미터값(value)을 추가
-			map.put(name, paramValue);
+			map.put(cNum, paramValue);
 		}
 		
 		// 파일명을 갖고있는 파라미터를 읽어오기
@@ -121,10 +133,48 @@ public class ImageUploadController {
 				fileList.add(originalName);
 				
 
+				System.out.println("originalName 이름:"+originalName);
 				System.out.println("originalName 타입:"+originalName.getClass());
 				
-				
+
+				for (int i=0; i<fileList.size(); i++) {
+
+					if(i == 0) {
+						
+		            String img1  = fileList.get(i);		                              
+		            idto.setiName1(img1); 	
+		
+					
+					}else if(i == 1) {
+						
+			            String img2  = fileList.get(i);		                              
+			            idto.setiName2(img2); 	
+			            
+					}else if(i == 2) {
+						
+			            String img3  = fileList.get(i);		                              
+			            idto.setiName3(img3); 	
+			            
+					}else if(i == 3) {
+						
+			            String img4  = fileList.get(i);		                              
+			            idto.setiName4(img4); 	
+			            
+					}else if(i == 4) {
+						
+			            String img5  = fileList.get(i);		                              
+			            idto.setiName5(img5); 	
+			            
+					}else if(i == 5) {
+						
+			            String img6  = fileList.get(i);		                              
+			            idto.setiName6(img6); 	
+			            
+					}
+				}
 			}
+				
+		
 			
 		}// while문
 		
@@ -132,7 +182,19 @@ public class ImageUploadController {
 		map.put("fileList", fileList);
 		model.addAttribute("map", map);
 		
-		return "image_upload/result"; // result.jsp
+		session.setAttribute("imagesRegistOk", "이미지 업로드 완료");
+		
+		
+		
+		imageMapper.imageInsert(idto);  
+		
+		
+		
+
+		
+		
+		
+		return "vehicle/vehicle_list";
 	}
 		
 

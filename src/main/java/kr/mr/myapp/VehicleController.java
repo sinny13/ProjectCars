@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import kr.mr.mapper.CategoryMapper;
+import kr.mr.mapper.ImageMapper;
 import kr.mr.mapper.VehicleMapper;
 import kr.mr.model.CategoryDTO;
+import kr.mr.model.ImageDTO;
 import kr.mr.model.VehicleDTO;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +31,8 @@ public class VehicleController {
 	private VehicleMapper vehicleMapper;
 	@Autowired
 	private CategoryMapper categoryMapper;
+	@Autowired
+	private ImageMapper imageMapper;
 	
 	// 자동차 등록뷰 페이지
 	@RequestMapping("/vehicleInput.do")
@@ -257,6 +261,13 @@ public class VehicleController {
 			VehicleDTO vDto = vehicleMapper.vehicleGetter(cNum);
 			
 			model.addAttribute("vDto", vDto);
+			
+			
+			// cNum에 해당하는 이미지 리스트 가져오기			
+			ImageDTO iDto = imageMapper.imageGetter(cNum);
+			model.addAttribute("iDto", iDto);
+
+			System.out.println("cno는?? : "+cNum);
 			
 			
 

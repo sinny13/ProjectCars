@@ -43,6 +43,14 @@ $(document).ready(function(){
 	}	  
 	
 });
+
+/* 이미지등록 완료 */
+$(document).ready(function(){  
+	if(${imagesRegistOk != null}){
+		alert("${imagesRegistOk}"); 
+	}	  
+	
+});
 </script>
 
 <%
@@ -116,5 +124,18 @@ function updateVehicle(cNum,category_fk){
 		if(isDel) location.href="vehicleDelete.do?cNum="+cNum+"&fileName="+fileName;	
 	}
 </script>
+
+
+
+   <!-- JS here -->
+
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="${ctx}/resources/assets/js/owl.carousel.min.js"></script>
+    <script src="${ctx}/resources/assets/js/slick.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="${ctx}/resources/assets/js/plugins.js"></script>
+    <script src="${ctx}/resources/assets/js/main.js"></script>
 
 <%@ include file="../inc/footer.jsp" %>

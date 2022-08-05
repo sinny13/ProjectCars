@@ -16,8 +16,8 @@
 				
 				<div class="form-group">
 					 <label for=""></label>
-<%-- 					 <input type="text" type='hidden' value="${vDto.cNum}" class="form-control" name="cNum"/>
-					 <input type="text" type='hidden'  class="form-control" name="carIMAGE1"/> --%>
+					 <input type="text" type='' value="${vDto.cNum}" class="form-control" name="cNum"/>
+
 				</div>
 
 				<div class="form-group mt-3 d-flex justify-content-end mb-3">
@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				
-				<div id="div-file" class="text-center">name='ImgName"+cnt+"'</div>
+				<div id="div-file" class="text-center"></div>
 				<div class="form-group mt-3">
 					<button type="submit" class="btn btn-primary form-control">파일 업로드</button>
 				</div>
@@ -42,9 +42,10 @@
 		let cnt = 1;
 		function fileAppend(){
 			
-			$("#div-file").append("<input type='file' accept='image/*' class='form-control mb-2' name='imageName' onchange='preViewImg(this)'/>"
+			$("#div-file").append("<input type='file' accept='image/*' class='form-control mb-2' name='ImageFile"+cnt+"' onchange='preViewImg(this)'/>"
 					+"<img class='mb-1'/><button type='button' class='btn-close border bg-light'"
-					+"style='display:none; position:relative; left:-30px; top:-32px' onclick='resetInput(this)'></button>");
+					+"style='display:none; position:relative; left:-30px; top:-32px' onclick='resetInput(this)'></button>"
+					+"<span>파일번호 : "+cnt+"<span>"+"</br>");
 			cnt++;
 
 		}

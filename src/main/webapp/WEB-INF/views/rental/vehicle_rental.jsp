@@ -31,10 +31,14 @@
           <div class="product-image">
             <img class="active" src="${ctx}/resources/file_upload/${vDto.fileName}">
           </div>
-          <ul class="image-list">
-            <li class="image-item"><img src="https://source.unsplash.com/W1yjvf5idqA"></li>
-            <li class="image-item"><img src="https://source.unsplash.com/VgbUxvW3gS4"></li>
-            <li class="image-item"><img src="https://source.unsplash.com/5WbYFH0kf_8"></li>
+          <ul class="image-list">      	
+            <li class="image-item"><img src="${ctx}/resources/file_repo/${iDto.iName1}"></li>
+            <li class="image-item"><img src="${ctx}/resources/file_repo/${iDto.iName2}"></li>
+            <li class="image-item"><img src="${ctx}/resources/file_repo/${iDto.iName3}"></li>
+            <li class="image-item"><img src="${ctx}/resources/file_repo/${iDto.iName4}"></li>
+            <li class="image-item"><img src="${ctx}/resources/file_repo/${iDto.iName5}"></li>
+            <li class="image-item"><img src="${ctx}/resources/file_repo/${iDto.iName6}"></li>
+            <li class="image-item"><img class="active" src="${ctx}/resources/file_upload/${vDto.fileName}"></li>
           </ul>
         </div>
       </div>
@@ -72,18 +76,29 @@
         <h3>${vDto.cSpec} cars</h3>
       </div>
     <c:forEach var="vehicle" items="${vehicleList}">
-      <div class="card column-xs-12 column-md-4" style="display : flex">
-    	<c:if test="${vehicle.cSpec == vDto.cSpec}">
-        		<img src="https://source.unsplash.com/miziNqvJx5M">
+      <div class="card" style="display : flex">
+    	<%-- <c:if test="${vehicle.cSpec == vDto.cSpec}"> --%>
+        		<ul class="image-list"> 
+        			<li class="image-item">
+        				<a href="vehicleRental.do?cNum=${vehicle.cNum}">
+        					<img src="${ctx}/resources/file_upload/${vehicle.fileName}">
+        				</a>
+        			</li>
+        		</ul>	
         		<div>
         			<h4>[더미] ${vehicle.cName}</h4>
         			<p class="price">${vehicle.price}원</p>
         		</div>   	
-        	</c:if>
+        	<%-- </c:if> --%>
       </div>
     </c:forEach>
     </div>    
   </div>
+  
+
+  
+  
+  
 </main>
 
 <%@ include file="../inc/footer.jsp" %>
