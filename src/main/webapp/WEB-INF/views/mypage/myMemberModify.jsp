@@ -3,12 +3,6 @@
 
 <%@ include file="../inc/header.jsp" %>
 
-<!-- Personal CSS -->
-<link rel="stylesheet" href="${ctx}/resources/css/myPageList.css">
-<link rel="stylesheet" href="${ctx}/resources/css/myWishList.css">
-
-<script type="text/javascript" src="${ctx}/resources/js/mdb.min.js"></script>
-
 <body style="background-color:#111; color:#fff">
     <div class="container p-3 my-5 bg-secondary text-white">
         <h1>회원정보수정</h1>

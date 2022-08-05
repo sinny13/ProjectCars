@@ -5,9 +5,6 @@
 
 <!-- Personal CSS -->
 <link rel="stylesheet" href="${ctx}/resources/css/myPageList.css">
-<link rel="stylesheet" href="${ctx}/resources/css/myWishList.css">
-
-<script type="text/javascript" src="${ctx}/resources/js/mdb.min.js"></script>
 
 <body style="background-color:#111; color:#fff">
 <div class="layout">
@@ -88,7 +85,6 @@
 						</tr>
 					  </thead>
 					  <tbody>
-<%-- 					  	<c:forEach var="dto" items=""> --%>
 							<tr>
 							  <td>${dto.rentalDate}</td>
 							  <td>${dto.cNum}</td>
@@ -100,19 +96,20 @@
 	                			</a>
 							  </td>
 							</tr>
-  <%--               		</c:forEach> --%>
 					</tbody>
 				</table>
 				</div>
 
 				<div class="container mt-5">
-					<h2><i class="xi-car"></i> &nbsp;관심상품</h2>            
+					<div class="wish_header d-flex" style="justify-content: space-between;">
+						<h2><i class="xi-car"></i> &nbsp;관심상품</h2>
+						<a href="myWishList.do"><i class="xi-plus"></i></a>  
+					</div>          
 					<table class="table mt-3" style="color:#fff;">
 					  <thead>
 						<tr>
 						  <th>상품정보</th>
 						  <th>가격</th>
-						  <th>장바구니</th>
 						  <th>상세보기</th>
 						  <th>삭제</th>
 						</tr>
@@ -126,12 +123,7 @@
 						  	price
 						  </td>
 						  <td>
-							<a href="#" class="btn btn-primary">
-								<i class="xi-cart-add"></i>장바구니
-							</a>
-						  </td>
-						  <td>
-							<a href="myWishList.do" class="btn btn-primary">
+							<a href="myWishDetail.do" class="btn btn-primary">
 								<i class="xi-zoom-in"></i>상세보기
 							</a>
 						  </td>
@@ -145,7 +137,6 @@
 							<td>test</td>
 							<td>test</td>
 							<td>test</td>
-							<td>test</td>
 							<td>
 								<a href="#" class='btn btn-danger'>  
                 					삭제
@@ -153,7 +144,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td>test</td>
 							<td>test</td>
 							<td>test</td>
 							<td>test</td>

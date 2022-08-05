@@ -38,17 +38,16 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
  --><!-- MDB Js -->
 <script type="text/javascript" src="${ctx}/resouces/js/mdb.min.js"></script>
+
 <!-- CSS -->
 
-<link rel="stylesheet" href="${ctx}/resources/css/noticeList.css">
-<link rel="stylesheet" href="${ctx}/resources/css/noticeRent.css">
-<link rel="stylesheet" href="${ctx}/resources/css/myPageList.css">
-<link rel="stylesheet" href="${ctx}/resources/css/myWishList.css">
-
 <link rel="stylesheet" href="${ctx}/resources/css/mdb.min.css">
+
 <link rel="stylesheet" href="${ctx}/resources/css/car_main.css">
 <link rel="stylesheet" href="${ctx}/resources/css/home.css">
+
 <link rel="stylesheet" href="${ctx}/resources/css/font.css">
+
 
 
 <script type="text/javascript">
@@ -304,9 +303,6 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 		</li>
         <li class="letter">
 			<a class="letter" href="memberLogin.do" onclick="javascript:showMsg()">1:1렌트상담</a>
-		</li>
-        <li class="letter">
-			<a class="letter" href="myReservation.do">실시간 신청</a>
 		</li>
         <li class="letter">
 			<a class="letter" href="myDirection.do">오시는길</a>

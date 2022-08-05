@@ -3,6 +3,7 @@
 
 <%@ include file="inc/header.jsp" %>
 
+
 <!-- MDB Js -->
 <script type="text/javascript" src="${ctx}/resources/js/mdb.min.js"></script>
 
