@@ -77,7 +77,7 @@ public class VehicleController {
 			
 
 			
-			dto.setCategoty_fk(category_fk);
+
 			
 			int n = vehicleMapper.vehicleInsert(dto);
 			
@@ -207,12 +207,10 @@ public class VehicleController {
 				fileName = uuid + "." + ext;
 				uploadFile.transferTo(new File(uploadPath + "\\" + fileName));
 				
-				dto.setCategoty_fk(category_fk);
 				dto.setFileName(fileName);
 				
 			}else {
 				
-				dto.setCategoty_fk(category_fk);
 				dto.setFileName(pImageOld);
 			}
 			

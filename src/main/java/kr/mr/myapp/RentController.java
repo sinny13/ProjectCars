@@ -44,33 +44,7 @@ public class RentController {
 	          
 	   }  
 	   
-	   @RequestMapping("/longDayCar.do") 
-	   public String LongDayCar(Model model) {
-		   
-		   List<VehicleDTO> vehicleList = vehicleMapper.vehicleList();	  
-		   model.addAttribute("vehicleList", vehicleList);
-		   
-		   return "rental/longDayCar"; 
-		   
-	   }  
-	   
-	   
-	   
-	   @RequestMapping("/paymentOk.do") 
-	   public String paymentOk(Model model,int cNum) {
-		   
-			VehicleDTO vDto = vehicleMapper.vehicleGetter(cNum);
-			
-			model.addAttribute("vDto", vDto);
-		   
-		   return "payment/paymentOk"; 
-		   
-	   }  
-	   	   
-	   
-	   
-	   
-	   
+
 	   
 	   
 

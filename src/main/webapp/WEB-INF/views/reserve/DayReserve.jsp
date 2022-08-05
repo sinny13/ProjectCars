@@ -104,6 +104,14 @@
                     <td><input value="${vDto.cNum}" name="cNum" type="hidden" class="form-control" id="exampleFormControlInput1"></td>
                 </tr>
                 <tr>
+                    <td>모델</td>
+                    
+                    <td>
+                    	<img src="${ctx}/resources/file_upload/${vDto.fileName}"
+                    	 style="max-width: 300px; min-width:150px; max-height:auto; min-height: auto;">
+                    </td>
+                </tr>
+                <tr>
                     <td>이름</td>
                     <td><input name="revName" type="name" class="form-control" id="exampleFormControlInput1" placeholder="Input Name"></td>
                 </tr>
@@ -119,10 +127,22 @@
                 <tr>
                     <td>렌트지역</td>
                     <td>
-                        <div class="form-check">
+                        <div class="form-check d-flex">
                             <input name="revAddr" class="form-check-input" type="radio" id="flexRadioDefault1">
+							</br>
                             <label class="form-check-label" for="flexRadioDefault1">
-                              서구지점
+                              서구본점
+                            </label>
+
+                            <input name="revAddr" class="form-check-input" type="radio" id="flexRadioDefault1">
+							</br>	
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              유성점
+                            </label>
+                            <input name="revAddr" class="form-check-input" type="radio" id="flexRadioDefault1">
+                            </br>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              중구점
                             </label>
                           </div>
                     </td>
