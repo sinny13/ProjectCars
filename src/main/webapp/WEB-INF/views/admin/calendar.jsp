@@ -10,77 +10,49 @@
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+	  const request = $.ajax({
+		  url: "/calendars", // 변경하기
+		  method: "GET",
+		  dataType: "json"
+	  });
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      headerToolbar: {
-        left: 'prevYear,prev,next,nextYear today',
-        center: 'title',
-        right: 'dayGridMonth,dayGridWeek,dayGridDay'
-      },
-      initialDate: '2020-09-12',
-      navLinks: true, // can click day/week names to navigate views
-      editable: true,
-      dayMaxEvents: true, // allow "more" link when too many events
-      events: [
-        {
-          title: '일정',
-          start: '2020-09-01'
-        },
-        {
-          title: 'Long Event',
-          start: '2020-09-07',
-          end: '2020-09-10'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2020-09-09T16:00:00'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2020-09-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2020-09-11',
-          end: '2020-09-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2020-09-12T10:30:00',
-          end: '2020-09-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2020-09-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2020-09-12T14:30:00'
-        },
-        {
-          title: 'Happy Hour',
-          start: '2020-09-12T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: '2020-09-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2020-09-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2020-09-28'
-        }
-      ]
-    });
+	  request.done(function (data) {
+		  let events = [];
+		  console.log(data); // log 로 데이터 찍어주기.
+		  // var arr = [{title: 'evt1', start: '2022-02-07'}, {title: 'evt2', start: '2022-02-08'}];
+		  data.forEach(function(item){
+			  events.push({
+				  title: item.title,
+				  start: item.start,
+			  });
+		  });
+		  console.log(events);
 
-    calendar.render();
+		  // const arr = Array.from(data);
+
+
+		  var calendarEl = document.getElementById('calendar');
+
+		  var calendar = new FullCalendar.Calendar(calendarEl, {
+			  initialDate: '2022-02-07',
+			  initialView: 'timeGridWeek',
+			  headerToolbar: {
+				  left: 'prev,next today',
+				  center: 'title',
+				  right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+			  },
+			  editable: true,
+			  droppable: true,
+			  drop: function (arg) {
+				  if (document.getElementById('drop-remove').checked) {
+					  arg.draggedEl.parentNode.removeChild(arg.draggedEl);
+				  }
+			  },
+			  events: events
+		  });
+
+		  calendar.render();
+	  });
   });
 
 </script>

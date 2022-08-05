@@ -341,7 +341,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
             <div class="card-header">
               <i class="fa fa-bar-chart"></i> 기간(월)내 판매금액(카테고리별) </div>
             <div class="card-body">
-            <%@ include file="combo_chart.jsp" %>
+           <%--  <%@ include file="combo_chart.jsp" %> --%>
               <div class="row">
                 <div class="col-sm-8 my-auto">
                   <canvas id="myBarChart" width="100" height="50"></canvas>
@@ -557,7 +557,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
           <div class="card mb-3">
             <div class="card-header">
               <i class="fa fa-pie-chart"></i> 차종별 판매내역(월) </div>
-           		<%@ include file="pie_chart.jsp" %>
+           		<%-- <%@ include file="pie_chart.jsp" %> --%>
             <%-- <div class="card-body">
               <canvas id="myPieChart" width="100%" height="100"></canvas>
             </div> --%>
