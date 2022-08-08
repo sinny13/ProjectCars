@@ -39,6 +39,8 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
  --><!-- MDB Js -->
 <script type="text/javascript" src="${ctx}/resouces/js/mdb.min.js"></script>
 
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
 <!-- CSS -->
 
 <link rel="stylesheet" href="${ctx}/resources/css/mdb.min.css">

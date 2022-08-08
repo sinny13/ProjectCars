@@ -7,18 +7,15 @@
 <link rel="stylesheet" href="${ctx}/resources/css/myInvoice.css">
 
 <div id="myInvoice">
-<div class="container_body">
+
     <div class="container mt-3">
         <div class="mt-3 mb-3 p-3 text-white rounded" style="background-color: rgba(70, 70, 70, 0.5)">
              <h1><i class="xi-barcode"></i>&nbsp;Invoce</h1> 
         </div>
     </div>
+    
     <div class="container">
-        <div class="row gutters">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="card">
-                    <div class="card-body p-0">
-                        <div class="invoice-container">
+                      <div class="invoice-container">
                             <div class="invoice-header">
 
                                 <!-- Row start -->
@@ -59,7 +56,7 @@
                                                 <div>Invoice - #001</div>
                                                 <div>January 10th 2022</div>
                                             </div>
-                                        </div>													
+                                        </div>                                       
                                     </div>
                                 </div>
                                 <!-- Row end -->
@@ -119,9 +116,9 @@
                                                         <td>&nbsp;</td>
                                                         <td colspan="2">
                                                             <h5 class="text-success"><strong>Grand Total</strong></h5>
-                                                        </td>			
+                                                        </td>         
                                                         <td>
-                                                            <h5 class="text-success"><strong>${dto.tot_price}</strong></h5>
+                                                            <h5 class="text-success"><strong>{dto.tot_price}</strong></h5>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -132,17 +129,14 @@
                                 <!-- Row end -->
         
                             </div>
-        				
-                        <div class="invoice-footer">
+                    
+                        <!-- <div class="invoice-footer">
                             Thank you for your Business.
-                        </div>  
-                        </div> 
+                        </div> -->  
+                        </div> <!-- invoice container -->
+                         
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+
 
 <%@ include file="../inc/footer.jsp" %>

@@ -11,12 +11,13 @@
 <script type="text/javascript" src="${ctx}/resources/js/mdb.min.js"></script>
 
   <div class="container mt-5">
-  	
-  	<div class="container_inner mt-3">
-		<div class="mt-3 mb-3 p-3 text-white rounded" style="background-color: rgba(70, 70, 70, 0.5)">
-			<h1><i class="xi-paper"></i>&nbsp;FAQ</h1> 
-		</div>
-	</div>
+     
+     <div class="container_inner mt-3">
+      <div class="mt-3 mb-3 p-3 text-white rounded" style="background-color: rgba(70, 70, 70, 0.5)">
+         <h1><i class="xi-paper"></i>&nbsp;FAQ</h1>
+         <h4>전화문의 1555-5555</h4> 
+      </div>
+   </div>
   
     <div class="accordion accordion-flush" id="accordionFlushExample">
       <div class="accordion-item">
@@ -95,6 +96,105 @@
           </div>
         </div>
       </div>
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading7">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse7" aria-expanded="false" aria-controls="flush-collapse7">
+            Q. 앱/웹에서 예약하면 예약 확정되는 건가요?
+          </button>
+        </h2>
+        <div id="flush-collapse7" class="accordion-collapse collapse" aria-labelledby="flush-heading7" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body" style="color:#111">
+            A. 네, <code>결제와 동시에</code> 예약이 확정됩니다. 5조 렌트카는 실시간 예약서비스를 제공합니다.
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading8">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
+            Q. 한 아이디로 여러 대를 예약할 수 있나요?
+          </button>
+        </h2>
+        <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body" style="color:#111">
+            A. 네, <code>여러 대</code> 예약 가능합니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading9">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse9" aria-expanded="false" aria-controls="flush-collapse9">
+            Q. 예약연장이 가능한가요?
+          </button>
+        </h2>
+        <div id="flush-collapse9" class="accordion-collapse collapse" aria-labelledby="flush-heading9" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body" style="color:#111">
+            A. <code>예약한 렌트카 업체</code>에 직접 문의 및 협의 후 현장 결제해주시면 됩니다. 예약 이후 5조 렌트카에서 예약 안내 전화가 갈 수 있습니다.
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading10">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse10" aria-expanded="false" aria-controls="flush-collapse10">
+            Q. 예약변경은 가능한지 궁금합니다.
+          </button>
+        </h2>
+        <div id="flush-collapse10" class="accordion-collapse collapse" aria-labelledby="flush-heading10" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body" style="color:#111">
+            A. 예약 시간, 딜리버리 장소 변경 등을 희망하실 경우, <code>예약을 취소</code>하신 후 다시 예약해주셔야 합니다.
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading11">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse11" aria-expanded="false" aria-controls="flush-collapse11">
+            Q. 현금영수증 또는 세금계산서 발행이 가능한가요?
+          </button>
+        </h2>
+        <div id="flush-collapse11" class="accordion-collapse collapse" aria-labelledby="flush-heading11" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body" style="color:#111">
+            A. <code>예약한 매장</code>에 직접 문의 및 협의 후 현장 결제해주시면 됩니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading12">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse12" aria-expanded="false" aria-controls="flush-collapse12">
+            Q. 예약한 차량과 다른 차량이 배차되는 경우도 있나요?
+          </button>
+        </h2>
+        <div id="flush-collapse12" class="accordion-collapse collapse" aria-labelledby="flush-heading12" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body" style="color:#111">
+            A. <code>즉시 출고</code>는 실시간 예약이기 때문에 대부분 예약한 차량 그대로 받아보실 수 있으나 예약한 차량이 사고/고장으로 대여할 수 없는 상황일 때는 부득이하게 동급 차종 혹은 다른 차량으로 변경안내 전화가 갈 수 있습니다.
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading13">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse13" aria-expanded="false" aria-controls="flush-collapse13">
+            Q. 노쇼일 경우 수수료가 있나요?
+          </button>
+        </h2>
+        <div id="flush-collapse13" class="accordion-collapse collapse" aria-labelledby="flush-heading13" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body" style="color:#111">
+            A. [<code>노쇼</code> 수수료]
+            * 노쇼란? 대여시간 이후 사전 협의 없이 인수 장소에 나타나지 않고, 연락 두절하는 경우를 가리킵니다.
+            
+            -<code>노쇼</code>일 경우, <code>환불 불가</code>합니다.
+            -대여시간 <code>3시간</code>이 지난 후에는 연락이 되었거나 차량 이용을 원하더라도 차량 대여가 불가합니다.
+            -(배달 신청 고객) 예약한 대여시간에 배달장소에서 대여시간 이후 <code>30분 동안</code> 노쇼인 경우, 대여시작 시간이 지난 후 <code>3시간 이내</code>에 업체 차고지에서 직접 인수해야 합니다.
+          </div>
+        </div>
+      </div>
+      
+      
     </div>
   </div>
 <%@ include file="../inc/footer.jsp" %>
