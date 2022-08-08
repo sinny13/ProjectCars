@@ -37,7 +37,7 @@ public interface VehicleMapper {
 	
 	// 차량 예약 상태 
 	
-	public int vehicleStatus(int cNum);
+	public int vehicleStatusY(int cNum);
 	
 	
 }

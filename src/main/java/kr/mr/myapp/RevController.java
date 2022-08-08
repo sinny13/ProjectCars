@@ -92,30 +92,30 @@ public class RevController {
 	   @RequestMapping("/paymentOk.do") 
 	   public String paymentOk(VehicleDTO vDto,Model model,int cNum) {
 		   
-		   String status = "Y";
 		   
 		   
-		   vDto.setStatus(status);
-		   
-		   
-		   int cnt = vehicleMapper.vehicleStatus(cNum);
+		   int cnt = vehicleMapper.vehicleStatusY(cNum);
 		   
 		   if(cnt>0) {
 			   
 			   
 			   System.out.println("상태업데이트 성공!");
-			   status = "Y";
+
 		   }else {
 			   System.out.println("상태업데이트 실패!");
-			   status = null;
+
 		   }
 		   
 		   
 
 		   // 차량정보 넣기
 			vehicleMapper.vehicleGetter(cNum);
-			
 			model.addAttribute("vDto", vDto);
+			
+			
+			
+			
+			System.out.println("status : "+vDto.getStatus());
 		   
 		   return "payment/paymentOk"; 
 		   

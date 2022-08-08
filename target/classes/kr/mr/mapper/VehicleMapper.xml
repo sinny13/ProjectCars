@@ -33,8 +33,8 @@
   
 
   
-<update id="vehicleStatus" parameterType="Integer">
-		update car set status=#{status} 
+<update id="vehicleStatusY" parameterType="Integer">
+		update car set status="Y"
 		where cNum=#{cNum}		
 </update>
   

@@ -24,6 +24,37 @@
 <%@ include file="../inc/header.jsp" %>
 
 <link href="resources/css/rent_page.css" rel="stylesheet">
+<link href="resources/css/font.css" rel="stylesheet">
+
+
+
+<style>
+/*클릭 이벤트를 포함하는 모든 영역에 추가하면 하위 이벤트까지 작동안함.*/
+
+#element{
+	pointer-events:cursor;
+}
+
+#element:focus{
+	pointer-events: none;
+}
+ 
+#element:hover {
+	
+	pointer-events: none;
+} 
+
+h1,h2,h3,h4,h5,h6,p{
+font-family: LeferiPoint-WhiteObliqueA;
+}
+</style>
+
+
+
+
+
+
+
 
 <body id="page-top">
     
@@ -90,12 +121,14 @@
             
             <div class="row my-auto" style=" padding-left:120px; padding-right:120px;">
             <c:forEach var="vDto" items="${vehicleList}"> 
+            <c:if test="${vDto.status != 'Y'}">  
                 <div class="col-sm-4 portfolio-item filter ${vDto.category_fk}">
                     <a class="portfolio-link" href="#portfolioModal${vDto.cNum}" data-toggle="modal"> 
                         
                         <div class="caption-port">
                            
                      <div class="simpletxt">
+
                         <h3 class="name">${vDto.cName}</h3>
                         <p>"Lorem ipsum dolor sit amet, consectetur,<br>
                          sed do eiusmod tempor incididunt" </p>
@@ -110,7 +143,22 @@
                         <img class="img-fluid" src="${ctx}/resources/file_upload/${vDto.fileName}" style="max-width: 100%; min-width:150px; max-height:auto; min-height: 300px; margin:auto; ">  
                     </a> 
                 </div>
-               
+             </c:if>  
+             
+            <c:if test="${vDto.status == 'Y'}">  
+                <div id="element" class="col-sm-4 portfolio-item filter ${vDto.category_fk}">
+                    <a class="portfolio-link" href="#portfolioModal${vDto.cNum}" data-toggle="modal"> 
+                        
+                        <div class="caption-port">
+                           
+                     <div class="simpletxt">
+                        <h2 class="text-white">렌트중</h2>
+                     </div>
+                        </div>
+                        <img class="img-fluid" src="${ctx}/resources/file_upload/${vDto.fileName}" style="max-width: 100%; min-width:150px; max-height:auto; min-height: 300px; margin:auto; ">  
+                    </a> 
+                </div>
+             </c:if>  
          
                
             
@@ -141,12 +189,11 @@
                                 <div class="heading-border"></div>
                               </div>
                             </div>
+
                             <div class="row">
                               <div class="col-md-6">
-                               <!--  <img class="img-fluid img-centered" src="resources/image/portfolio/p-1.jpg" alt=""> -->
                                 <img class="img-fluid img-centered" src="${ctx}/resources/file_upload/${vDto.fileName}" alt="">
                               </div>
-                              <div class="col-md-6">
                                 <p>Our new Project every processes had become fragmented; meaning quality and service were inconsistent. This lack of standardization was adversely impacting operating costs, productivity and customer satisfaction. For several years now Payfast has worked strategically with innovations as a means of developing new solutions, products and services. In line with this vision, Success was approached to find new payments solutions to offer Payfast customers on their website, including open invoice and partial payments options.</p>
                                 <ul class="list-inline item-details">
                                     <li>Client:
@@ -165,6 +212,8 @@
                                         </strong>
                                     </li>
                                 </ul>
+                                
+                              <div class="col-md-6">
                                 <button onclick="location.href='oneDayRev.do?cNum=${vDto.cNum}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-car-side"></i>렌트하기
                                 </button>
@@ -232,3 +281,6 @@
     }
 
 </script>
+
+
+    

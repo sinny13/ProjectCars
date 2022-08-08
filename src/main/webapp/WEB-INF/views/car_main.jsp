@@ -33,7 +33,12 @@
                  <img src="${ctx}/resources/file_upload/${vDto.fileName}" 
                  style="max-width: 100%; min-width:150px; max-height:auto; min-height: 300px;">
                  <!-- <a href="#"><i class="ti-instagram"></i></a> -->
-                 <a href="vehicleRental.do?cNum=${vDto.cNum}&cSpec='recommand'"><i><h2>${vDto.company}</h2><h6>${vDto.cName}</h6></i></a>
+				<c:if test="${vDto.status != 'Y'}">                 
+                 <a  href="vehicleRental.do?cNum=${vDto.cNum}&cSpec='recommand'"><i><h2>${vDto.company}</h2><h6>${vDto.cName}</h6></i></a>                               
+                </c:if>
+                <c:if test="${vDto.status == 'Y'}">
+                 <a id="element" href="vehicleRental.do?cNum=${vDto.cNum}&cSpec='recommand'"><i><h2>렌트중</h2></i></a>
+               	</c:if>
                </div>
 			 </c:forEach>
             </div>
@@ -90,4 +95,18 @@
     <!-- Jquery Plugins, main Jquery -->
     <script src="${ctx}/resources/assets/js/plugins.js"></script>
     <script src="${ctx}/resources/assets/js/main.js"></script>
+    
+<style>
+/*클릭 이벤트를 포함하는 모든 영역에 추가하면 하위 이벤트까지 작동안함.*/
+#element { 
+
+pointer-events: none;
+
+ }
+element:hover {
+	background-color: #111
+} 
+</style>
+    
+    
    
