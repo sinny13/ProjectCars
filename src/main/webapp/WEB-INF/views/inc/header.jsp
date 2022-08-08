@@ -218,7 +218,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 <!------- 즉시출고가능차량 start ------->     
  <ul class="navbar-nav">
    	<li class="nav-link">            
-      <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">즉시출고가능차량</a> 
+      <a class="nav-link" href="nowCar.do" role="button">즉시출고가능차량</a> 
     </li> 
  </ul>
   

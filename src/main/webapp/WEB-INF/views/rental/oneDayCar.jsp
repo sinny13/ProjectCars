@@ -35,14 +35,7 @@
 	pointer-events:cursor;
 }
 
-#element:focus{
-	pointer-events: none;
-}
- 
-#element:hover {
-	
-	pointer-events: none;
-} 
+
 
 h1,h2,h3,h4,h5,h6,p{
 font-family: LeferiPoint-WhiteObliqueA;
@@ -130,9 +123,8 @@ font-family: LeferiPoint-WhiteObliqueA;
                      <div class="simpletxt">
 
                         <h3 class="name">${vDto.cName}</h3>
-                        <p>"Lorem ipsum dolor sit amet, consectetur,<br>
-                         sed do eiusmod tempor incididunt" </p>
-                         <h4 class="price"> 1000&euro;</h4>
+                        <p style="margin:15px; white-space: nowrap; overflow:hidden; text-overflow:ellipsis; ">"${vDto.contents}"</p>
+                         <h4 class="price"> ￦ ${vDto.price}</h4>
                          <button>READ MORE</button><br>
                          <div class="wishtxt">
                             <p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
@@ -149,7 +141,7 @@ font-family: LeferiPoint-WhiteObliqueA;
                 <div id="element" class="col-sm-4 portfolio-item filter ${vDto.category_fk}">
                     <a class="portfolio-link" href="#portfolioModal${vDto.cNum}" data-toggle="modal"> 
                         
-                        <div class="caption-port">
+                        <div class="caption-port" style="opacity: 1;">
                            
                      <div class="simpletxt">
                         <h2 class="text-white">렌트중</h2>
@@ -168,7 +160,7 @@ font-family: LeferiPoint-WhiteObliqueA;
         </section>
       </div>
 
- <!--====================================================
+<!--====================================================
                     PORTFOLIO MODALS
 ======================================================-->
 <c:forEach var="vDto" items="${vehicleList}"> 
@@ -185,7 +177,7 @@ font-family: LeferiPoint-WhiteObliqueA;
                         <div class="modal-body">
                             <div class="title-bar">
                               <div class="col-md-12">
-                                <h2 class="text-center">Our Project</h2>
+                                <h2 class="text-center">Car Info</h2>
                                 <div class="heading-border"></div>
                               </div>
                             </div>
@@ -194,29 +186,65 @@ font-family: LeferiPoint-WhiteObliqueA;
                               <div class="col-md-6">
                                 <img class="img-fluid img-centered" src="${ctx}/resources/file_upload/${vDto.fileName}" alt="">
                               </div>
-                                <p>Our new Project every processes had become fragmented; meaning quality and service were inconsistent. This lack of standardization was adversely impacting operating costs, productivity and customer satisfaction. For several years now Payfast has worked strategically with innovations as a means of developing new solutions, products and services. In line with this vision, Success was approached to find new payments solutions to offer Payfast customers on their website, including open invoice and partial payments options.</p>
+                              
+                        <p style="margin:15px; overflow:hidden; text-overflow:ellipsis; ">${vDto.contents}</p>
                                 <ul class="list-inline item-details">
-                                    <li>Client:
+                                    <li>차종:
                                         <strong>
-                                          <a href="#">Techs Soft</a>
+                                        	<c:if test="${vDto.category_fk eq '100'}">                                     
+                                          		<a href="#">스포츠카</a>
+                                          	</c:if>
+                                        	<c:if test="${vDto.category_fk eq '200'}">                                     
+                                          		<a href="#">세단</a>
+                                          	</c:if>
+                                        	<c:if test="${vDto.category_fk eq '300'}">                                     
+                                          		<a href="#">SUV</a>
+                                          	</c:if>
+                                        	<c:if test="${vDto.category_fk eq '400'}">                                     
+                                          		<a href="#">전기차</a>
+                                          	</c:if>
                                         </strong>
                                     </li>
-                                    <li>Date:
+                                    <li>제조사:
                                         <strong>
-                                          <a href="#">April 2018</a>
+                                          <a href="#">${vDto.company}</a>
                                         </strong>
                                     </li>
-                                    <li>Service:
+                                    <li>가격:
                                         <strong>
-                                          <a href="#">Web Development</a>
+                                          <a href="#">￦ ${vDto.price}원</a>
                                         </strong>
                                     </li>
                                 </ul>
                                 
                               <div class="col-md-6">
+                              <!-- 렌트가능 -->
+                              	<c:if test="${sessionScope.userId != null && vDto.status != 'Y'}">
                                 <button onclick="location.href='oneDayRev.do?cNum=${vDto.cNum}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-car-side"></i>렌트하기
                                 </button>
+                                </c:if>
+                                
+                              	<c:if test="${sessionScope.userId != null && vDto.status == 'Y'}">
+                                <button onclick="javascript:alert('이미 렌트된 차량입니다.')" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                                    <i class="fa-solid fa-car-side"></i>렌트하기
+                                </button>
+                                </c:if>
+                                
+                              	<c:if test="${sessionScope.userId == null && vDto.status != 'Y'}">
+                                <button onclick="javascript:LoginValid()" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                                    <i class="fa-solid fa-car-side"></i>렌트하기
+                                </button>
+                                </c:if>
+                                
+                              	<c:if test="${sessionScope.userId == null && vDto.status == 'Y'}">
+                                <button onclick="javascript:alert('이미 렌트된 차량입니다.')" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                                    <i class="fa-solid fa-car-side"></i>렌트하기
+                                </button>
+                                </c:if>
+                                <button onclick="javascript:#" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                                    <i class="fa-solid fa-heart"></i>관심상품
+                                </button>                                
                                 <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
                                     <i class="fa fa-times"></i> Close
                                 </button>
@@ -279,8 +307,16 @@ font-family: LeferiPoint-WhiteObliqueA;
     function showMsg(){
         alert("로그인이 필요합니다!!")
     }
+    
+    
+    function LoginValid() {
+    	alert('차량 예약에는 로그인이 필요합니다.')
+    	document.location.href='memberLogin.do'
+	}
+    
+    
 
 </script>
 
 
-    
+        

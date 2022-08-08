@@ -37,6 +37,8 @@
     <!-- 로그인 리소스 -->
 	<script type="text/javascript" src="${ctx}/resouces/js/login.js"></script>
 	<link rel="stylesheet" href="${ctx}/resources/css/login.css">
+	<!-- 로그인 유효성 체크 -->
+	<script type="text/javascript" src="${ctx}/resources/js/login_valid.js"></script>
 	<style>
     .navbar .nav-link {
       color: #fff !important;
@@ -126,12 +128,12 @@
  
 	<!-- Sign Up -->
 	<div class="container__form container--signup">
-		<form action="memberLoginOK.do" method="post" class="form" id="form1"> <!-- 로그인폼 -->
+		<form action="memberLoginOK.do" method="post" class="form" id="form1" name="loginForm"> <!-- 로그인폼 -->
 			<h2 class="form__title">회원 로그인</h2>
 			<input type="text" placeholder="아이디 입력" id="id" name="id" class="input" />
 			<input type="password" placeholder="비밀번호 입력" id="name" name="pw" class="input" />
 			<a href="#" class="link" onclick="javascript:alert('기능 미구현 추후 작업예정입니다')">비밀번호 찾기</a>
-			<button class="btn">로그인</button>
+			<button type="button" class="btn" onclick="loginChk()">로그인</button>
 		</form>
 	</div>
 

@@ -1,11 +1,9 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
-<%@page import="kr.mr.model.VehicleDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-
-
 
 
 
@@ -33,42 +31,26 @@
 
 
 
-
 <style>
 /*클릭 이벤트를 포함하는 모든 영역에 추가하면 하위 이벤트까지 작동안함.*/
-
 
 #element{
 	pointer-events:cursor;
 }
 
+#element:focus{
+	pointer-events: none;
+}
+ 
+#element:hover {
+	
+	pointer-events: none;
+} 
 
 h1,h2,h3,h4,h5,h6,p{
-
 font-family: LeferiPoint-WhiteObliqueA;
-
 }
-
-h1{
-
-margin : 0;
-padding : 0;
-font-size: 25px;
-color: #BBB;
-
-}
-
-p{
-margin : 0;
-padding : 0;
-font-size: 40px;
-color: #BBB;
-
-}
-
 </style>
-
-
 
 
 
@@ -125,7 +107,7 @@ color: #BBB;
         <section class="resume-section p-3 p-lg-5 d-flex  flex-column" id="portfolio"> 
             <div class="row my-auto">
                 <div class="col-12">
-                <h2 class="  text-center">LongDay</h2>
+                <h2 class="  text-center">Now Rental</h2>
                 <div class="mb-5 heading-border"></div>
                 </div>
                 <div class="col-md-12">
@@ -150,10 +132,13 @@ color: #BBB;
                            
                      <div class="simpletxt">
 
-                        <h1 style="margin:0; padding:0" class="name">${vDto.company} ${vDto.cName}</h1>
+                        <h3 class="name">${vDto.cName}</h3>
                         <p style="margin:15px; white-space: nowrap; overflow:hidden; text-overflow:ellipsis; ">"${vDto.contents}"</p>
-                         <h3 class="price"> ￦ ${vDto.price}</h3>
+                         <h4 class="price"> ￦ ${vDto.price}</h4>
+                         <button>READ MORE</button><br>
                          <div class="wishtxt">
+                            <p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
+                            <p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
                          </div>
                      </div>
                         </div>
@@ -162,22 +147,7 @@ color: #BBB;
                 </div>
              </c:if>  
              
-            <c:if test="${vDto.status == 'Y'}">  
-                <div id="element" class="col-sm-4 portfolio-item filter ${vDto.category_fk}">
-                    <a class="portfolio-link" href="#portfolioModal${vDto.cNum}" data-toggle="modal"> 
-                        
-                        <div class="caption-port" style="opacity: 1;">
-                           
-                     <div class="simpletxt">
-                        <h2 class="text-white">렌트중</h2>
-                     </div>
-                        </div>
-                        <img class="img-fluid" src="${ctx}/resources/file_upload/${vDto.fileName}" style="max-width: 100%; min-width:150px; max-height:auto; min-height: 300px; margin:auto; ">  
-                    </a> 
-                </div>
-             </c:if>  
-         
-               
+            
             
             
             </c:forEach> 
@@ -185,7 +155,7 @@ color: #BBB;
         </section>
       </div>
 
- <!--====================================================
+<!--====================================================
                     PORTFOLIO MODALS
 ======================================================-->
 <c:forEach var="vDto" items="${vehicleList}"> 
@@ -243,29 +213,19 @@ color: #BBB;
                                 
                                <div class="col-md-6">
                               <!-- 렌트가능 -->
-                              	<c:if test="${sessionScope.userId != null && vDto.status != 'Y'}">
-                                <button onclick="location.href='oneDayRev.do?cNum=${vDto.cNum}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                              	<c:if test="${sessionScope.userId != null}">
+                                <button onclick="location.href='nowRev.do?cNum=${vDto.cNum}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-car-side"></i>렌트하기
                                 </button>
                                 </c:if>
+
                                 
-                              	<c:if test="${sessionScope.userId != null && vDto.status == 'Y'}">
-                                <button onclick="javascript:alert('이미 렌트된 차량입니다.')" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
-                                    <i class="fa-solid fa-car-side"></i>렌트하기
-                                </button>
-                                </c:if>
-                                
-                              	<c:if test="${sessionScope.userId == null && vDto.status != 'Y'}">
+                              	<c:if test="${sessionScope.userId == null}">
                                 <button onclick="javascript:LoginValid()" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-car-side"></i>렌트하기
                                 </button>
                                 </c:if>
                                 
-                              	<c:if test="${sessionScope.userId == null && vDto.status == 'Y'}">
-                                <button onclick="javascript:alert('이미 렌트된 차량입니다.')" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
-                                    <i class="fa-solid fa-car-side"></i>렌트하기
-                                </button>
-                                </c:if>
                                 <button onclick="javascript:#" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-heart"></i>관심상품
                                 </button>                                

@@ -59,12 +59,20 @@
         <br/>
         <br/>
       	</div>
+      	
+ 	<c:if test="${mDto.isRented == 'Y'}">
+        <button class="add-to-cart" onclick='javascript:alert("차량은 1대만 구매 가능합니다. ")'>
+        		렌트카 예약하기
+        </button>
+        </c:if>
+ 	<c:if test="${mDto.isRented != 'Y'}">
         <button class="add-to-cart">
         	<a href="rentalSelector.do?cNum=${vDto.cNum}&id=${sessionScope.userId}">
         		렌트카 예약하기
         	</a>
         </button>
-        <button class="add-to-cart"><a href="wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}">관심상품</button>
+        </c:if>
+        <button class="add-to-cart">관심상품<a href="wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}"></button>
       </div>
     </div>
     <%-- </c:forEach> --%>

@@ -1,5 +1,5 @@
-<%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -9,8 +9,11 @@
 
 <%
 	Date nowTime = new Date();
-	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+	SimpleDateFormat today = new SimpleDateFormat("yyyy-MM-dd");
 %>
+
+
+
 
 	<style>
 		 .ui-widget-header { border: 0px solid #dddddd; background: #fff; } 
@@ -96,7 +99,7 @@
 	
 
 	<body style="background-color:#111; color:#fff">
-<!-- 	<form action="payment.do"> -->
+	<form action="payment.do" method="post">
     <div class="container p-3 my-5 bg-secondary text-white">
         <h1>렌트 예약</h1>
     </div>
@@ -104,30 +107,54 @@
         <table class="table" style="color: #fff;">
             <thead>
                 <tr class="table-dark">
-                    <th>장기렌트</th>
+                    <th>즉시렌트</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>이름</td>
-                    <td><input name="name" type="name" class="form-control" id="exampleFormControlInput1" placeholder="Input Name"></td>
+                    <td>차량번호</td>
+                    <td><input value="${vDto.cNum}" name="cNum" type="hidden" class="form-control" id="exampleFormControlInput1"></td>
                 </tr>
                 <tr>
-                    <td>주민번호</td>
-                    <td><input name="revjumin1" type="rrn_first" class="form-control" id="exampleFormControlInput" placeholder="Input rrn"></td>
-                    <td><input name="revjumin2" type="rrn_second" class="form-control" id="exampleFormControlInput" placeholder="Input rrn"></td>
+                    <td>모델</td>
+                    
+                    <td>
+                    	<img src="${ctx}/resources/file_upload/${vDto.fileName}"
+                    	 style="max-width: 300px; min-width:150px; max-height:auto; min-height: auto;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td><input name="revName" type="name" class="form-control" id="exampleFormControlInput1" placeholder="Input Name"></td>
+                </tr>
+                <tr>
+                    <td>주민번호</td>                   
+                    <td><input name="revJumin1" type="rrn_first" class="form-control" id="exampleFormControlInput" placeholder="Input rrn"></td>
+                    <td><input name="revJumin2" type="rrn_second" class="form-control" id="exampleFormControlInput" placeholder="Input rrn"></td>
                 </tr>
                 <tr>
                     <td>연락처</td>
-                    <td><input name="revtel" type="tel" class="form-control" id="exampleFormControlInput1" placeholder="010-xxxx-xxxx"></td>
+                    <td><input name="revTel" type="tel" class="form-control" id="exampleFormControlInput1" placeholder="010-xxxx-xxxx"></td>
                 </tr>
                 <tr>
                     <td>렌트지역</td>
                     <td>
-                        <div class="form-check">
+                        <div class="form-check d-flex">
                             <input name="revAddr" class="form-check-input" type="radio" id="flexRadioDefault1">
+							</br>
                             <label class="form-check-label" for="flexRadioDefault1">
-                              서구지점
+                              서구본점
+                            </label>
+
+                            <input name="revAddr" class="form-check-input" type="radio" id="flexRadioDefault1">
+							</br>	
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              유성점
+                            </label>
+                            <input name="revAddr" class="form-check-input" type="radio" id="flexRadioDefault1">
+                            </br>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              중구점
                             </label>
                           </div>
                     </td>
@@ -144,8 +171,7 @@
                 </tr>
                 <tr>
                     <td>사용일시</td>
-                    <td><input name="revDate" id="sdate" class="datepicker"></td>
-                    <td><input name="revDate2" id="edate" class="datepicker"></td>
+                    <td><input value='<%= today.format(nowTime) %>' disabled></td>
                 </tr>
             </tbody>
         </table> 
@@ -177,53 +203,7 @@
                 <input type='reset' value='취소' class='btn btn-danger'/>    
             </div>   
 
-            <script>               
-            $(document).ready(function (nowTime) {
-                $.datepicker.regional['ko'] = {
-                    closeText: '닫기',
-                    prevText: '이전달',
-                    nextText: '다음달',
-                    currentText: '오늘',
-                    monthNames: ['1월(JAN)','2월(FEB)','3월(MAR)','4월(APR)','5월(MAY)','6월(JUN)',
-                    '7월(JUL)','8월(AUG)','9월(SEP)','10월(OCT)','11월(NOV)','12월(DEC)'],
-                    monthNamesShort: ['1월','2월','3월','4월','5월','6월',
-                    '7월','8월','9월','10월','11월','12월'],
-                    dayNames: ['일','월','화','수','목','금','토'],
-                    dayNamesShort: ['일','월','화','수','목','금','토'],
-                    dayNamesMin: ['일','월','화','수','목','금','토'],
-                    weekHeader: 'Wk',
-                    dateFormat: 'yy-mm-dd',
-                    firstDay: 0,
-                    isRTL: false,
-                    showMonthAfterYear: true,
-                    yearSuffix: '',
-                    showOn: 'both',
-                    buttonText: "달력",
-                    changeMonth: true,
-                    changeYear: false,
-                    showButtonPanel: false,
-                    yearRange: 'c-0:c+1',
-                    minDate:  0,
-                    maxDate: new Date('2022-10-31')
-
-                };
-                $.datepicker.setDefaults($.datepicker.regional['ko']);
-
-                $('#sdate').datepicker();
-                $('#sdate').datepicker("option", "minDate", 0);
-                $('#sdate').datepicker("option", "onClose", function ( selectedDate ) {
-                    $("#edate").datepicker( "option", "minDate", selectedDate );
-                });
-
-                $('#edate').datepicker();
-                $('#edate').datepicker("option", "minDate", $("#sdate").val());
-                $('#edate').datepicker("option", "onClose", function ( selectedDate ) {
-                    $("#sdate").datepicker( "option", "minDate", selectedDate );
-                });
-            });
-                
-            </script>
         </div> 
-<!--         </form> -->
+        </form>
     </body>
 <%@ include file="../inc/footer.jsp" %>

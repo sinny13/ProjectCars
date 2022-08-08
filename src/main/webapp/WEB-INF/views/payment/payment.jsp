@@ -8,6 +8,30 @@
 <link rel="stylesheet" href="${ctx}/resources/js/payment.js">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
+
+<script type="text/javascript">
+
+
+// 세션 자바스크립트 변환방법1
+const mId = "<%=(String)session.getAttribute("userId")%>"
+
+
+
+ var userId = sessionStorage.set("userId",mId); 
+
+
+
+alert(mId);
+alert(userId);
+
+
+
+
+
+</script>
+
+
+
 <div id="myPayment">
 <!-- partial:index.partial.html -->
 <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -390,6 +414,7 @@
               <div class="control__label">
                 신용/체크카드/페이결제
                 <div class="microcopy">credit / check card / pay</div>
+ 
               </div>
               <span class="control__extra">
                 <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
@@ -430,6 +455,8 @@
             </div>
           </div>
           
+          
+          
 
           <!-- jQuery -->
           <script type="text/javascript"
@@ -462,12 +489,19 @@
               <span class="btn__label">결제하기</span>
               <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
             </button> -->
+			
+
 
 
           <script>
             var IMP = window.IMP; // 생략가능
             IMP.init('imp52074203'); 
-          
+            
+
+
+
+
+            
             function requestPay(cNum) {
             IMP.init('iamport'); //iamport 대신 자신의 "가맹점 식별코드"를 사용
             IMP.request_pay({
@@ -485,8 +519,10 @@
               console.log(rsp);
               if (rsp.success) {
                 var msg = '결제가 완료되었습니다.';
-                alert(msg);
-                location.href = "paymentOk.do?cNum="+cNum;
+                /* alert(msg); */
+                alert(mId);
+                
+                location.href = "paymentOk.do?cNum="+cNum+"&id="+mId;
                 
                 
 /*         		document.prodFrm.action="cartAdd.do?pNum="+pNum;
@@ -509,7 +545,7 @@
 
 
 
-
+			
           <div class="form__footer">
             <button class="btn btn--primary js-goto" data-page="4">
               <span class="btn__label">Place my order</span>

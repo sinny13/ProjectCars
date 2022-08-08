@@ -10,6 +10,8 @@
 <!-- 로그인 리소스 -->
 <link rel="stylesheet" href="${ctx}/resources/css/memberRegister.css">
 <link rel="stylesheet" href="${ctx}/resources/css/hover/button.css">
+<!-- 유효성JS -->
+<script type="text/javascript" src="${ctx}/resources/js/register_valid.js"></script>
 
 <style>
 .navbar .nav-link {
@@ -157,38 +159,43 @@ code {
 </style>
 
 <div class="container mt-5 p-5" style="width:800px; border-radius:10px;">
-	<form action="${ctx}/memberInsert.do" method="post" class="bg-dark p-5">
+	<form action="${ctx}/memberInsert.do" method="post" class="bg-dark p-5" name="joinForm">
         
       <legend>회원가입</legend>
       
         <div class="box1">
           <div><label>아이디</label></div>
-            <input class="form-control pt-2 pb-2" type="text" name="id" placeholder="아이디">
+            <input class="form-control pt-2 pb-2" type="text" name="id" placeholder="아이디를 입력하세요">
         </div>     
            
         <div class="box2">
           <div><label>비밀번호:</label></div>
-            <input class="form-control mb-2" type="password" name="pw" placeholder="비밀번호">
+            <input class="form-control mb-2" type="password" name="pw" placeholder="비밀번호를 입력하세요">
+        </div>
+        
+        <div class="box2">
+          <div><label>비밀번호확인:</label></div>
+            <input class="form-control mb-2" type="password" name="pwConfirm" placeholder="비밀번호를 입력하세요">
         </div>
         
         <div class="box2">
           <div><label>이름:</label></div>
-			<input class="form-control mb-2" type="text" name="name" placeholder="이름">
+			<input class="form-control mb-2" type="text" name="name" placeholder="이름을 입력하세요">
         </div>
         
         <div class="box2">
           <div><label>나이:</label></div>
-			<input class="form-control mb-2" type="text" name="age" placeholder="나이">
+			<input class="form-control mb-2" type="text" name="age" placeholder="나이를 입력하세요">
         </div>
         
         <div class="box2">
           <div><label>이메일:</label></div>
-			<input class="form-control mb-2" type="text" name="email" placeholder="이메일">
+			<input class="form-control mb-2" type="text" name="email" placeholder="이메일을 입력하세요">
         </div>
         
         <div class="box2">
           <div><label>전화번호:</label></div>
-			<input class="form-control mb-2" type="text" name="tel" placeholder="전화번호">
+			<input class="form-control mb-2" type="text" name="tel" placeholder="전화번호를 입력하세요">
         </div>
 		<!-- 주소  -->
 		<div class="row m-0 mb-2">
@@ -205,7 +212,8 @@ code {
 		<input  class="form-control mb-2" type="text" name="detailAddr" id="detailAddr" placeholder="상세주소">
 		
 		<div class="text-center mt-3">
-		<button type="submit" class="pulse">가입</button>
+		<!-- <input type="button" value="회원가입" class="btn btn-primary" onclick="inputChk()"> -->
+		<button type='button' onclick="inputChk()" class="pulse">가입</button>
 		<button type="reset" class="pulse">취소</button>
 		</div>
         
