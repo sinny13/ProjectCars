@@ -58,7 +58,7 @@
                     <td class="desc">우리은행 : 523-16-15-2361</td>
                     <td class="id num">5조</td>
                     <!-- <td class="qty">1</td> -->
-                    <td class="amt">₩{dto.price}</td>
+                    <td class="amt">₩300,000,000</td>
                   </tr>
                 </tbody>
               </table>

@@ -18,7 +18,8 @@
 }
 
 #myBankPayment table.invoice {
-  background: #fff;
+  background: #black;
+  border: 1px solid #fff;
 }
 
 #myBankPayment table.invoice .num {
@@ -28,10 +29,10 @@
   font-size: 0.8em;
 }
 #myBankPayment table.invoice tr, table.invoice td {
-  background: #fff;
+  background: #black;
   text-align: left;
   font-weight: 400;
-  color: #322d28;
+  color: #white;
 }
 #myBankPayment table.invoice tr.header td img {
   max-width: 300px;
