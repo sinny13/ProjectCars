@@ -70,7 +70,7 @@
 			if(linkBtn === "remove"){
 				moveForm.attr("action", "remove.do");
 			}else if(linkBtn === "list"){
-				moveForm.attr("action", "list.do").attr("method", "get");
+				moveForm.attr("action", "boardList.do").attr("method", "get");
 				
 				// clone()은 복사해옴.
 				var viewPageObj = $("input[name='viewPage']").clone();

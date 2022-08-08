@@ -26,7 +26,7 @@ public class BoardController {
 	
 	// 게시판 목록
 //	@RequestMapping("/list.do") /list.do로 요청 시 해당 메소드(글 목록 보기) 실행
-	@RequestMapping("/list.do")
+	@RequestMapping("/boardList.do")
 	public String list(
 			// @RequestParam : https://heavenly-appear.tistory.com/302
 			@RequestParam(defaultValue = "1") int viewPage,
@@ -66,7 +66,7 @@ public class BoardController {
 	public String register(BoardVO board) {
 		service.register(board);
 		
-		return "redirect:/list.do"; // 글등록 : 글등록 후 다시 글 목록으로 돌아갈 때(redirect)
+		return "redirect:/boardList.do"; // 글등록 : 글등록 후 다시 글 목록으로 돌아갈 때(redirect)
 	}
 	
 	
@@ -99,7 +99,7 @@ public class BoardController {
 		
 		// redirect:접두어가 붙으면 스프링에서 내부적으로
 		// response.sendRedirect() 처리해 줌
-		return "redirect:/list.do";
+		return "redirect:/boardList.do";
 	}
 	
 	@RequestMapping("/remove.do")
@@ -119,7 +119,7 @@ public class BoardController {
 				
 		rttr.addFlashAttribute("bvo", bvo);
 		
-		return "redirect:/list.do";
+		return "redirect:/boardList.do";
 	}
 	
 	

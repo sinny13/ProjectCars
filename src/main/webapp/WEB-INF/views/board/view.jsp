@@ -1,13 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <c:set var="ctx" value="${pageContext.request.contextPath}"/> 
-   
 <%@ include file="../inc/header.jsp" %>
+
 <div class="container d-flex mt-5 justify-content-center">
    <div class="w-75 shadow p-5 rounded border">
       <h3>${board.subject}</h3>
-      <form action="list.do" method="get" id="moveForm">
+      
+      <!-- 검색했을 때 해당 게시글 정보를 list로 넘겨줌 -->
+      <form action="boardList.do" method="get" id="moveForm">
          <input type="hidden" name="viewPage" value="${viewPage}"/>
          <input type="hidden" name="searchType" value="${bvo.searchType}"/>
          <input type="hidden" name="keyWord" value="${bvo.keyWord}"/>
@@ -45,11 +48,13 @@
       </div>
       <div class="form-group mt-4">
          <c:if test="${sessionScope.userId !=null && sessionScope.userId !=''}">
-            <c:if test="${sessionScope.userId == board.id}">
+         
+         	<!-- id : 유저 고유값 -->
+            <c:if test="${sessionScope.userId == 'admin'}"> <!-- board.id -->
                <button type="submit" id="btn-modify"
                      class="btn btn-primary me-2">수정하기</button>
             </c:if>
-            <c:if test="${sessionScope.userId != board.id}">
+            <c:if test="${sessionScope.userId != 'admin'}">
                <button type="submit" id="btn-modify"
                      class="btn btn-primary me-2" disabled>수정하기</button>
             </c:if>
@@ -115,8 +120,8 @@
             <textarea class="form-control" id="reply_contents"></textarea>
           </div>
           <div class="mb-3">
-            <label for="replyer" class="col-form-label">글쓴이</label>
-            <input type="text" class="form-control" id="replyer" name="replyer">
+            <label for="replyer" class="col-form-label" id="replyer" name="replyer">(${userId})${userName}</label>
+            <!-- <input type="text" class="form-control" id="replyer" name="replyer"> -->
           </div>
           <div class="mb-3">
             <label for="replyDate" class="col-form-label">등록일</label>
@@ -141,7 +146,7 @@
 <script type="text/javascript" src="js/reply.js"></script>
 
 <script type="text/javascript">
-   $(document).ready(function(){
+	$(document).ready(function(){
       /// 댓글 리스트 ///
       var bidValue = "<c:out value='${board.bid}'/>";
       
@@ -295,20 +300,20 @@
       
       
       
-      var moveForm = $("#moveForm");
-      
-      
-      $("#btn-list").click(() => {
+      var moveForm = $("#moveForm"); // 13줄, form태그의 id="moveForm"으로 이동 : 검색
+       $("#btn-list").click(() => {
          //location.href="<c:url value='/list.do?viewPage=${viewPage}&searchType=${bvo.searchType}&keyWord=${bvo.keyWord}'/>";
          moveForm.submit();
       })
       
-      $("#btn-modify").click(() => {
+      $("#btn-modify").click(() => { // 50줄로 이동
          //location.href="<c:url value='/modify.do?bid=${board.bid}&viewPage=${viewPage}&searchType=${bvo.searchType}&keyWord=${bvo.keyWord}'/>";
-         moveForm.attr("action", "modify.do");
-         moveForm.submit();
+         moveForm.attr("action", "modify.do"); // .do로 이동
+         moveForm.submit(); // DB로 form 전송
       })
-   });
+      
+      
+	});
 </script>
 
 <%@ include file="../inc/footer.jsp" %>

@@ -3,7 +3,7 @@ package kr.mr.model;
 public class BoardPaging {
 	private int totalCnt;
 	
-	private int viewPage;
+	private int viewPage; // 현재 페이지
 	private int startIndex;
 	private int blockSize = 5;
 	private int currentBlock; // 현재 블럭의 위치
@@ -22,7 +22,7 @@ public class BoardPaging {
 	
 	// 인자 생성자
 	public BoardPaging(int totalCnt, int viewPage, int cntPerPage) {
-		this.totalCnt = totalCnt;
+		this.totalCnt = totalCnt; //
 		this.cntPerPage = cntPerPage;
 		this.viewPage = viewPage;
 		
