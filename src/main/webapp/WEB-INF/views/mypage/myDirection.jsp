@@ -89,11 +89,11 @@
     
     let storeName;
     if (i === 0) {
-    	storeName = '둔산본점'
+    	storeName = 'A 둔산본점'
     } else if (i === 1) {
-    	storeName = '유성점'
+    	storeName = 'B 유성점'
     }else if (i === 2) {
-    	storeName = '월평점'
+    	storeName = 'C 월평점'
     }
     
     
@@ -256,7 +256,7 @@
 </script>
 
 <div id="store">
-	<br><h2 style="text-align:center">둔산본점</h2><br>
+	<br><h2 style="text-align:center">A 둔산본점</h2><br>
 	<ul style="list-style:none">
 	  <li style="display:flex">
 	    <strong style="margin-right:100px;">주소</strong>

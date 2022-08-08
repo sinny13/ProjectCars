@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="${ctx}/resources/css/myPayment.css">
 <link rel="stylesheet" href="${ctx}/resources/js/myPayment.js">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 
 <div id="myPayment">
 <!-- partial:index.partial.html -->
@@ -309,7 +311,7 @@
 
           <div class="f f--no-margin">
             <label for="payment-cc" class="control block is-selected">
-              <input type="radio" name="payment" id="payment-cc" class="control__input" checked />
+              <input type="radio" name="payment" id="payment-cc" value="1" class="control__input"  checked/>
               <div class="control__label">
                 무통장입금
                 <!-- <div class="microcopy">Pay safely and securely with your credit card.</div> -->
@@ -386,7 +388,7 @@
             </div>
 
             <label for="payment-paypal" class="control block">
-              <input type="radio" name="payment" id="payment-paypal" class="control__input" />
+              <input type="radio" name="payment" id="payment-paypal" value="2" class="control__input" />
               <div class="control__label">
                 신용/체크카드/페이결제
                 <div class="microcopy">credit / check card / pay</div>
@@ -435,10 +437,10 @@
           <script type="text/javascript"
           src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
           <script type="text/javascript"
-          src="https://cdn.iamport.kr/js/iamport.payment-1.1.2.js"></script>
+          src="https://cdn.iamport.kr/js/iamport.payment-1.1.2.js"></script> 
 
           <div class="form__footer">
-            <button class="btn btn--primary js-goto" onclick="requestPay()"">
+            <button class="btn btn--primary js-goto" id="payBtn" onclick="requestPay()">
               <span class="btn__label">결제하기</span>
               <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
             </button>
@@ -464,11 +466,91 @@
             </button> -->
 
 
-          <script>
+         <script>
+		
+         
+         
             var IMP = window.IMP; // 생략가능
             IMP.init('imp52074203'); 
-          
-            function requestPay() {
+         
+            
+            
+            
+            
+           /*  $('input[type=radio][name=payment]').change(function(){
+            	if(this.value == '1'){
+            		alert("현금");
+            	}
+            	else if(this.value == '2'){
+            		alert("카드");
+            	}
+            });
+             */
+            
+             
+             
+             
+             
+             
+        /*      var current = $('input[type=radio][name=payment]:checked').val(); */
+        
+         /*    alert(current); */
+            
+            
+
+
+             
+             function requestPay(){
+            	 var current = $("input:radio[name='payment']:checked").val();
+            	/*  alert(current); */
+            	 
+            	 
+            	 if(current == '1'){
+             		cashPay();
+             	}
+             	else if(current == '2'){
+             		cardPay();
+             	}
+            	 
+             };
+             
+             
+            /*  
+             function requestPay(current){
+                	if(current == '1'){
+                		alert("현금결제");
+                	}
+                	else if(current == '2'){
+                		alert("카드결제");
+                	}
+                }; */
+                
+                     
+         
+         
+             
+             
+             
+             
+      /*   	function requestPay(){
+            	if $("#payment-cc").click(cardPay(){
+            		location.href="cash.jsp"
+            	} else{
+            		cashPay();
+            	}
+            } */
+            
+
+            
+            
+            function cashPay(){
+            	location.href = "http://localhost:8080/web/myBankPayment.do"
+            };
+            
+            
+            
+            
+            function cardPay() {
             IMP.init('iamport'); //iamport 대신 자신의 "가맹점 식별코드"를 사용
             IMP.request_pay({
               pg: "inicis",
@@ -497,7 +579,6 @@
           }
           </script>
           
-
 
 
 
@@ -784,7 +865,7 @@
 </div>
 </div>
 <!-- partial -->
-  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="./script.js"></script> -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="${ctx}/resources/js/myPayment.js"></script>
 
 
 <%@ include file="../inc/footer.jsp" %>
