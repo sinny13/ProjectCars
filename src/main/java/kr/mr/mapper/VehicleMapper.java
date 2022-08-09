@@ -33,7 +33,15 @@ public interface VehicleMapper {
 	
 	// 추천으로 검색
 	public List<VehicleDTO> specGetter(String cSpec);
+<<<<<<< HEAD
 
+=======
+	
+	
+	// 차량 예약 상태 
+	
+	public int vehicleStatusY(int cNum);
+>>>>>>> branch 'topic_new0808' of https://github.com/sinny13/ProjectCars.git
 	
 	
 }

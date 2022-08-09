@@ -3,8 +3,19 @@
 
 <%@ include file="../inc/header.jsp" %>
 
+<<<<<<< HEAD
 <body style="background-color:#111; color:#fff">
     <div class="container p-3 my-5 text-white" style="background-color: rgba(70, 70, 70, 0.5)">
+=======
+<!-- Personal CSS -->
+<link rel="stylesheet" href="${ctx}/resources/css/myPageList.css">
+<link rel="stylesheet" href="${ctx}/resources/css/myWishList.css">
+
+<script type="text/javascript" src="${ctx}/resources/js/mdb.min.js"></script>
+
+<body style="background-color:#111; color:#fff">
+    <div class="container p-3 my-5 bg-secondary text-white">
+>>>>>>> branch 'topic_new0808' of https://github.com/sinny13/ProjectCars.git
         <h1>회원정보수정</h1>
     </div>
 	<div class="card" style="background-color:#111; color:#fff">

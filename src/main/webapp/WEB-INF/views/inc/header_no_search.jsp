@@ -38,6 +38,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
  --><!-- MDB Js -->
 <script type="text/javascript" src="${ctx}/resouces/js/mdb.min.js"></script>
+<<<<<<< HEAD
 
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
@@ -305,6 +306,277 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 		</li>
         <li class="letter">
 			<a class="letter" href="memberLogin.do" onclick="javascript:showMsg()">1:1렌트상담</a>
+=======
+<!-- CSS -->
+
+<link rel="stylesheet" href="${ctx}/resources/css/noticeList.css">
+<link rel="stylesheet" href="${ctx}/resources/css/noticeRent.css">
+<link rel="stylesheet" href="${ctx}/resources/css/myPageList.css">
+<link rel="stylesheet" href="${ctx}/resources/css/myWishList.css">
+
+<link rel="stylesheet" href="${ctx}/resources/css/mdb.min.css">
+<link rel="stylesheet" href="${ctx}/resources/css/car_main.css">
+<link rel="stylesheet" href="${ctx}/resources/css/home.css">
+<link rel="stylesheet" href="${ctx}/resources/css/font.css">
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		<c:if test="${msg != null}">
+			alert("${msg}");
+		</c:if>
+		<c:remove var="msg" scope="session"/>
+	});
+
+	function chkValidation(){	// 유효성체크
+		if($("#user_id").val()==''){
+			//alert("아이디를 입력하세요!!!");
+			//alert($("#idMsg"));
+			$("#idMsg").css("display", "block");
+			
+			$("#user_id").focus();
+			return false;
+		}
+		
+		if($("#pw").val()==''){ 
+			$("#pwMsg").css("display", "block");
+			//alert("비밀번호를 입력하세요!!!");
+			$("#pw").focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function valueChk(obj){ // 온키업 이벤트로 인풋창에 키를 입력한 상태에서 작동된다. 
+		if(obj.id == "user_id"){
+			$("#idMsg").css("display", "none");
+		}else{
+			$("#pwMsg").css("display", "none");
+		}
+	}
+	
+	function logout(){
+		// c:url를 이용하면 ${ctx}를 생략할 수 있다.
+		location.href="<c:url value='/#adminLogout.do'/>";
+	}
+
+<!-- 미구현기능 메세지 출력 -->
+	function showMsg(){
+		alert("기능 미구현!! 추후 작업예정입니다.");
+		document.location.href="#";
+	}
+	
+<!-- 미구현기능 메세지 출력 -->
+	function notice(){
+		alert("해당 기능을 이용하기 위해서는 로그인이 필요합니다.");
+		document.location.href="#clientLogin.do";
+	}
+	
+<!-- 검색어 유효성체크 -->
+	function emptyResult(){
+		if($("#searchInput").val()==''){
+			alert("차량을 입력하세요");
+				$("#searchInput").focus();
+				
+		}
+		
+}
+	
+	
+</script>
+
+</head>
+<body>
+<!-- <1header>	 -->
+<header class="header sticky-top">
+<nav class="nav-top navbar m-0 p-0 navbar-expand-md " style="font-family: LeferiPoint-WhiteObliqueA; background-color: #111">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarRightAlignExample"
+      aria-controls="navbarRightAlignExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+      <!-- Left links -->
+      <ul class="navbar-nav">
+      	<c:if test="${sessionScope.LoginProcess != null}">
+           <li class="nav-item text-start px-3" style="color:white; list-style :none; line-height:40px;">
+              ${sessionScope.userName}님 안녕하세요!!
+           </li>
+    	</c:if>
+      </ul>
+        <!-- 로그인 유효성체크  -->
+        <ul class="navbar-nav ms-auto">
+	            <c:if test="${sessionScope.LoginProcess == null}">
+	            	<li>
+	            		<a class="nav-link" href="memberLogin.do">로그인</a>
+	            	</li>
+	            	<li>
+             			<a class="nav-link" href="memberRegister.do">회원가입</a>
+           			</li>	            	
+	            </c:if>
+	            
+	            <c:if test="${sessionScope.LoginProcess != null}">
+					<li>
+	            		<a class="nav-link" href="memberLogout.do">로그아웃</a>
+	            	</li>
+	            	<li>
+             			<a class="nav-link" href="#wishMovie.do">위시리스트</a>
+           			</li>	
+				</c:if>	
+        <!-- Navbar dropdown -->
+        <li class="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="ture">마이페이지</a>
+          <!-- Dropdown menu -->
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <c:if test="${sessionScope.isLogin != null and sessionScope.isAccount =='client'}">
+              	<a class="dropdown-item" onclick="javascript:notice()" href="#memberInfo.do?id=${sessionScope.id}">내 정보보기</a>
+              </c:if>
+              <c:if test="${sessionScope.isLogin != null and sessionScope.isAccount =='admin'}">
+              	<a class="dropdown-item" onclick="javascript:alert('관리자 정보 미구현!)">관리자 정보보기</a>
+              </c:if>
+            </li>
+            <li>
+              <a class="dropdown-item" href="myPageList.do">마이페이지</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">주문배송조회</a>
+            </li>
+            <li><hr class="dropdown-divider"/></li>
+            <li>
+              <a class="dropdown-item" href="#">개발중...</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+<hr>
+</nav>
+<!-- </header>	 -->
+<!-- <header2>	 -->
+<nav class="nav-second navbar m-0 p-0 navbar-expand-sm" style="font-family: LeferiPoint-WhiteObliqueA;">
+  <!-- Container wrapper -->
+  <div class="container">   
+  	<a class="nav-link" href="${ctx}">
+          <img style="position: relative; width: 100px; alt="로고" src="${ctx}/resources/image/logo/임시로고.png">
+    </a>  
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">        
+    <span class="navbar-toggler-icon"></span>    
+  </button>
+   <ul class="navbar-nav">
+   		<li class="nav-link">            
+          <a class="nav-link" href="home.do">Home</a> 
+        </li> 
+   </ul>
+<!------- 네비메뉴 start ------->
+<!------- 즉시출고가능차량 start ------->     
+ <ul class="navbar-nav">
+   	<li class="nav-link">            
+      <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">즉시출고가능차량</a> 
+    </li> 
+ </ul>
+<!------- 즉시출고가능차량 end ------->   
+
+
+<!------- 장기렌트 start ------->  
+  <ul class="navbar-nav">
+  <li class="nav-link dropdown ">
+        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">장기렌트</a>
+        <ul class="dropdown-menu shadow">
+        <li class="letter">
+			<a class="letter" href='rentPage.do'>모든차량</a>
+			<hr class="dropdown-divider"/>
+		</li>
+        <li class="letter">
+			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">세단</a>
+		</li>
+        <li class="letter">
+			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">스포츠카</a>
+		</li>
+        <li class="letter">
+			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">SUV</a>
+		</li>
+		</ul>
+	</li>
+</ul>
+<!------- 장기렌트 start ------->  
+
+
+
+<!------- 1일렌트 start ------->  
+  <ul class="navbar-nav">
+  <li class="nav-link dropdown ">
+        <a class="nav-link" href="${ctx}" role="button" data-bs-toggle="dropdown">1일렌트</a>
+        <ul class="dropdown-menu shadow">
+        <li class="letter">
+			<a class="letter" href='${ctx}'>모든차량</a>
+			<hr class="dropdown-divider"/>
+		</li>
+        <li class="letter">
+			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">세단</a>
+		</li>
+        <li class="letter">
+			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">스포츠카</a>
+		</li>
+        <li class="letter">
+			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">SUV</a>
+		</li>
+		</ul>
+	</ul>
+<!------- 1일렌트 end ------->		
+
+   
+<!------- 이용안내 start ------->  
+  <ul class="navbar-nav">
+  <li class="nav-link dropdown ">
+        <a class="nav-link" href="${ctx}" role="button" data-bs-toggle="dropdown">이용안내</a>
+        <ul class="dropdown-menu shadow">
+        <li class="letter">
+			<a class="letter" href='noticeList.do'>보험/유의사항</a>
+			<hr class="dropdown-divider"/>
+		</li>
+        <li class="letter">
+			<a class="letter" href="noticeDayRent.do">1일렌트 안내사항</a>
+		</li>
+        <li class="letter">
+			<a class="letter" href="noticeLongRent.do">장기렌트 안내사항</a>
+		</li>
+        <li class="letter">
+			<a class="letter" href="noticeFaq.do">FAQ</a>
+		</li>
+		</ul>
+	</ul>   
+<!------- 이용안내 end ------->	
+<!------- 고객센터 start ------->
+  <ul class="navbar-nav">
+  <li class="nav-link dropdown ">
+        <a class="nav-link" href="" role="button" data-bs-toggle="dropdown">고객센터</a>
+        <ul class="dropdown-menu shadow">
+        <li class="letter">
+			<a class="letter" href='BoardInsert.do'>공지사항</a>
+			<hr class="dropdown-divider"/>
+		</li>
+        <li class="letter">
+			<a class="letter" href="memberLogin.do" onclick="javascript:showMsg()">1:1렌트상담</a>
+		</li>
+        <li class="letter">
+			<a class="letter" href="myReservation.do">실시간 신청</a>
+>>>>>>> branch 'topic_new0808' of https://github.com/sinny13/ProjectCars.git
 		</li>
         <li class="letter">
 			<a class="letter" href="myDirection.do">오시는길</a>

@@ -3,6 +3,7 @@ package kr.mr.model;
 public class BoardPaging {
 	private int totalCnt;
 	
+<<<<<<< HEAD
 	private int viewPage; // 현재 페이지
 	private int startIndex;
 	private int blockSize = 5;
@@ -23,6 +24,28 @@ public class BoardPaging {
 	// 인자 생성자
 	public BoardPaging(int totalCnt, int viewPage, int cntPerPage) {
 		this.totalCnt = totalCnt; //
+=======
+	private int viewPage;
+	private int startIndex;
+	private int blockSize = 5;
+	private int currentBlock; // 현재 블럭의 위치
+	private int blockStart;
+	private int blockEnd;
+	private int prevPage;
+	private int nextPage;
+	
+	private int cntPerPage; // 한페이지당 게시글 수
+	private int totalPage; // 전체페이지 수
+	
+	private int startRowNum; //rowNum 시작번호
+	
+	// 기본 생성자
+	public BoardPaging() {}
+	
+	// 인자 생성자
+	public BoardPaging(int totalCnt, int viewPage, int cntPerPage) {
+		this.totalCnt = totalCnt;
+>>>>>>> branch 'topic_new0808' of https://github.com/sinny13/ProjectCars.git
 		this.cntPerPage = cntPerPage;
 		this.viewPage = viewPage;
 		

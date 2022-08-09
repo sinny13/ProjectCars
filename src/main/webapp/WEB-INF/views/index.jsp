@@ -159,7 +159,11 @@
           <li class="nav-item">
             <a
                class="nav-link"
+<<<<<<< HEAD
                href="https://github.com/" 
+=======
+               href="https://github.com/sinny13/ProjectCars.git" 
+>>>>>>> branch 'topic_new0808' of https://github.com/sinny13/ProjectCars.git
                rel="nofollow"
                target="_blank"
                >

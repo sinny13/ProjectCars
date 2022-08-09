@@ -31,4 +31,17 @@
   	select name from member where id = #{id} and pw=#{pw}
   </select>
   
+<<<<<<< HEAD
+=======
+  
+    <update id="insertById" parameterType="memberDTO">
+  	update member set cNum=#{cNum}, isRented="Y"
+  	where id=#{id}
+  </update>
+  
+  <select id="memberGetter" parameterType="String" resultType="memberDTO">
+  	select * from member where id = #{id}
+  </select>
+  
+>>>>>>> branch 'topic_new0808' of https://github.com/sinny13/ProjectCars.git
 </mapper>

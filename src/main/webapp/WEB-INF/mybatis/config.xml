@@ -9,5 +9,11 @@
   	<typeAlias type="kr.mr.model.MemberDTO" alias="memberDTO"/>
   	<typeAlias type="kr.mr.model.CategoryDTO" alias="categoryDTO"/>
   	<typeAlias type="kr.mr.model.VehicleDTO" alias="vehicleDTO"/>
+<<<<<<< HEAD
+=======
+  	<typeAlias type="kr.mr.model.WishDTO" alias="wishDTO"/>
+  	<typeAlias type="kr.mr.model.ReserveDTO" alias="reserveDTO"/>
+  	<typeAlias type="kr.mr.model.ImageDTO" alias="imageDTO"/>
+>>>>>>> branch 'topic_new0808' of https://github.com/sinny13/ProjectCars.git
   </typeAliases>
 </configuration>

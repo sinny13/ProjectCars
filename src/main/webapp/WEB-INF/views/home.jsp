@@ -3,6 +3,7 @@
 
 <%@ include file="inc/header.jsp" %>
 
+<<<<<<< HEAD
 
 <!-- MDB Js -->
 <script type="text/javascript" src="${ctx}/resources/js/mdb.min.js"></script>
@@ -23,6 +24,34 @@ $(document).ready(function(){
 		alert("${LogoutProcess}");	
 	}	  
 });
+=======
+<!-- MDB Js -->
+<script type="text/javascript" src="${ctx}/resources/js/mdb.min.js"></script>
+
+
+<!-- 로그인성공 메세지  -->
+<script type="text/javascript">
+$(document).ready(function(){ 
+	if(${LoginProcess != null}){
+		alert("${LoginProcess}");	
+		
+	}	  
+});
+
+<!-- 로그아웃성공 메세지  -->
+$(document).ready(function(){ 
+	if(${LogoutProcess != null}){
+		alert("${LogoutProcess}");	
+	}	  
+});
+<!-- 위시리스트 담기 실패 메세지  -->
+$(document).ready(function(){ 
+	if(${WishInsertFail != null}){
+		alert("${WishInsertFail}");	
+	}	  
+});
+
+>>>>>>> branch 'topic_new0808' of https://github.com/sinny13/ProjectCars.git
 
 </script>
 <!-- 메세지삭제 -->

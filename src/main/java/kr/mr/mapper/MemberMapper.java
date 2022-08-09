@@ -28,4 +28,15 @@ public interface MemberMapper {
 	// 로그인
 	public String memberLogin(MemberDTO dto);
 	
+<<<<<<< HEAD
+=======
+	// 아이디로 cNum과 isRented 업데이트
+	public int insertById(MemberDTO dto);
+		
+	
+	// 회원 1명 가져오기
+	public MemberDTO memberGetter(String id);
+	
+	
+>>>>>>> branch 'topic_new0808' of https://github.com/sinny13/ProjectCars.git
 }

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+<<<<<<< HEAD
 #myPageList .table td{
 	color:#fff;
 }
@@ -127,3 +128,37 @@
 
 
 
+=======
+.table td{
+	color:#fff;
+}
+
+.table td:hover{
+	color: darkorchid;
+}
+
+/* img{
+    width: 50px;
+    height: 30px;
+} */
+
+button{
+    background-color: darkgrey;
+    color: #fff;
+    border-radius: 5px;
+}
+
+button:hover{
+   background-color: rgba(200, 0, 200, 0.300);
+   transition: 0.8s;
+}
+
+.btn:hover{
+    background-color: rgba(200, 0, 200, 0.300);
+    transition: 0.8s;
+}
+
+.btn1{
+    background-color: rgba(139, 0, 0, 0.500);
+}
+>>>>>>> branch 'topic_new0808' of https://github.com/sinny13/ProjectCars.git

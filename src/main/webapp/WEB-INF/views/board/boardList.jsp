@@ -119,6 +119,7 @@
 	      <tr>
 	         <th>번호</th>
 	         <th>제목</th>
+<<<<<<< HEAD
 	         <th>글쓴이</th>
 	         <th>등록일</th>
 	         <th>조회수</th>
@@ -136,6 +137,23 @@
 	         <td>${lvo.writer}</td>
 	         <td><fmt:formatDate pattern="yyyy-MM-dd" value="${lvo.regDate}"/></td>
 	         <td>${lvo.hit}</td>
+=======
+	         <th>등록일</th>
+	         <th>글쓴이</th>
+	         <th>조회수</th>
+	      </tr>
+	   </thead>
+	   <tbody><!-- 게시판 글 리스트 제공  -->
+	      <c:set var="bno" value="${bp.startRowNum}"/>
+	      <c:forEach var="lvo" items="${list}"><!-- 선언 -->
+	      <tr>
+	<%--          <td>${vo.bid}</td> --%>
+	         <td>${bno}</td>
+	         <td><a class="goView" href="<c:url value='${lvo.bid}'/>">${lvo.subject}</a></td>
+	         <td>${lvo.writer}</td>
+	         <td>${lvo.hit}</td>
+	         <td><fmt:formatDate pattern="yyyy-MM-dd" value="${lvo.regDate}"/></td>
+>>>>>>> branch 'topic_new0808' of https://github.com/sinny13/ProjectCars.git
 	      </tr>
 	      <c:set var="bno" value="${bno-1}"/>
 	      </c:forEach>

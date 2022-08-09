@@ -37,6 +37,7 @@
     <!-- 로그인 리소스 -->
 	<script type="text/javascript" src="${ctx}/resouces/js/login.js"></script>
 	<link rel="stylesheet" href="${ctx}/resources/css/login.css">
+<<<<<<< HEAD
 	<style>
     .navbar .nav-link {
       color: #fff !important;
@@ -132,6 +133,105 @@
 			<input type="password" placeholder="비밀번호 입력" id="name" name="pw" class="input" />
 			<a href="#" class="link" onclick="javascript:alert('기능 미구현 추후 작업예정입니다')">비밀번호 찾기</a>
 			<button class="btn">로그인</button>
+=======
+	<!-- 로그인 유효성 체크 -->
+	<script type="text/javascript" src="${ctx}/resources/js/login_valid.js"></script>
+	<style>
+    .navbar .nav-link {
+      color: #fff !important;
+      font-family: LeferiPoint-WhiteObliqueA;
+    }
+        
+    h1,h2,h3,h4,h5,h5,p{   
+   		font-family: LeferiPoint-WhiteObliqueA;
+  </style>
+  </head>
+  
+  
+<body>
+    <!-- Start your project here-->
+    
+
+<div class="container">
+ <!-- Navbar -->
+  <nav
+       class="navbar navbar-expand-lg navbar-dark d-none d-lg-block w-100"
+       style="z-index: 2000; height: auto ; box-shadow: 0em;"
+       >
+    <div class="container-fluid w-100">
+      <!-- Navbar brand -->
+      <a
+         class="navbar-brand nav-link"
+         href="#ProjectCars"
+         >
+        <strong>ProjectCars</strong>
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarExample01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="home.do">Home</a>
+          </li>        
+        </ul>
+
+        <ul class="navbar-nav list-inline">
+          <!-- Icons -->
+          <li class="">
+            <a
+               class="nav-link"
+               href="https://www.youtube.com/"
+               rel="nofollow"
+               target="_blank"
+               >
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+          <li class="">
+            <a
+               class="nav-link"
+               href="https://www.facebook.com/"
+               rel="nofollow"
+               target="_blank"
+               >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+               class="nav-link"
+               href="https://twitter.com/"
+               rel="nofollow"
+               target="_blank"
+               >
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+               class="nav-link"
+               href="https://github.com/" 
+               rel="nofollow"
+               target="_blank"
+               >
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+<div class="container right-panel-active" style="max-height: auto ">
+ 
+	<!-- Sign Up -->
+	<div class="container__form container--signup">
+		<form action="memberLoginOK.do" method="post" class="form" id="form1" name="loginForm"> <!-- 로그인폼 -->
+			<h2 class="form__title">회원 로그인</h2>
+			<input type="text" placeholder="아이디 입력" id="id" name="id" class="input" />
+			<input type="password" placeholder="비밀번호 입력" id="name" name="pw" class="input" />
+			<a href="#" class="link" onclick="javascript:alert('기능 미구현 추후 작업예정입니다')">비밀번호 찾기</a>
+			<button type="button" class="btn" onclick="loginChk()">로그인</button>
+>>>>>>> branch 'topic_new0808' of https://github.com/sinny13/ProjectCars.git
 		</form>
 	</div>
 

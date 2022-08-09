@@ -12,7 +12,10 @@ public class BoardVO {
 	private String writer; // 글쓴이
 	
 	private Date regDate; // 작성날짜
+<<<<<<< HEAD
 	
+=======
+>>>>>>> branch 'topic_new0808' of https://github.com/sinny13/ProjectCars.git
 	private String id; // 작성자 식별
 	
 	// 게시판 검색
