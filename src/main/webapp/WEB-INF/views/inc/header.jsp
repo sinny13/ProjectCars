@@ -271,7 +271,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
         <a class="nav-link" href="" role="button" data-bs-toggle="dropdown">고객센터</a>
         <ul class="dropdown-menu shadow">
         <li class="letter">
-			<a class="letter" href='BoardInsert.do'>공지사항</a>
+			<a class="letter" href='boardList.do'>공지사항</a>
 			<hr class="dropdown-divider"/>
 		</li>
         <li class="letter">
