@@ -258,6 +258,52 @@ public class RevController {
 		   return "payment/paymentOk"; 
 		   
 	   }  
+	   
+	   
+	   @RequestMapping("/bankPaymentOk.do") 
+	   public String bankpaymentOk( Model model) {
+		   
+		   
+		   
+			/*
+			 * 
+			 * 
+			 * int cnt = vehicleMapper.vehicleStatusY(cNum);
+			 * 
+			 * if(cnt>0) {
+			 * 
+			 * 
+			 * System.out.println("id :"+id); System.out.println("cNum :"+cNum);
+			 * 
+			 * mDto.setId(id); mDto.setcNum(cNum);
+			 * 
+			 * memberMapper.insertById(mDto);
+			 * 
+			 * 
+			 * System.out.println("상태업데이트 성공!");
+			 * 
+			 * }else { System.out.println("상태업데이트 실패!");
+			 * 
+			 * }
+			 * 
+			 * 
+			 * 
+			 * // 차량정보 넣기
+			 * 
+			 * 
+			 * 
+			 * 
+			 * vehicleMapper.vehicleGetter(cNum); model.addAttribute("vDto", vDto);
+			 * 
+			 * 
+			 * 
+			 * 
+			 * System.out.println("status : "+vDto.getStatus());
+			 */
+		   
+		   return "payment/bank_paymentOk"; 
+		   
+	   }  
 	   	   
 	   
 	

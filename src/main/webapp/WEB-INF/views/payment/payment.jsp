@@ -348,7 +348,7 @@ color: #BBB;
 
           <div class="f f--no-margin">
             <label for="payment-cc" class="control block is-selected">
-              <input type="radio" name="payment" id="payment-cc" class="control__input" checked />
+              <input type="radio" name="payment" id="payment-cc" value="1" class="control__input"  checked/>
               <div class="control__label">
                 무통장입금
 
@@ -360,7 +360,7 @@ color: #BBB;
               <div class="f">
                 <div class="input is-selected">
                   <!-- <svg class="input__icon"><use xlink:href="#icon-lock"></use></svg> -->
-                  <label for="ccnumber" class="input__label">입금자명 
+                  <label for="ccnumber" class="input__label" id="pName" >${sessionScope.userName} 
                     <!-- <span class="required">(required)</span> -->
                   </label>
                   <!-- <input id="ccnumber" type="text" class="input__input"  -->
@@ -369,32 +369,71 @@ color: #BBB;
                   <!-- <div class="input__error">입금자명을 입력해주세요.</div> -->
 
                   <!-- <label for="ccsecurity" class="input__label">Security code <span class="required">(required)</span></label> -->
-                    <input id="ccsecurity" type="text" class="input__input" data-mask="^\d{3,4}$" />
+                    <input id="ccsecurity" type="text" class="input__input" data-mask="^\d{3,4}$" disabled />
                     <!-- <div class="input__error">입금자명을 입력해주세요</div> -->
                 </div>
                 <div class="f30">
                   <div class="input input--select">
-                    <label for="ccmonth" class="input__label">입금은행
+                    <label for="ccmonth" class="input__label">
                       <!-- <span class="required">(required)</span> -->
                     </label>
                     <select name="ccmonth" id="ccmonth" class="input__input">
                       <option disabled selected>입금은행을 선택하세요</option>
-                      <option value="1">우리은행:141-4142-1341-414</option>
-                      <option value="2">국민은행:142-4142-1341-414</option>
-                      <option value="3">신한은행:143-4142-1341-414</option>
-                      <option value="4">카카오뱅크:144-4142-1341-414</option>
-                      <option value="5">농협:145-4142-1341-414</option>
-                      <option value="6">하나은행:146-4142-1341-414</option>
-
+                      <option value="1">농협 : 354-1571-9069-42</option>
+                      <option value="2">신한은행 : 10033-72-762-286</option>
+                      <option value="3">우리은행 : 007-34-6864-714</option>
+                      <!-- <option value="2">02 - February</option>
+                      <option value="3">03 - March</option>
+                      <option value="4">04 - April</option>
+                      <option value="5">05 - May</option>
+                      <option value="6">06 - June</option>
+                      <option value="7">07 - July</option>
+                      <option value="8">08 - August</option>
+                      <option value="9">09 - September</option>
+                      <option value="10">10 - October</option>
+                      <option value="11">11 - November</option>
+                      <option value="12">12 - December</option> -->
                     </select>
                   </div>
                 </div>
+                
+                <script>
+                   var bank = document.getElementById("ccmonth");
+                   var paybank = bank.options[bank.selectedIndex].value;
 
+                   alert(paybank);
+                   
+                   var 
+                </script>
+                
+                <!-- <div class="f30">
+                  <div class="input input--select">
+                    <label for="ccyear" class="input__label">Expiry year <span class="required">(required)</span></label>
+                    <select name="ccyear" id="ccyear" class="input__input">
+                      <option disabled selected>YY</option>
+                      <option value="2017">17</option>
+                      <option value="2018">18</option>
+                      <option value="2019">19</option>
+                      <option value="2020">20</option>
+                      <option value="2021">21</option>
+                      <option value="2022">22</option>
+                      <option value="2023">23</option>
+                    </select>
+                  </div>
+                </div> -->
+                <!-- <div class="f40">
+                  <div class="input">
+                    <svg class="input__icon"><use xlink:href="#icon-help"></use></svg>
+                    <label for="ccsecurity" class="input__label">Security code <span class="required">(required)</span></label>
+                    <input id="ccsecurity" type="text" class="input__input" data-mask="^\d{3,4}$" />
+                    <div class="input__error">Please enter a security code.</div>
+                  </div>
+                </div> -->
               </div>
             </div>
 
             <label for="payment-paypal" class="control block">
-              <input type="radio" name="payment" id="payment-paypal" class="control__input" />
+              <input type="radio" name="payment" id="payment-paypal" value="2" class="control__input" />
               <div class="control__label">
                 신용/체크카드/페이결제
                 <div class="microcopy">credit / check card / pay</div>
@@ -441,7 +480,7 @@ color: #BBB;
           src="https://cdn.iamport.kr/js/iamport.payment-1.1.2.js"></script>
 
           <div class="form__footer">
-            <button class="btn btn--primary js-goto" onclick="requestPay(${vDto.cNum})">
+            <button class="btn btn--primary js-goto" id="payBtn" onclick="requestPay(${vDto.cNum})">
               <span class="btn__label">결제하기</span>
               <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
             </button>
@@ -467,6 +506,19 @@ color: #BBB;
 
             
             function requestPay(cNum) {
+		var current = $("input:radio[name='payment']:checked").val();
+                if(current == '1'){
+                   cashPay();
+                }
+                else if(current == '2'){
+                   cardPay();
+                }
+                
+             };
+            function cashPay(){
+               location.href = "http://localhost:8080/web/bankPaymentOk?cNum="+cNum+"&id="+mId;
+            };
+            function cardPay() {
             IMP.init('iamport'); //iamport 대신 자신의 "가맹점 식별코드"를 사용
             IMP.request_pay({
               pg: "inicis",
@@ -493,10 +545,9 @@ color: #BBB;
         		document.prodFrm.submit(); */
                 
               } else {
-                var msg = '결제에 실패하였습니다.';
-                msg += '에러내용 : ' + rsp.error_msg;
-                alert(msg);
-                location.href = "payment.do";
+            	  var msg = '결제에 실패하였습니다.';
+                  msg += '에러내용 : ' + rsp.error_msg;
+                  alert(msg);
               }
             
             });
@@ -652,7 +703,8 @@ color: #BBB;
 </div>
 </div>
 <!-- partial -->
-  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="./script.js"></script> -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'>
+  </script><script  src="${ctx}/resources/js/payment.js"></script>
 
 
 <%@ include file="../inc/footer.jsp"%>
