@@ -16,12 +16,12 @@
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel1"><strong>인터넷 사이버몰 利用標準約款</strong><br><small>공정거래위원회 표준약관 제10023호</small></h5>
+          <h5 class="modal-title" id="staticBackdropLabel1" style="color:black"><strong>인터넷 사이버몰 利用標準約款</strong><br><small>공정거래위원회 표준약관 제10023호</small></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         
         
-<div class="modal-body" >
+<div class="modal-body" style="color:black">
 <strong>제1조(목적)</strong>
 <br>
 이 약관은 5조렌트카 회사(전자상거래 사업자)가 운영하는 5조렌트카 사이버 몰(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 한다)를 이용함에 있어 사이버 몰과 이용자의 권리,의무 및 책임사항을 규정함을 목적으로 합니다.
@@ -243,7 +243,7 @@
 “몰”과 이용자간에 제기된 전자상거래 소송에는 한국법을 적용합니다.
 <br>
 </div>
-        <div class="modal-footer">
+        <div class="modal-footer" style="color:black">
           <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
@@ -256,11 +256,11 @@
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel2"><strong>개인정보 보호정책</strong></h5>
+          <h5 class="modal-title" id="staticBackdropLabel2" style="color:black"><strong>개인정보 보호정책</strong></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
          
-  <div class="modal-body">
+  <div class="modal-body" style="color:black">
     우리 헌법은 국민의 기본권인 사생활의 비밀과 자유 및 통신의 비밀을 보장하고 있으므로 도/감청 등에의한 개인 정보 및 사생활의 은밀한 탐지는 원칙적으로 불법입니다. 그러나 우리 사회에 횡행하는 불법 도청, 통신상의 정보 유출로 인하여 심각한 인권 침해가 나타나고 있고 국민 개개인의 자유로운 생활형성이 위협 받고 있습니다.
 이러한 기본권 침해의 소지를 원천적으로 제거함으로써 5조렌트카회원의 프라이버시를 철저히 보호하여 정보화 사회에서의 통신의 자유를 보장하고자 아래와 같이 개인정보보호정책을 명시합니다. 5조렌트카 개인정보보호정책은 정부의 법률 및 지침의 변경과 5조렌트카
 의 정책 변화에 따라 변경될 수 있습니다. 회원님께서는 5조렌트카 사이트 방문 시에 수시로 확인하시기 바랍니다.
@@ -327,7 +327,7 @@ TEL : 042-555-5555
 이상의 변경된 5조렌트카 의 개인정보보호정책은 2022년 08월 09일부터 시행합니다.
 
   </div>
-          <div class="modal-footer">
+          <div class="modal-footer" style="color:black">
             <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
@@ -341,16 +341,16 @@ TEL : 042-555-5555
       <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel3"><strong>이메일무단수집거부</strong></h5>
+            <h5 class="modal-title" id="staticBackdropLabel3" style="color:black"><strong>이메일무단수집거부</strong></h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
            
-    <div class="modal-body">
+    <div class="modal-body" style="color:black">
       우리 <code>'5조렌트카'</code> 회원에게 무차별적으로 보내지는 타사의 메일을 차단하고자 합니다. 본 웹사이트에 게시된 이메일 주소가 전자우편 수집 프로그램이나 그 밖의 기술적 장치를 이용하여 무단으로 수집되는 것을 거부합니다. 이를 위반시 정보통신망법에 의해 형사처벌됨을 유념하시기 바랍니다.
       <br>
       [게시일 2022년 08월 09일]
     </div>
-            <div class="modal-footer">
+            <div class="modal-footer" style="color:black">
               <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
