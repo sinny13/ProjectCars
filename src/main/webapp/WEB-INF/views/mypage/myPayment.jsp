@@ -327,7 +327,7 @@
               <div class="f">
                 <div class="input is-selected">
                   <!-- <svg class="input__icon"><use xlink:href="#icon-lock"></use></svg> -->
-                  <label for="ccnumber" class="input__label">입금자명 
+                  <label for="ccnumber" class="input__label" id="pName" >${sessionScope.userName} 
                     <!-- <span class="required">(required)</span> -->
                   </label>
                   <!-- <input id="ccnumber" type="text" class="input__input"  -->
@@ -336,17 +336,19 @@
                   <!-- <div class="input__error">입금자명을 입력해주세요.</div> -->
 
                   <!-- <label for="ccsecurity" class="input__label">Security code <span class="required">(required)</span></label> -->
-                    <input id="ccsecurity" type="text" class="input__input" data-mask="^\d{3,4}$" />
+                    <input id="ccsecurity" type="text" class="input__input" data-mask="^\d{3,4}$" disabled />
                     <!-- <div class="input__error">입금자명을 입력해주세요</div> -->
                 </div>
                 <div class="f30">
                   <div class="input input--select">
-                    <label for="ccmonth" class="input__label">입금은행
+                    <label for="ccmonth" class="input__label">
                       <!-- <span class="required">(required)</span> -->
                     </label>
                     <select name="ccmonth" id="ccmonth" class="input__input">
                       <option disabled selected>입금은행을 선택하세요</option>
-                      <option value="1">우리은행:142-4142-1341-414</option>
+                      <option value="1">농협 : 354-1571-9069-42</option>
+                      <option value="2">신한은행 : 10033-72-762-286</option>
+                      <option value="3">우리은행 : 007-34-6864-714</option>
                       <!-- <option value="2">02 - February</option>
                       <option value="3">03 - March</option>
                       <option value="4">04 - April</option>
@@ -361,6 +363,16 @@
                     </select>
                   </div>
                 </div>
+                
+                <script>
+                	var bank = document.getElementById("ccmonth");
+                	var paybank = bank.options[bank.selectedIndex].value;
+
+                	alert(paybank);
+                	
+                	var 
+                </script>
+                
                 <!-- <div class="f30">
                   <div class="input input--select">
                     <label for="ccyear" class="input__label">Expiry year <span class="required">(required)</span></label>
@@ -487,9 +499,7 @@
             });
              */
             
-             
-             
-             
+
              
              
         /*      var current = $('input[type=radio][name=payment]:checked').val(); */

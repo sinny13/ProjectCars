@@ -341,7 +341,9 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
             <div class="card-header">
               <i class="fa fa-bar-chart"></i> 기간(월)내 판매금액(카테고리별) </div>
             <div class="card-body">
-           <%--  <%@ include file="combo_chart.jsp" %> --%>
+            <%@ include file="combo_chart.jsp" %> 
+           
+           
               <div class="row">
                 <div class="col-sm-8 my-auto">
                   <canvas id="myBarChart" width="100" height="50"></canvas>
@@ -361,11 +363,11 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
           <!-- Card Columns Example Social Feed-->
-          <div class="mb-0 mt-4">
+          <!-- <div class="mb-0 mt-4">
             <i class="fa fa-newspaper-o"></i> News Feed</div>
           <hr class="mt-2">
           <div class="card-columns">
-            <!-- Example Social Card-->
+            Example Social Card
             <div class="card mb-3">
               <a href="#">
                 <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=610" alt="">
@@ -422,7 +424,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
               </div>
               <div class="card-footer small text-muted">Posted 32 mins ago</div>
             </div>
-            <!-- Example Social Card-->
+            Example Social Card
             <div class="card mb-3">
               <a href="#">
                 <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=180" alt="">
@@ -462,7 +464,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
               </div>
               <div class="card-footer small text-muted">Posted 46 mins ago</div>
             </div>
-            <!-- Example Social Card-->
+            Example Social Card
             <div class="card mb-3">
               <a href="#">
                 <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=281" alt="">
@@ -486,7 +488,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
               </div>
               <div class="card-footer small text-muted">Posted 1 hr ago</div>
             </div>
-            <!-- Example Social Card-->
+            Example Social Card
             <div class="card mb-3">
               <a href="#">
                 <img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=185" alt="">
@@ -549,7 +551,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
               </div>
               <div class="card-footer small text-muted">Posted yesterday</div>
             </div>
-          </div>
+          </div> -->
           <!-- /Card Columns-->
         </div>
         <div class="col-lg-4">
@@ -557,15 +559,15 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
           <div class="card mb-3">
             <div class="card-header">
               <i class="fa fa-pie-chart"></i> 차종별 판매내역(월) </div>
-           		<%-- <%@ include file="pie_chart.jsp" %> --%>
+           		 <%@ include file="pie_chart.jsp" %> 
             <%-- <div class="card-body">
               <canvas id="myPieChart" width="100%" height="100"></canvas>
             </div> --%>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
           <!-- Example Notifications Card-->
-          <div class="card mb-3">
-            <div class="card-header">
+         <!--  <div class="card mb-3"> -->
+            <!-- <div class="card-header">
               <i class="fa fa-bell-o"></i> Feed Example</div>
             <div class="list-group list-group-flush small">
               <a class="list-group-item list-group-item-action" href="#">
@@ -612,8 +614,8 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
               <a class="list-group-item list-group-item-action" href="#">View all activity...</a>
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-        </div>
+          </div> -->
+       <!--  </div> -->
       </div>
       
         <!-- calendar -->
@@ -622,7 +624,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
          	<i class="fa fa-table"></i> 예약 현황 </div>
       		<div class="table-responsive">
       			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-	 		<%@ include file="calendar.jsp" %>
+	 		 <%@ include file="calendar.jsp" %> 
 	 		</div>
 	 		</table>
      	 </div>
