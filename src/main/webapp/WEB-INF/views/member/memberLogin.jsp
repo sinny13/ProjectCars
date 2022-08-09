@@ -133,8 +133,7 @@
 			<input type="text" placeholder="아이디 입력" id="id" name="id" class="input" />
 			<input type="password" placeholder="비밀번호 입력" id="name" name="pw" class="input" />
 			<a href="#" class="link" onclick="javascript:alert('기능 미구현 추후 작업예정입니다')">비밀번호 찾기</a>
-			<!-- <button type="button" class="btn" onclick="loginChk()">로그인</button> -->
-			<button class="btn">로그인</button>
+			<button type="button" class="btn" onclick="loginChk()">로그인</button>
 		</form>
 	</div>
 

@@ -33,7 +33,7 @@
 						<tr class="table-dark">
 							<th class="col-6"><i class="xi-walk"></i> &nbsp;{dto.name}님의 정보</th>
 							<th class="col-3">
-								<button class="custom-btn btn-5" onclick="location.href='myMemberModify.do'"><span>상세정보 보기</span></button>
+								<button class="custom-btn btn-5" onclick="location.href='myMemberModify.do'"><span>상세정보</span></button>
 							</th>
 						</tr>
 					</thead>
@@ -59,7 +59,7 @@
 						<tr class="table-dark">
 							<th class="col-6"><i class="xi-walk"></i> &nbsp;나의 쇼핑정보</th>
 							<th class="col-3">
-								<button class="custom-btn btn-5" onclick="location.href='myInvoice.do'"><span>최근 구매내역 보기</span></button>
+								<button class="custom-btn btn-5" onclick="location.href='payInvoice.do'"><span>Invoice</span></button>
 							</th>
 						</tr>
 					</thead>
@@ -139,7 +139,8 @@
 						<tr>
 						  <th>상품정보</th>
 						  <th>가격</th>
-						  <th>예약하기</th>
+						  <th>1일렌트</th>
+						  <th>장기렌트</th>
 						  <th>삭제</th>
 						</tr>
 					  </thead>
@@ -152,9 +153,12 @@
 						  <td>
 						  	{dto.price}
 						  </td>
-						  <td>
-					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
-						  </td>
+							<td>
+					    		<button class="custom-btn btn-5" onclick="location.href='oneDayRev.do'"><span>예약하기</span></button>
+						  	</td>
+							<td>
+					    		<button class="custom-btn btn-5" onclick="location.href='longDayRev.do'"><span>예약하기</span></button>
+						  	</td>
 						  <td>
                 			<div id="close_btn">
 								<button class="close" onclick="location.href='#'; javascript:delMsg()">삭제</button>
@@ -170,7 +174,10 @@
 						  	{dto.price}
 						  </td>
 							<td>
-					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
+					    		<button class="custom-btn btn-5" onclick="location.href='oneDayRev.do'"><span>예약하기</span></button>
+						  	</td>
+							<td>
+					    		<button class="custom-btn btn-5" onclick="location.href='longDayRev.do'"><span>예약하기</span></button>
 						  	</td>
 							<td>
 	                			<div id="close_btn">
@@ -187,7 +194,10 @@
 						  	{dto.price}
 						  </td>
 							<td>
-					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
+					    		<button class="custom-btn btn-5" onclick="location.href='oneDayRev.do'"><span>예약하기</span></button>
+						  	</td>
+							<td>
+					    		<button class="custom-btn btn-5" onclick="location.href='longDayRev.do'"><span>예약하기</span></button>
 						  	</td>
 							<td>
 	                			<div id="close_btn">

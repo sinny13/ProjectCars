@@ -18,7 +18,7 @@ import kr.mr.model.VehicleDTO;
 
 
 @Controller
-public class rentController {
+public class RentController {
 	
 	@Autowired
 	   private VehicleMapper vehicleMapper;
@@ -44,34 +44,34 @@ public class rentController {
 	
 	
 	
-	@RequestMapping("/rentNowPage.do") 
+	@RequestMapping("/nowCar.do") 
 	public String nowCar(Model model) {
 		
 		List<VehicleDTO> vehicleList = vehicleMapper.vehicleList();	  
 		model.addAttribute("vehicleList", vehicleList);
 		
-		return "rental/rentNowPage"; 
+		return "rental/nowCar"; 
 		
 	}  
 	
 	
-	   @RequestMapping("/rentDayPage.do") 
+	   @RequestMapping("/oneDayCar.do") 
 	      public String DayCar(Model model) {
 	  
 	      List<VehicleDTO> vehicleList = vehicleMapper.vehicleList();	  
 	      model.addAttribute("vehicleList", vehicleList);
 	  
-	       return "rental/rentDayPage"; 
+	       return "rental/oneDayCar"; 
 	          
 	   }  
 	   
-	   @RequestMapping("/rentLongPage.do") 
+	   @RequestMapping("/longDayCar.do") 
 	   public String LongDayCar(Model model) {
 		   
 		   List<VehicleDTO> vehicleList = vehicleMapper.vehicleList();	  
 		   model.addAttribute("vehicleList", vehicleList);
 		   
-		   return "rental/rentLongPage"; 
+		   return "rental/longDayCar"; 
 		   
 	   }  
 	   

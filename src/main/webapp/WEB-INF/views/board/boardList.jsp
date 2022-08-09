@@ -119,8 +119,8 @@
 	      <tr>
 	         <th>번호</th>
 	         <th>제목</th>
-	         <th>글쓴이</th>
 	         <th>등록일</th>
+	         <th>글쓴이</th>
 	         <th>조회수</th>
 	      </tr>
 	   </thead>
@@ -128,14 +128,12 @@
 	      <c:set var="bno" value="${bp.startRowNum}"/>
 	      <c:forEach var="lvo" items="${list}"><!-- 선언 -->
 	      <tr>
-	<%-- <td>${vo.bid}</td> --%>
-	
-		<!-- 테이블: 번호 제목 글쓴이 등록일 조회수 -->
+	<%--          <td>${vo.bid}</td> --%>
 	         <td>${bno}</td>
 	         <td><a class="goView" href="<c:url value='${lvo.bid}'/>">${lvo.subject}</a></td>
 	         <td>${lvo.writer}</td>
-	         <td><fmt:formatDate pattern="yyyy-MM-dd" value="${lvo.regDate}"/></td>
 	         <td>${lvo.hit}</td>
+	         <td><fmt:formatDate pattern="yyyy-MM-dd" value="${lvo.regDate}"/></td>
 	      </tr>
 	      <c:set var="bno" value="${bno-1}"/>
 	      </c:forEach>

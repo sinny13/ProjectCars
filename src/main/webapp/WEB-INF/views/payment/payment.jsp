@@ -4,10 +4,47 @@
 <%@ include file="../inc/header.jsp" %>
 
 <link href="https://fonts.googleapis.com/css?family=Muli:400,700,800,900" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="${ctx}/resources/css/myPayment.css">
-<link rel="stylesheet" href="${ctx}/resources/js/myPayment.js">
+<link rel="stylesheet" href="${ctx}/resources/css/payment.css">
+<link rel="stylesheet" href="${ctx}/resources/js/payment.js">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+<script type="text/javascript">
+
+
+// 세션 자바스크립트 변환방법1
+const mId = "<%=(String)session.getAttribute("userId")%>"
+
+
+
+ var userId = sessionStorage.set("userId",mId); 
+
+
+
+alert(mId);
+alert(userId);
+
+
+
+
+
+</script>
+
+
+
+<style>
+
+h1,h2,h3,h4,h5,h6,p,strong,tr,td,th{
+
+color: #BBB;
+
+}
+
+
+</style>
+
+
+
 
 
 <div id="myPayment">
@@ -314,20 +351,16 @@
               <input type="radio" name="payment" id="payment-cc" value="1" class="control__input"  checked/>
               <div class="control__label">
                 무통장입금
-                <!-- <div class="microcopy">Pay safely and securely with your credit card.</div> -->
+
               </div>
-              <!-- <span class="control__extra">
-                <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
-                <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
-                <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
-              </span> -->
+
             </label>
 
             <div class="block block--collapse">
               <div class="f">
                 <div class="input is-selected">
                   <!-- <svg class="input__icon"><use xlink:href="#icon-lock"></use></svg> -->
-                  <label for="ccnumber" class="input__label">입금자명 
+                  <label for="ccnumber" class="input__label" id="pName" >${sessionScope.userName} 
                     <!-- <span class="required">(required)</span> -->
                   </label>
                   <!-- <input id="ccnumber" type="text" class="input__input"  -->
@@ -336,17 +369,19 @@
                   <!-- <div class="input__error">입금자명을 입력해주세요.</div> -->
 
                   <!-- <label for="ccsecurity" class="input__label">Security code <span class="required">(required)</span></label> -->
-                    <input id="ccsecurity" type="text" class="input__input" data-mask="^\d{3,4}$" />
+                    <input id="ccsecurity" type="text" class="input__input" data-mask="^\d{3,4}$" disabled />
                     <!-- <div class="input__error">입금자명을 입력해주세요</div> -->
                 </div>
                 <div class="f30">
                   <div class="input input--select">
-                    <label for="ccmonth" class="input__label">입금은행
+                    <label for="ccmonth" class="input__label">
                       <!-- <span class="required">(required)</span> -->
                     </label>
                     <select name="ccmonth" id="ccmonth" class="input__input">
                       <option disabled selected>입금은행을 선택하세요</option>
-                      <option value="1">우리은행:142-4142-1341-414</option>
+                      <option value="1">농협 : 354-1571-9069-42</option>
+                      <option value="2">신한은행 : 10033-72-762-286</option>
+                      <option value="3">우리은행 : 007-34-6864-714</option>
                       <!-- <option value="2">02 - February</option>
                       <option value="3">03 - March</option>
                       <option value="4">04 - April</option>
@@ -361,6 +396,16 @@
                     </select>
                   </div>
                 </div>
+                
+                <script>
+                   var bank = document.getElementById("ccmonth");
+                   var paybank = bank.options[bank.selectedIndex].value;
+
+                   alert(paybank);
+                   
+                   var 
+                </script>
+                
                 <!-- <div class="f30">
                   <div class="input input--select">
                     <label for="ccyear" class="input__label">Expiry year <span class="required">(required)</span></label>
@@ -392,26 +437,19 @@
               <div class="control__label">
                 신용/체크카드/페이결제
                 <div class="microcopy">credit / check card / pay</div>
+ 
               </div>
               <span class="control__extra">
                 <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
-                <!-- <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
-                <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
-                <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg> -->
               </span>
             </label>
           </div>
           
-          <!-- <div class="message message--info is-visible">Your <b>credit card</b> will be charged as soon as you finish the current step.</div> -->
-          <!-- <div class="message message--info is-hidden">You will be redirected to <b>PayPal</b> as soon as you finish the current step.</div> -->
           
           <div class="collapser">
-            <!-- <a href="#" class="collapser__label">Redeem a gift card</a> -->
+
             <div class="collapser__content">
-              
-              <!-- <header class="header">
-                <h2>Gift cards</h2>
-              </header> -->
+
               <p class="microcopy">Add gifts cards you would like to redeem.</p>
 
               <div class="f">
@@ -432,21 +470,22 @@
             </div>
           </div>
           
+          
+          
 
           <!-- jQuery -->
           <script type="text/javascript"
           src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
           <script type="text/javascript"
-          src="https://cdn.iamport.kr/js/iamport.payment-1.1.2.js"></script> 
+          src="https://cdn.iamport.kr/js/iamport.payment-1.1.2.js"></script>
 
           <div class="form__footer">
-            <button class="btn btn--primary js-goto" id="payBtn" onclick="requestPay()">
+            <button class="btn btn--primary js-goto" id="payBtn" onclick="requestPay(${vDto.cNum})">
               <span class="btn__label">결제하기</span>
               <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
             </button>
             <button class="btn btn--transparent secondary js-goto" data-page="2">
-              <!-- <svg class="btn__icon"><use xlink:href="#icon-navigate_before"></use></svg> -->
-              <!-- <span class="btn__label">Return to Shipping method</span> -->
+
               <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
             </button>
           </div>
@@ -454,102 +493,31 @@
         </div>
         <div class="page page--4">
           
-          <!-- <header class="header">
-            <h2>Order review</h2>
-          </header>
-          <p class="microcopy">Please review and make sure your order is correct.</p> -->
-          
-            <!-- <button onclick="requestPay()">결제하기</button> -->
-            <!-- <button class="btn btn--primary js-goto" onclick="requestPay()">
-              <span class="btn__label">결제하기</span>
-              <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
-            </button> -->
 
 
-         <script>
-		
-         
-         
+
+          <script>
             var IMP = window.IMP; // 생략가능
             IMP.init('imp52074203'); 
-         
-            
-            
-            
-            
-           /*  $('input[type=radio][name=payment]').change(function(){
-            	if(this.value == '1'){
-            		alert("현금");
-            	}
-            	else if(this.value == '2'){
-            		alert("카드");
-            	}
-            });
-             */
-            
-             
-             
-             
-             
-             
-        /*      var current = $('input[type=radio][name=payment]:checked').val(); */
-        
-         /*    alert(current); */
-            
             
 
 
-             
-             function requestPay(){
-            	 var current = $("input:radio[name='payment']:checked").val();
-            	/*  alert(current); */
-            	 
-            	 
-            	 if(current == '1'){
-             		cashPay();
-             	}
-             	else if(current == '2'){
-             		cardPay();
-             	}
-            	 
-             };
-             
-             
-            /*  
-             function requestPay(current){
-                	if(current == '1'){
-                		alert("현금결제");
-                	}
-                	else if(current == '2'){
-                		alert("카드결제");
-                	}
-                }; */
+
+
+            
+            function requestPay(cNum) {
+		var current = $("input:radio[name='payment']:checked").val();
+                if(current == '1'){
+                   cashPay();
+                }
+                else if(current == '2'){
+                   cardPay();
+                }
                 
-                     
-         
-         
-             
-             
-             
-             
-      /*   	function requestPay(){
-            	if $("#payment-cc").click(cardPay(){
-            		location.href="cash.jsp"
-            	} else{
-            		cashPay();
-            	}
-            } */
-            
-
-            
-            
+             };
             function cashPay(){
-            	location.href = "http://localhost:8080/web/myBankPayment.do"
+               location.href = "http://localhost:8080/web/bankPaymentOk?cNum="+cNum+"&id="+mId;
             };
-            
-            
-            
-            
             function cardPay() {
             IMP.init('iamport'); //iamport 대신 자신의 "가맹점 식별코드"를 사용
             IMP.request_pay({
@@ -567,12 +535,19 @@
               console.log(rsp);
               if (rsp.success) {
                 var msg = '결제가 완료되었습니다.';
-                alert(msg);
-                location.href = "결제 완료 후 이동할 페이지 url"
+                /* alert(msg); */
+                alert(mId);
+                
+                location.href = "paymentOk.do?cNum="+cNum+"&id="+mId;
+                
+                
+/*         		document.prodFrm.action="cartAdd.do?pNum="+pNum;
+        		document.prodFrm.submit(); */
+                
               } else {
-                var msg = '결제에 실패하였습니다.';
-                msg += '에러내용 : ' + rsp.error_msg;
-                alert(msg);
+            	  var msg = '결제에 실패하였습니다.';
+                  msg += '에러내용 : ' + rsp.error_msg;
+                  alert(msg);
               }
             
             });
@@ -585,6 +560,7 @@
 
 
 
+			
           <div class="form__footer">
             <button class="btn btn--primary js-goto" data-page="4">
               <span class="btn__label">Place my order</span>
@@ -599,154 +575,16 @@
           
         </div>
       </div>
-<!--     </form> -->
 
-  <!--   <h1>Heading level 1</h1>
-    <p>Should be used for:</p>
-    <ul>
-      <li><b>Exlusively</b> as main heading on pages</li>
-    </ul>
-
-    <h2>Heading level 2</h2>
-    <p>Should be used for:</p>
-    <ul>
-      <li>Secondary headings on pages (for structure)</li>
-      <li>Component main headings (e.g. modals)</li>
-    </ul>
-
-    <h3>Heading level 3</h3>
-    <p>Should be used for:</p>
-    <ul>
-      <li>Tertirary headings on pages (for structure)</li>
-      <li>Product names</li>
-      <li>Services names</li>
-    </ul>
-
-    <h4>Heading level 4</h4>
-    <p>Should be used for:</p>
-    <ul>
-      <li><b>Exlusively</b> for additional structure</li>
-    </ul>
-
-    <h5>Heading level 5</h5>
-    <p>Should be used for:</p>
-    <ul>
-      <li><b>Exlusively</b> for additional structure</li>
-      <li><b>Try to avoid using h5</b></li>
-    </ul>
-
-    <h6>Heading level 6</h6>
-    <p>Should be used for:</p>
-    <ul>
-      <li><b>Exlusively</b> for additional structure</li>
-      <li><b>Try to avoid using h6</b></li>
-    </ul>
-
-    <p>Body copy looks like this. Rounded, yet easy to read. Not too small either.</p>
-
-    <button class="btn">Change language</button>
-
-    <h1>All our products</h1>
-    <p>We offer a wide selection of products that you can personalize in 3 easy steps</p>
-    <ol>
-      <li>Upload your image, or select one from your social media</li>
-      <li>Customize your settings to your liking</li>
-      <li>Order and get an unforgettable experience delivered to your door</li>
-    </ol>
-
-    <h2>Throw Pillows</h2>
-    <div class="grid">
-
-    <div class="product">
-      <div class="product__body">
-        <div class="product__image">
-          <img src="http://via.placeholder.com/200x200" alt="">
-        </div>
-        <h3 class="product__name">Custom Throw Pillow</h3>
-        <div class="product__price"><sup>$</sup>30.00</div>
-      </div>
-      <footer class="product__footer">
-        <button class="btn btn--primary">Customize</button>
-      </footer>
-    </div>
-
-    <div class="product">
-      <div class="product__body">
-        <div class="product__image">
-          <img src="http://via.placeholder.com/200x200" alt="">
-        </div>
-        <h3 class="product__name">Some Other Product With a Long Name</h3>
-        <div class="product__price"><sup>$</sup>30.00</div>
-      </div>
-      <footer class="product__footer">
-        <button class="btn btn--primary">Customize</button>
-      </footer>
-    </div>
-
-    <div class="product">
-      <div class="product__body">
-        <div class="product__image">
-          <img src="http://via.placeholder.com/200x200" alt="">
-        </div>
-        <h3 class="product__name">Custom Throw Pillow</h3>
-        <div class="product__price"><sup>$</sup>30.00</div>
-      </div>
-      <footer class="product__footer">
-        <button class="btn btn--primary">Customize</button>
-      </footer>
-    </div>
-
-    </div>
-
-    <p>Choose an option:</p>
-    <div class="radio">
-      <div class="radio__box"></div>
-      <div class="radio__label">Option 1</div>
-    </div>
-
-    <div class="radio">
-      <div class="radio__box"></div>
-      <div class="radio__label">Option 2</div>
-    </div>
-
-    <p>Sign up:</p>
-    <div class="checkbox">
-      <div class="checkbox__box"></div>
-      <div class="checkbox__label">Option 2</div>
-    </div>
-
-    <div class="modal is-open2">
-      <div class="modal__background"></div>
-      <div class="modal__content">
-        <header class="modal__header">
-          <div class="modal__heading">Change your language</div>
-        </header>
-        <div class="modal__body">
-          <p>Select the language you would like to use:</p>
-          <div class="dropdown is-pressable">
-            <div class="dropdown__label">Select a language...</div>
-            <div class="dropdown__options">
-              <div class="dropdown__option">Option 1</div>
-              <div class="dropdown__option">Option 2</div>
-            </div>
-          </div>        
-        </div>
-        <footer class="modal__footer">
-          <button class="btn">Cancel</button>
-          <button class="btn btn--primary">Confirm</button>
-        </footer>
-      </div>
-    </div> -->
     
     </div>
   <div class="checkout__summary">
     
-<!--     <div class="logo"></div> -->
     
     <header class="header">
-      <h2>Order summary</h2>
+      <h2>결제정보</h2>
     </header>
-    <p class="microcopy">A summary of your total order.</p>
+    <strong style="font-family: LeferiPoint-WhiteObliqueA; font-size: 15px; color: #BBB">${vDto.company} ${vDto.cName}</strong>
     
     <div class="collapser">
       <!-- <a href="#" class="collapser__label">Add a coupon code</a> -->
@@ -779,22 +617,22 @@
       <table class="pricing">
         <tbody>
           <tr>
-            <img src="${ctx}/resources/image/cars/람보르기니  가야도르.jpg" alt="">
-            <!-- <td class="pricing__label">Custom Throw Pillow (18" x 18")</td> -->
-            <td class="pricing__label">람보르기니 우라칸</td>
-            <td class="pricing__price">￦300,000,000</td>
-          </tr>
-          <!-- <tr>
+							<img class="active" src="${ctx}/resources/file_upload/${vDto.fileName}">
+							<!-- <td class="pricing__label">Custom Throw Pillow (18" x 18")</td> -->
+							<td class="pricing__label">1일 비용 : </td>
+							<td class="pricing__price">￦ ${vDto.price}</td>
+						</tr>
+						<!-- <tr>
             <td>image</td>
             <td class="pricing__label">Triptych Canvas Print (36" x 24")</td>
             <td class="pricing__price">$276.66</td>
           </tr> -->
-        </tbody>
-      </table>
-      
-      <table class="pricing">
-        <tbody>
-          <!-- <tr>
+					</tbody>
+				</table>
+
+				<table class="pricing">
+					<tbody>
+						<!-- <tr>
             <td class="pricing__label">Subtotal</td>
             <td class="pricing__price">$306.66</td>
           </tr>
@@ -814,26 +652,26 @@
             <td class="pricing__label">Tax <small>(13%)</small></td>
             <td class="pricing__price">$28.95</td>
           </tr> -->
-        </tbody>
-        <tfoot>
-          <tr class="pricing__total">
-            <td class="pricing__label">Total</td>
-            <td class="pricing__price"><span class="currency">￦</span> <b>300,000,000</b></td>
-          </tr>
-          <!-- <tr class="pricing__total-localized">
+					</tbody>
+					<tfoot>
+						<tr class="pricing__total">
+							<td class="pricing__label">Total</td>
+							<td class="pricing__price"><span class="currency">￦</span> <b>${rDto.totalPrice}</b></td>
+						</tr>
+						<!-- <tr class="pricing__total-localized">
             <td class="pricing__label">Total in EUR</td>
             <td class="pricing__price"><span class="currency">EUR</span> <b>€ 211.36</b></td>
           </tr> -->
-        </tfoot>
-      </table>
-    </div>
-    
-    <!-- <header class="header">
+					</tfoot>
+				</table>
+			</div>
+
+			<!-- <header class="header">
       <h2>Shipping summary</h2>
     </header>
     <p class="microcopy">A summary of your shipping and payment selections.</p> -->
-    
-    <!-- <table>
+
+			<!-- <table>
       <tbody>
         <tr>
           <td class="pricing__label">Shipping address</td>
@@ -865,7 +703,8 @@
 </div>
 </div>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="${ctx}/resources/js/myPayment.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'>
+  </script><script  src="${ctx}/resources/js/payment.js"></script>
 
 
-<%@ include file="../inc/footer.jsp" %>
+<%@ include file="../inc/footer.jsp"%>

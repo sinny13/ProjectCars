@@ -38,18 +38,17 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
  --><!-- MDB Js -->
 <script type="text/javascript" src="${ctx}/resouces/js/mdb.min.js"></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
 <!-- CSS -->
 
-<link rel="stylesheet" href="${ctx}/resources/css/mdb.min.css">
+<link rel="stylesheet" href="${ctx}/resources/css/noticeList.css">
+<link rel="stylesheet" href="${ctx}/resources/css/noticeRent.css">
+<link rel="stylesheet" href="${ctx}/resources/css/myPageList.css">
+<link rel="stylesheet" href="${ctx}/resources/css/myWishList.css">
 
+<link rel="stylesheet" href="${ctx}/resources/css/mdb.min.css">
 <link rel="stylesheet" href="${ctx}/resources/css/car_main.css">
 <link rel="stylesheet" href="${ctx}/resources/css/home.css">
-
 <link rel="stylesheet" href="${ctx}/resources/css/font.css">
-
 
 
 <script type="text/javascript">
@@ -219,7 +218,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 <!------- 즉시출고가능차량 start ------->     
  <ul class="navbar-nav">
    	<li class="nav-link">            
-      <a class="nav-link" href="rentNowPage.do" role="button">즉시출고가능차량</a> 
+      <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">즉시출고가능차량</a> 
     </li> 
  </ul>
 <!------- 즉시출고가능차량 end ------->   
@@ -227,19 +226,49 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 
 <!------- 장기렌트 start ------->  
   <ul class="navbar-nav">
-  	<li class="nav-link dropdown ">
-  		<a class="nav-link" href="rentLongPage.do" role="button">장기렌트</a>
+  <li class="nav-link dropdown ">
+        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">장기렌트</a>
+        <ul class="dropdown-menu shadow">
+        <li class="letter">
+			<a class="letter" href='rentPage.do'>모든차량</a>
+			<hr class="dropdown-divider"/>
+		</li>
+        <li class="letter">
+			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">세단</a>
+		</li>
+        <li class="letter">
+			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">스포츠카</a>
+		</li>
+        <li class="letter">
+			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">SUV</a>
+		</li>
+		</ul>
 	</li>
-  </ul>
+</ul>
 <!------- 장기렌트 start ------->  
 
 
 
 <!------- 1일렌트 start ------->  
   <ul class="navbar-nav">
-    <li class="nav-link dropdown ">
-        <a class="nav-link" href="rentDayPage.do" role="button">1일렌트</a>
-  </ul>
+  <li class="nav-link dropdown ">
+        <a class="nav-link" href="${ctx}" role="button" data-bs-toggle="dropdown">1일렌트</a>
+        <ul class="dropdown-menu shadow">
+        <li class="letter">
+			<a class="letter" href='${ctx}'>모든차량</a>
+			<hr class="dropdown-divider"/>
+		</li>
+        <li class="letter">
+			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">세단</a>
+		</li>
+        <li class="letter">
+			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">스포츠카</a>
+		</li>
+        <li class="letter">
+			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">SUV</a>
+		</li>
+		</ul>
+	</ul>
 <!------- 1일렌트 end ------->		
 
    
@@ -275,6 +304,9 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 		</li>
         <li class="letter">
 			<a class="letter" href="memberLogin.do" onclick="javascript:showMsg()">1:1렌트상담</a>
+		</li>
+        <li class="letter">
+			<a class="letter" href="myReservation.do">실시간 신청</a>
 		</li>
         <li class="letter">
 			<a class="letter" href="myDirection.do">오시는길</a>

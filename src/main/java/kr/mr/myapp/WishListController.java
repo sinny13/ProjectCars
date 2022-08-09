@@ -49,7 +49,7 @@ public class WishListController {
 		   
 		   
 		   
-		   return "wish/myWishList"; 
+		   return "mypage/myWishList"; 
 		   
 		   
 		   
