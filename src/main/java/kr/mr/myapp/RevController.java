@@ -1,7 +1,10 @@
 package kr.mr.myapp;
 
+import java.io.IOException;
+import java.sql.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,51 +62,110 @@ public class RevController {
 
 	// 장기 예약 페이지 전환
 	@RequestMapping("/longDayRev.do")
-	public String reserveLongDay(Model model) {
+	public String reserveLongDay(Model model , int cNum) {
+		
+		VehicleDTO vDto = vehicleMapper.vehicleGetter(cNum);
+		
+		model.addAttribute("vDto", vDto);
+		
+		
 		return "reserve/LongReserve";
 
 	}
 
-	// 즉시예약 페이지 전환
-	@RequestMapping("/revLongDay.do")
-	public String reserveNow(Model model) {
-		return "reserve/myNowReserv";
 
-	}
 
 	// 예약정보 입력 -> 결제
-	@RequestMapping("/payment.do")
-	public String reserveInsert(ReserveDTO dto,int cNum,Model model, HttpSession session) {
+	   @RequestMapping("/onedaypayment.do")
+	   public String onedayreserveInsert(ReserveDTO dto,int cNum,Model model, HttpSession session, HttpServletRequest request)throws IOException{
+	      
+	      String datepicker1 = request.getParameter("datepicker1");
+	      System.out.println("datepicker1 : " +  datepicker1);
+	      
+	      
+	      Date reDate1 = Date.valueOf(datepicker1);
+	      System.out.println("reDate1 : " + reDate1 );
+	      
+	      
+	      dto.setRevDate1(reDate1);
+	      
+	      
+	      
+	      int cnt = reserveMapper.reserveInsert(dto);
+	      
+	      if (cnt > 0) { // 등록성공
+	         
+	         // 회원정보
+	         List<ReserveDTO> revList = reserveMapper.reserveList();      
+	         model.addAttribute("revList", revList);
+	         
+	         // cNum으로 차량 정보 가져오기
+	         VehicleDTO vDto = vehicleMapper.vehicleGetter(cNum);
+	         
+	         model.addAttribute("vDto", vDto);
+	         
+	         
+	         
+	         
+	         return "payment/payment";
+	         
+	         
+	         
+	         
+	      } else {
+	         session.setAttribute("1", "1 1!!");
+	         return "reserve/myNowReserv";
+	         
+	      }
+	      
+	   }
+	   
+	   // 예약정보 입력 -> 결제
+	   @RequestMapping("/longdaypayment.do")
+	   public String reserveInsert(ReserveDTO dto,int cNum,Model model, HttpSession session, HttpServletRequest request)throws IOException{
+	      
+	      String datepicker1 = request.getParameter("datepicker1");
+	      System.out.println("datepicker1 : " +  datepicker1);
+	      String datepicker2 = request.getParameter("datepicker2");
+	      System.out.println("datepicker2 : " +  datepicker2);
+	      
+	      Date reDate1 = Date.valueOf(datepicker1);
+	      System.out.println("reDate1 : " + reDate1 );
+	      Date reDate2 = Date.valueOf(datepicker2);
+	      System.out.println("reDate2 : " + reDate2 );
+	      
+	      dto.setRevDate1(reDate1);
+	      dto.setRevDate2(reDate2);
+	      
+	      
+	      int cnt = reserveMapper.reserveInsert(dto);
 
-		
-		int cnt = reserveMapper.reserveInsert(dto);
+	      if (cnt > 0) { // 등록성공
 
-		if (cnt > 0) { // 등록성공
+	         // 회원정보
+	         List<ReserveDTO> revList = reserveMapper.reserveList();      
+	         model.addAttribute("revList", revList);
+	         
+	         // cNum으로 차량 정보 가져오기
+	         VehicleDTO vDto = vehicleMapper.vehicleGetter(cNum);
+	         
+	         model.addAttribute("vDto", vDto);
+	         
+	         
+	         
+	         
+	         return "payment/payment";
 
-			// 회원정보
-			List<ReserveDTO> revList = reserveMapper.reserveList();		
-			model.addAttribute("revList", revList);
-			
-			// cNum으로 차량 정보 가져오기
-			VehicleDTO vDto = vehicleMapper.vehicleGetter(cNum);
-			
-			model.addAttribute("vDto", vDto);
-			
-			
-			
-			
-			return "payment/payment";
+	         
+	         
+	         
+	      } else {
+	         session.setAttribute("1", "1 1!!");
+	         return "reserve/myNowReserv";
 
-			
-			
-			
-		} else {
-			session.setAttribute("1", "1 1!!");
-			return "reserve/myNowReserv";
+	      }
 
-		}
-
-	}
+	   }
 	
 	
 	

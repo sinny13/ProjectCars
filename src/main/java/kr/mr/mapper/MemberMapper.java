@@ -35,5 +35,8 @@ public interface MemberMapper {
 	// 회원 1명 가져오기
 	public MemberDTO memberGetter(String id);
 	
+	//회원 id중복체크
+	public String memberIdChk(String mId);
+	
 	
 }

@@ -158,15 +158,62 @@ code {
 }
 </style>
 
+<script type="text/javascript">
+function idChk(){
+   if($("#id").val() ==''){
+      alert("아이디를 입력하세요!!");
+      $("#id").focus();
+      return;
+   }
+   
+   var id = $("#id").val();
+   
+   $.ajax({
+      url:"<c:url value='/memberIdCheck.do'/>",
+      type: "POST",
+      data:{"id": id}, // key:value 형태로 서버에 보내는 data를 의미
+      success:duplicateChk, // 콜백함수
+      error:function(){
+         alert("요청 실패!!!");
+      }
+   });
+}
+
+// 서버로부터 전송된 응답 결과를 처리하는 함수, data: 서버 처리결과 데이터   
+function duplicateChk(data){
+/*       if(data !=null){ */
+   if(data != "N"){
+      alert("이미 존재하는 아이디 입니다!!");
+      $("#id").focus();
+   }else{
+      alert("사용가능한 아이디 입니다!!");
+   }
+}
+</script>
+
+
+
+
+
 <div class="container mt-5 p-5" style="width:800px; border-radius:10px;">
 	<form action="${ctx}/memberInsert.do" method="post" class="bg-dark p-5" name="joinForm">
         
       <legend>회원가입</legend>
       
-        <div class="box1">
+       <div class="box1">
           <div><label>아이디</label></div>
-            <input class="form-control pt-2 pb-2" type="text" name="id" placeholder="아이디를 입력하세요">
-        </div>     
+          
+          <div class="row m-0 mb-2">
+              <div class="col-md-8 p-0 mb-2">
+               <input class="form-control pt-2 pb-2" type="text" id ="id" name="id" placeholder="아이디">
+              </div>
+              
+              <div class="col-md-4 pe-0">
+            <input class="form-control btn btn-outline-secondary" 
+                  type="button" value="중복확인" onclick="idChk()"/>
+           </div>
+        </div>      
+       </div>      
            
         <div class="box2">
           <div><label>비밀번호:</label></div>

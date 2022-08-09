@@ -9,7 +9,7 @@
 
 <div class="container bg-dark w-70 mt-5 border shadow-sm p-5" >
    <h3>차량정보 수정</h3>
-   <form name="vehicleFrm" action="vehiscleUpdateOk.do" method="post" enctype="multipart/form-data">
+   <form name="vehicleFrm" action="vehicleUpdateOk.do" method="post" enctype="multipart/form-data">
       <table class="table table-borderless">
          <tbody>
             <tr>        
@@ -143,7 +143,8 @@
             <tr>
                <td>차량소개</td>
                <td>
-					<textarea class="form-control" name="contents" rows="3" placeholder="설명을 입력하세요 "></textarea>
+					<textarea class="form-control" name="contents" rows="3" 				
+					placeholder="설명을 입력하세요 ">${vDto.contents}</textarea>
                </td>
             </tr>       
             <tr>

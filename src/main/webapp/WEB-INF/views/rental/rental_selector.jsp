@@ -149,7 +149,7 @@
           <h1>즉시출고가능</h1>
           <button class="pulse" 
           			style="font-family:LeferiPoint-WhiteObliqueA; font-weight: bolder ;color: #FFFFFF "
-          			onclick = "location.href='#nowRev.do?cNum=${vDto.cNum}'">지금 예약하기</button>         
+          			onclick = "location.href='nowRev.do?cNum=${vDto.cNum}'">지금 예약하기</button>         
         </div>
       </div>
       <div class="right-slide">

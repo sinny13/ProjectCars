@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.mr.mapper.MemberMapper;
 import kr.mr.model.MemberDTO;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -53,18 +55,44 @@ public class MemberController {
 	
 	
 	
-	// 회원가입 파라미터 받아서 DTO에저장
-	@RequestMapping("/memberInsert.do")
-	public String memberInsert(MemberDTO dto) {
-		// 파라미터를 수집해서
-		// dto 셋팅해서 인자로 넘겨줘야한다.
-		// 이과정을 스프링에서 다처리해준다.
-		// DTO를 통해서 자동으로 파라미터를 모아서 만들어준다.
-		
-		int cnt = memberMapper.memberInsert(dto);
-		
-		return "redirect:home.do";
-	}
+	   // 회원가입 파라미터 받아서 DTO에저장
+	   @RequestMapping("/memberInsert.do")
+	   public String memberInsert(MemberDTO dto) {
+	      // 파라미터를 수집해서
+	      // dto 셋팅해서 인자로 넘겨줘야한다.
+	      // 이과정을 스프링에서 다처리해준다.
+	      // DTO를 통해서 자동으로 파라미터를 모아서 만들어준다.
+	      
+	      int cnt = memberMapper.memberInsert(dto);
+	      
+	      return "redirect:home.do";
+	   }
+	   
+	   // 중복검사 ID
+	   @RequestMapping(value="/memberIdCheck.do", method =RequestMethod.POST )
+	   @ResponseBody // return값 보내기
+	   public String memberIdCheck(/* @RequestParam("id")String id */ HttpServletRequest request) {
+	      
+	      
+	      
+	      /* System.out.println("id :" + id); */
+	        String mId = request.getParameter("id"); 
+	        System.out.println("mId :" + mId);
+	       
+	      // id 중복 체크 
+	       String IdChk = memberMapper.memberIdChk(mId);
+	      
+	      String resChk = "N"; // N(중복X)
+	      if(IdChk !=null) {
+	         resChk = "Y"; // 중복(O);
+	         
+	      }
+	      
+	      System.out.println("IdChk : "+IdChk);
+	      System.out.println(resChk);
+	      
+	      return resChk;
+	   }
 	
 	
 	

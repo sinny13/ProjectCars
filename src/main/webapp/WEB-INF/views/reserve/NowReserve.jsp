@@ -198,6 +198,19 @@
             </label>
         </div>
         
+        <div class="container" style="margin-top: 100px; color: slategray;">
+            <h2 style="color: #FFF;"> 가격 정책 대한 동의 </h2>
+    			차량 1대의 가격은 각각의 날짜에 합산하여 가격이 책정됩니다.
+    			
+        </div>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+            가격 정책에 동의합니다(필수)
+            </label>
+        </div>        
+        
             <div colspan='2' align='center'>               
                 <input type='submit' value='예약하기' class='btn btn-primary'/>    
                 <input type='reset' value='취소' class='btn btn-danger'/>    

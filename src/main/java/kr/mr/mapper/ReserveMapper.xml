@@ -6,8 +6,8 @@
 <mapper namespace="kr.mr.mapper.ReserveMapper">
 
   <insert id="reserveInsert" parameterType="reserveDTO">
-     insert into reservation(revName, revJumin1,revJumin2,revTel,revAddr)
-     values(#{revName}, #{revJumin1},#{revJumin2},#{revTel},#{revAddr})
+     insert into reservation(revName, revJumin1,revJumin2,revTel,revAddr,revDate1,revDate2)
+     values(#{revName}, #{revJumin1},#{revJumin2},#{revTel},#{revAddr},#{revDate1},#{revDate2})
   </insert>
 
 
@@ -15,6 +15,10 @@
   <select id="reserveList" resultType="reserveDTO">
   	select * from reservation
   </select>
+  
+  
+  
+  
   
   
 
