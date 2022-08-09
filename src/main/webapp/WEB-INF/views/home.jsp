@@ -17,6 +17,7 @@ $(document).ready(function(){
 	}	  
 });
 
+
 <!-- 로그아웃성공 메세지  -->
 $(document).ready(function(){ 
 	if(${LogoutProcess != null}){

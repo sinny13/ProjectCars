@@ -3,18 +3,11 @@
 
 <%@ include file="../inc/header.jsp" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>여러개 마커에 이벤트 등록하기2</title>
-
-</head>
 <body>
 
-<h2 style="text-align:center; margin-top:50px">오시는 길</h2>
+<h2 style="text-align:center; margin-top:50px"><strong><i class="xi-map"></i>&nbsp;오시는 길</strong></h2>
 
-<div id="map" style="width:80%;height:500px; margin:auto;"></div>
+<div id="map" style="width:1320px;height:500px; margin:auto;"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=55efd8a826ef496316fe172291167420"></script>
 <script>
@@ -89,11 +82,11 @@
     
     let storeName;
     if (i === 0) {
-    	storeName = '둔산본점'
+    	storeName = 'A 둔산본점'
     } else if (i === 1) {
-    	storeName = '유성점'
+    	storeName = 'B 유성점'
     }else if (i === 2) {
-    	storeName = '월평점'
+    	storeName = 'C 월평점'
     }
     
     
@@ -255,7 +248,7 @@
   }
 </script>
 
-<div id="store">
+<div id="store" style="width:1320px; margin:auto;">
 	<br><h2 style="text-align:center">둔산본점</h2><br>
 	<ul style="list-style:none">
 	  <li style="display:flex">
@@ -277,12 +270,6 @@
 	  </li>
 	</ul>
 </div>
-
-
-
-
-</body>
-</html>
 
 
 <%@ include file="../inc/footer.jsp" %>

@@ -17,16 +17,38 @@ public class rentController {
 	@Autowired
 	   private VehicleMapper vehicleMapper;
 	   
-	   
-	   @RequestMapping("/rentPage.do") 
-	      public String rentPage(Model model) {
+			 
+	   @RequestMapping("/rentNowPage.do") 
+	      public String rentNowPage(Model model) {
 	  
-	      List<VehicleDTO> vehicleList = vehicleMapper.vehicleList();
-	  
-	      model.addAttribute("vehicleList", vehicleList);
-	  
-	       return "rental/rentPage"; 
+		   List<VehicleDTO> vehicleList = vehicleMapper.vehicleList();
+		   
+		   model.addAttribute("vehicleList", vehicleList);
+		   
+	       return "rental/rentNowPage"; 
 	          
+	   }  
+	   
+	   @RequestMapping("/rentDayPage.do") 
+	   public String rentDayPage(Model model) {
+		   		   
+		   List<VehicleDTO> vehicleList = vehicleMapper.vehicleList();
+		   
+		   model.addAttribute("vehicleList", vehicleList);
+		   
+		   return "rental/rentDayPage"; 
+		   
+	   }  
+	   
+	   @RequestMapping("/rentLongPage.do") 
+	   public String rentLongPage(Model model) {
+		   
+		   List<VehicleDTO> vehicleList = vehicleMapper.vehicleList();
+		   
+		   model.addAttribute("vehicleList", vehicleList);
+		   
+		   return "rental/rentLongPage"; 
+		   
 	   }  
 
 	}

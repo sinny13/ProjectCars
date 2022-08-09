@@ -163,7 +163,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 	            		<a class="nav-link" href="memberLogout.do">로그아웃</a>
 	            	</li>
 	            	<li>
-             			<a class="nav-link" href="#wishMovie.do">위시리스트</a>
+             			<a class="nav-link" href="myWishList.do">위시리스트</a>
            			</li>	
 				</c:if>	
         <!-- Navbar dropdown -->
@@ -219,7 +219,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 <!------- 즉시출고가능차량 start ------->     
  <ul class="navbar-nav">
    	<li class="nav-link">            
-      <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">즉시출고가능차량</a> 
+      <a class="nav-link" href="rentNowPage.do" role="button">즉시출고가능차량</a> 
     </li> 
  </ul>
 <!------- 즉시출고가능차량 end ------->   
@@ -227,49 +227,19 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 
 <!------- 장기렌트 start ------->  
   <ul class="navbar-nav">
-  <li class="nav-link dropdown ">
-        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">장기렌트</a>
-        <ul class="dropdown-menu shadow">
-        <li class="letter">
-			<a class="letter" href='rentPage.do'>모든차량</a>
-			<hr class="dropdown-divider"/>
-		</li>
-        <li class="letter">
-			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">세단</a>
-		</li>
-        <li class="letter">
-			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">스포츠카</a>
-		</li>
-        <li class="letter">
-			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">SUV</a>
-		</li>
-		</ul>
+  	<li class="nav-link dropdown ">
+  		<a class="nav-link" href="rentLongPage.do" role="button">장기렌트</a>
 	</li>
-</ul>
+  </ul>
 <!------- 장기렌트 start ------->  
 
 
 
 <!------- 1일렌트 start ------->  
   <ul class="navbar-nav">
-  <li class="nav-link dropdown ">
-        <a class="nav-link" href="${ctx}" role="button" data-bs-toggle="dropdown">1일렌트</a>
-        <ul class="dropdown-menu shadow">
-        <li class="letter">
-			<a class="letter" href='${ctx}'>모든차량</a>
-			<hr class="dropdown-divider"/>
-		</li>
-        <li class="letter">
-			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">세단</a>
-		</li>
-        <li class="letter">
-			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">스포츠카</a>
-		</li>
-        <li class="letter">
-			<a class="letter" href="${ctx}" onclick="javascript:showMsg()">SUV</a>
-		</li>
-		</ul>
-	</ul>
+    <li class="nav-link dropdown ">
+        <a class="nav-link" href="rentDayPage.do" role="button">1일렌트</a>
+  </ul>
 <!------- 1일렌트 end ------->		
 
    

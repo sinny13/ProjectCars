@@ -73,7 +73,7 @@
         <section class="resume-section p-3 p-lg-5 d-flex  flex-column" id="portfolio"> 
             <div class="row my-auto">
                 <div class="col-12">
-                <h2 class="  text-center">Portfolio</h2>
+                <h2 class="  text-center">장기렌트 차량</h2>
                 <div class="mb-5 heading-border"></div>
                 </div>
                 <div class="col-md-12">

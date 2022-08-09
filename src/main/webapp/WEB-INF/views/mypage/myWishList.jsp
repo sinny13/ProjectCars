@@ -46,8 +46,7 @@
 				<div class="content">
 
 					<h1>{dto.cName}</h1>
-
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, numquam quis perspiciatis ea ad omnis provident laborum dolore in atque.
+					<h1>{dto.company}</h1>
 
 				</div>
 
@@ -85,8 +84,7 @@
 				<div class="content">
 
 					<h1>{dto.cName}</h1>
-
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, numquam quis perspiciatis ea ad omnis provident laborum dolore in atque.
+					<h1>{dto.company}</h1>
 
 				</div>
 
@@ -123,10 +121,9 @@
 
 				<div class="content">
 
-					<h1>{dto.cName}</h1>
-
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, numquam quis perspiciatis ea ad omnis provident laborum dolore in atque.
-
+					<h1>상품명 : {dto.cName}</h1>
+					<h1>제조회사 : {dto.company}</h1>
+					
 				</div>
 
 				<footer class="content">
