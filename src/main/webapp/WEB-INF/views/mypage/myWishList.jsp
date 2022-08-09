@@ -4,8 +4,8 @@
 
 <%@ include file="../inc/header.jsp" %>
 
-<link rel="stylesheet" href="${ctx}/resources/css/myWishList.css">
-<link rel="stylesheet" href="${ctx}/resources/js/myWishList.js">
+<link rel="stylesheet" href="${ctx}/resources/css/myWishList.css?myWishList">
+<link rel="stylesheet" href="${ctx}/resources/js/myWishList.js?myWishList">
 
 <script type="text/javascript">
 
