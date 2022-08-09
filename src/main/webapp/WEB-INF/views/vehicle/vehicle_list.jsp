@@ -43,6 +43,14 @@ $(document).ready(function(){
 	}	  
 	
 });
+
+/* 이미지등록 완료 */
+$(document).ready(function(){  
+	if(${imagesRegistOk != null}){
+		alert("${imagesRegistOk}"); 
+	}	  
+	
+});
 </script>
 
 <%
@@ -82,7 +90,7 @@ $(document).ready(function(){
 					<img src="${ctx}/resources/file_upload/${vDto.fileName}" style="width:150px">
 				</td>
 				
-				<td>${vDto.price}</td>
+				<td> ￦ ${vDto.price}원</td>
 				<td>${vDto.category_fk}</td>
 				<td>${vDto.color}</td>
 				<td>${vDto.company}</td>
@@ -91,6 +99,7 @@ $(document).ready(function(){
 				<td>
 					<a href="javaScript:updateVehicle('${vDto.cNum}','${vDto.category_fk}')" class="btn btn-primary btn-sm mb-2" >수정</a>
 					<a href="javaScript:deleteVehicle('${vDto.cNum}','${vDto.fileName}')" class="btn btn-danger btn-sm">삭제</a>
+					<a href="imageInput.do?cNum=${vDto.cNum}" class="btn btn-danger btn-sm">이미지업로드</a>
 				</td>
 		</c:forEach>
 			<tr>
@@ -115,5 +124,18 @@ function updateVehicle(cNum,category_fk){
 		if(isDel) location.href="vehicleDelete.do?cNum="+cNum+"&fileName="+fileName;	
 	}
 </script>
+
+
+
+   <!-- JS here -->
+
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="${ctx}/resources/assets/js/owl.carousel.min.js"></script>
+    <script src="${ctx}/resources/assets/js/slick.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="${ctx}/resources/assets/js/plugins.js"></script>
+    <script src="${ctx}/resources/assets/js/main.js"></script>
 
 <%@ include file="../inc/footer.jsp" %>

@@ -15,8 +15,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import kr.mr.mapper.CategoryMapper;
+import kr.mr.mapper.ImageMapper;
+import kr.mr.mapper.MemberMapper;
 import kr.mr.mapper.VehicleMapper;
 import kr.mr.model.CategoryDTO;
+import kr.mr.model.ImageDTO;
+import kr.mr.model.MemberDTO;
 import kr.mr.model.VehicleDTO;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +33,10 @@ public class VehicleController {
 	private VehicleMapper vehicleMapper;
 	@Autowired
 	private CategoryMapper categoryMapper;
+	@Autowired
+	private ImageMapper imageMapper;	
+	@Autowired
+	private MemberMapper memberMapper;
 	
 	// 자동차 등록뷰 페이지
 	@RequestMapping("/vehicleInput.do")
@@ -70,7 +78,10 @@ public class VehicleController {
 			}
 			
 			dto.setFileName(fileName);
-			dto.setCategoty_fk(category_fk);
+			
+
+			
+
 			
 			int n = vehicleMapper.vehicleInsert(dto);
 			
@@ -200,12 +211,10 @@ public class VehicleController {
 				fileName = uuid + "." + ext;
 				uploadFile.transferTo(new File(uploadPath + "\\" + fileName));
 				
-				dto.setCategoty_fk(category_fk);
 				dto.setFileName(fileName);
 				
 			}else {
 				
-				dto.setCategoty_fk(category_fk);
 				dto.setFileName(pImageOld);
 			}
 			
@@ -241,7 +250,14 @@ public class VehicleController {
 		
 		// 차량 판매정보 페이지
 		@RequestMapping("/vehicleRental.do")
-		public String vehicleGetter(int cNum,String cSpec, HttpServletRequest request,Model model) {
+		public String vehicleGetter(int cNum,String cSpec,HttpSession session, HttpServletRequest request,Model model) {
+			
+			
+			String mId = (String)session.getAttribute("userId");
+			
+			MemberDTO mDto = memberMapper.memberGetter(mId);
+			
+			model.addAttribute("mDto", mDto);
 			
 			
 			List<CategoryDTO> catList = categoryMapper.categoryList();
@@ -254,6 +270,13 @@ public class VehicleController {
 			VehicleDTO vDto = vehicleMapper.vehicleGetter(cNum);
 			
 			model.addAttribute("vDto", vDto);
+			
+			
+			// cNum에 해당하는 이미지 리스트 가져오기			
+			ImageDTO iDto = imageMapper.imageGetter(cNum);
+			model.addAttribute("iDto", iDto);
+
+			System.out.println("cno는?? : "+cNum);
 			
 			
 

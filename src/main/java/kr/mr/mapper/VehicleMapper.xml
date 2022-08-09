@@ -29,6 +29,15 @@
 		color=#{color},cSpec=#{cSpec},fileName=#{fileName},contents=#{contents},category_fk=#{category_fk} 
 		where cNum=#{cNum}		
   </update>
+  
+  
+
+  
+<update id="vehicleStatusY" parameterType="Integer">
+		update car set status="Y"
+		where cNum=#{cNum}		
+</update>
+  
 
 
 <!-- car_main.jsp -->

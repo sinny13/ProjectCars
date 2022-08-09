@@ -1,12 +1,7 @@
-<%@page import="java.util.Date"%>
-<%@page import="kr.mr.model.VehicleDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-
-
-
 
 
 <!DOCTYPE html>
@@ -33,42 +28,19 @@
 
 
 
-
 <style>
 /*클릭 이벤트를 포함하는 모든 영역에 추가하면 하위 이벤트까지 작동안함.*/
-
 
 #element{
 	pointer-events:cursor;
 }
 
 
+
 h1,h2,h3,h4,h5,h6,p{
-
 font-family: LeferiPoint-WhiteObliqueA;
-
 }
-
-h1{
-
-margin : 0;
-padding : 0;
-font-size: 25px;
-color: #BBB;
-
-}
-
-p{
-margin : 0;
-padding : 0;
-font-size: 40px;
-color: #BBB;
-
-}
-
 </style>
-
-
 
 
 
@@ -125,7 +97,7 @@ color: #BBB;
         <section class="resume-section p-3 p-lg-5 d-flex  flex-column" id="portfolio"> 
             <div class="row my-auto">
                 <div class="col-12">
-                <h2 class="  text-center">LongDay</h2>
+                <h2 class="  text-center">OneDay</h2>
                 <div class="mb-5 heading-border"></div>
                 </div>
                 <div class="col-md-12">
@@ -150,10 +122,13 @@ color: #BBB;
                            
                      <div class="simpletxt">
 
-                        <h1 style="margin:0; padding:0" class="name">${vDto.company} ${vDto.cName}</h1>
+                        <h3 class="name">${vDto.cName}</h3>
                         <p style="margin:15px; white-space: nowrap; overflow:hidden; text-overflow:ellipsis; ">"${vDto.contents}"</p>
-                         <h3 class="price"> ￦ ${vDto.price}</h3>
+                         <h4 class="price"> ￦ ${vDto.price}</h4>
+                         <button>READ MORE</button><br>
                          <div class="wishtxt">
+                            <p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
+                            <p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
                          </div>
                      </div>
                         </div>
@@ -185,7 +160,7 @@ color: #BBB;
         </section>
       </div>
 
- <!--====================================================
+<!--====================================================
                     PORTFOLIO MODALS
 ======================================================-->
 <c:forEach var="vDto" items="${vehicleList}"> 
@@ -211,6 +186,7 @@ color: #BBB;
                               <div class="col-md-6">
                                 <img class="img-fluid img-centered" src="${ctx}/resources/file_upload/${vDto.fileName}" alt="">
                               </div>
+                              
                         <p style="margin:15px; overflow:hidden; text-overflow:ellipsis; ">${vDto.contents}</p>
                                 <ul class="list-inline item-details">
                                     <li>차종:
@@ -241,10 +217,10 @@ color: #BBB;
                                     </li>
                                 </ul>
                                 
-                               <div class="col-md-6">
+                              <div class="col-md-6">
                               <!-- 렌트가능 -->
                               	<c:if test="${sessionScope.userId != null && vDto.status != 'Y'}">
-                                <button onclick="location.href='longDayRev.do?cNum=${vDto.cNum}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                                <button onclick="location.href='oneDayRev.do?cNum=${vDto.cNum}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-car-side"></i>렌트하기
                                 </button>
                                 </c:if>
