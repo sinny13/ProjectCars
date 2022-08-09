@@ -14,12 +14,17 @@ public class ReserveDTO {
 	private Date revDate1;
 	private Date revDate2;
 	
+	private int dateCnt;
+	private int totalPrice;
+	
+	
 	
 	public ReserveDTO() {}
 
 
+
 	public ReserveDTO(int revNum, String revName, String revJumin1, String revJumin2, String revTel, String revAddr,
-			int count, Date revDate1, Date revDate2) {
+			int count, Date revDate1, Date revDate2, int dateCnt, int totalPrice) {
 		super();
 		this.revNum = revNum;
 		this.revName = revName;
@@ -30,7 +35,10 @@ public class ReserveDTO {
 		this.count = count;
 		this.revDate1 = revDate1;
 		this.revDate2 = revDate2;
+		this.dateCnt = dateCnt;
+		this.totalPrice = totalPrice;
 	}
+
 
 
 	public int getRevNum() {
@@ -38,9 +46,11 @@ public class ReserveDTO {
 	}
 
 
+
 	public void setRevNum(int revNum) {
 		this.revNum = revNum;
 	}
+
 
 
 	public String getRevName() {
@@ -48,9 +58,11 @@ public class ReserveDTO {
 	}
 
 
+
 	public void setRevName(String revName) {
 		this.revName = revName;
 	}
+
 
 
 	public String getRevJumin1() {
@@ -58,9 +70,11 @@ public class ReserveDTO {
 	}
 
 
+
 	public void setRevJumin1(String revJumin1) {
 		this.revJumin1 = revJumin1;
 	}
+
 
 
 	public String getRevJumin2() {
@@ -68,9 +82,11 @@ public class ReserveDTO {
 	}
 
 
+
 	public void setRevJumin2(String revJumin2) {
 		this.revJumin2 = revJumin2;
 	}
+
 
 
 	public String getRevTel() {
@@ -78,9 +94,11 @@ public class ReserveDTO {
 	}
 
 
+
 	public void setRevTel(String revTel) {
 		this.revTel = revTel;
 	}
+
 
 
 	public String getRevAddr() {
@@ -88,9 +106,11 @@ public class ReserveDTO {
 	}
 
 
+
 	public void setRevAddr(String revAddr) {
 		this.revAddr = revAddr;
 	}
+
 
 
 	public int getCount() {
@@ -98,9 +118,11 @@ public class ReserveDTO {
 	}
 
 
+
 	public void setCount(int count) {
 		this.count = count;
 	}
+
 
 
 	public Date getRevDate1() {
@@ -108,9 +130,11 @@ public class ReserveDTO {
 	}
 
 
+
 	public void setRevDate1(Date revDate1) {
 		this.revDate1 = revDate1;
 	}
+
 
 
 	public Date getRevDate2() {
@@ -118,16 +142,42 @@ public class ReserveDTO {
 	}
 
 
+
 	public void setRevDate2(Date revDate2) {
 		this.revDate2 = revDate2;
 	}
 
 
+
+	public int getDateCnt() {
+		return dateCnt;
+	}
+
+
+
+	public void setDateCnt(int dateCnt) {
+		this.dateCnt = dateCnt;
+	}
+
+
+
+	public int getTotalPrice() {
+		return totalPrice;
+	}
+
+
+
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "ReserveDTO [revNum=" + revNum + ", revNames=" + revName + ", revJumin1=" + revJumin1 + ", revJumin2="
+		return "ReserveDTO [revNum=" + revNum + ", revName=" + revName + ", revJumin1=" + revJumin1 + ", revJumin2="
 				+ revJumin2 + ", revTel=" + revTel + ", revAddr=" + revAddr + ", count=" + count + ", revDate1="
-				+ revDate1 + ", revDate2=" + revDate2 + "]";
+				+ revDate1 + ", revDate2=" + revDate2 + ", dateCnt=" + dateCnt + ", totalPrice=" + totalPrice + "]";
 	}
 
 

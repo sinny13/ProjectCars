@@ -32,6 +32,21 @@ alert(userId);
 
 
 
+<style>
+
+h1,h2,h3,h4,h5,h6,p,strong,tr,td,th{
+
+color: #BBB;
+
+}
+
+
+</style>
+
+
+
+
+
 <div id="myPayment">
 <!-- partial:index.partial.html -->
 <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -336,13 +351,9 @@ alert(userId);
               <input type="radio" name="payment" id="payment-cc" class="control__input" checked />
               <div class="control__label">
                 무통장입금
-                <!-- <div class="microcopy">Pay safely and securely with your credit card.</div> -->
+
               </div>
-              <!-- <span class="control__extra">
-                <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
-                <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
-                <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
-              </span> -->
+
             </label>
 
             <div class="block block--collapse">
@@ -368,44 +379,17 @@ alert(userId);
                     </label>
                     <select name="ccmonth" id="ccmonth" class="input__input">
                       <option disabled selected>입금은행을 선택하세요</option>
-                      <option value="1">우리은행:142-4142-1341-414</option>
-                      <!-- <option value="2">02 - February</option>
-                      <option value="3">03 - March</option>
-                      <option value="4">04 - April</option>
-                      <option value="5">05 - May</option>
-                      <option value="6">06 - June</option>
-                      <option value="7">07 - July</option>
-                      <option value="8">08 - August</option>
-                      <option value="9">09 - September</option>
-                      <option value="10">10 - October</option>
-                      <option value="11">11 - November</option>
-                      <option value="12">12 - December</option> -->
+                      <option value="1">우리은행:141-4142-1341-414</option>
+                      <option value="2">국민은행:142-4142-1341-414</option>
+                      <option value="3">신한은행:143-4142-1341-414</option>
+                      <option value="4">카카오뱅크:144-4142-1341-414</option>
+                      <option value="5">농협:145-4142-1341-414</option>
+                      <option value="6">하나은행:146-4142-1341-414</option>
+
                     </select>
                   </div>
                 </div>
-                <!-- <div class="f30">
-                  <div class="input input--select">
-                    <label for="ccyear" class="input__label">Expiry year <span class="required">(required)</span></label>
-                    <select name="ccyear" id="ccyear" class="input__input">
-                      <option disabled selected>YY</option>
-                      <option value="2017">17</option>
-                      <option value="2018">18</option>
-                      <option value="2019">19</option>
-                      <option value="2020">20</option>
-                      <option value="2021">21</option>
-                      <option value="2022">22</option>
-                      <option value="2023">23</option>
-                    </select>
-                  </div>
-                </div> -->
-                <!-- <div class="f40">
-                  <div class="input">
-                    <svg class="input__icon"><use xlink:href="#icon-help"></use></svg>
-                    <label for="ccsecurity" class="input__label">Security code <span class="required">(required)</span></label>
-                    <input id="ccsecurity" type="text" class="input__input" data-mask="^\d{3,4}$" />
-                    <div class="input__error">Please enter a security code.</div>
-                  </div>
-                </div> -->
+
               </div>
             </div>
 
@@ -418,23 +402,15 @@ alert(userId);
               </div>
               <span class="control__extra">
                 <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
-                <!-- <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
-                <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg>
-                <svg class="control__icon"><use xlink:href="#icon-credit-card"></use></svg> -->
               </span>
             </label>
           </div>
           
-          <!-- <div class="message message--info is-visible">Your <b>credit card</b> will be charged as soon as you finish the current step.</div> -->
-          <!-- <div class="message message--info is-hidden">You will be redirected to <b>PayPal</b> as soon as you finish the current step.</div> -->
           
           <div class="collapser">
-            <!-- <a href="#" class="collapser__label">Redeem a gift card</a> -->
+
             <div class="collapser__content">
-              
-              <!-- <header class="header">
-                <h2>Gift cards</h2>
-              </header> -->
+
               <p class="microcopy">Add gifts cards you would like to redeem.</p>
 
               <div class="f">
@@ -470,8 +446,7 @@ alert(userId);
               <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
             </button>
             <button class="btn btn--transparent secondary js-goto" data-page="2">
-              <!-- <svg class="btn__icon"><use xlink:href="#icon-navigate_before"></use></svg> -->
-              <!-- <span class="btn__label">Return to Shipping method</span> -->
+
               <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
             </button>
           </div>
@@ -479,17 +454,6 @@ alert(userId);
         </div>
         <div class="page page--4">
           
-          <!-- <header class="header">
-            <h2>Order review</h2>
-          </header>
-          <p class="microcopy">Please review and make sure your order is correct.</p> -->
-          
-            <!-- <button onclick="requestPay()">결제하기</button> -->
-            <!-- <button class="btn btn--primary js-goto" onclick="requestPay()">
-              <span class="btn__label">결제하기</span>
-              <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
-            </button> -->
-			
 
 
 
@@ -560,154 +524,16 @@ alert(userId);
           
         </div>
       </div>
-<!--     </form> -->
 
-  <!--   <h1>Heading level 1</h1>
-    <p>Should be used for:</p>
-    <ul>
-      <li><b>Exlusively</b> as main heading on pages</li>
-    </ul>
-
-    <h2>Heading level 2</h2>
-    <p>Should be used for:</p>
-    <ul>
-      <li>Secondary headings on pages (for structure)</li>
-      <li>Component main headings (e.g. modals)</li>
-    </ul>
-
-    <h3>Heading level 3</h3>
-    <p>Should be used for:</p>
-    <ul>
-      <li>Tertirary headings on pages (for structure)</li>
-      <li>Product names</li>
-      <li>Services names</li>
-    </ul>
-
-    <h4>Heading level 4</h4>
-    <p>Should be used for:</p>
-    <ul>
-      <li><b>Exlusively</b> for additional structure</li>
-    </ul>
-
-    <h5>Heading level 5</h5>
-    <p>Should be used for:</p>
-    <ul>
-      <li><b>Exlusively</b> for additional structure</li>
-      <li><b>Try to avoid using h5</b></li>
-    </ul>
-
-    <h6>Heading level 6</h6>
-    <p>Should be used for:</p>
-    <ul>
-      <li><b>Exlusively</b> for additional structure</li>
-      <li><b>Try to avoid using h6</b></li>
-    </ul>
-
-    <p>Body copy looks like this. Rounded, yet easy to read. Not too small either.</p>
-
-    <button class="btn">Change language</button>
-
-    <h1>All our products</h1>
-    <p>We offer a wide selection of products that you can personalize in 3 easy steps</p>
-    <ol>
-      <li>Upload your image, or select one from your social media</li>
-      <li>Customize your settings to your liking</li>
-      <li>Order and get an unforgettable experience delivered to your door</li>
-    </ol>
-
-    <h2>Throw Pillows</h2>
-    <div class="grid">
-
-    <div class="product">
-      <div class="product__body">
-        <div class="product__image">
-          <img src="http://via.placeholder.com/200x200" alt="">
-        </div>
-        <h3 class="product__name">Custom Throw Pillow</h3>
-        <div class="product__price"><sup>$</sup>30.00</div>
-      </div>
-      <footer class="product__footer">
-        <button class="btn btn--primary">Customize</button>
-      </footer>
-    </div>
-
-    <div class="product">
-      <div class="product__body">
-        <div class="product__image">
-          <img src="http://via.placeholder.com/200x200" alt="">
-        </div>
-        <h3 class="product__name">Some Other Product With a Long Name</h3>
-        <div class="product__price"><sup>$</sup>30.00</div>
-      </div>
-      <footer class="product__footer">
-        <button class="btn btn--primary">Customize</button>
-      </footer>
-    </div>
-
-    <div class="product">
-      <div class="product__body">
-        <div class="product__image">
-          <img src="http://via.placeholder.com/200x200" alt="">
-        </div>
-        <h3 class="product__name">Custom Throw Pillow</h3>
-        <div class="product__price"><sup>$</sup>30.00</div>
-      </div>
-      <footer class="product__footer">
-        <button class="btn btn--primary">Customize</button>
-      </footer>
-    </div>
-
-    </div>
-
-    <p>Choose an option:</p>
-    <div class="radio">
-      <div class="radio__box"></div>
-      <div class="radio__label">Option 1</div>
-    </div>
-
-    <div class="radio">
-      <div class="radio__box"></div>
-      <div class="radio__label">Option 2</div>
-    </div>
-
-    <p>Sign up:</p>
-    <div class="checkbox">
-      <div class="checkbox__box"></div>
-      <div class="checkbox__label">Option 2</div>
-    </div>
-
-    <div class="modal is-open2">
-      <div class="modal__background"></div>
-      <div class="modal__content">
-        <header class="modal__header">
-          <div class="modal__heading">Change your language</div>
-        </header>
-        <div class="modal__body">
-          <p>Select the language you would like to use:</p>
-          <div class="dropdown is-pressable">
-            <div class="dropdown__label">Select a language...</div>
-            <div class="dropdown__options">
-              <div class="dropdown__option">Option 1</div>
-              <div class="dropdown__option">Option 2</div>
-            </div>
-          </div>        
-        </div>
-        <footer class="modal__footer">
-          <button class="btn">Cancel</button>
-          <button class="btn btn--primary">Confirm</button>
-        </footer>
-      </div>
-    </div> -->
     
     </div>
   <div class="checkout__summary">
     
-<!--     <div class="logo"></div> -->
     
     <header class="header">
       <h2>결제정보</h2>
     </header>
-    <p class="microcopy">A summary of your total order.</p>
+    <strong style="font-family: LeferiPoint-WhiteObliqueA; font-size: 15px; color: #BBB">${vDto.company} ${vDto.cName}</strong>
     
     <div class="collapser">
       <!-- <a href="#" class="collapser__label">Add a coupon code</a> -->
@@ -742,7 +568,7 @@ alert(userId);
           <tr>
 							<img class="active" src="${ctx}/resources/file_upload/${vDto.fileName}">
 							<!-- <td class="pricing__label">Custom Throw Pillow (18" x 18")</td> -->
-							<td class="pricing__label">${vDto.company} ${vDto.cName}</td>
+							<td class="pricing__label">1일 비용 : </td>
 							<td class="pricing__price">￦ ${vDto.price}</td>
 						</tr>
 						<!-- <tr>
@@ -779,7 +605,7 @@ alert(userId);
 					<tfoot>
 						<tr class="pricing__total">
 							<td class="pricing__label">Total</td>
-							<td class="pricing__price"><span class="currency">￦</span> <b>${vDto.price}</b></td>
+							<td class="pricing__price"><span class="currency">￦</span> <b>${rDto.totalPrice}</b></td>
 						</tr>
 						<!-- <tr class="pricing__total-localized">
             <td class="pricing__label">Total in EUR</td>

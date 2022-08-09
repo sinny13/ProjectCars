@@ -19,7 +19,7 @@
   min-height: 100vh;
   max-width: 1440px;
   margin: auto;
-  color: #405461;
+  color: #BBBBBB;
   font-family: "Muli";
   background: #111;
 }
@@ -634,7 +634,7 @@
   font-size: 18px;
 }
 #myPayment .pricing__total td {
-  color: #404b61;
+  color: #BBBBBB;
   padding-top: 24px;
   border-top: 1px solid #ccc;
 }

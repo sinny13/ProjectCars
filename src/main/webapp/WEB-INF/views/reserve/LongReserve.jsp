@@ -87,7 +87,7 @@
    
 
    <body style="background-color:#111; color:#fff">
-   <form action="longdaypayment.do" method="post">
+   <form action="longdaypayment.do?price=${vDto.price}" method="post">
     <div class="container p-3 my-5 bg-secondary text-white">
         <h1>렌트 예약</h1>
     </div>
@@ -153,7 +153,7 @@
                 </tr>
                <tr>
                     <td>1일가격</td>
-                    <td><input value="￦ ${vDto.price}원" name="price" type="text" class="form-control" id="exampleFormControlInput1" readonly></td>
+                    <td><span>${vDto.price}원</span></td>
                 </tr>                  
             </tbody>
         </table> 

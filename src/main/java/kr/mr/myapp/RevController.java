@@ -77,7 +77,7 @@ public class RevController {
 
 	// 예약정보 입력 -> 결제
 	   @RequestMapping("/onedaypayment.do")
-	   public String onedayreserveInsert(ReserveDTO dto,int cNum,Model model, HttpSession session, HttpServletRequest request)throws IOException{
+	   public String onedayreserveInsert(ReserveDTO rDto,int price,int cNum,Model model, HttpSession session, HttpServletRequest request)throws IOException{
 	      
 	      String datepicker1 = request.getParameter("datepicker1");
 	      System.out.println("datepicker1 : " +  datepicker1);
@@ -87,14 +87,18 @@ public class RevController {
 	      System.out.println("reDate1 : " + reDate1 );
 	      
 	      
-	      dto.setRevDate1(reDate1);
+	      rDto.setRevDate1(reDate1);
 	      
 	      
+	      int totalPrice = 1 * price;
 	      
-	      int cnt = reserveMapper.reserveInsert(dto);
-	      
+	        rDto.setTotalPrice(totalPrice); 
+		      
+		      
+	      int cnt = reserveMapper.reserveInsert(rDto);
+
 	      if (cnt > 0) { // 등록성공
-	         
+
 	         // 회원정보
 	         List<ReserveDTO> revList = reserveMapper.reserveList();      
 	         model.addAttribute("revList", revList);
@@ -104,41 +108,75 @@ public class RevController {
 	         
 	         model.addAttribute("vDto", vDto);
 	         
+	         // 예약정보 가져오기
 	         
+	         model.addAttribute("rDto", rDto);
 	         
-	         
-	         return "payment/payment";
-	         
-	         
-	         
-	         
-	      } else {
-	         session.setAttribute("1", "1 1!!");
-	         return "reserve/myNowReserv";
 	         
 	      }
-	      
+	         
+	         return "payment/payment";
+
 	   }
 	   
-	   // 예약정보 입력 -> 결제
+	// 예약정보 입력 -> 결제
 	   @RequestMapping("/longdaypayment.do")
-	   public String reserveInsert(ReserveDTO dto,int cNum,Model model, HttpSession session, HttpServletRequest request)throws IOException{
+	   public String reserveInsert(ReserveDTO rDto,String price,int cNum,Model model, HttpSession session, HttpServletRequest request)throws IOException{
 	      
+	      // 파라미터 받기
 	      String datepicker1 = request.getParameter("datepicker1");
 	      System.out.println("datepicker1 : " +  datepicker1);
 	      String datepicker2 = request.getParameter("datepicker2");
 	      System.out.println("datepicker2 : " +  datepicker2);
 	      
+	      
+	      
+	      int eachPrice = Integer.parseInt(price);
+	      
+	      
+	      System.out.println("eachPrice : " +  eachPrice);
+	      
+	      
+	      
+	      
+	      
+	      // String -> Date(SQL)타입 형변환
 	      Date reDate1 = Date.valueOf(datepicker1);
 	      System.out.println("reDate1 : " + reDate1 );
 	      Date reDate2 = Date.valueOf(datepicker2);
 	      System.out.println("reDate2 : " + reDate2 );
 	      
-	      dto.setRevDate1(reDate1);
-	      dto.setRevDate2(reDate2);
+	      // 예약기간 계산(날짜, 시간 계산)
+	      long diffSec = (reDate2.getTime() - reDate1.getTime()) / 1000; //초 차이
+	        long diffMin = (reDate2.getTime() - reDate1.getTime()) / 60000; //분 차이
+	        long diffHor = (reDate2.getTime() - reDate1.getTime()) / 3600000; //시 차이
+	        long diffDays = diffSec / (24*60*60); //일자수 차이
+	      
+	        System.out.println(diffSec + "초 차이");
+	        System.out.println(diffMin + "분 차이");
+	        System.out.println(diffHor + "시 차이");
+	        System.out.println(diffDays + "일 차이");
+	        
+	        // long -> int 형변환
+	        int dateCnt = (int)diffDays;
+	        System.out.println("dateCnt :" + dateCnt);
+	        
+	        
+	        
+	        int totalPrice = dateCnt * eachPrice;
+	        
+	        System.out.println( "totalPrice : "+totalPrice);
+	        
+	        
+     
+	        // dto에 입력하기
+	        rDto.setRevDate1(reDate1);
+	        rDto.setRevDate2(reDate2);
+	        rDto.setDateCnt(dateCnt); 
+	        rDto.setTotalPrice(totalPrice); 
 	      
 	      
-	      int cnt = reserveMapper.reserveInsert(dto);
+	      int cnt = reserveMapper.reserveInsert(rDto);
 
 	      if (cnt > 0) { // 등록성공
 
@@ -150,6 +188,10 @@ public class RevController {
 	         VehicleDTO vDto = vehicleMapper.vehicleGetter(cNum);
 	         
 	         model.addAttribute("vDto", vDto);
+	         
+	         // 예약정보 가져오기
+	         
+	         model.addAttribute("rDto", rDto);
 	         
 	         
 	         
