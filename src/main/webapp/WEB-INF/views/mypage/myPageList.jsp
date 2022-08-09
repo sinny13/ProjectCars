@@ -140,7 +140,6 @@
 						  <th>상품정보</th>
 						  <th>가격</th>
 						  <th>예약하기</th>
-						  <th>예약하기</th>
 						  <th>삭제</th>
 						</tr>
 					  </thead>
@@ -154,10 +153,7 @@
 						  	{dto.price}
 						  </td>
 						  <td>
-					    	<button class="custom-btn btn-5" onclick="location.href='myDayReserv.do'"><span>1일렌트</span></button>
-						  </td>
-						  <td>
-					    	<button class="custom-btn btn-5" onclick="location.href='myLongReserv.do'"><span>장기렌트</span></button>
+					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
 						  </td>
 						  <td>
                 			<div id="close_btn">
@@ -174,10 +170,7 @@
 						  	{dto.price}
 						  </td>
 							<td>
-					    		<button class="custom-btn btn-5" onclick="location.href='myDayReserv.do'"><span>1일렌트</span></button>
-						  	</td>
-						  	<td>
-					    		<button class="custom-btn btn-5" onclick="location.href='myLongReserv.do'"><span>장기렌트</span></button>
+					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
 						  	</td>
 							<td>
 	                			<div id="close_btn">
@@ -194,10 +187,7 @@
 						  	{dto.price}
 						  </td>
 							<td>
-					    		<button class="custom-btn btn-5" onclick="location.href='myDayReserv.do'"><span>1일렌트</span></button>
-						  	</td>
-						  	<td>
-					    		<button class="custom-btn btn-5" onclick="location.href='myLongReserv.do'"><span>장기렌트</span></button>
+					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
 						  	</td>
 							<td>
 	                			<div id="close_btn">
