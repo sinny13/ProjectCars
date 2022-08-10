@@ -4,7 +4,7 @@
 <%@ include file="../inc/header.jsp" %>
 
 <!-- Personal CSS -->
-<link rel="stylesheet" href="${ctx}/resources/css/myPageList.css">
+<link rel="stylesheet" href="${ctx}/resources/css/myPageList.css?myPageList">
 
 <script type="text/javascript">
 	function showMsg(){
@@ -132,7 +132,7 @@
 
 				<div class="container mt-5">
 					<div class="wish_header d-flex" style="justify-content: space-between;">
-						<h2><i class="xi-heart"></i> &nbsp;위시리스트</h2>
+						<h2 onclick="location.href='myWishList.do';"><i class="xi-heart"></i> &nbsp;위시리스트</h2>
 					</div>          
 					<table class="table mt-3" style="color:#fff;">
 					  <thead>
@@ -153,7 +153,7 @@
 						  	{dto.price}
 						  </td>
 						  <td>
-					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
+					    		<button class="custom-btn btn-5" onclick="location.href='rentalSelector.do'"><span>예약하기</span></button>
 						  </td>
 						  <td>
                 			<div id="close_btn">
@@ -170,7 +170,7 @@
 						  	{dto.price}
 						  </td>
 							<td>
-					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
+					    		<button class="custom-btn btn-5" onclick="location.href='rentalSelector.do'"><span>예약하기</span></button>
 						  	</td>
 							<td>
 	                			<div id="close_btn">
@@ -187,7 +187,7 @@
 						  	{dto.price}
 						  </td>
 							<td>
-					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
+					    		<button class="custom-btn btn-5" onclick="location.href='rentalSelector.do'"><span>예약하기</span></button>
 						  	</td>
 							<td>
 	                			<div id="close_btn">

@@ -33,13 +33,15 @@ public class MyPageController {
 	}
 
 	
-	/*
-	 * // 위시리스트 뷰페이지
-	 * 
-	 * @RequestMapping("/myWishList.do") public String myWishList() {
-	 * 
-	 * return "wish/myWishList"; }
-	 */
+	 // 위시리스트 뷰페이지
+	 
+	@RequestMapping("/myWishList.do") 
+		
+		public String myWishList() {
+	  
+		return "mypage/myWishList"; 
+	}
+
 	 
 	// 오시는길 뷰페이지
 	@RequestMapping("/myDirection.do")
@@ -49,16 +51,4 @@ public class MyPageController {
 	}
 		
 	
-	/*
-	 * @RequestMapping("/myBankPayment.do") public String myBankPayment() {
-	 * 
-	 * return "payment/myBankPayment"; }
-	 * 
-	 * 
-	 * // 인보이스
-	 * 
-	 * @RequestMapping("/myInvoice.do") public String myInvoice() {
-	 * 
-	 * return "payment/myInvoice"; }
-	 */
 }

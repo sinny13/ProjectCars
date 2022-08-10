@@ -304,6 +304,15 @@ public class RevController {
 		   return "payment/bank_paymentOk"; 
 		   
 	   }  
+	   
+	   // 인보이스
+		 
+	   @RequestMapping("/myInvoice.do") 
+	   public String myInvoice() {
+		 
+		   return "payment/myInvoice"; 
+		
+		}
 	   	   
 	   
 	
