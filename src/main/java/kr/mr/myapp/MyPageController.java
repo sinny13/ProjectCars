@@ -49,16 +49,11 @@ public class MyPageController {
 	}
 		
 	
-	/*
-	 * @RequestMapping("/myBankPayment.do") public String myBankPayment() {
-	 * 
-	 * return "payment/myBankPayment"; }
-	 * 
-	 * 
-	 * // 인보이스
-	 * 
-	 * @RequestMapping("/myInvoice.do") public String myInvoice() {
-	 * 
-	 * return "payment/myInvoice"; }
-	 */
+	  
+	  // 인보이스(구매내역)
+	  
+	  @RequestMapping("/myInvoice.do") public String myInvoice() {
+	  
+	  return "payment/myInvoice"; }
+	 
 }
