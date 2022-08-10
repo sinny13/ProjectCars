@@ -24,7 +24,7 @@ public class WishListController {
 	   private WishMapper wishMapper;
 	   
 	   
-	   @RequestMapping("/myWishList.do") 
+	   @RequestMapping("/WishList.do") 
 	      public String wishInsert(int cNum,String id,HttpSession session ,HttpServletRequest request,  Model model) {
 		   
 		   System.out.println("id : "+id);
