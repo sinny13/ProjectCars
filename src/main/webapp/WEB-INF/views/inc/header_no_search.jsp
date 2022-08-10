@@ -162,6 +162,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 	            		<a class="nav-link" href="memberLogout.do">로그아웃</a>
 	            	</li>
 	            	<li>
+<<<<<<< HEAD
              			<a class="nav-link" href="myWishList.do">위시리스트</a>
            			</li>	
 				</c:if>	

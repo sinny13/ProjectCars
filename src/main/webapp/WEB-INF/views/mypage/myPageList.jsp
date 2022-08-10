@@ -4,7 +4,7 @@
 <%@ include file="../inc/header.jsp" %>
 
 <!-- Personal CSS -->
-<link rel="stylesheet" href="${ctx}/resources/css/myPageList.css?myPageList">
+<link rel="stylesheet" href="${ctx}/resources/css/myPageList.css">
 
 <script type="text/javascript">
 	function showMsg(){

@@ -3,7 +3,7 @@
 
 <%@ include file="../inc/header.jsp" %>
 
-
+<body style="background-color:#111; color:#fff">
     <div class="container p-3 my-5 text-white" style="background-color: rgba(70, 70, 70, 0.5)">
         <h1>회원정보수정</h1>
     </div>
@@ -68,6 +68,7 @@
             </form>                                                 
         </div>
       </div>
+
 
 
 

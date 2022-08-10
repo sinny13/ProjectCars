@@ -348,4 +348,18 @@
     <!-- Jquery Plugins, main Jquery -->
     <script src="${ctx}/resources/assets/js/plugins.js"></script>
     <script src="${ctx}/resources/assets/js/main.js"></script>
+
+
+    
+<style>
+/*클릭 이벤트를 포함하는 모든 영역에 추가하면 하위 이벤트까지 작동안함.*/
+#element { 
+
+pointer-events: none;
+
+ }
+element:hover {
+	background-color: #111
+} 
+</style>
    

@@ -19,7 +19,7 @@
 	font-family: LeferiPoint-WhiteObliqueA;
 }
 
-h1, h2, h3, h4, p, legend ,span{
+h1, h2, h3, h4, h5, h5, p, legend ,span{
 	color: #fff !important;
 	font-family: LeferiPoint-WhiteObliqueA;
 }

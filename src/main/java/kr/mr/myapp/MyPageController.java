@@ -32,12 +32,65 @@ public class MyPageController {
 		return "mypage/myMemberModify";
 	}
 
+	
+	 // 위시리스트 뷰페이지
+	  
+	 @RequestMapping("/myWishList.do") 
+	 public String myWishList() {
+	  
+		 return "mypage/myWishList"; 
+	}
+	 
+
+	// 관심목록 상세보기 뷰페이지
+	@RequestMapping("/myWishDetail.do")
+	public String myWishDetail() {
+
+		return "mypage/myWishDetail";
+	}
+
 	// 오시는길 뷰페이지
 	@RequestMapping("/myDirection.do")
 	public String myDirection() {
 
 		return "mypage/myDirection";
 	}
+
+	// 1일 렌트예약 뷰페이지
+	@RequestMapping("/myDayReserv.do")
+	public String myDayReserv() {
+
+		return "mypage/myDayReserv";
+	}
 	
-		
+	// 장기 렌트예약 뷰페이지
+	@RequestMapping("/myLongReserv.do")
+	public String myLongReserv() {
+
+		return "mypage/myLongReserv";
+	}
+	
+	// 결제 뷰페이지
+	@RequestMapping("/myPayment.do")
+	public String myPayment() {
+
+		return "mypage/myPayment";
+	}	
+	
+	// 결제 -> 무통장입금 뷰페이지
+	@RequestMapping("/myBankPayment.do")
+	public String myBankPayment() {
+
+		return "mypage/myBankPayment";
+	}	
+	
+	// 결제 완료창
+	@RequestMapping("/myPaymentOk.do")
+	public String myPaymentOk() {
+
+		return "mypage/myPaymentOk";
+	}
+	
+	
+
 }
