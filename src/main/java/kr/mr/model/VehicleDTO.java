@@ -1,5 +1,6 @@
 package kr.mr.model;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -22,6 +23,19 @@ public class VehicleDTO {
 	   
 	   private String status;
 	   
+	   
+	   
+	   private String wprice; 
+	    
+	   
+
+	   public String getWprice() {
+	      DecimalFormat formatter = new DecimalFormat("###,###,###,###");
+	      int price = getPrice();
+	      String wprice = formatter.format(price);
+	      
+	      return wprice;
+	   }
 	   
 	   
 	   

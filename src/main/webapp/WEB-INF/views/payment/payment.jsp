@@ -625,7 +625,7 @@ color: #BBB;
 							<img class="active" src="${ctx}/resources/file_upload/${vDto.fileName}">
 							<!-- <td class="pricing__label">Custom Throw Pillow (18" x 18")</td> -->
 							<td class="pricing__label">1일 비용 : </td>
-							<td class="pricing__price">￦ ${vDto.price}</td>
+							<td class="pricing__price">￦ ${vDto.wprice} 원</td>
 						</tr>
 						<!-- <tr>
             <td>image</td>
@@ -661,7 +661,7 @@ color: #BBB;
 					<tfoot>
 						<tr class="pricing__total">
 							<td class="pricing__label">Total</td>
-							<td class="pricing__price"><span class="currency">￦</span> <b>${rDto.totalPrice}</b></td>
+							<td class="pricing__price"><span class="currency">￦</span> <b>${rDto.wtotalPrice}원</b></td>
 						</tr>
 						<!-- <tr class="pricing__total-localized">
             <td class="pricing__label">Total in EUR</td>

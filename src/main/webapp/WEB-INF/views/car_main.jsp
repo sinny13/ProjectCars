@@ -15,11 +15,10 @@
     <link rel="stylesheet" href="${ctx}/resources/assets/css/themify-icons.css" />
     <link rel="stylesheet" href="${ctx}/resources/assets/css/style.css" />
     
-    <!-- MyCss -->
+<!-- MyCss -->
 	<link rel="stylesheet" href="${ctx}/resources/css/font.css">
     <link rel="stylesheet" href="${ctx}/resources/css/car_main.css">
 	<link rel="stylesheet" href="${ctx}/resources/css/main.css">
-	
 
 <!-- 슬라이더 -->
 
@@ -31,10 +30,18 @@
             <div class="instagram-active owl-carousel">
 			 <c:forEach var="vDto" items="${vehicleList}">
                <div class="single-instagram me-4 Border-radius">
+				<c:if test="${vDto.status != 'Y'}">                 
                  <img src="${ctx}/resources/file_upload/${vDto.fileName}" 
                  style="max-width: 100%; min-width:150px; max-height:auto; min-height: 300px;">
                  <!-- <a href="#"><i class="ti-instagram"></i></a> -->
-                 <a href="vehicleRental.do?cNum=${vDto.cNum}&cSpec='recommand'"><i><h2>${vDto.company}</h2><h6>${vDto.cName}</h6></i></a>
+                 <a  href="vehicleRental.do?cNum=${vDto.cNum}&cSpec='recommand'"><i><h2>${vDto.company}</h2><h6>${vDto.cName}</h6></i></a>                               
+                </c:if>
+				<c:if test="${vDto.status == 'Y'}">                 
+                 <img src="${ctx}/resources/file_upload/${vDto.fileName}" 
+                 style=" opacity: 0.5 ; max-width: 100%; min-width:150px; max-height:auto; min-height: 300px;">
+                 <!-- <a href="#"><i class="ti-instagram"></i></a> -->
+                 <a  onclick="javascript:alert('이미 렌트중인 차량입니다!')"><i><h1>렌트중</h1></i></a>                               
+                </c:if>
                </div>
 			 </c:forEach>
             </div>
@@ -55,14 +62,14 @@
 	<p>회사 규약 / 안내사항</p>
 </div>
 
-<div id="sectionNotice">
+<div class="card bg-dark text-white mt-5 mb-5" id="sectionNotice">
     <section class="section" id="blog">
-        <div class="container">
+        <div class="container text-white">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="blog-grid">
                         <div class="blog-img">     
-                            <a href="#">
+                            <a href="noticeList.do">
                                 <img src="${ctx}/resources/image/carMain/Information.jpg" style="width: 500px; height: 300px" title="" alt="">
                             </a>
                         </div>
@@ -81,7 +88,7 @@
                 <div class="col-lg-4">
                     <div class="blog-grid">
                         <div class="blog-img">
-                            <a href="#">
+                            <a href="noticeDayRent.do">
                                 <img src="${ctx}/resources/image/carMain/DayRent.jpg" style="width: 500px; height: 300px" title="" alt="">
                             </a>
                         </div>
@@ -100,7 +107,7 @@
                 <div class="col-lg-4">
                     <div class="blog-grid">
                         <div class="blog-img">
-                            <a href="#">
+                            <a href="noticeLongRent.do">
                                 <img src="${ctx}/resources/image/carMain/LongRent.jpg" style="width: 500px; height: 300px" title="" alt="">
                             </a>
                         </div>
@@ -324,7 +331,7 @@
 	<!-- card body -->
 	
     <div class="frame" id="faqBtn">
-        <button class="custom-btn btn-12" onclick="location.href='boardList.do';"><span>Click!</span><span>공지사항 더 보기</span></button>
+        <button class="custom-btn btn-12" onclick="location.href='noticeFaq.do';"><span>Click!</span><span>공지사항 더 보기</span></button>
     </div>
     
    	</div>
@@ -348,8 +355,7 @@
     <!-- Jquery Plugins, main Jquery -->
     <script src="${ctx}/resources/assets/js/plugins.js"></script>
     <script src="${ctx}/resources/assets/js/main.js"></script>
-
-
+   
     
 <style>
 /*클릭 이벤트를 포함하는 모든 영역에 추가하면 하위 이벤트까지 작동안함.*/
@@ -362,4 +368,6 @@ element:hover {
 	background-color: #111
 } 
 </style>
+    
+    
    

@@ -4,7 +4,7 @@
 <%@ include file="../inc/header.jsp" %>
 
 <!-- Personal CSS -->
-<link rel="stylesheet" href="${ctx}/resources/css/myPageList.css?myPageList">
+<link rel="stylesheet" href="${ctx}/resources/css/myPageList.css">
 
 <script type="text/javascript">
 	function showMsg(){
@@ -31,24 +31,24 @@
 				<table class="table table-borderless">
 					<thead>
 						<tr class="table-dark">
-							<th class="col-6"><i class="xi-walk"></i> &nbsp;${sessionScope.userName}님의 정보</th>
+							<th class="col-6"><i class="xi-walk"></i> &nbsp;${sessionScope.userName}님의 정보</th> 
 							<th class="col-3">
-								<button class="custom-btn btn-5" onclick="location.href='myMemberModify.do'"><span>상세정보 보기</span></button>
+								<button class="custom-btn btn-5" onclick="location.href='myMemberModify.do?mId=${member.id}'"><span>상세정보 보기</span></button>
 							</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td>이메일</td>
-							<td>{dto.email}</td>
+							<td>${member.email}</td>
 						</tr>
 						<tr>
 							<td>휴대폰</td>
-							<td>{dto.tel}</td>
+							<td>${member.tel}</td>
 						</tr>
 						<tr>
 							<td>주소</td>
-							<td>{dto.roadAddr}</td>
+							<td>${member.detailAddr}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -65,16 +65,16 @@
 					</thead>
 						<tbody>
 						<tr>
-							<td>진행 중 주문</td>
-							<td>1건</td>
+							<td>현재 예약된 차량 : </td>
+							<td>${vDto.cName}</td>
 						</tr>
 						<tr>
 							<td>교환/반품 주문</td>
 							<td>0건</td>
 						</tr>
 						<tr>
-							<td>나의 e-Money</td>
-							<td>100,000</td>
+							<td>나의 Point</td>
+							<td>0 P</td>
 						</tr>
 					</tbody>
 				</table>
@@ -132,7 +132,7 @@
 
 				<div class="container mt-5">
 					<div class="wish_header d-flex" style="justify-content: space-between;">
-						<h2 onclick="location.href='myWishList.do';"><i class="xi-heart"></i> &nbsp;위시리스트</h2>
+						<h2><i class="xi-heart"></i> &nbsp;위시리스트</h2>
 					</div>          
 					<table class="table mt-3" style="color:#fff;">
 					  <thead>
@@ -153,7 +153,7 @@
 						  	{dto.price}
 						  </td>
 						  <td>
-					    		<button class="custom-btn btn-5" onclick="location.href='rentalSelector.do'"><span>예약하기</span></button>
+					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
 						  </td>
 						  <td>
                 			<div id="close_btn">
@@ -170,7 +170,7 @@
 						  	{dto.price}
 						  </td>
 							<td>
-					    		<button class="custom-btn btn-5" onclick="location.href='rentalSelector.do'"><span>예약하기</span></button>
+					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
 						  	</td>
 							<td>
 	                			<div id="close_btn">
@@ -187,7 +187,7 @@
 						  	{dto.price}
 						  </td>
 							<td>
-					    		<button class="custom-btn btn-5" onclick="location.href='rentalSelector.do'"><span>예약하기</span></button>
+					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
 						  	</td>
 							<td>
 	                			<div id="close_btn">

@@ -179,7 +179,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
               </c:if>
             </li>
             <li>
-              <a class="dropdown-item" href="myPageList.do">마이페이지</a>
+              <a class="dropdown-item" href="myPageList.do?mId=${sessionScope.userId}">마이페이지</a>
             </li>
             <li>
               <a class="dropdown-item" href="#">주문배송조회</a>

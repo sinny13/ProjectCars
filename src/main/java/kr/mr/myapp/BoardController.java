@@ -59,7 +59,7 @@ public class BoardController {
 	// GET : html <body>의 내용을 담아서 보낼때 사용
 	public String registerForm(
 			@ModelAttribute("viewPage") int viewPage) {
-		return "board/register"; // 글쓰기
+		return "board/board_register"; // 글쓰기
 	}
 	@RequestMapping(value="/boardRegister.do", method=RequestMethod.POST)
 	// POST : html <body>의 내용 없이 보낼 때 사용

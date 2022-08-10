@@ -1,6 +1,7 @@
 package kr.mr.model;
 
 import java.sql.Date;
+import java.text.DecimalFormat;
 
 public class ReserveDTO {
 
@@ -16,6 +17,17 @@ public class ReserveDTO {
 	
 	private int dateCnt;
 	private int totalPrice;
+	
+	 private String wtotalPrice; 
+
+	   public String getWtotalPrice() {
+	      DecimalFormat formatter = new DecimalFormat("###,###,###,###,###,###");
+	      int totalPrice = getTotalPrice();
+	      String wtotalPrice = formatter.format(totalPrice);
+	      
+	      return wtotalPrice;
+	   }	
+	
 	
 	
 	

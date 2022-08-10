@@ -2,7 +2,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../inc/header_no_search.jsp" %>
+<%@ include file="../inc/header.jsp" %>
 
 <!-- Personal CSS -->
 <link rel="stylesheet" href="${ctx}/resources/css/home.css">

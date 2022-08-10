@@ -24,7 +24,7 @@
   </select>
   
   <update id="memberUpdate" parameterType="memberDTO">
-  	update member set age=#{age}, email=#{email}, tel=#{tel} where no=#{no}
+  	update member set id=#{id}, pw=#{pw},age=#{age}, email=#{email}, tel=#{tel}, detailAddr=#{detailAddr} where no=#{no}
   </update>
   
   <select id="memberLogin" parameterType="memberDTO" resultType="String">

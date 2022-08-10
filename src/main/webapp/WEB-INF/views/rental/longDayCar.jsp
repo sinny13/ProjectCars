@@ -152,7 +152,7 @@ color: #BBB;
 
                         <h1 style="margin:0; padding:0" class="name">${vDto.company} ${vDto.cName}</h1>
                         <p style="margin:15px; white-space: nowrap; overflow:hidden; text-overflow:ellipsis; ">"${vDto.contents}"</p>
-                         <h3 class="price"> ￦ ${vDto.price}</h3>
+                         <h3 class="price"> ￦ ${vDto.wprice}원</h3>
                          <div class="wishtxt">
                          </div>
                      </div>

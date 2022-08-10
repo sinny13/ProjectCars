@@ -31,7 +31,7 @@ padding: 0;
 
 </style>
     
-<%@ include file="../inc/header_no_search.jsp" %>
+<%@ include file="../inc/header.jsp" %>
 
 <style>
 /*

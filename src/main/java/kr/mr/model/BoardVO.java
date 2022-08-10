@@ -12,6 +12,7 @@ public class BoardVO {
 	private String writer; // 글쓴이
 	
 	private Date regDate; // 작성날짜
+	
 	private String id; // 작성자 식별
 	
 	// 게시판 검색

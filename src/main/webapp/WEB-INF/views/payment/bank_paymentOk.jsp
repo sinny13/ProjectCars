@@ -115,7 +115,7 @@
             	홈으로
             </button>
             
-            <button class='pulse m-3 p-3 justify-content-center' style="width: 100px; height: 50px"  onclick="location.href='home.do'">
+            <button class='pulse m-3 p-3 justify-content-center' style="width: 150px; height: 50px"  onclick="location.href='myPageList.do?mId=${sessionScope.userId}'">
             	마이페이지
             </button>
             

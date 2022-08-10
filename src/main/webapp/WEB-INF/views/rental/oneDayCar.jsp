@@ -124,7 +124,7 @@ font-family: LeferiPoint-WhiteObliqueA;
 
                         <h3 class="name">${vDto.cName}</h3>
                         <p style="margin:15px; white-space: nowrap; overflow:hidden; text-overflow:ellipsis; ">"${vDto.contents}"</p>
-                         <h4 class="price"> ￦ ${vDto.price}</h4>
+                         <h4 class="price"> ￦ ${vDto.wprice}원</h4>
                          <button>READ MORE</button><br>
                          <div class="wishtxt">
                             <p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>

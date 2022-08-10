@@ -183,7 +183,7 @@
                 </tr>
                <tr>
                     <td>가격</td>
-					<td><span>${vDto.price}원</span></td>
+					<td><span>${vDto.wprice}원</span></td>
 				</tr>                 
             </tbody>
         </table> 

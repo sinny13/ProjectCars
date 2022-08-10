@@ -90,7 +90,7 @@ $(document).ready(function(){
 					<img src="${ctx}/resources/file_upload/${vDto.fileName}" style="width:150px">
 				</td>
 				
-				<td> ￦ ${vDto.price}원</td>
+				<td> ￦ ${vDto.wprice}원</td>
 				<td>${vDto.category_fk}</td>
 				<td>${vDto.color}</td>
 				<td>${vDto.company}</td>
