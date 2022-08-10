@@ -161,9 +161,6 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 					<li>
 	            		<a class="nav-link" href="memberLogout.do">로그아웃</a>
 	            	</li>
-	            	<li>
-             			<a class="nav-link" href="wishList.do">위시리스트</a>
-           			</li>	
 				</c:if>	
         <!-- Navbar dropdown -->
         <li class="dropdown">

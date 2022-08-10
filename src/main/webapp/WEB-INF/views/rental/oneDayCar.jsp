@@ -223,28 +223,38 @@ font-family: LeferiPoint-WhiteObliqueA;
                                 <button onclick="location.href='oneDayRev.do?cNum=${vDto.cNum}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-car-side"></i>렌트하기
                                 </button>
+                                <button onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                                    <i class="fa-solid fa-heart"></i>관심상품
+                                </button>                                 
                                 </c:if>
                                 
                               	<c:if test="${sessionScope.userId != null && vDto.status == 'Y'}">
                                 <button onclick="javascript:alert('이미 렌트된 차량입니다.')" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-car-side"></i>렌트하기
                                 </button>
+                                <button onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                                    <i class="fa-solid fa-heart"></i>관심상품
+                                </button>                                 
                                 </c:if>
                                 
                               	<c:if test="${sessionScope.userId == null && vDto.status != 'Y'}">
                                 <button onclick="javascript:LoginValid()" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-car-side"></i>렌트하기
                                 </button>
+                                <button onclick="alert('해당 기능은 로그인을 해야 이용 가능합니다'); location.href='memberLogin.do'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                                    <i class="fa-solid fa-heart"></i>관심상품
+                                </button>                                   
+                                
                                 </c:if>
                                 
                               	<c:if test="${sessionScope.userId == null && vDto.status == 'Y'}">
-                                <button onclick="javascript:alert('이미 렌트된 차량입니다.')" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                                <button onclick="alert('이미 렌트된 차량입니다.')" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-car-side"></i>렌트하기
                                 </button>
-                                </c:if>
-                                <button onclick="javascript:#" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                                <button onclick="alert('해당 기능은 로그인을 해야 이용 가능합니다') ; location.href='memberLogin.do'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-heart"></i>관심상품
-                                </button>                                
+                                </button>                                   
+                                </c:if>                               
                                 <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
                                     <i class="fa fa-times"></i> Close
                                 </button>

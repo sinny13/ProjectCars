@@ -39,4 +39,9 @@ public interface MemberMapper {
 	public String memberIdChk(String mId);
 	
 	
+	
+	  
+	// 각 회원의 차량렌트여부
+	public MemberDTO isRented(String id);
+	
 }

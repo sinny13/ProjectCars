@@ -40,10 +40,9 @@ public class WishListController {
 
 		   wishMapper.wishInsert(wDto);
 		   
-		   List<WishDTO> wishList =  wishMapper.wishList();
-			/* model.addAttribute("wishList", wishList); */
+		   List<WishDTO> wishList =  wishMapper.wishList2(id);
 		   
-		   request.setAttribute("wishList", wishList);
+		   model.addAttribute("wishList", wishList);
 		   
 		   wishList.toString();
 		   
@@ -66,5 +65,31 @@ public class WishListController {
 
 	          
 	   }  
+	   
+	   @RequestMapping("/deleteWishList.do") 
+	   public String deleteWishList(int cNum,String id, Model model) {
+		   
+
+		   int n = wishMapper.deleteWishList(cNum);
+	
+		   
+		   
+		   if(n>0) {
+			   
+			   
+			   List<WishDTO> wishList =  wishMapper.wishList2(id);
+			   
+			   model.addAttribute("wishList", wishList);
+			   
+			   
+		   }else {
+			
+		}
+		   
+		   
+		   return "wish/wish_list"; 
+		   }
+		   
+
 
 	}

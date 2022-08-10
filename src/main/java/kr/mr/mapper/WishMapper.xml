@@ -7,19 +7,30 @@
 <mapper namespace="kr.mr.mapper.WishMapper">
   
   <select id="wishList" resultType="WishDTO">
-  	<!-- SELECT * from wishList -->
-  	
   	
   	SELECT car.cName,car.price,car.company,car.fileName, wishList.wID 
   	FROM car INNER JOIN wishList 
-  	ON car.cNum = wishList.cNum;
-
+  	ON car.cNum = wishList.cNum
+  	
   </select>
   
   <insert id="wishInsert" parameterType="WishDTO">
      insert into wishList(cNum,id)
      values(#{cNum},#{id})
   </insert>
+
+
+	<select id="wishList2" resultType="WishDTO">
+  	
+  	SELECT car.cNum,wishList.id,car.cName,car.price,car.company,car.fileName, wishList.wID 
+  	FROM car INNER JOIN wishList 
+  	ON car.cNum = wishList.cNum
+  	WHERE id = #{id}
+  	
+  </select>
+	<delete id="deleteWishList" parameterType="Integer"> 	
+	delete from wishList where cNum = #{cNum}  	
+  </delete>
 
   
   

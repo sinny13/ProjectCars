@@ -66,13 +66,24 @@
         </button>
         </c:if>
  	<c:if test="${mDto.isRented != 'Y'}">
-        <button class="add-to-cart">
-        	<a href="rentalSelector.do?cNum=${vDto.cNum}&id=${sessionScope.userId}">
+        <button class="add-to-cart" onclick="location.href='rentalSelector.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'">
         		렌트카 예약하기
-        	</a>
         </button>
         </c:if>
-        <button class="add-to-cart">관심상품<a href="wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}"></button>
+        <c:if test="${sessionScope.userId!= null}">
+       <button  class="add-to-cart" onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'">
+        		관심상품
+        </button>
+        </c:if>
+        <c:if test="${sessionScope.userId == null}">
+       <button class="add-to-cart" onclick="alert('기능을 이용하기 위해서는 로그인이 필요합니다.')">
+        		관심상품
+        </button>
+        </c:if>
+<%--         <button class="add-to-cart">
+        	<a href="wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}"/>
+        	관심상품
+        </button> --%>
       </div>
     </div>
     <%-- </c:forEach> --%>

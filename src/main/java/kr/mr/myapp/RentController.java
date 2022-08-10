@@ -14,6 +14,7 @@ import kr.mr.mapper.MemberMapper;
 import kr.mr.mapper.ReserveMapper;
 import kr.mr.mapper.VehicleMapper;
 import kr.mr.model.CategoryDTO;
+import kr.mr.model.MemberDTO;
 import kr.mr.model.VehicleDTO;
 
 
@@ -25,6 +26,9 @@ public class RentController {
 	
 	@Autowired
 	private ReserveMapper reserveMapper;
+	
+	@Autowired
+	private MemberMapper memberMapper;
 	
 	   
 	   
@@ -45,7 +49,12 @@ public class RentController {
 	
 	
 	@RequestMapping("/nowCar.do") 
-	public String nowCar(Model model) {
+	public String nowCar(Model model, String id) {
+		
+		
+		MemberDTO mDto = memberMapper.isRented(id);
+		
+		model.addAttribute("mDto", mDto);
 		
 		List<VehicleDTO> vehicleList = vehicleMapper.vehicleList();	  
 		model.addAttribute("vehicleList", vehicleList);

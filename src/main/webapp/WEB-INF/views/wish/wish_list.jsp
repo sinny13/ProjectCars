@@ -1,47 +1,81 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+
 <%@ include file="../inc/header.jsp" %>
 
-<c:if test="${wishList == null}">    
-	<div>위시리스트가 업습니다.</div>
-</c:if>
+<link rel="stylesheet" href="${ctx}/resources/css/myWishList.css?myWishList">
+<link rel="stylesheet" href="${ctx}/resources/js/myWishList.js?myWishList">
 
+<script type="text/javascript">
 
-<link rel="stylesheet" href="${ctx}/resources/css/wish.css">
-  <div class="wish">
-    <div class="product">
-      
-      <c:if test="${wishList != null}">
-      <c:forEach var="wDtos" items="${wishList}">
-      <div class="product-card">
-        <h2 class="name">${wDtos.company} ${wDtos.cName}</h2>
-        <span class="price">${wDtos.price}만원</span>
-        <a class="popup-btn">예약하기</a>
-      </div>
-      <div class="popup-view">
-        <div class="popup-card">
-          <a><i class="fas fa-times close-btn"></i></a>
-          <div class="product-img">
-            <img class="active" src="${ctx}/resources/file_upload/${wDtos.fileName}">
-          </div>
-          <div class="info">
-            <h2>Xiomi 7 Smart Watch<br><span>Smart Sport Modes</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <span class="price">$100.00</span>
-            <a href="#" class="add-cart-btn">Add to Cart</a>
-            <a href="#" class="add-wish">Add to Wishlist</a>
-          </div>
-        </div>
-      </div>
-     </c:forEach>
-  		</c:if>
-      </div>
-  </div>
-  
+	function delMsg(){
+		window.confirm("삭제.. 할건가요??");
 
-  
-  
-  
+	}
+	
+</script>
+
+<div id="myWishList">
+
+<!--<div class="container mt-3">
+		<div class="mt-3 mb-3 p-3 bg-secondary text-white rounded">
+			 <h1><i class="xi-emoticon-happy-o"></i>&nbsp;위시리스트</h1> 
+		</div>
+	</div> -->
+	<div class="container mt-3">
+			<div class="mt-3 mb-3 p-3 text-white rounded" style="background-color: rgba(70, 70, 70, 0.5)">
+			  <h1><i class="xi-heart"></i>&nbsp;위시리스트</h1> 
+			</div>
+		</div>
+	
+	
+
+	<div class="container">
+
+		<section id="cart" class="mt-5"> 
+		
+		<c:if test="${wishList == null}">    
+			<div>위시리스트가 없습니다.</div>
+		</c:if>		
+		
+		
+		<c:if test="${wishList != null}">
+      	<c:forEach var="wDtos" items="${wishList}">
+			<article class="product">
+				<header>
+					<a class="remove" onclick="location.href='deleteWishList.do?cNum=${wDtos.cNum}&id=${wDtos.id}'; javascript:delMsg()">
+						<img src="${ctx}/resources/file_upload/${wDtos.fileName}">
+
+						<h3>Remove Car</h3>
+					</a>
+				</header>
+
+				<div class="content">
+
+					<h1>${wDtos.company} ${wDtos.cName}</h1>
+
+				</div>
+
+				<footer class="content">
+					
+					<h2 class="full-price">
+						
+						<div class="frame">
+					    	<button class="custom-btn btn-5" onclick="location.href='rentalSelector.do?cNum=${wDtos.cNum}&id=${wDtos.id}'"><span>예약하기</span></button>
+					    </div>
+					</h2>
+					<h2 class="price">
+						￦ ${wDtos.price}원
+					</h2>
+					
+				</footer>
+			</article>
+			</c:forEach>
+			</c:if>
+		</section>
+	</div>
+
+</div>
+
 <%@ include file="../inc/footer.jsp" %>
-
