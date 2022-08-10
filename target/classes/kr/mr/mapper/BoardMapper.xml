@@ -36,8 +36,8 @@
 	</select>
 	
 	<insert id="insert" parameterType="boardVO">
-		insert into table_board(subject, contents, writer, id)
-		values(#{subject}, #{contents}, #{writer}, #{id})
+		insert into table_board(subject, contents, writer, bid)
+		values(#{subject}, #{contents}, #{writer}, #{bid})
 	</insert>
 	<select id="view" parameterType="Integer" resultType="boardVO">
 		select * from table_board where bid=#{bid}
