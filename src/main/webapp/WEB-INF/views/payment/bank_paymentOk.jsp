@@ -3,8 +3,9 @@
     
 <%@ include file="../inc/header.jsp" %>
 
-<link rel="stylesheet" href="${ctx}/resources/css/myBankPayment.css">
+<link rel="stylesheet" href="${ctx}/resources/css/bankPaymentOk.css">
 
+<link rel="stylesheet" href="${ctx}/resources/css/hover/button.css">
 <!-- partial -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.js'></script>
@@ -106,11 +107,19 @@
             </p>
           </div> -->
         </div>
-        <header class="row align-center">
+        <header class="additional-info">
             <!-- <a class="button hollow secondary"><i class="ion ion-chevron-left"></i> Go Back to Purchases</a> -->
-            &nbsp;&nbsp;<a class="button" href="home.do">
-              <!-- <i class="ion ion-ios-printer-outline"></i>  -->
-              홈으로</a>
+            &nbsp;&nbsp;
+            
+            <button class='pulse m-3 p-3 justify-content-center' style="width: 100px; height: 50px"  onclick="location.href='home.do'">
+            	홈으로
+            </button>
+            
+            <button class='pulse m-3 p-3 justify-content-center' style="width: 100px; height: 50px"  onclick="location.href='home.do'">
+            	마이페이지
+            </button>
+            
+            
           </header>
       </section>
       </div>

@@ -515,9 +515,14 @@ color: #BBB;
                 }
                 
              };
-            function cashPay(){
-               location.href = "http://localhost:8080/web/bankPaymentOk?cNum="+cNum+"&id="+mId;
-            };
+             
+           
+             function cashPay(){
+                location.href = "http://localhost:8080/web/bankPaymentOk.do"
+             	/* location.href = "bankPaymentOk.do" */
+             };
+                        
+            
             function cardPay() {
             IMP.init('iamport'); //iamport 대신 자신의 "가맹점 식별코드"를 사용
             IMP.request_pay({
