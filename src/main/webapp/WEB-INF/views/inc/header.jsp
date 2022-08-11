@@ -279,7 +279,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 			<a class="letter" href="memberLogin.do" onclick="javascript:showMsg()">1:1렌트상담</a>
 		</li>
         <li class="letter">
-			<a class="letter" href="myReservation.do">실시간 신청</a>
+			<a style="color: #c36f51" class="letter" href="myReservation.do">실시간 신청</a>
 		</li>
         <li class="letter">
 			<a class="letter" href="myDirection.do">오시는길</a>

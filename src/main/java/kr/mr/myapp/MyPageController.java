@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.mr.mapper.MemberMapper;
 import kr.mr.mapper.MyPageMapper;
+import kr.mr.mapper.WishMapper;
 import kr.mr.model.CategoryDTO;
 import kr.mr.model.MemberDTO;
+import kr.mr.model.RevHistoryDTO;
+import kr.mr.model.WishDTO;
 
 @Controller
 public class MyPageController {
@@ -22,10 +25,32 @@ public class MyPageController {
 	
 	@Autowired
 	private MemberMapper memberMapper;
-
+	
+	@Autowired
+	   private WishMapper wishMapper;
+	
 	// 마이페이지 뷰페이지
 	@RequestMapping("/myPageList.do")
 	public String myPageList(Model model,String mId) {
+		
+		
+		
+		
+		  RevHistoryDTO hDto = mypageMapper.revHistory(mId);
+		  
+		  model.addAttribute("hDto", hDto);
+		 
+		 
+		
+		
+		
+		   List<WishDTO> wishList =  wishMapper.wishList2(mId);
+		   
+		   model.addAttribute("wishList", wishList);
+		   
+		   wishList.toString();
+		   		
+		
 		
 		
 		MemberDTO member = memberMapper.memberGetter(mId);		
@@ -87,10 +112,18 @@ public class MyPageController {
 		
 	
 	  
-	  // 인보이스(구매내역)
-	  
+	  // 인보이스(구매내역)	  
 	  @RequestMapping("/myInvoice.do") public String myInvoice() {
 	  
-	  return "payment/myInvoice"; }
+	  return "payment/myInvoice"; 
+	  
+	  }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 	 
 }

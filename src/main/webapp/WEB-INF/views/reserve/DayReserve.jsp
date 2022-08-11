@@ -124,7 +124,7 @@
             <tbody>
                 <tr>
                     <td>차량번호</td>
-                    <td><input value="${vDto.cNum}" name="cNum" type="hidden" class="form-control" id="exampleFormControlInput1"></td>
+                    <td><input value="${vDto.cNum}" type="text" name="cNum" class="form-control" id="exampleFormControlInput1" readonly></td>
                 </tr>
                 <tr>
                     <td>모델</td>

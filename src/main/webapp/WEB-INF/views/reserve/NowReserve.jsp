@@ -113,6 +113,7 @@
 	<form action="longdaypayment.do?price=${vDto.price}" method="post" name="revForm">
     <div class="container p-3 my-5 bg-secondary text-white">
         <h1>렌트 예약</h1>
+                    	<input value="${sessionScope.userId}" name="id" type="hidden">
     </div>
     <div class="container">
         <table class="table" style="color: #fff;">
@@ -124,7 +125,9 @@
             <tbody>
                 <tr>
                     <td>차량번호</td>
-                    <td><input value="${vDto.cNum}" name="cNum" type="hidden" class="form-control" id="exampleFormControlInput1"></td>
+                    <td>
+                    	<input value="${vDto.cNum}" name="cNum" type="hidden" class="form-control" id="exampleFormControlInput1">
+                    </td>
                 </tr>
                 <tr>
                     <td>모델</td>
