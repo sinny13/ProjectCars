@@ -32,12 +32,12 @@
 	<select id="getList" resultType="boardVO"><!--고정된 형식 boardVO-->
 		select * from table_board
 		<include refid="criteria"></include><!--전체 게시글의 개수-->
-		order by bid asc limit #{startIndex}, #{cntPerPage} <!-- DESC: 내림차순 ASC: 오름차순 -->
+		order by bid desc limit #{startIndex}, #{cntPerPage} <!-- DESC: 내림차순 ASC: 오름차순 -->
 	</select>
 	
 	<insert id="insert" parameterType="boardVO">
-		insert into table_board(subject, contents, writer, id)
-		values(#{subject}, #{contents}, #{writer}, #{id})
+		insert into table_board(subject, contents, writer, bid)
+		values(#{subject}, #{contents}, #{writer}, #{bid})
 	</insert>
 	<select id="view" parameterType="Integer" resultType="boardVO">
 		select * from table_board where bid=#{bid}
