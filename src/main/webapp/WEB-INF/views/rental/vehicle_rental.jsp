@@ -89,31 +89,59 @@
     <%-- </c:forEach> --%>
     <%-- </c:forEach> --%>
     
+    
+    
     <div class="grid related-products" >
-      <div class="column-xs-12" >
+      <div class="column-xs-12 m-3" >
         <!-- <h4>관련상품</h4> -->
-        <h3>${vDto.cSpec} cars</h3>
+      <h3>
+      	<c:if test="${vDto.cSpec eq 'none'}">                                     
+        		<a href="#">차량 정보 : 일반차량</a>
+        	</c:if>
+      	<c:if test="${vDto.cSpec eq 'recommand'}">                                     
+        		<a href="#">차량 정보 : 추천</a>
+        	</c:if>
+      	<c:if test="${vDto.cSpec eq 'discount'}">                                     
+        		<a href="#">차량 정보 : 할인</a>
+        	</c:if>
+      	<c:if test="${vDto.cSpec eq 'hit'}">                                     
+        		<a href="#">차량 정보 : 인기</a>
+        	</c:if>
+      </h3>
       </div>
-    <c:forEach var="vehicle" items="${vehicleList}">
-      <div class="card" style="display : flex">
-    	<%-- <c:if test="${vehicle.cSpec == vDto.cSpec}"> --%>
+          
+	<c:set var="i" value="0" />
+	<c:set var="j" value="4" />
+	<table>
+	  <c:forEach var="vehicle" items="${vehicleList}">
+	    <c:if test="${i % j == 0 }">
+	    <tr>
+	    </c:if>
+	    <td class="my-5">
+      <div class="card mb-5" style="display:flex; max-height:300px ;max-width:350px;min-width: 350px">
         		<ul class="image-list"> 
         			<li class="image-item">
         				<a href="vehicleRental.do?cNum=${vehicle.cNum}">
-        					<img src="${ctx}/resources/file_upload/${vehicle.fileName}">
+        					<img  src="${ctx}/resources/file_upload/${vehicle.fileName}">
         				</a>
         			</li>
         		</ul>	
         		<div>
-        			<h4>[더미] ${vehicle.cName}</h4>
+        			<h4>${vehicle.company} - ${vehicle.cName}</h4>
         			<p class="price">${vehicle.price}원</p>
         		</div>   	
-        	<%-- </c:if> --%>
       </div>
-    </c:forEach>
+      </td>			
+	    <c:if test="${i%j == j-1}">
+	    </tr>
+	    </c:if>
+	    <c:set var="i" value="${i+1}" />
+	  </c:forEach>
+	</table>
     </div>    
-  </div>
-  
+  </div>    
+    
+
 
   
   
