@@ -10,6 +10,10 @@ import org.apache.ibatis.annotations.Mapper;
 import kr.mr.model.BoardVO;
 
 //springMVC 구조 : Controller > Service > DAO > DateBase
+
+// xml(sql) > Mapper > Service > Controller > View > 결과
+
+// BoardMapper에서는 구현할 게시판의 기능을 선언 후 매개변수를 받아온다. ex.삭제하고 싶다 > 삭제 메소드 선언, 매개변수로 필요한 정보
 @Mapper
 public interface BoardMapper {
 	// 게시판 리스트 가져오기

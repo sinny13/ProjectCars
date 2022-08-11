@@ -13,7 +13,7 @@ public class BoardVO {
 	
 	private Date regDate; // 작성날짜
 	
-	private String id; // 작성자 식별
+	private String uid; // 작성자 식별
 	
 	// 게시판 검색
 	private String searchType; // 작성자 제목 내용 검색
@@ -32,7 +32,7 @@ public class BoardVO {
 	@Override
 	public String toString() {
 		return "BoardVO [bid=" + bid + ", subject=" + subject + ", contents=" + contents + ", hit=" + hit + ", writer="
-				+ writer + ", id=" + id + ", searchType=" + searchType + ", keyWord=" + keyWord + ", startIndex="
+				+ writer + ", uid=" + uid + ", searchType=" + searchType + ", keyWord=" + keyWord + ", startIndex="
 				+ startIndex + ", cntPerPage=" + cntPerPage + "]";
 	}
 
@@ -86,12 +86,12 @@ public class BoardVO {
 		this.regDate = regDate;
 	}
 
-	public String getId() {
-		return id;
+	public String getUid() {
+		return uid;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setUid(String uid) {
+		this.uid = uid;
 	}
 
 	public String getSearchType() {
