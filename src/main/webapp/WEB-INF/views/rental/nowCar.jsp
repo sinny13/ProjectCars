@@ -159,9 +159,9 @@ font-family: LeferiPoint-WhiteObliqueA;
                     PORTFOLIO MODALS
 ======================================================-->
 <c:forEach var="vDto" items="${vehicleList}"> 
-<div class="portfolio-modal modal fade" id="portfolioModal${vDto.cNum}" tabindex="-1" role="dialog" aria-hidden="true" >
+  <div class="portfolio-modal modal fade" id="portfolioModal${vDto.cNum}" tabindex="-1" role="dialog" aria-hidden="true" >
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content" style="background:#555;">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
                     <div class="rl"></div>
@@ -220,7 +220,8 @@ font-family: LeferiPoint-WhiteObliqueA;
                                 <button onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-heart"></i>관심상품
                                 </button>                                 
-                                </c:if> --%>
+                                </c:if>
+--%>
                                 
                               	<c:if test="${sessionScope.userId != null && mDto.isRented == 'Y'}">
                                 <button onclick="alert('회원님은 이미 예약한 차량이 있습니다.')" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
@@ -259,8 +260,8 @@ font-family: LeferiPoint-WhiteObliqueA;
         </div>
     </div>
   </div>
-   </div>  
-  </c:forEach> 
+  </div>  
+</c:forEach>
 
   <!-- Global javascript -->
   <script src="resources/js/jquery/jquery.min.js"></script>
