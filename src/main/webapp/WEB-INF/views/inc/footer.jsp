@@ -17,7 +17,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="staticBackdropLabel1" style="color:black"><strong>인터넷 사이버몰 利用標準約款</strong><br><small>공정거래위원회 표준약관 제10023호</small></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color:#fff;"></button>
         </div>
         
         
@@ -244,7 +244,7 @@
 <br>
 </div>
         <div class="modal-footer">
-          <button type="button" class="btn" data-bs-dismiss="modal" style="color:black">Close</button>
+          <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -328,7 +328,7 @@ TEL : 042-555-5555
 
   </div>
           <div class="modal-footer">
-            <button type="button" class="btn" data-bs-dismiss="modal" style="color:black">Close</button>
+            <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -351,7 +351,7 @@ TEL : 042-555-5555
       [게시일 2022년 08월 09일]
     </div>
             <div class="modal-footer">
-              <button type="button" class="btn" data-bs-dismiss="modal" style="color:black">Close</button>
+              <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
