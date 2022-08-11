@@ -5,7 +5,7 @@
 
 <link href="https://fonts.googleapis.com/css?family=Muli:400,700,800,900" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="${ctx}/resources/css/payment.css">
-<link rel="stylesheet" href="${ctx}/resources/js/payment.js">
+<script src="${ctx}/resources/js/payment.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 

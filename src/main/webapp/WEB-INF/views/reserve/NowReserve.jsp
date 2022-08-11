@@ -5,6 +5,10 @@
     
 <%@ include file="../inc/header.jsp" %>
 
+<!-- CSS -->
+<link rel="stylesheet" href="${ctx}/resources/css/hover/button.css">
+<!-- 유효성체크JS -->
+<script src="${ctx}/resources/js/rev_valid.js"></script>
 
 
 <%
@@ -106,7 +110,7 @@
 	
 
 	<body style="background-color:#111; color:#fff">
-	<form action="longdaypayment.do?price=${vDto.price}" method="post">
+	<form action="longdaypayment.do?price=${vDto.price}" method="post" name="revForm">
     <div class="container p-3 my-5 bg-secondary text-white">
         <h1>렌트 예약</h1>
     </div>
@@ -165,16 +169,7 @@
                             </label>
                           </div>
                     </td>
-<!-- 
-                    <td>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                              유성지점
-                            </label>
-                          </div>
-                    </td>
- -->
+
                 </tr>
                 <tr>
                     <td>사용일시</td>
@@ -204,7 +199,7 @@
         </div>
         
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <input name="policy1"  class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
             이용약관에 동의합니다(필수)
             </label>
@@ -217,15 +212,15 @@
         </div>
         
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <input name="policy2" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
             가격 정책에 동의합니다(필수)
             </label>
         </div>        
         
-            <div colspan='2' align='center'>               
-                <input type='submit' value='예약하기' class='btn btn-primary'/>    
-                <input type='reset' value='취소' class='btn btn-danger'/>    
+            <div colspan='2' align='center'>                
+                <button style="max-width:140px ;height: 40px" class="fill" type="button"  onclick='javascript:revChk()'>예약하기</button>
+                <button style="max-width:140px ;height: 40px" class="fill" type="reset" >취소</button>
             </div>   
             
             <script>
@@ -240,4 +235,6 @@
         </div> 
         </form>
     </body>
+
+
 <%@ include file="../inc/footer.jsp" %>

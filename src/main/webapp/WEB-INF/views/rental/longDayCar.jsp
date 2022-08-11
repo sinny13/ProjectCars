@@ -244,7 +244,7 @@ color: #BBB;
                                <div class="col-md-6">
                                                             <!-- 렌트가능 -->
                               	<c:if test="${sessionScope.userId != null && vDto.status != 'Y' && mDto.isRented != 'Y'}">
-                                <button onclick="location.href='oneDayRev.do?cNum=${vDto.cNum}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                                <button onclick="location.href='longDayRev.do?cNum=${vDto.cNum}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-car-side"></i>렌트하기
                                 </button>
                                 <button onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
