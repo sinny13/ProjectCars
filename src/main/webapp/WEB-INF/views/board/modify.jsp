@@ -6,12 +6,12 @@
 
 <div class="container d-flex mt-5 justify-content-center">
 	<div class="w-75 shadow p-5 rounded border">
-		<form id="moveForm" method="post" action="<c:url value='modify.do'/>">
+		<form id="moveForm" method="post" action="<c:url value='boardModify.do'/>">
 			<input type="hidden" name="viewPage" value="${viewPage}"/>
 			<input type="hidden" name="keyWord" value="${bvo.keyWord}"/>
 			<input type="hidden" name="searchType" value="${bvo.searchType}"/>
 			
-			<h3>글수정 하기</h3>
+			<h5>글수정하기</h5>
 			<div class="d-flex">
 				<div class="form-group">
 					<label for="subject">번호</label>
@@ -23,11 +23,11 @@
 					<input type="text" class="form-control" id="writer" 
 						name="writer" readonly value="${board.writer}"/>
 				</div>
-				<div class="form-group">
+<%-- 				<div class="form-group">
 					<label for="hit">조회수</label>
 					<input type="text" class="form-control" id="hit" 
 						name="hit" readonly value="${board.hit}"/>
-				</div>
+				</div> --%>
 			</div>
 	
 			<div class="form-group">
@@ -44,8 +44,8 @@
 
 			<div class="form-group mt-4">
 				<button type="submit" id="btn-modify" class="btn btn-primary me-2">수정하기</button>
-				<button type="button" id="btn-remove" data-link="remove" class="btn btn-danger me-2">삭제</button>
-				<button type="button" id="btn-list" data-link="list" class="btn btn-secondary">리스트</button>
+				<button type="button" id="btn-remove" data-link="remove" class="btn btn-danger me-2">삭제하기</button>
+				<button type="button" id="btn-list" data-link="list" class="btn btn-secondary">글목록</button>
 			</div>
 		</form>
 	</div>
@@ -68,9 +68,9 @@
 			var linkBtn = $(this).data("link");
 			
 			if(linkBtn === "remove"){
-				moveForm.attr("action", "remove.do");
+				moveForm.attr("action", "boardRemove.do");
 			}else if(linkBtn === "list"){
-				moveForm.attr("action", "list.do").attr("method", "get");
+				moveForm.attr("action", "boardList.do").attr("method", "get");
 				
 				// clone()은 복사해옴.
 				var viewPageObj = $("input[name='viewPage']").clone();
@@ -79,7 +79,7 @@
 				
 				// list로 넘어가는 파라미터는 viewPage, keyWord, searchType만
 				// 필요하다. 나머지는 필요없기 때문에 지워버리고 
-				// 세계의 파라미터만 담아서 보냄
+				// 세 개의 파라미터만 담아서 보냄
 				moveForm.empty();
 				
 				moveForm.append(viewPageObj);

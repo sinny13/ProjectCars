@@ -5,9 +5,12 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}"/> 
 <%@ include file="../inc/header.jsp" %>
 
+<link rel="stylesheet" href="${ctx}/resources/js/board.js?view">
+
+
 <div class="container d-flex mt-5 justify-content-center">
    <div class="w-75 shadow p-5 rounded border">
-      <h3>${board.subject}</h3>
+      <h5>${board.subject}</h5>
       
       <!-- 검색했을 때 해당 게시글 정보를 list로 넘겨줌 -->
       <form action="boardList.do" method="get" id="moveForm">
@@ -28,11 +31,10 @@
             <input type="text" class="form-control" id="writer" 
                name="writer" disabled value="${board.writer}"/>
          </div>
-         <div class="form-group">
+<%--          <div class="form-group">
             <label for="hit">조회수</label>
-            <input type="text" class="form-control" id="hit" 
-               name="hit" disabled value="${board.hit}"/>
-         </div>
+            <input type="text" class="form-control" id="hit" name="hit" disabled value="${board.hit}"/>
+         </div> --%>
       </div>
       
       <div class="form-group">
@@ -58,12 +60,12 @@
                      class="btn btn-primary me-2" disabled>수정하기</button>
             </c:if>
          </c:if>
-         <button type="button" id="btn-list" class="btn btn-primary me-2">리스트</button>
+         <button type="button" id="btn-list" class="btn btn-primary me-2">글목록</button>
          
-         <button type="button" id="btn-delete" class="btn btn-primary me-2">삭제</button>
+         <button type="button" id="btn-delete" class="btn btn-primary me-2">삭제하기</button>
       </div>
       <!-------------------- 댓글 UI ------------------>
-      <div class="mt-5 d-flex justify-content-between mb-2">
+<%--       <div class="mt-5 d-flex justify-content-between mb-2">
          <h6 class=""><i class="fa fa-comments-o"></i> 댓글</h6>
          <c:if test="${sessionScope.userId != null && sessionScope.userId != ''}">
             <button id="btn-addReply" class="btn btn-sm btn-outline-secondary"
@@ -72,7 +74,8 @@
          <c:if test="${sessionScope.userId == null || sessionScope.userId == ''}">
             <button id="btn-addReply" class="btn btn-sm btn-outline-secondary"
              onclick="javascript:alert('로그인 후 쓰기가 가능합니다!!')">새댓글</button>
-         </c:if>
+         </c:if> --%>
+         
 <%--          <c:if test="${sessionScope.userId == admin}">
             <button id="btn-addReply" class="btn btn-sm btn-outline-secondary"
              onclick="javascript:alert('로그인 후 쓰기가 가능합니다!!')">새댓글</button>
@@ -80,7 +83,7 @@
       </div>
       
       <!------------------- 댓글 영역 ----------------->
-      <ul class="m-0 p-0 reply" style="list-style:none">
+<!--       <ul class="m-0 p-0 reply" style="list-style:none">
          <li class="mb-2">
             <div class="form-control">
                <div class="d-flex justify-content-between">
@@ -100,12 +103,12 @@
       </ul>
       
    </div>
-</div>
+</div> -->
 
 <!---------------------- modal ------------------------->
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#replyModal" data-bs-whatever="@mdo">Open modal for @mdo</button> -->
 
-<div class="modal fade" id="replyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<%-- <div class="modal fade" id="replyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -141,14 +144,39 @@
     </div>
   </div>
 </div>
-
+ --%>
 
 <!---------------------------------------------->
 <script type="text/javascript" src="js/reply.js"></script>
 
 <script type="text/javascript">
+
 	$(document).ready(function(){
-      /// 댓글 리스트 ///
+		// # : id
+		$("#btn-list").click(() => {
+			location.href="<c:url value='boardList.do?viewPage=${bp.viewPage}'/>";
+		})
+		// . : class
+		
+		
+		var moveForm = $("#moveForm"); // 13줄, form태그의 id="moveForm"으로 이동 : 검색
+       $("#btn-list").click(() => {
+         //location.href="<c:url value='/list.do?viewPage=${viewPage}&searchType=${bvo.searchType}&keyWord=${bvo.keyWord}'/>";
+         moveForm.submit();
+      })
+      
+      $("#btn-modify").click(() => { // 50줄로 이동
+         //location.href="<c:url value='/modify.do?bid=${board.bid}&viewPage=${viewPage}&searchType=${bvo.searchType}&keyWord=${bvo.keyWord}'/>";
+         moveForm.attr("action", "boardModify.do"); // .do로 이동
+         moveForm.submit(); // DB로 form 전송
+      })
+		
+		
+		
+		
+		
+		
+/*       /// 댓글 리스트 ///
       var bidValue = "<c:out value='${board.bid}'/>";
       
       var rUL = $(".reply");
@@ -178,10 +206,10 @@
                
                rUL.html(str);
             });
-      } // displayList
+      } // displayList */
       
       ///////////////////////// modal /////////////////////////
-      var modal = $("#replyModal");
+ <%--      var modal = $("#replyModal");
       var taReplyContents = $("#reply_contents");
        var ipReplyer = $("#replyer"); 
 /*       var ipReplyer = modal.find("input[name=replyer]"); */
@@ -191,7 +219,7 @@
       var delBtn = $("#btn-md-remove");
       var regBtn = $("#btn-md-register");
 
-      <%--let userName = "${sessionScope.userName}";--%>
+      let userName = "${sessionScope.userName}";
       let userId = "${sessionScope.userId}"
       // console.log(userName);
 
@@ -208,14 +236,14 @@
          modal.find("button[id != 'btn-md-close']").hide();
          regBtn.show();
          
-      });
+      }); --%>
       
       /* console.log("reply_contents:" + taReplyContents.val());
       console.log("replyer : " + ipReplyer.val()); */
       
       
       // 댓글 등록 버튼 클릭시 이벤트 처리
-      regBtn.on("click", function(e){
+ /*      regBtn.on("click", function(e){
          if(taReplyContents.val() == null || taReplyContents.val().trim()==''){
             alert("댓글을 입력하세요!!");
             taReplyContents.focus();
@@ -296,22 +324,7 @@
             modal.modal("hide");
             displayList();
          });
-      })
-      
-      
-      
-      
-      var moveForm = $("#moveForm"); // 13줄, form태그의 id="moveForm"으로 이동 : 검색
-       $("#btn-list").click(() => {
-         //location.href="<c:url value='/list.do?viewPage=${viewPage}&searchType=${bvo.searchType}&keyWord=${bvo.keyWord}'/>";
-         moveForm.submit();
-      })
-      
-      $("#btn-modify").click(() => { // 50줄로 이동
-         //location.href="<c:url value='/modify.do?bid=${board.bid}&viewPage=${viewPage}&searchType=${bvo.searchType}&keyWord=${bvo.keyWord}'/>";
-         moveForm.attr("action", "modify.do"); // .do로 이동
-         moveForm.submit(); // DB로 form 전송
-      })
+      }) */
       
       
 	});

@@ -4,6 +4,9 @@
    
 <%@ include file="../inc/header.jsp" %>
 
+
+
+
 <style>
    .ck-editor__editable { height: 200px;}
    .ck-content {font-size: 12px;}
@@ -15,7 +18,7 @@
 <div class="container d-flex mt-5 justify-content-center">
    <div class="w-75 shadow p-5 rounded border">
       <h3>공지사항</h3>
-      <form method="post" action="<c:url value='register.do'/>">
+      <form id="regForm" method="post"> <!-- action="<c:url value='BoardRegister.do'/>" -->
          <input type="hidden" name="id" value="${sessionScope.userId}"/>
          
          <div class="form-group"class="form-control" id="writer" name="writer">
@@ -27,20 +30,31 @@
          </div>
          <div class="form-group">
             <label for="subject">제목</label>
-            <input type="text" class="form-control" id="subject" 
-               name="subject" placeholder="글 제목을 입력하세요"/>
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="글 제목을 입력하세요"/>
          </div>
          <div class="form-group">
             <label for="contents">내용</label>
             <textarea class="form-control" id="contents" 
                name="contents" rows="3"></textarea>
-            <script type="text/javascript">
+          </div>
+          
+         <div class="form-group mt-4">
+            <button type="button" onclick="regBoardChk()" class="btn btn-secondary">등록</button>
+            <button type="button" id="btn-list" class="btn btn-secondary">글목록</button>
+         </div>
+      </form>
+
+   </div>
+</div>
                
-               /* CKEDITOR.editorConfig = function(config){
+               
+               
+               
+     <!--           CKEDITOR.editorConfig = function(config){
                   config.enterMode = CKEDITOR.ENTER_BR
-                }; */
+                }; 
                 
-            /*
+            
                ClassicEditor.defaultConfig={
                   toolbar:{
                      items:[
@@ -57,7 +71,7 @@
                         '|',
                         'outdent',
                         '|',
-                        /* 'imageUpload',
+                         'imageUpload',
                         '|', 
                         'insertTable',
                         '|',
@@ -73,28 +87,35 @@
                ClassicEditor.create(document.querySelector('#contents'))
                   .catch(error => {
                      console.error(error);
-                  });
-            */
-            </script>
+                  }); </script>-->
+            
  
-             
- 
-          </div>
-          
-         <div class="form-group mt-4">
-            <button type="submit" class="btn btn-primary">등록</button>
-            <button type="button" id="btn-list" class="btn btn-secondary">리스트</button>
-         </div>
-      </form>
 
-   </div>
-</div>
-<script type="text/javascript">
-   $(document).ready(function(){
-      $("#btn-list").click(() => {
-         location.href="<c:url value='list.do?viewPage=${viewPage}'/>";
-      })
-   });
+
+
+<script type="text/javascript" src="${ctx}/resouces/js/board.js">
+
+<!-- 게시판 유효성 -->
+$(document).ready(function(){
+	
+	function regBoardChk(){
+	
+		/* 제목 */
+		if(document.regForm.subject.value.lenth == 0){
+			alert("제목을 입력해주세요.");
+			regForm.subject.focus();
+			return;
+		}
+		/* 내용 */
+		if(document.regForm.subject.value.lenth =< 5){
+			alert("내용을 5글자 이상 입력해주세요.");
+			regForm.contents.focus();
+			return;
+		}
+		
+		
+	}
+}
+
 </script>
-
 <%@ include file="../inc/footer.jsp" %>

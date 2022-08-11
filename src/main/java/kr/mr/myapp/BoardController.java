@@ -54,14 +54,14 @@ public class BoardController {
 		return "board/boardList"; // boardList.jsp에서 사용하기 위해 반환
 	}
 	
-	
-	@RequestMapping(value="/register.do", method=RequestMethod.GET)
+//	@GetMapping("/register.do")
+	@RequestMapping(value="/boardRegister.do", method=RequestMethod.GET)
 	// GET : html <body>의 내용을 담아서 보낼때 사용
 	public String registerForm(
 			@ModelAttribute("viewPage") int viewPage) {
 		return "board/register"; // 글쓰기
 	}
-	@RequestMapping(value="/register.do", method=RequestMethod.POST)
+	@RequestMapping(value="/boardRegister.do", method=RequestMethod.POST)
 	// POST : html <body>의 내용 없이 보낼 때 사용
 	public String register(BoardVO board) {
 		service.register(board);
@@ -70,7 +70,7 @@ public class BoardController {
 	}
 	
 	
-	@RequestMapping("/view.do")
+	@RequestMapping("/boardView.do")
 	public String view(@ModelAttribute("bvo") BoardVO bvo, int viewPage, Model model) {
 		BoardVO board = service.view(bvo.getBid(), "view");
 		model.addAttribute("board", board);
@@ -80,7 +80,7 @@ public class BoardController {
 		
 	}
 	
-	@RequestMapping(value="/modify.do", method=RequestMethod.GET)
+	@RequestMapping(value="/boardModify.do", method=RequestMethod.GET)
 	public String modifyForm(@ModelAttribute("bvo") BoardVO bvo, @ModelAttribute("viewPage") int viewPage, Model model) {
 		BoardVO board = service.view(bvo.getBid(), "modify");
 		model.addAttribute("board", board);
@@ -88,7 +88,7 @@ public class BoardController {
 		return "board/modify"; // modify.jsp
 	}
 	
-	@RequestMapping(value="/modify.do", method=RequestMethod.POST)
+	@RequestMapping(value="/boardModify.do", method=RequestMethod.POST)
 	public String modify(BoardVO board,
 			@ModelAttribute("viewPage") int viewPage, Model model) {
 		System.out.println(board);
@@ -102,7 +102,7 @@ public class BoardController {
 		return "redirect:/boardList.do";
 	}
 	
-	@RequestMapping("/remove.do")
+	@RequestMapping("/boardRemove.do")
 	public String remove(@ModelAttribute BoardVO bvo,
 			int viewPage, RedirectAttributes rttr) {
 		

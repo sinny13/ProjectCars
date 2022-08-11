@@ -14,7 +14,7 @@
 	if(${sessionScope.userId == 'admin'}){
 		
 	$("#btn-write").click(() => {
-         location.href="<c:url value='register.do?viewPage=${bp.viewPage}'/>";
+         location.href="<c:url value='boardRegister.do?viewPage=${bp.viewPage}'/>";
       })
 	}
 	
@@ -48,8 +48,8 @@
         
          moveForm.find("input[name='viewPage']").val($(this).attr("href"));
          moveForm.submit();
-      });
-      
+      }); 
+       
       /************* 글 상세보기 ***********/
       /* 149줄 */
       /* class="goView"에 on("clilck")으로 동적 바인딩(묶음) 후 클릭 이벤트 처리 */
@@ -61,14 +61,25 @@
 	         
 	         moveForm.append("<input type='hidden' name='bid' value='"+
 	               $(this).attr("href")+"'>");
-	         moveForm.attr("action", "view.do"); 
+	         moveForm.attr("action", "boardView.do"); 
 	         /*
 	         moveform에 action 속성 추가, 속성값: view.do로 이동
 	     	 action : 폼 데이터(form data)를 서버로 보낼 때 해당 데이터가 도착할 url을 입력
 	       	 */
 	         moveForm.submit();
 	      });
+	      
+	      
+	      
+	      
       }
+      
+      
+      
+      
+      
+      
+      
     	  
       
       
@@ -129,12 +140,12 @@
 <!-- BoardController : BoardPaging bp = new BoardPaging(totalCnt, viewPage, cntPerPage); -->
 <div class="m-0 my-1"><b>${bp.viewPage}</b> / ${bp.totalPage} pages</div><!-- 현재 페이지 -->
 	<table class="table table-hover">
-	   <thead style="background:#8091a3; color:white">
+	   <thead style="background:#1111; color:white bd">
 	      <tr>
 	         <th>번호</th>
 	         <th>제목</th>
 	         <th>글쓴이</th>
-	         <th>등록일</th>
+	         <th>등록일</th>  
 	         <th>조회수</th>
 	         
 	      </tr>
@@ -151,15 +162,13 @@
 	         <td>${lvo.writer}</td><!-- 여기는 관리자니까 누르면 마이페이지로 감 아니면 관리자가 쓴 글로 이동 -->
 	         <td><fmt:formatDate pattern="yyyy-MM-dd" value="${lvo.regDate}"/></td>
 	         <td>${lvo.hit}</td>
-	         <td>
+	         <td> 
 		         <c:if test="${sessionScope.userId !=null && sessionScope.userId !=''}">
 		         	<c:if test="${sessionScope.userId == 'admin'}">
-		         		<button type="submit" id="btn-modify" class="btn btn-primary me-2">수정하기</button>
 		         		<button type="button" id="btn-delete" class="btn btn-primary me-2">삭제</button>
 		         	</c:if>
 		         </c:if>
 		         <c:if test="${sessionScope.userId != 'admin'}">
-               <button type="submit" id="btn-modify" class="btn btn-primary me-2" hidden>수정하기</button>
                <button type="button" id="btn-delete" class="btn btn-primary me-2" hidden>삭제</button>
             </c:if>
 	         </td>
