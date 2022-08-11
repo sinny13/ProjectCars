@@ -18,7 +18,7 @@
 <div class="container d-flex mt-5 justify-content-center">
    <div class="w-75 shadow p-5 rounded border">
       <h3>공지사항</h3>
-      <form id="regForm" method="post"> <!-- action="<c:url value='BoardRegister.do'/>" -->
+      <form id="regForm" method="post" action="<c:url value='boardRegister.do'/>">
          <input type="hidden" name="id" value="${sessionScope.userId}"/>
          
          <div class="form-group"class="form-control" id="writer" name="writer">
@@ -39,7 +39,7 @@
           </div>
           
          <div class="form-group mt-4">
-            <button type="button" onclick="regBoardChk()" class="btn btn-secondary">등록</button>
+            <button type="submit" onclick="regBoardChk()" class="btn btn-secondary">등록</button>
             <button type="button" id="btn-list" class="btn btn-secondary">글목록</button>
          </div>
       </form>

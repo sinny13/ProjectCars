@@ -140,7 +140,7 @@
 <!-- BoardController : BoardPaging bp = new BoardPaging(totalCnt, viewPage, cntPerPage); -->
 <div class="m-0 my-1"><b>${bp.viewPage}</b> / ${bp.totalPage} pages</div><!-- 현재 페이지 -->
 	<table class="table table-hover">
-	   <thead style="background:#1111; color:white bd">
+	   <thead style="background:#1111; color:white">
 	      <tr>
 	         <th>번호</th>
 	         <th>제목</th>
@@ -150,7 +150,7 @@
 	         
 	      </tr>
 	   </thead>
-	   <tbody><!-- 게시판 글 리스트 제공  -->
+	   <tbody style="color:white"><!-- 게시판 글 리스트 제공  -->
 	      <c:set var="bno" value="${bp.startRowNum}"/>
 	      <c:forEach var="lvo" items="${list}"><!-- 선언 -->
 	      <tr>
@@ -162,7 +162,7 @@
 	         <td>${lvo.writer}</td><!-- 여기는 관리자니까 누르면 마이페이지로 감 아니면 관리자가 쓴 글로 이동 -->
 	         <td><fmt:formatDate pattern="yyyy-MM-dd" value="${lvo.regDate}"/></td>
 	         <td>${lvo.hit}</td>
-	         <td> 
+<%-- 	         <td> 
 		         <c:if test="${sessionScope.userId !=null && sessionScope.userId !=''}">
 		         	<c:if test="${sessionScope.userId == 'admin'}">
 		         		<button type="button" id="btn-delete" class="btn btn-primary me-2">삭제</button>
@@ -171,7 +171,7 @@
 		         <c:if test="${sessionScope.userId != 'admin'}">
                <button type="button" id="btn-delete" class="btn btn-primary me-2" hidden>삭제</button>
             </c:if>
-	         </td>
+	         </td> --%>
 	      </tr>
 	      <c:set var="bno" value="${bno-1}"/>
 	      </c:forEach>
