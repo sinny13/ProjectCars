@@ -5,7 +5,7 @@
 <%@ include file="../inc/header.jsp" %>
 
 <!-- Personal CSS -->
-<link rel="stylesheet" href="${ctx}/resources/css/home.css">
+<link rel="stylesheet" href="${ctx}/resources/css/vehicle_update.css">
 
 <div class="container bg-dark w-70 mt-5 border shadow-sm p-5" >
    <h3>차량정보 수정</h3>

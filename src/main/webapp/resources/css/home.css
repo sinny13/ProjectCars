@@ -9,117 +9,121 @@ h1,h2,h3,h4,h5,h5,p{
 /* 폰트설정 끝*/
 
 body{
-	background-color: #111;
-	color: #BBBBBB;
+   background-color: #111;
+   color: #BBBBBB;
 }
 
 .header{
-	background-color: #111;
-	color: #BBBBBB;
-	position: sticky;
+   background-color: #111;
+   color: #BBBBBB;
+   position: sticky;
 }
 
 
 .Home-Title{
-	font-family: LeferiPoint-WhiteObliqueA;
+   font-family: LeferiPoint-WhiteObliqueA;
 }
 
 main{
-	color: #BBBBBB;
-	font-family: LeferiPoint-WhiteObliqueA;
+   color: #BBBBBB;
+   font-family: LeferiPoint-WhiteObliqueA;
 }
 
 .nav-top ,
 .nav-second{
-	height: 40px;
-	background-color: #111;
-	
+   height: 40px;
+   background-color: #111;
+   
 }
 
 
 .nav-second{
-	padding : 0;
-	margin : 0;
-	height: 70px;
-	vertical-align: middle;
+   padding : 0;
+   margin : 0;
+   height: 70px;
+   vertical-align: middle;
 }
 
 .nav-item .nav-link{
-	box-shadow: azure;
-	margin: 0 5px;
-	background-color: rgba(240, 255, 255, 0.081);
+   box-shadow: azure;
+   margin: 0 5px;
+   background-color: rgba(240, 255, 255, 0.081);
 
 }
 
 hr{
-	color: black;
-	padding:0.5px; 
+   color: black;
+   padding:0.5px; 
 }
 
 .letter{
-	color: black;
-	padding:10px;
+   color: black;
+   padding:10px;
 }
 
 .card{
-	height: 400px;
-	
+   height: 400px;
+   
 }
 .cards{
-	height: 700px;
-	
+   height: 700px;
+   
 }
 
 .gallery{
-	height: 250px;
+   height: 250px;
 }
 
 
 h3 {
-	font-weight:bold;
+   
+   text-align: center;
+   font-weight:bold;
 }
 
 h3 > a{
-	text-decoration: none;
-	color: #cccccc;
+   text-decoration: none;
+   color: #cccccc;
 }
-
+table td{
+   width: 560px
+}
 
 
 .card-title, .card-text{
-	color: #121212;
-	font-family: 'LeferiPoint-WhiteObliqueA';
+   color: #121212;
+   font-family: 'LeferiPoint-WhiteObliqueA';
 }
 .card-text{
-	font-family : LeferiPoint-WhiteObliqueA;
+   font-family : LeferiPoint-WhiteObliqueA;
 }
 
 
 
 .nav-link{
-	color: #BBBBBB;
-	font-weight: bolder;	
-	
+   color: #BBBBBB;
+   font-weight: bolder;   
+   
 }
 
 .nav-link:hover{
-	color:white;
+   color:white;
 }
 
 .modal-dialog{
-	max-width:400px;
+   max-width:400px;
 }
 
 #idMsg, #pwMsg {
-	color:crimson;
-	display:none;
+   color:crimson;
+   display:none;
 }
 
 .welcomeMsg {
-	padding-right : 25px;
-	color:white;
-	font-size:1.3em;
-	line-height:32px;
+   padding-right : 25px;
+   color:white;
+   font-size:1.3em;
+   line-height:32px;
 }
 
 
@@ -127,7 +131,6 @@ h3 > a{
 
 
 td .wishTable{
-	vertical-align: middle;
-	font-weight: bolder;
+   vertical-align: middle;
+   font-weight: bolder;
 }
-

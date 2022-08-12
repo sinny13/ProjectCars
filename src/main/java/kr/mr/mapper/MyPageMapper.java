@@ -35,4 +35,8 @@ public interface MyPageMapper {
 	// 마이페이지 - 주문배송내역
 	public RevHistoryDTO revHistory(String id);
 	
+	
+	// 렌트리스트 가져오기
+	public List<RevHistoryDTO> reservationList();
+	
 }

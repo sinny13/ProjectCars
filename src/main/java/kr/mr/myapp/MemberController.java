@@ -123,41 +123,43 @@ public class MemberController {
 	}
 
 	@RequestMapping("/memberLoginOK.do")
-	public String loginProcess(MemberDTO dto, HttpSession session){
-		String userName = memberMapper.memberLogin(dto);
-		String userId =  dto.getId();
-		String userPw =  dto.getPw();
-
-		System.out.println("userName : "+userName);
-		System.out.println("아이디 : "+userId);
-		System.out.println("비밀번호 : "+userPw);
+	public String loginProcess(MemberDTO dto,HttpSession session){
 		
-
-		if(userName !=null && !"".equals(userName)){ //로그인성공
+		MemberDTO mDto = memberMapper.memberLogin(dto);
+		
+		
+		if(mDto != null) { // 로그인 성공
 			
-			if(userId !=null && !"admin".equals(userName)) {
+			String userId =  mDto.getId();	
+			String userName =  mDto.getName();			
+			
+			
+			if(userId !=null  && "admin".equals(userId)) {
 				session.setAttribute("isAccount", "admin"); //관리자계정일때 (계정구분)
 				System.out.println("관리자계정 : YES");
-			}
+				
+				System.out.println("userName : " + userName);
+			}			
 			
 			session.setAttribute("isLogin", "yes"); //로그인 성공 여부 YES
 			session.setAttribute("userId", userId); // id저장
 			session.setAttribute("userName", userName); // 이름 저장
 			session.setAttribute("isAccount", "client");  // 멤버계정일때 (계정구분)
 			
-			session.setAttribute("LoginProcess", "로그인성공!"+userName+"님 환영합니다!"); // 로그인 성공-실패 메세지
-			
 			System.out.println("로그인성공");
+			session.setAttribute("LoginProcess", "로그인성공!"+userName+"님 환영합니다!"); // 로그인 성공 메세지			
+			
 			
 		}else{ // 로그인 실패
-			session.setAttribute("userId", "");
-			session.setAttribute("userName", "");
-			session.setAttribute("LoginProcess", "로그인에 실패했습니다!"); // 로그인 성공-실패 메세지
 
-			System.out.println("로그인실패");
-		}
+		System.out.println("로그인에 실패했습니다");
+		session.setAttribute("LoginProcess", "로그인에 실패했습니다!"); // 로그인 성공-실패 메세지
+		
+		return "member/memberLogin";
+	}
 
-		return "redirect:/home.do";
+	return "redirect:/home.do";
+	
 	}
 
 	@RequestMapping("/memberLogout.do")

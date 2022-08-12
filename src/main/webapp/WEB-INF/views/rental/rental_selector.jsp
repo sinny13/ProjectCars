@@ -132,20 +132,20 @@
 
 
       <div class="left-slide">
-        <div style="background-color: #1f4a9b">
+        <div style="background-color: #111">
           <h1>1일렌트</h1>
           <button class="pulse" 
           			style="font-family:LeferiPoint-WhiteObliqueA; font-weight: bolder ;color: #FFFFFF "
           			onclick = "location.href='oneDayRev.do?cNum=${vDto.cNum}'">지금 예약하기</button>
         </div>
 
-        <div style="background-color: #000">
+        <div style="background-color: #111">
           <h1>장기렌트</h1>
           <button class="pulse" 
           			style="font-family:LeferiPoint-WhiteObliqueA; font-weight: bolder ;color: #FFFFFF "
           			onclick = "location.href='longDayRev.do?cNum=${vDto.cNum}'">지금 예약하기</button>          
         </div>
-        <div style="background-color: rgb(231, 58, 95)">
+        <div style="background-color: #111">
           <h1>즉시출고가능</h1>
           <button class="pulse" 
           			style="font-family:LeferiPoint-WhiteObliqueA; font-weight: bolder ;color: #FFFFFF "

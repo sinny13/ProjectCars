@@ -17,8 +17,13 @@ public class RevHistoryDTO {
 	private Date revDate1;
 	private Date revDate2;
 
+	private String revName; 
+	private String revTel; 	
+	
+	
 	private int dateCnt;
 	
+	private String wtotalPrice; 
 	
 	
 
@@ -34,7 +39,6 @@ public class RevHistoryDTO {
 
 	
 
-	private String wtotalPrice; 
 
     public String getWtotalPrice() {
        DecimalFormat formatter = new DecimalFormat("###,###,###,###,###,###");
@@ -172,7 +176,40 @@ public class RevHistoryDTO {
 
 	public void setRevDate2(Date revDate2) {
 		this.revDate2 = revDate2;
+	}
+
+
+	public String getRevName() {
+		return revName;
+	}
+
+
+	public void setRevName(String revName) {
+		this.revName = revName;
+	}
+
+
+	public String getRevTel() {
+		return revTel;
+	}
+
+
+	public void setRevTel(String revTel) {
+		this.revTel = revTel;
 	};
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

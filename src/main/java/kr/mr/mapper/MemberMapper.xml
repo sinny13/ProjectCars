@@ -27,8 +27,8 @@
   	update member set id=#{id}, pw=#{pw},age=#{age}, email=#{email}, tel=#{tel}, detailAddr=#{detailAddr} where no=#{no}
   </update>
   
-  <select id="memberLogin" parameterType="memberDTO" resultType="String">
-  	select name from member where id = #{id} and pw=#{pw}
+  <select id="memberLogin" resultType="memberDTO">
+  	select * from member where id = #{id} and pw=#{pw}
   </select>
   
   

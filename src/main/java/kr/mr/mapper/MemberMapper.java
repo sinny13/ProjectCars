@@ -26,7 +26,7 @@ public interface MemberMapper {
 	public int memberUpdate(MemberDTO dto);
 		
 	// 로그인
-	public String memberLogin(MemberDTO dto);
+	public MemberDTO memberLogin(MemberDTO dto);
 	
 	// 아이디로 cNum과 isRented 업데이트
 	public int insertById(MemberDTO dto);

@@ -3,9 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 
-    
-
-
 
 <!DOCTYPE html>
 <html lang="kr">
@@ -53,6 +50,25 @@
   
 <body>
     <!-- Start your project here-->
+
+
+
+
+<!-- 로그인실패 메세지  -->
+<script type="text/javascript">
+/* $(document).ready(function(){ 
+	if(${LoginProcess != null}){
+		alert("로그인에 실패했습니다);	
+		
+	}	  
+}); */
+
+<c:if test="${LoginProcess != null}">
+	alert("로그인에 실패했습니다.")
+</c:if>
+
+</script>
+
     
 
 <div class="container">

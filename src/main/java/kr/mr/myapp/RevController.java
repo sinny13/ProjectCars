@@ -344,6 +344,24 @@ int cnt = vehicleMapper.vehicleStatusY(cNum);
 			  return "mypage/vehicle_return"; 
 			  
 		  }
+		  
+		// 렌트리스트 가져오기
+	      @RequestMapping("/reservationList.do")
+	      public String myPageList(Model model) {
+	      
+	          
+	         
+	    	 List<RevHistoryDTO> reservationList = mypageMapper.reservationList();
+	           
+	         model.addAttribute("reservationList", reservationList);
+	         
+	         return "admin/reservationList";
+	      }		  
+		  
+		  
+		  
+		  
+		  
 	
 
 }

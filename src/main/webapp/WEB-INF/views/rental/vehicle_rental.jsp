@@ -90,7 +90,7 @@
         </button>
         </c:if>
         <c:if test="${sessionScope.userId == null}">
-       <button class="add-to-cart" onclick="alert('기능을 이용하기 위해서는 로그인이 필요합니다.')">
+       <button class="add-to-cart" onclick="alert('기능을 이용하기 위해서는 로그인이 필요합니다.');location.href='memberLogin.do'">
         		관심상품
         </button>
         </c:if>

@@ -32,7 +32,7 @@
 /*클릭 이벤트를 포함하는 모든 영역에 추가하면 하위 이벤트까지 작동안함.*/
 
 #element{
-	pointer-events:cursor;
+   pointer-events:cursor;
 }
 
 
@@ -56,41 +56,7 @@ font-size: 40px;
 
 <body id="page-top">
     
-    <%-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">
-          <span class="d-block d-lg-none  mx-0 px-0"><img src="resources/image/portfolio/logo-white.png" alt="" class="img-fluid"></span>
-          <span class="d-none d-lg-block">
-            <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="resources/image/logo/logo.png" alt="">
-          </span>
-        </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                 <li class="nav-item">
-                      <a class="nav-link js-scroll-trigger" href="#about">최신</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link js-scroll-trigger" href="#experience">인기</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link js-scroll-trigger" href="#portfolio"><c:if test="${vehicleList == null}">
-                  등록된 차량이 없습니다!
-               </c:if>    </a>
-                  </li> 
-                  <!-- <li class="nav-item">
-                      <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-                  </li> -->
-              </ul>
-          </div>
-      </nav> --%>
+    
       
 
 
@@ -101,10 +67,6 @@ font-size: 40px;
      
         <section class="resume-section p-3 p-lg-5 d-flex  flex-column" id="portfolio"> 
             <div class="row my-auto">
-                <div class="col-12">
-                <h2 class="  text-center">OneDay</h2>
-                <div class="mb-5 heading-border"></div>
-                </div>
                 <div class="col-md-12">
                 <div class="port-head-cont">
                     <button class="btn btn-general btn-green filter-b" data-filter="all">All</button>
@@ -121,7 +83,7 @@ font-size: 40px;
             <c:forEach var="vDto" items="${vehicleList}"> 
             <c:if test="${vDto.status != 'Y'}">  
                 <div class="col-sm-4 portfolio-item filter ${vDto.category_fk}">
-                    <a class="portfolio-link" href="#portfolioModal${vDto.cNum}" data-toggle="modal"> 
+                    <a class="portfolio-link" href="vehicleRental.do?cNum=${vDto.cNum}&cSpec='recommand'" > 
                         
                         <div class="caption-port">
                            
@@ -165,149 +127,7 @@ font-size: 40px;
         </section>
       </div>
 
-<!--====================================================
-                    PORTFOLIO MODALS
-======================================================-->
-<c:forEach var="vDto" items="${vehicleList}"> 
-<div class="portfolio-modal modal fade" id="portfolioModal${vDto.cNum}" tabindex="-1" role="dialog" aria-hidden="true" >
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                        <div class="modal-body">
-                            <div class="title-bar">
-                              <div class="col-md-12">
-                                <h2 class="text-center">Car Info</h2>
-                                <div class="heading-border"></div>
-                              </div>
-                            </div>
 
-                            <div class="row">
-                              <div class="col-md-6">
-                                <img class="img-fluid img-centered" src="${ctx}/resources/file_upload/${vDto.fileName}" alt="">
-                              </div>
-                              
-                        <p style="margin:15px; overflow:hidden; text-overflow:ellipsis; ">${vDto.contents}</p>
-                                <ul class="list-inline item-details">
-                                    <li>차종:
-                                        <strong>
-                                        	<c:if test="${vDto.category_fk eq '100'}">                                     
-                                          		<a href="#">스포츠카</a>
-                                          	</c:if>
-                                        	<c:if test="${vDto.category_fk eq '200'}">                                     
-                                          		<a href="#">세단</a>
-                                          	</c:if>
-                                        	<c:if test="${vDto.category_fk eq '300'}">                                     
-                                          		<a href="#">SUV</a>
-                                          	</c:if>
-                                        	<c:if test="${vDto.category_fk eq '400'}">                                     
-                                          		<a href="#">전기차</a>
-                                          	</c:if>
-                                        </strong>
-                                    </li>
-                                    <li>제조사:
-                                        <strong>
-                                          <a href="#">${vDto.company}</a>
-                                        </strong>
-                                    </li>
-                                    <li>가격:
-                                        <strong>
-                                          <a href="#">￦ ${vDto.price}원</a>
-                                        </strong>
-                                    </li>
-                                </ul>
-                                
-                              <div class="col-md-6">
-                              <!-- 렌트가능 -->
-                              	<c:if test="${sessionScope.userId != null && vDto.status != 'Y'}">
-                                <button onclick="location.href='oneDayRev.do?cNum=${vDto.cNum}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
-                                    <i class="fa-solid fa-car-side"></i>렌트하기
-                                </button>
-                                <button onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
-                                    <i class="fa-solid fa-heart"></i>관심상품
-                                </button>                                 
-                                </c:if>
-                                
-                              	<c:if test="${sessionScope.userId != null && vDto.status == 'Y'}">
-                                <button onclick="javascript:alert('이미 렌트된 차량입니다.')" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
-                                    <i class="fa-solid fa-car-side"></i>렌트하기
-                                </button>
-                                <button onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
-                                    <i class="fa-solid fa-heart"></i>관심상품
-                                </button>                                 
-                                </c:if>
-                                
-                              	<c:if test="${sessionScope.userId == null && vDto.status != 'Y'}">
-                                <button onclick="javascript:LoginValid()" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
-                                    <i class="fa-solid fa-car-side"></i>렌트하기
-                                </button>
-                                <button onclick="alert('해당 기능은 로그인을 해야 이용 가능합니다'); location.href='memberLogin.do'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
-                                    <i class="fa-solid fa-heart"></i>관심상품
-                                </button>                                   
-                                
-                                </c:if>
-                                
-                              	<c:if test="${sessionScope.userId == null && vDto.status == 'Y'}">
-                                <button onclick="alert('이미 렌트된 차량입니다.')" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
-                                    <i class="fa-solid fa-car-side"></i>렌트하기
-                                </button>
-                                <button onclick="alert('해당 기능은 로그인을 해야 이용 가능합니다') ; location.href='memberLogin.do'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
-                                    <i class="fa-solid fa-heart"></i>관심상품
-                                </button>                                   
-                                </c:if>                               
-                                <button class="btn btn-general btn-white" type="button" data-dismiss="modal">
-                                    <i class="fa fa-times"></i> Close
-                                </button>
-                            </div>
-                          </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
-   </div>  
-  </c:forEach> 
-
-  <!-- Global javascript -->
-  <script src="resources/js/jquery/jquery.min.js"></script>
-  <script src="resources/js/bootstrap/bootstrap.bundle.min.js"></script>
-  <script>
-    $(document).ready(function(){
-
-    $(".filter-b").click(function(){
-        var value = $(this).attr('data-filter');
-        if(value == "all")
-        { 
-            $('.filter').show('1000');
-        }
-        else
-        { 
-            $(".filter").not('.'+value).hide('3000');
-            $('.filter').filter('.'+value).show('3000');
-        }
-    });
-    
-    if ($(".filter-b").removeClass("active")) {
-      $(this).removeClass("active");
-    }
-    $(this).addClass("active");
-    });
-
-    // SKILLS
-    $(function () {
-        $('.counter').counterUp({
-            delay: 10,
-            time: 2000
-        });
-
-    });
-</script> 
 
 
 </body>
@@ -325,9 +145,9 @@ font-size: 40px;
     
     
     function LoginValid() {
-    	alert('차량 예약에는 로그인이 필요합니다.')
-    	document.location.href='memberLogin.do'
-	}
+       alert('차량 예약에는 로그인이 필요합니다.')
+       document.location.href='memberLogin.do'
+   }
     
     
 

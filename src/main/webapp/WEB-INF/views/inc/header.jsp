@@ -40,7 +40,6 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 <script type="text/javascript" src="${ctx}/resouces/js/mdb.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
-
 <!-- CSS -->
 
 <link rel="stylesheet" href="${ctx}/resources/css/mdb.min.css">
@@ -140,7 +139,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
     <div class="collapse navbar-collapse" id="navbarRightAlignExample">
       <!-- Left links -->
       <ul class="navbar-nav">
-      	<c:if test="${sessionScope.LoginProcess != null}">
+      	<c:if test="${sessionScope.userId != null}">
            <li class="nav-item text-start px-3" style="color:white; list-style :none; line-height:40px;">
               ${sessionScope.userName}님 안녕하세요!!
            </li>
@@ -148,7 +147,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
       </ul>
         <!-- 로그인 유효성체크  -->
         <ul class="navbar-nav ms-auto">
-	            <c:if test="${sessionScope.LoginProcess == null}">
+	           <c:if test="${sessionScope.userId == null}">
 	            	<li>
 	            		<a class="nav-link" href="memberLogin.do">로그인</a>
 	            	</li>
@@ -157,7 +156,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
            			</li>	            	
 	            </c:if>
 	            
-	            <c:if test="${sessionScope.LoginProcess != null}">
+	            <c:if test="${sessionScope.userId != null}">
 					<li>
 	            		<a class="nav-link" href="memberLogout.do">로그아웃</a>
 	            	</li>
@@ -218,33 +217,17 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
         </li> 
    </ul>
 <!------- 네비메뉴 start ------->
-<!------- 즉시출고가능차량 start ------->     
+
+
+
+<!------- 차량모델 렌트 start ------->     
  <ul class="navbar-nav">
    	<li class="nav-link">            
-      <a class="nav-link" href="nowCar.do?id=${sessionScope.userId}" role="button">즉시출고가능차량</a> 
+      <a class="nav-link" href="oneDayCar.do?id=${sessionScope.userId}" role="button">렌트카</a> 
     </li> 
  </ul>
   
 <!------- 즉시출고가능차량 end ------->   
-
-
-<!------- 장기렌트 start ------->  <!-- LongDay.do -->
-    <ul class="navbar-nav">
-   		<li class="nav-link">            
-          <a class="nav-link" href="longDayCar.do">장기렌트</a> 
-        </li> 
-   </ul>
-<!------- 장기렌트 start ------->  
-
-
-
-<!------- 1일렌트 start ------->  <!--"OneDay.do"  -->
-    <ul class="navbar-nav">
-   		<li class="nav-link">            
-          <a class="nav-link" href="oneDayCar.do">1일렌트</a> 
-        </li> 
-   </ul>
-<!------- 1일렌트 end ------->		
 
    
 <!------- 이용안내 start ------->  
@@ -278,15 +261,6 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 			<hr class="dropdown-divider"/>
 		</li>
         <li class="letter">
-			<a class="letter"  href='boardList.do'>게시판테스트</a>
-		</li>
-        <li class="letter">
-			<a class="letter" href="memberLogin.do" onclick="javascript:showMsg()">1:1렌트상담</a>
-		</li>
-        <li class="letter">
-			<a style="color: #c36f51" class="letter" href="myReservation.do">실시간 신청</a>
-		</li>
-        <li class="letter">
 			<a class="letter" href="myDirection.do">오시는길</a>
 		</li>
 		</ul>
@@ -301,10 +275,10 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
   <li class="nav-link dropdown ">
         <a class="nav-link" href="${ctx}" role="button" data-bs-toggle="dropdown">관리자메뉴</a>
         <ul class="dropdown-menu shadow">
-        <li class="nav-item ">
+<!--         <li class="nav-item ">
           <a class="letter" href="adminPage.do">관리자페이지</a>
           <hr class="dropdown-divider"/>
-        </li>
+        </li> -->
         <li class="nav-item ">
           <a class="letter" href="catInput.do">카테고리 등록</a>
         </li>
@@ -321,6 +295,10 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
             <a class="letter" href="memberList.do">회원목록 관리</a>
             <hr class="dropdown-divider"/>
         </li>
+ 		<li class="nav-item ">
+            <a class="letter" href="reservationList.do">렌트 현황</a>
+            <hr class="dropdown-divider"/>
+        </li>        
         <li class="nav-item ">
             <a class="letter" href="memberLogout.do">로그아웃</a>
         </li>

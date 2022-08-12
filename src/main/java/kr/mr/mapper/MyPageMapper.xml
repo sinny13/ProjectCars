@@ -48,6 +48,13 @@
 	where reservation.id = #{id};
   </select>
   
+  <select id="reservationList" resultType="RevHistoryDTO" >
+   select *
+   from car inner join reservation
+   on car.cNum = reservation.cNum;
+  </select>  
+  
+  
   
 </mapper>
   
