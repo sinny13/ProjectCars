@@ -35,9 +35,13 @@ public interface VehicleMapper {
 	public List<VehicleDTO> specGetter(String cSpec);
 	
 	
-	// 차량 예약 상태 
-	
+	// 차량 예약 상태 	
 	public int vehicleStatusY(int cNum);
+	
+	
+	
+	// 차량반납 status "N" 
+	 public void vehicleStatusToN();
 	
 	
 }

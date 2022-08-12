@@ -49,4 +49,13 @@
   <select id="specGetter"  resultType="VehicleDTO">
 		select * from car where cSpec = ${cSpec}
   </select>	
+  
+  
+  
+<!-- 차량반납 status "N" -->  
+ <update id="vehicleStatusToN">
+ 	update car set status = "N" where status = "Y";
+ </update> 
+  
+  
 </mapper>

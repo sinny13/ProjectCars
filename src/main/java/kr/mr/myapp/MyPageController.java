@@ -27,7 +27,7 @@ public class MyPageController {
 	private MemberMapper memberMapper;
 	
 	@Autowired
-	   private WishMapper wishMapper;
+	private WishMapper wishMapper;
 	
 	// 마이페이지 뷰페이지
 	@RequestMapping("/myPageList.do")
@@ -113,7 +113,8 @@ public class MyPageController {
 	
 	  
 	  // 인보이스(구매내역)	  
-	  @RequestMapping("/myInvoice.do") public String myInvoice() {
+	  @RequestMapping("/myInvoice.do") 
+	  public String myInvoice() {
 	  
 	  return "payment/myInvoice"; 
 	  
@@ -121,6 +122,7 @@ public class MyPageController {
 	  
 	  
 	  
+
 	  
 	  
 	  

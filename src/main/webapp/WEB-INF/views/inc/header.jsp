@@ -177,6 +177,11 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
             </li>
             <c:if test="${sessionScope.isLogin != null}">
             <li>
+              <a class="dropdown-item" href="vehicleReturn.do?mId=${sessionScope.userId}">차량반납</a>
+            </li>
+            </c:if>
+            <c:if test="${sessionScope.isLogin != null}">
+            <li>
               <a class="dropdown-item" href="myPageList.do?mId=${sessionScope.userId}">마이페이지</a>
             </li>
             </c:if>

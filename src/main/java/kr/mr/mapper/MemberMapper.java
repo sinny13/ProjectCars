@@ -44,4 +44,13 @@ public interface MemberMapper {
 	// 각 회원의 차량렌트여부
 	public MemberDTO isRented(String id);
 	
+	
+	
+	// 멤버 isRented초기화 : 회원차량반납 
+	 public void memberisRentedToNull();
+	
+	
+	
+	
+	
 }

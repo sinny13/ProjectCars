@@ -13,11 +13,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.mr.mapper.MemberMapper;
+import kr.mr.mapper.MyPageMapper;
 import kr.mr.mapper.ReserveMapper;
 import kr.mr.mapper.VehicleMapper;
+import kr.mr.mapper.WishMapper;
 import kr.mr.model.MemberDTO;
 import kr.mr.model.ReserveDTO;
+import kr.mr.model.RevHistoryDTO;
 import kr.mr.model.VehicleDTO;
+import kr.mr.model.WishDTO;
 
 @Controller
 public class RevController {
@@ -30,7 +34,13 @@ public class RevController {
 	private VehicleMapper vehicleMapper;
 	
 	@Autowired
-	private MemberMapper memberMapper;
+	private MemberMapper memberMapper;	
+
+	@Autowired
+	private MyPageMapper mypageMapper;
+	
+	@Autowired
+	private WishMapper wishMapper;
 
 	// 즉시예약 페이지 전환
 	@RequestMapping("/nowRev.do")
@@ -213,11 +223,7 @@ public class RevController {
 	
 	   @RequestMapping("/paymentOk.do") 
 	   public String paymentOk(VehicleDTO vDto, MemberDTO mDto, String id, Model model,int cNum) {
-		   
-		   
-		   
-
-		   
+		   		   
 		   
 		   int cnt = vehicleMapper.vehicleStatusY(cNum);
 		   
@@ -263,42 +269,39 @@ public class RevController {
 	   @RequestMapping("/bankPaymentOk.do") 
 	   public String bankpaymentOk(VehicleDTO vDto, MemberDTO mDto, String id, Model model,int cNum) {
 		   
+			  
+int cnt = vehicleMapper.vehicleStatusY(cNum);
+		   
+		   if(cnt>0) {
+			   
+		   		
+			   System.out.println("id :"+id);
+			   System.out.println("cNum :"+cNum);
+			   
+			   mDto.setId(id);   
+			   mDto.setcNum(cNum);   
+			   
+			   memberMapper.insertById(mDto);
+			   
+			   
+			   System.out.println("상태업데이트 성공!");
+
+		   }else {
+			   System.out.println("상태업데이트 실패!");
+
+		   }
 		   
 		   
+
+		   // 차량정보 넣기
+
+			vehicleMapper.vehicleGetter(cNum);
+			model.addAttribute("vDto", vDto);
 			
-			  
-			  
-			  int cnt = vehicleMapper.vehicleStatusY(cNum);
-			  
-			  if(cnt>0) {
-			  
-			  
-			  System.out.println("id :"+id); System.out.println("cNum :"+cNum);
-			  
-			  mDto.setId(id); mDto.setcNum(cNum);
-			  
-			  memberMapper.insertById(mDto);
-			  
-			  
-			  System.out.println("상태업데이트 성공!");
-			  
-			  }else { System.out.println("상태업데이트 실패!");
-			  
-			  }
-			  
-			  
-			  
-			  // 차량정보 넣기
-			  
-			  
-			  
-			  
-			  vehicleMapper.vehicleGetter(cNum); model.addAttribute("vDto", vDto);
-			  
-			  
-			  
-			  
-			  System.out.println("status : "+vDto.getStatus());
+			
+			
+			
+			System.out.println("status : "+vDto.getStatus());
 			 
 		   
 		   return "payment/bank_paymentOk"; 
@@ -306,7 +309,41 @@ public class RevController {
 	   }  
 	   	   
 	   
-	
+		  // 차량반납 페이지
+		  @RequestMapping("/vehicleReturn.do") 
+		  public String vehicleReturn(Model model,String mId) {
+			  
+			  RevHistoryDTO hDto = mypageMapper.revHistory(mId);		  
+			  model.addAttribute("hDto", hDto);
+
+			MemberDTO member = memberMapper.memberGetter(mId);		
+			model.addAttribute("member", member);
+			  
+			  
+			  return "mypage/vehicle_return"; 
+			  
+		  }
+		  
+		  // 차량반납 완료
+		  @RequestMapping("/vehicleReturnOk.do") 
+		  public String vehicleReturnOk(RevHistoryDTO hDto, Model model,String mId) {
+			  
+
+			model.addAttribute("hDto", hDto);
+
+			MemberDTO member = memberMapper.memberGetter(mId);		
+			model.addAttribute("member", member);
+			
+			//멤버렌트한 차량반납
+			memberMapper.memberisRentedToNull();
+			  
+			// 차량 상태 반납상태로 전환
+			vehicleMapper.vehicleStatusToN();
+			  
+			
+			  return "mypage/vehicle_return"; 
+			  
+		  }
 	
 
 }

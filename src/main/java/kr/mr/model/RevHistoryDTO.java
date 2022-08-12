@@ -17,6 +17,22 @@ public class RevHistoryDTO {
 	private Date revDate1;
 	private Date revDate2;
 
+	private int dateCnt;
+	
+	
+	
+
+	public int getDateCnt() {
+		return dateCnt;
+	}
+
+
+	public void setDateCnt(int dateCnt) {
+		this.dateCnt = dateCnt;
+	}
+	
+
+	
 
 	private String wtotalPrice; 
 
@@ -29,18 +45,14 @@ public class RevHistoryDTO {
     }   
 	
 	
-	
-	
-	
-	
-	
+
 	
 	public RevHistoryDTO() {}
 
 
 
 	public RevHistoryDTO(int cNum, String cName, String fileName, String id, String isRented, String revAddr,
-			int totalPrice, Date revDate1, Date revDate2) {
+			int totalPrice, Date revDate1, Date revDate2,int dateCnt) {
 		super();
 		this.cNum = cNum;
 		this.cName = cName;
@@ -51,6 +63,7 @@ public class RevHistoryDTO {
 		this.totalPrice = totalPrice;
 		this.revDate1 = revDate1;
 		this.revDate2 = revDate2;
+		this.dateCnt = dateCnt;
 	}
 
 

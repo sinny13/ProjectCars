@@ -31,8 +31,13 @@
 		<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
 			<property name="dataSource" ref="dataSource"/>
 			<property name="configLocation" value="/WEB-INF/mybatis/config.xml"/>
-			<!-- <property name="mapperLocations" value="classpath:mr/web/mybatis/*.xml"/> -->
+			<!-- <property name="configLocation" value="classpath:/mybatis-config.xml"/> -->
+			<!-- <property name="mapperLocations" value="classpath*:/mappers/*Mapper.xml"/> -->
 		</bean>
+		
+<!--     	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+        	<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+    	</bean>		 -->
 		
 		<context:component-scan base-package="kr.mr.service"/>		
 <!-- 		<context:component-scan base-package="kr.mr.model" /> -->

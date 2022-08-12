@@ -8,11 +8,13 @@
 
 <script type="text/javascript">
 	function showMsg(){
-		window.confirm("취소 하시게요?.....");
+		let confirm = window.confirm("취소 하시게요?.....");
+		if(confirm == true){
 		document.location.href="revCancle.do";
+		}
 	}
 	function delMsg(){
-		alert("삭제.. 할건가요??");
+		window.confirm("삭제.. 할건가요??");
 		document.location.href="#";
 	}
 </script>
@@ -57,17 +59,24 @@
 				<table class="table table-borderless">
 					<thead>
 						<tr class="table-dark">
-							<th class="col-6"><i class="xi-walk"></i> &nbsp;나의 쇼핑정보</th>
+							<th class="col-6"><i class="xi-walk"></i> &nbsp;나의 예약정보</th>
 							<th class="col-3">
 								<button class="custom-btn btn-5" onclick="location.href='myInvoice.do'"><span>최근 구매내역 보기</span></button>
 							</th>
 						</tr>
 					</thead>
 						<tbody>
+						<c:if test="${hDto == null}">
+						<tr>
+							<td>현재 예약된 차량 이 없습니다. </td>
+						</tr>
+						</c:if>
+						<c:if test="${hDto != null}">						
 						<tr>
 							<td>현재 예약된 차량 : </td>
-							<td>${vDto.cName}</td>
+							<td>${hDto.cName}</td>
 						</tr>
+						</c:if>
 						<tr>
 							<td>교환/반품 주문</td>
 							<td>0건</td>
@@ -85,7 +94,7 @@
 		
 			<c:if test="${hDto == null}">
 			<div class="container mt-5">
-				<h2><i class="xi-cart-o"></i> &nbsp;주문내역</h2>            
+				<h2><i class="xi-cart-o"></i> &nbsp;차량 예약내역</h2>            
 				<table class="table mt-3" style="color:#fff">
 					  <thead>
 						<tr>
@@ -112,7 +121,7 @@
 				
 			<c:if test="${hDto != null}">
 			<div class="container mt-5">
-				<h2><i class="xi-cart-o"></i> &nbsp;주문내역</h2>            
+				<h2><i class="xi-cart-o"></i> &nbsp;나의 예약정보</h2>            
 				<table class="table mt-3" style="color:#fff">
 					  <thead>
 						<tr>
