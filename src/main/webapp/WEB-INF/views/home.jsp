@@ -30,29 +30,7 @@
   </div>
 </div>
 
-<!-- 로그인성공 메세지  -->
-<script type="text/javascript">
-$(document).ready(function(){ 
-	if(${LoginProcess != null}){
-		alert("${LoginProcess}");	
-		
-	}	  
-});
 
-<!-- 로그아웃성공 메세지  -->
-$(document).ready(function(){ 
-	if(${LogoutProcess != null}){
-		alert("${LogoutProcess}");	
-	}	  
-});
-<!-- 위시리스트 담기 실패 메세지  -->
-$(document).ready(function(){ 
-	if(${WishInsertFail != null}){
-		alert("${WishInsertFail}");	
-	}	  
-});
-
-</script>
 
 <!-- 메세지삭제 -->
 <script  src="${ctx}/resources/js/3dCarousel.js?ver=111"></script>

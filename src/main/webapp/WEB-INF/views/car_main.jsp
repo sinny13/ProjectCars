@@ -24,9 +24,12 @@
 <!-- 슬라이더 -->
 
 
+
+
+
 <!--? instagram-social start -->
-    <div class="instagram-area fix" style="width:1320px; margin:auto;">
-      <div class="container-fluid p-0">
+    <div class="instagram-area fix">
+      <div class="instagram-area fix" style="width:1320px; margin:auto;">
         <div class="row">
           <div class="col-xl-12">
             <div class="instagram-active owl-carousel">
@@ -55,26 +58,43 @@
 
 
 
+
+
+
+
+
 <%-- <!--? instagram-social start -->
-    <div class="instagram-area fix">
+    <div class="instagram-area fix" style="width:1320px; margin:auto;">
       <div class="container-fluid p-0">
         <div class="row">
           <div class="col-xl-12">
             <div class="instagram-active owl-carousel">
-          <c:forEach var="vDto" items="${vehicleList}">
+			 <c:forEach var="vDto" items="${vehicleList}">
                <div class="single-instagram me-4 Border-radius">
+				<c:if test="${vDto.status != 'Y'}">                 
                  <img src="${ctx}/resources/file_upload/${vDto.fileName}" 
                  style="max-width: 100%; min-width:150px; max-height:auto; min-height: 300px;">
                  <!-- <a href="#"><i class="ti-instagram"></i></a> -->
-                 <a href="vehicleRental.do?cNum=${vDto.cNum}&cSpec='recommand'"><i><h2>${vDto.company}</h2><h6>${vDto.cName}</h6></i></a>
+                 <a  href="vehicleRental.do?cNum=${vDto.cNum}&cSpec='${vDto.cSpec}'"><i><h2>${vDto.company}</h2><h6>${vDto.cName}</h6></i></a>                               
+                </c:if>
+				<c:if test="${vDto.status == 'Y'}">                 
+                 <img src="${ctx}/resources/file_upload/${vDto.fileName}" 
+                 style=" opacity: 0.5 ; max-width: 100%; min-width:150px; max-height:auto; min-height: 300px;">
+                 <!-- <a href="#"><i class="ti-instagram"></i></a> -->
+                 <a  href="vehicleRental.do?cNum=${vDto.cNum}&cSpec='${vDto.cSpec}'"><i><h1>렌트중</h1></i></a>                               
+                </c:if>
                </div>
-          </c:forEach>
+			 </c:forEach>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- instagram-social End --> --%>
+
+
+
+
 
 
 <br/>
