@@ -3,25 +3,48 @@
 
 <%@ include file="inc/header.jsp" %>
 
-<!-- MDB Js -->
-<script type="text/javascript" src="${ctx}/resources/js/mdb.min.js"></script>
+<!-- partial:index.partial.html -->
+<div class="carousel">
+  <div class="carousel_3d">
+    <div id="drag-container">
+      <div id="spin-container">
+        <!-- Add your images (or video) here -->
+        <img src="${ctx}/resources/image/emblem/롤스로이스.png" alt="#">
+        <img src="${ctx}/resources/image/emblem/람보르기니.png" alt="#">
+        <img src="${ctx}/resources/image/emblem/레인지로버.png" alt="#">
+        <img src="${ctx}/resources/image/emblem/벤츠.png" alt="#">
+        <img src="${ctx}/resources/image/emblem/벤틀리.png" alt="#">
+        <img src="${ctx}/resources/image/emblem/부가티.png" alt="#">
+        <img src="${ctx}/resources/image/emblem/포르쉐.png" alt="#">
+        <img src="${ctx}/resources/image/emblem/페라리.png" alt="#">
+        <img src="${ctx}/resources/image/emblem/테슬라.png" alt="#">
+        <img src="${ctx}/resources/image/emblem/캐딜락.png" alt="#">
 
+
+
+        <!-- Text at center of ground -->
+        <p style="font-size:50px;">Project Cars</p>
+      </div>
+      <div id="ground"></div>
+    </div>
+  </div>
+</div>
 
 <!-- 로그인성공 메세지  -->
 <script type="text/javascript">
-/* $(document).ready(function(){ 
+$(document).ready(function(){ 
 	if(${LoginProcess != null}){
 		alert("${LoginProcess}");	
 		
 	}	  
-}); */
+});
 
 <!-- 로그아웃성공 메세지  -->
-/* $(document).ready(function(){ 
+$(document).ready(function(){ 
 	if(${LogoutProcess != null}){
 		alert("${LogoutProcess}");	
 	}	  
-}); */
+});
 <!-- 위시리스트 담기 실패 메세지  -->
 $(document).ready(function(){ 
 	if(${WishInsertFail != null}){
@@ -29,112 +52,11 @@ $(document).ready(function(){
 	}	  
 });
 
-
 </script>
+
 <!-- 메세지삭제 -->
+<script  src="${ctx}/resources/js/3dCarousel.js?ver=111"></script>
 
-
-
-<!-- 1. Carousel wrapper -->
-<div
-  id="carouselVideoExample"
-  class="carousel slide carousel-fade"
-  data-mdb-ride="carousel"
->
-  <!-- Indicators -->
-  <div class="carousel-indicators">
-    <button
-      type="button"
-      data-mdb-target="#carouselVideoExample"
-      data-mdb-slide-to="0"
-      class="active"
-      aria-current="true"
-      aria-label="Slide 1"
-    ></button>
-    <button
-      type="button"
-      data-mdb-target="#carouselVideoExample"
-      data-mdb-slide-to="1"
-      aria-label="Slide 2"
-    ></button>
-    <button
-      type="button"
-      data-mdb-target="#carouselVideoExample"
-      data-mdb-slide-to="2"
-      aria-label="Slide 3"
-    ></button>
-  </div>
-
-  <!-- Inner -->
-  <div class="carousel-inner">
-    <!-- Single item1 -->
-    <div class="carousel-item active">
-      <video class="img-fluid w-100" autoplay loop muted>
-        <!-- <source src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4" type="video/mp4" /> -->
-        <source src="${ctx}/resources/video/Lamborghini Urus Dynamic.mp4" type="video/mp4" />
-      </video>
-      <div class="carousel-caption d-none d-md-block">
-        <h5>lorem ipsum</h5>
-        <p>
-          dolor sit amet
-        </p>
-      </div>
-    </div>
-
-    <!-- Single item2 -->
-    <div class="carousel-item">
-      <video class="img-fluid w-100"  autoplay loop muted>
-        <source src="${ctx}/resources/video/Bentley Motors.mp4" type="video/mp4" />
-      </video>
-      <div class="carousel-caption d-none d-md-block">
-        <h5></h5>
-        <p>
-          lorem ipsum
-        </p>
-      </div>
-    </div>
-
-    <!-- Single item3 -->
-    <div class="carousel-item">
-      <video class="img-fluid w-100" autoplay loop muted>
-        <source src="${ctx}/resources/video/GENESIS G80 Launching.mp4" type="video/mp4" />
-      </video>
-      <div class="carousel-caption d-none d-md-block">
-        <h5>lorem ipsum</h5>
-        <p>
-          dolor sit amet
-        </p>
-      </div>
-    </div>
-  </div>
-  <!-- Inner -->
-
-  <!-- Controls -->
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-mdb-target="#carouselVideoExample"
-    data-mdb-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-mdb-target="#carouselVideoExample"
-    data-mdb-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-<!-- 1. Carousel wrapper End-->
-<br>
-<br>
-<br>
-<br>
 
 <!-- car_main  -->
 <%@ include file="car_main.jsp" %>
