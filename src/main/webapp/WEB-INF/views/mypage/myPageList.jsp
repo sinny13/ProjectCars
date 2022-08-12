@@ -71,6 +71,13 @@
 							<td>현재 예약된 차량 이 없습니다. </td>
 						</tr>
 						</c:if>
+<%-- 						
+						<c:if test="${hDto.status == 'N' && hDto != null}">
+						<tr>
+							<td>현재 예약된 차량 이 없습니다. </td>
+						</tr>
+						</c:if> --%>
+						
 						<c:if test="${hDto != null}">						
 						<tr>
 							<td>현재 예약된 차량 : </td>

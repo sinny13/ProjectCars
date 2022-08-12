@@ -17,7 +17,11 @@
   </select>
   
   
-  
+
+    <delete id="deleteRevHistory" parameterType="Integer">
+  	delete from reservation
+	where cNum =  #{cNum}
+  </delete>
 
   
   

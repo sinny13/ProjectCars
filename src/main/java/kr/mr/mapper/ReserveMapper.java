@@ -16,7 +16,7 @@ public interface ReserveMapper {
 	// 예약정보 전체리스트 가져오기
 	public List<ReserveDTO> reserveList(); 
 	
-
+	public void deleteRevHistory(int cNum);
 		
 
 	

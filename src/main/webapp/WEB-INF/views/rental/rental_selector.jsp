@@ -130,7 +130,36 @@
   </nav>
 
 
+	<c:if test="${sessionScope.userId == null}">	
+      <div class="left-slide">
+        <div style="background-color: #111">
+          <h1>1일렌트</h1>
+          <button class="pulse" 
+          			style="font-family:LeferiPoint-WhiteObliqueA; font-weight: bolder ;color: #FFFFFF "
+          			onclick = "alert('해당기능을 이용하기위해서는 로그인이 필요합니다. \n로그인페이지로 이동합니다.');location.href='memberLogin.do'">지금 예약하기</button>
+        </div>
 
+        <div style="background-color: #111">
+          <h1>장기렌트</h1>
+          <button class="pulse" 
+          			style="font-family:LeferiPoint-WhiteObliqueA; font-weight: bolder ;color: #FFFFFF "
+          			onclick = "alert('해당기능을 이용하기위해서는 로그인이 필요합니다. \n로그인페이지로 이동합니다.');location.href='memberLogin.do'">지금 예약하기</button>
+        </div>
+        <div style="background-color: #111">
+          <h1>즉시출고가능</h1>
+          <button class="pulse" 
+          			style="font-family:LeferiPoint-WhiteObliqueA; font-weight: bolder ;color: #FFFFFF "
+          			onclick = "alert('해당기능을 이용하기위해서는 로그인이 필요합니다. \n로그인페이지로 이동합니다.');location.href='memberLogin.do'">지금 예약하기</button>
+        </div>
+      </div>
+      <div class="right-slide">
+        <div style="background-image: url('${ctx}/resources/image/selector/selectorBG3.jpg');"></div>
+        <div style="background-image: url('${ctx}/resources/image/selector/selectorBG2.jpg');"></div>
+        <div style="background-image: url('${ctx}/resources/image/selector/selectorBG0.jpg');"></div>
+      </div>
+    </c:if>
+    
+	<c:if test="${sessionScope.userId != null}">	
       <div class="left-slide">
         <div style="background-color: #111">
           <h1>1일렌트</h1>
@@ -157,6 +186,8 @@
         <div style="background-image: url('${ctx}/resources/image/selector/selectorBG2.jpg');"></div>
         <div style="background-image: url('${ctx}/resources/image/selector/selectorBG0.jpg');"></div>
       </div>
+    </c:if>
+      
       
 <div id="selector">      
       <div class="action-buttons">

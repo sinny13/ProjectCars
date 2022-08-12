@@ -41,7 +41,7 @@ public interface VehicleMapper {
 	
 	
 	// 차량반납 status "N" 
-	 public void vehicleStatusToN();
+	 public void vehicleStatusToN(int cNum);
 	
 	
 }

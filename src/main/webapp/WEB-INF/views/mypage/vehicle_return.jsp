@@ -37,7 +37,7 @@ const mId = "<%=(String)session.getAttribute("userId")%>"
 		</div>
 
 	
-			<c:if test="${member.isRented == null}">
+			<c:if test="${member.isRented == null or hDto == null}">
 			<div class="container mt-5">
 				<h2><i class="xi-cart-o"></i> &nbsp;차량 반납</h2>            
 				<table class="table mt-3" style="color:#fff">
@@ -61,7 +61,7 @@ const mId = "<%=(String)session.getAttribute("userId")%>"
 				</div>
 				</c:if>
 				
-			<c:if test="${member.isRented != null}">
+			<c:if test="${member.isRented != null and hDto != null}">
 			<div class="container mt-5">
 				<h2><i class="xi-cart-o"></i> &nbsp;나의 예약정보</h2>            
 				<table class="table mt-3" style="color:#fff">

@@ -313,7 +313,7 @@ int cnt = vehicleMapper.vehicleStatusY(cNum);
 		  @RequestMapping("/vehicleReturn.do") 
 		  public String vehicleReturn(Model model,String mId) {
 			  
-			  RevHistoryDTO hDto = mypageMapper.revHistory(mId);		  
+			  RevHistoryDTO hDto = mypageMapper.revHistory2(mId);		  
 			  model.addAttribute("hDto", hDto);
 
 			MemberDTO member = memberMapper.memberGetter(mId);		
@@ -326,26 +326,39 @@ int cnt = vehicleMapper.vehicleStatusY(cNum);
 		  
 		  // 차량반납 완료
 		  @RequestMapping("/vehicleReturnOk.do") 
-		  public String vehicleReturnOk(RevHistoryDTO hDto, Model model,String mId) {
+		  public String vehicleReturnOk(Model model,String mId) {
 			  
-
-			model.addAttribute("hDto", hDto);
+			  
+			RevHistoryDTO hDto = mypageMapper.revHistory2(mId);  
+			  
+			
+			int cNum = -1;
+			
+			cNum = hDto.getcNum();
+			
+			System.out.println("cNum : "+cNum);
 
 			MemberDTO member = memberMapper.memberGetter(mId);		
 			model.addAttribute("member", member);
 			
 			//멤버렌트한 차량반납
-			memberMapper.memberisRentedToNull();
+			memberMapper.memberisRentedToNull(mId);
 			  
 			// 차량 상태 반납상태로 전환
-			vehicleMapper.vehicleStatusToN();
-			  
+			vehicleMapper.vehicleStatusToN(cNum);
+			
+			/*
+			 * // hDto 메모리등록 model.addAttribute("hDto", hDto);
+			 */
+			
+			
+			reserveMapper.deleteRevHistory(cNum); 
 			
 			  return "mypage/vehicle_return"; 
 			  
 		  }
 		  
-		// 렌트리스트 가져오기
+		// 렌트 전체리스트 가져오기
 	      @RequestMapping("/reservationList.do")
 	      public String myPageList(Model model) {
 	      

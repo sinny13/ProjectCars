@@ -50,57 +50,11 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 <link rel="stylesheet" href="${ctx}/resources/css/font.css">
 
 
+
 <script type="text/javascript">
-	$(document).ready(function(){
-		<c:if test="${msg != null}">
-			alert("${msg}");
-		</c:if>
-		<c:remove var="msg" scope="session"/>
-	});
 
-	function chkValidation(){	// 유효성체크
-		if($("#user_id").val()==''){
-			//alert("아이디를 입력하세요!!!");
-			//alert($("#idMsg"));
-			$("#idMsg").css("display", "block");
-			
-			$("#user_id").focus();
-			return false;
-		}
-		
-		if($("#pw").val()==''){ 
-			$("#pwMsg").css("display", "block");
-			//alert("비밀번호를 입력하세요!!!");
-			$("#pw").focus();
-			return false;
-		}
-		return true;
-	}
-	
-	function valueChk(obj){ // 온키업 이벤트로 인풋창에 키를 입력한 상태에서 작동된다. 
-		if(obj.id == "user_id"){
-			$("#idMsg").css("display", "none");
-		}else{
-			$("#pwMsg").css("display", "none");
-		}
-	}
-	
-	function logout(){
-		// c:url를 이용하면 ${ctx}를 생략할 수 있다.
-		location.href="<c:url value='/#adminLogout.do'/>";
-	}
 
-<!-- 미구현기능 메세지 출력 -->
-	function showMsg(){
-		alert("기능 미구현!! 추후 작업예정입니다.");
-		document.location.href="#";
-	}
 	
-<!-- 미구현기능 메세지 출력 -->
-	function notice(){
-		alert("해당 기능을 이용하기 위해서는 로그인이 필요합니다.");
-		document.location.href="#clientLogin.do";
-	}
 	
 <!-- 검색어 유효성체크 -->
 	function emptyResult(){
@@ -168,7 +122,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
               <c:if test="${sessionScope.isLogin != null and sessionScope.isAccount =='client'}">
-              	<a class="dropdown-item" href="myMemberModify.do?mId=${sessionScope.id}">내 정보보기</a>
+              	<a class="dropdown-item" href="myMemberModify.do?mId=${sessionScope.userId}">내 정보보기</a>
               </c:if>
               <c:if test="${sessionScope.isLogin != null and sessionScope.isAccount =='admin'}">
               	<a class="dropdown-item" onclick="javascript:alert('관리자 정보 미구현!)">관리자 정보보기</a>

@@ -79,6 +79,7 @@
     h1,h2,h3,h4,h5,h5,p{
     
     font-family: LeferiPoint-WhiteObliqueA;
+    color: #fff !important;
     }
     
     
@@ -120,7 +121,10 @@
             <a class="nav-link" aria-current="page" href="memberLogin.do">로그인</a>
           </li>          
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="rentPage.do">모델</a>
+            <a class="nav-link" aria-current="page" href="memberRegister.do">회원가입</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link" href="oneDayCar.do?id=${sessionScope.userId}" aria-current="page" href="rentPage.do">렌트카</a>
           </li>
         </ul>
 
@@ -247,6 +251,11 @@
             <div class="text-white text-center">
               <h2>올 여름 여러분이 상상하는 차가 옵니다</h2>
               <p>제네시스 G80</p>
+              <a
+                 class="btn btn-outline-light btn-lg m-2"
+                href="home.do">
+                 HOME</a
+                >              
             </div>
           </div>
         </div>
@@ -275,9 +284,8 @@
               <h2>수입 외제차 독점판매</h2>
               <a
                  class="btn btn-outline-light btn-lg m-2"
-                 href="#"
-                 role="button"
-                 >내게 맞는 외제차 확인하기</a
+                href="home.do">
+                 HOME</a
                 >
             </div>
           </div>

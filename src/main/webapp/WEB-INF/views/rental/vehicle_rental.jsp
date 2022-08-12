@@ -25,6 +25,25 @@
     </div>
     <div class="grid product">
       <div class="column-xs-12 column-md-7">
+      	<!-- 예약중인경우 -->
+        <c:if test="${vDto.status == 'Y'}">
+        <div class="product-gallery">
+          <div class="product-image">
+            예약중<img class="active" src="${ctx}/resources/file_upload/${vDto.fileName}">
+          </div>
+          <ul class="image-list">      	
+            <li class="image-item"><img src="${ctx}/resources/file_repo/${iDto.iName1}"></li>
+            <li class="image-item"><img src="${ctx}/resources/file_repo/${iDto.iName2}"></li>
+            <li class="image-item"><img src="${ctx}/resources/file_repo/${iDto.iName3}"></li>
+            <li class="image-item"><img src="${ctx}/resources/file_repo/${iDto.iName4}"></li>
+            <li class="image-item"><img src="${ctx}/resources/file_repo/${iDto.iName5}"></li>
+            <li class="image-item"><img src="${ctx}/resources/file_repo/${iDto.iName6}"></li>
+            <li class="image-item"><img class="active" src="${ctx}/resources/file_upload/${vDto.fileName}"></li>
+          </ul>
+        </div>
+      </c:if>
+      
+        <c:if test="${vDto.status != 'Y'}">
         <div class="product-gallery">
           <div class="product-image">
             <img class="active" src="${ctx}/resources/file_upload/${vDto.fileName}">
@@ -39,7 +58,9 @@
             <li class="image-item"><img class="active" src="${ctx}/resources/file_upload/${vDto.fileName}"></li>
           </ul>
         </div>
+      </c:if>
       </div>
+      
       
       <div class="column-xs-12 column-md-5">
         <nav class="row">
@@ -73,27 +94,38 @@
         <br/>
         <br/>
       	</div>
-      	
- 	<c:if test="${mDto.isRented == 'Y'}">
-        <button class="add-to-cart" onclick='javascript:alert("차량은 1대만 구매 가능합니다. ")'>
-        		렌트카 예약하기
-        </button>
-        </c:if>
- 	<c:if test="${mDto.isRented != 'Y'}">
+    
+		<!-- 로그인상태 & 차량 미예약의 경우 -->  
+ 		<c:if test="${mDto.isRented != 'Y' && sessionScope.userId!= null}">
         <button class="add-to-cart" onclick="location.href='rentalSelector.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'">
         		렌트카 예약하기
         </button>
-        </c:if>
-        <c:if test="${sessionScope.userId!= null}">
        <button  class="add-to-cart" onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'">
         		관심상품
-        </button>
+        </button>        
         </c:if>
+        
+    	<!-- 로그인상태 & 이미차량을예약한경우 -->           
+        <c:if test="${sessionScope.userId != null && mDto.isRented == 'Y'}">
+        <button class="add-to-cart" onclick='javascript:alert("차량은 1대만 구매 가능합니다. ")'>
+        		렌트카 예약하기
+        </button>     
+       <button  class="add-to-cart" onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'">
+        		관심상품
+        </button>       
+        </c:if>   
+             
+        <!-- 미 로그인상태 -->  
         <c:if test="${sessionScope.userId == null}">
+        <button class="add-to-cart" onclick="alert('기능을 이용하기 위해서는 로그인이 필요합니다.');location.href='memberLogin.do'">
+        		렌트카 예약하기
+        </button>        
        <button class="add-to-cart" onclick="alert('기능을 이용하기 위해서는 로그인이 필요합니다.');location.href='memberLogin.do'">
         		관심상품
         </button>
         </c:if>
+        
+
 <%--         <button class="add-to-cart">
         	<a href="wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}"/>
         	관심상품

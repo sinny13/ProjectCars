@@ -36,7 +36,7 @@ public class MyPageController {
 		
 		
 		
-		  RevHistoryDTO hDto = mypageMapper.revHistory(mId);
+		  RevHistoryDTO hDto = mypageMapper.revHistory2(mId);
 		  
 		  model.addAttribute("hDto", hDto);
 		 

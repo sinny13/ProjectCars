@@ -47,7 +47,7 @@ public interface MemberMapper {
 	
 	
 	// 멤버 isRented초기화 : 회원차량반납 
-	 public void memberisRentedToNull();
+	 public void memberisRentedToNull(String id);
 	
 	
 	
