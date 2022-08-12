@@ -25,7 +25,7 @@
 
 
 <!--? instagram-social start -->
-    <div class="instagram-area fix">
+    <div class="instagram-area fix" style="width:1320px; margin:auto;">
       <div class="container-fluid p-0">
         <div class="row">
           <div class="col-xl-12">
@@ -270,7 +270,7 @@
        <h5 class="card-header">보험사 배너</h5>
     </div>
    <div class="card-body" style="margin: auto">
-		<a href="https://direct.hi.co.kr/">
+      <a href="https://direct.hi.co.kr/">
            <img src="${ctx}/resources/image/banner/banner01.jpg" style="width: 300px; height: 86px; margin-bottom: 2px;" title="" alt="">
         </a>
         <a href="https://www.axa.co.kr/">
@@ -316,7 +316,6 @@
     <script src="${ctx}/resources/assets/js/plugins.js"></script>
     <script src="${ctx}/resources/assets/js/main.js"></script>
 
-
     
 <style>
 /*클릭 이벤트를 포함하는 모든 영역에 추가하면 하위 이벤트까지 작동안함.*/
@@ -329,4 +328,3 @@ element:hover {
    background-color: #111
 } 
 </style>
-   

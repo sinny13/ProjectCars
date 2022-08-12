@@ -5,27 +5,27 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}"/> 
 <%@ include file="../inc/header.jsp" %>
 
-<div class="container d-flex mt-5 justify-content-center">
-   <div class="w-75 shadow p-5 rounded border">
+<div class="container mt-5">
+   <div class="w-120 p-5 rounded border">
       <h5>${board.subject}</h5>
       
       <!-- 검색했을 때 해당 게시글 정보를 list로 넘겨줌 -->
-      <form action="boardList.do" method="get" id="moveForm">
+      <form action="boardList.do" method="get" id="moveForm"> <!-- js:#moveForm -->
          <input type="hidden" name="viewPage" value="${viewPage}"/>
          <input type="hidden" name="searchType" value="${bvo.searchType}"/>
          <input type="hidden" name="keyWord" value="${bvo.keyWord}"/>
          <input type="hidden" name="bid" value="${board.bid}"/>
       </form>
       
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-contents-between">
          <div class="form-group">
             <label for="subject">번호</label>
-            <input type="text" class="form-control" id="bid" 
+            <input type="text" size=1 class="form-control" id="bid" 
                name="bid" disabled value="${board.bid}"/>
          </div>
-         <div class="form-group px-2">
+         <div class="form-group">
             <label for="writer">글쓴이</label>
-            <input type="text" class="form-control" id="writer" 
+            <input type="text" size=8 maxlength=8 class="form-control" id="writer" 
                name="writer" disabled value="${board.writer}"/>
          </div>
 <%--          <div class="form-group">
@@ -34,20 +34,19 @@
          </div> --%>
       </div>
       
-      <div class="form-group">
+      <div class="form-group border">
          <label for="subject">제목</label>
          <input type="text" class="form-control" id="subject" 
             name="subject" disabled value="${board.subject}"/>
       </div>
 
-      <div class="form-group">
+      <div class="form-group border">
          <label for="contents">내용</label>
-         <textarea class="form-control" id="contents" 
-            name="contents" rows="4" disabled><c:out value="${board.contents}" escapeXml="false"/></textarea>
+         <textarea class="form-control col-sm-100" id="contents" 
+            name="contents" rows="10" disabled><c:out value="${board.contents}" escapeXml="false"/></textarea>
       </div>
       <div class="form-group mt-4">
          <c:if test="${sessionScope.userId !=null && sessionScope.userId !=''}">
-         
             <c:if test="${sessionScope.userId == 'admin'}"> <!-- board.id -->
                <button type="submit" id="btn-modify" class="btn btn-primary me-2">수정하기</button>
                <button type="button" id="btn-delete"  data-link="remove" class="btn btn-primary me-2">삭제하기</button>
@@ -58,7 +57,7 @@
                <button type="button" id="btn-delete"  data-link="remove" class="btn btn-primary me-2" disabled>삭제하기</button>
             </c:if>
          </c:if>
-         <button type="button" id="btn-list" data-link="list" class="btn btn-primary me-2">글목록</button>
+         <button type="button" id="btn-list" class="btn btn-primary me-2">글목록</button>
       </div>
       <!-------------------- 댓글 UI ------------------>
 <%--       <div class="mt-5 d-flex justify-content-between mb-2">
@@ -148,38 +147,27 @@
 <script type="text/javascript">
 
 	$(document).ready(function(){
-		// # : id
-		$("#btn-list").click(() => {
-			location.href="<c:url value='boardList.do?viewPage=${bp.viewPage}'/>";
+					// # : id . : class
+		var moveForm = $("#moveForm");
+					
+		$("#btn-modify").click(() => {
+			moveForm.attr("action", "boardModify.do");
+			moveForm.submit();
 		})
-		// . : class
 		
+		$("#btn-delete").click(() => {
+			moveForm.attr("action", "boardRemove.do");
+			moveForm.submit();
+		})
 		
- 		var moveForm = $("#moveForm"); // 13줄, form태그의 id="moveForm"으로 이동 : 검색
-        $("#btn-list").click(() => {
-         //location.href="<c:url value='/list.do?viewPage=${viewPage}&searchType=${bvo.searchType}&keyWord=${bvo.keyWord}'/>";
-         moveForm.submit();
-      })  
-      
-      $("#btn-modify").click(() => { // 50줄로 이동
-         //location.href="<c:url value='/modify.do?bid=${board.bid}&viewPage=${viewPage}&searchType=${bvo.searchType}&keyWord=${bvo.keyWord}'/>";
-         moveForm.attr("action", "boardModify.do"); // .do로 이동
-         moveForm.submit(); // DB로 form 전송
-      })
-      $("button").on("click", function(e){
-    	  e.preventDefault();
-    	  var linkBtn = $(this).data("link");
-    	  
-    	  if(linkBtn === "remove"){
-    		  moveForm.attr("action", "boardRemove.do");
-    		  }else if(linkBtn === "list"){
-    			  moveForm.attr("action", "boardList.do").attr("method", "get");
-    			  }
-    	  moveForm.submit();
-		});
+		$("#btn-list").click(() => {
+			moveForm.attr("action", "boardList.do");
+			moveForm.submit();
+		})
 		
 		
 		
+	});
 		
 /*       /// 댓글 리스트 ///
       var bidValue = "<c:out value='${board.bid}'/>";
@@ -332,7 +320,7 @@
       }) */
       
       
-	});
+
 </script>
 
 <%@ include file="../inc/footer.jsp" %>

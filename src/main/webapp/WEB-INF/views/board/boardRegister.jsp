@@ -40,7 +40,7 @@
           
          <div class="form-group mt-4">
             <button type="submit" onclick="regBoardChk()" class="btn btn-secondary">등록</button>
-            <button type="button" id="btn-list" class="btn btn-secondary">글목록</button>
+            <button type="button" id="btn-list" class="btn btn-secondary" onclick="location.href='boardList.do'">글목록</button>
          </div>
       </form>
 
@@ -95,7 +95,7 @@
 
 <script type="text/javascript" src="${ctx}/resouces/js/board.js">
 
-<!-- 게시판 유효성 -->
+<!-- (미구현)게시판 유효성 -->
 $(document).ready(function(){
 	
 	function regBoardChk(){
@@ -113,7 +113,7 @@ $(document).ready(function(){
 			return;
 		}
 		
-		
+		regForm.submit();
 	}
 }
 

@@ -4,8 +4,8 @@
    
 <%@ include file="../inc/header.jsp" %>
 
-<div class="container d-flex mt-5 justify-content-center">
-	<div class="w-75 shadow p-5 rounded border">
+<div class="container mt-5">
+	<div class="w-120 p-5 border">
 		<form id="moveForm" method="post" action="<c:url value='boardModify.do'/>">
 			<input type="hidden" name="viewPage" value="${viewPage}"/>
 			<input type="hidden" name="keyWord" value="${bvo.keyWord}"/>
@@ -23,11 +23,11 @@
 					<input type="text" class="form-control" id="writer" 
 						name="writer" readonly value="${board.writer}"/>
 				</div>
-<%-- 				<div class="form-group">
+				<div class="form-group">
 					<label for="hit">조회수</label>
 					<input type="text" class="form-control" id="hit" 
 						name="hit" readonly value="${board.hit}"/>
-				</div> --%>
+				</div>
 			</div>
 	
 			<div class="form-group">
@@ -39,56 +39,47 @@
 			<div class="form-group">
 				<label for="contents">내용</label>
 				<textarea class="form-control" id="contents" 
-					name="contents" rows="4">${board.contents}</textarea>
+					name="contents" rows="10">${board.contents}</textarea>
 			</div>
 
 			<div class="form-group mt-4">
-				<button type="submit" id="btn-modify" class="btn btn-primary me-2">수정하기</button>
-				<button type="button" id="btn-list" data-link="list" class="btn btn-secondary">글목록</button>
+				<button type="submit" id="btn-modify" class="btn btn-primary me-2">수정완료</button>
+				<button type="button" id="btn-list" data-link="list" onclick="location.href='boardList.do'" class="btn btn-secondary">글목록</button>
 			</div>
 		</form>
 	</div>
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
-/* 		$("#btn-list").click(() => {
-			location.href="<c:url value='/list.do?viewPage=${viewPage}&searchType=${bvo.searchType}&keyWord=${bvo.keyWord}'/>";
-		})
-		
-		$("#btn-remove").click(() => {
-			location.href="<c:url value='/remove.do?bid=${board.bid}&viewPage=${viewPage}&searchType=${bvo.searchType}&keyWord=${bvo.keyWord}'/>";
-		}) */
 		
 		var moveForm = $("#moveForm");
 		
-		$("button").on("click", function(){
-			
-		
+		$("button").on("click", function(e){
+			e.preventDefualt();
 			
 			var linkBtn = $(this).data("link");
-				
-				if(linkBtn === "list"){
+			
+			if(linkBtn === "remove"){
+				moveForm.attr("action", "boardRemove.do");
+			}else if(linkBtn === "list"){
 				moveForm.attr("action", "boardList.do").attr("method", "get");
 				
-				
-				// clone()은 복사해옴.
 				var viewPageObj = $("input[name='viewPage']").clone();
 				var keyWordObj = $("input[name='keyWord']").clone();
 				var searchTypeObj = $("input[name='searchType']").clone();
 				
-				// list로 넘어가는 파라미터는 viewPage, keyWord, searchType만
-				// 필요하다. 나머지는 필요없기 때문에 지워버리고 
-				// 세 개의 파라미터만 담아서 보냄
 				moveForm.empty();
 				
 				moveForm.append(viewPageObj);
 				moveForm.append(keyWordObj);
 				moveForm.append(searchTypeObj);
-				
-				}
+			}
 			moveForm.submit();
-			
-	});
+		})
+		
+	})
+		
+	
 </script>
 
 <%@ include file="../inc/footer.jsp" %>
