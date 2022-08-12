@@ -118,6 +118,25 @@
             <button class='pulse m-3 p-3 justify-content-center' style="width: 150px; height: 50px"  onclick="location.href='myPageList.do?mId=${sessionScope.userId}'">
             	마이페이지
             </button>
+ 
+ 
+ 
+ 
+ 
+                                 <!-- Row start -->
+                                <div class="row gutters">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <div class="custom-actions-btns mb-5">
+                                           <input type="button" value="print" id="print" onclick="window.print()"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Row end -->                        
+                         
+ 
+ 
+ 
+ 
             
             
           </header>

@@ -169,22 +169,28 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
               <c:if test="${sessionScope.isLogin != null and sessionScope.isAccount =='client'}">
-              	<a class="dropdown-item" onclick="javascript:notice()" href="#memberInfo.do?id=${sessionScope.id}">내 정보보기</a>
+              	<a class="dropdown-item" href="myMemberModify.do?mId=${sessionScope.id}">내 정보보기</a>
               </c:if>
               <c:if test="${sessionScope.isLogin != null and sessionScope.isAccount =='admin'}">
               	<a class="dropdown-item" onclick="javascript:alert('관리자 정보 미구현!)">관리자 정보보기</a>
               </c:if>
             </li>
+            <c:if test="${sessionScope.isLogin != null}">
+            <li>
+              <a class="dropdown-item" href="vehicleReturn.do?mId=${sessionScope.userId}">차량반납</a>
+            </li>
+            </c:if>
+            <c:if test="${sessionScope.isLogin != null}">
             <li>
               <a class="dropdown-item" href="myPageList.do?mId=${sessionScope.userId}">마이페이지</a>
             </li>
+            </c:if>
+             <c:if test="${sessionScope.isLogin == null}">
             <li>
-              <a class="dropdown-item" href="#">주문배송조회</a>
+              <a class="dropdown-item" onclick="alert('해당기능은 로그인후 이용하실수 있습니다.'); location.href='memberLogin.do'">마이페이지</a>
             </li>
-            <li><hr class="dropdown-divider"/></li>
-            <li>
-              <a class="dropdown-item" href="#">개발중...</a>
-            </li>
+            </c:if>
+
           </ul>
         </li>
       </ul>
@@ -215,7 +221,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 <!------- 즉시출고가능차량 start ------->     
  <ul class="navbar-nav">
    	<li class="nav-link">            
-      <a class="nav-link" href="nowCar.do" role="button">즉시출고가능차량</a> 
+      <a class="nav-link" href="nowCar.do?id=${sessionScope.userId}" role="button">즉시출고가능차량</a> 
     </li> 
  </ul>
   
@@ -278,7 +284,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 			<a class="letter" href="memberLogin.do" onclick="javascript:showMsg()">1:1렌트상담</a>
 		</li>
         <li class="letter">
-			<a class="letter" href="myReservation.do">실시간 신청</a>
+			<a style="color: #c36f51" class="letter" href="myReservation.do">실시간 신청</a>
 		</li>
         <li class="letter">
 			<a class="letter" href="myDirection.do">오시는길</a>

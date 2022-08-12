@@ -8,7 +8,7 @@
 
 
     <div class="container p-3 my-5 text-white" style="background-color: rgba(70, 70, 70, 0.5)">
-        <h1>회원정보수정</h1>
+        <h1 class="text-center">회원정보</h1>
     </div>
     <div class="card-body" style="width:800px; margin:auto;">
         <div class='container'>                            

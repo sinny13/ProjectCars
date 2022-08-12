@@ -4,6 +4,7 @@ import java.util.List;
 
 import kr.mr.model.CategoryDTO;
 import kr.mr.model.MemberDTO;
+import kr.mr.model.RevHistoryDTO;
 
 public interface MyPageMapper {
 	
@@ -30,5 +31,8 @@ public interface MyPageMapper {
 	
 	// 카테고리 삭제
 	public int categoryDel(int cat_num);
+	
+	// 마이페이지 - 주문배송내역
+	public RevHistoryDTO revHistory(String id);
 	
 }

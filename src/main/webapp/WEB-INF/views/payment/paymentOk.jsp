@@ -54,7 +54,14 @@
 
 
 
-<h1><small>Rent Success</small> 예약한 차량의 상세정보는</br>마이페이지에서 확인 가능합니다 <small><button class="pulse">마이페이지</button></small></h1>
+<h1>
+	<small>Rent Success</small> 
+		예약한 차량의 상세정보는</br>마이페이지에서 확인 가능합니다 
+	<small>
+		<button class="pulse" onclick="location.href='myPageList.do?mId=${sessionScope.userId}'">마이페이지</button>
+        <button class='pulse' onclick="location.href='home.do'">홈으로</button>		
+	</small>
+</h1>
 
 <!-- You can add more ".slideshow-image" elements, but remember to update the "$items" variable on SCSS -->
 <div class="slideshow">

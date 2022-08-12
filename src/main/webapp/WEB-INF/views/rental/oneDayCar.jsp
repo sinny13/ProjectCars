@@ -39,6 +39,11 @@
 
 h1,h2,h3,h4,h5,h6,p{
 font-family: LeferiPoint-WhiteObliqueA;
+
+font-size: 40px;
+
+
+
 }
 </style>
 
@@ -143,8 +148,8 @@ font-family: LeferiPoint-WhiteObliqueA;
                         
                         <div class="caption-port" style="opacity: 1;">
                            
-                     <div class="simpletxt">
-                        <h2 class="text-white">렌트중</h2>
+                     <div>
+                        <h2 style="color: #c36f51" class="text-white p-1">렌트중</h2>
                      </div>
                         </div>
                         <img class="img-fluid" src="${ctx}/resources/file_upload/${vDto.fileName}" style="max-width: 100%; min-width:150px; max-height:auto; min-height: 300px; margin:auto; ">  

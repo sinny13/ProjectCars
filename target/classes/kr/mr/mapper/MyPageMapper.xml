@@ -41,6 +41,14 @@
   	delete from category where cat_num = #{cat_num}
   </delete>
   
+  <select id="revHistory" resultType="RevHistoryDTO" >
+	select *
+	from car inner join reservation
+	on car.cNum = reservation.cNum
+	where reservation.id = #{id};
+  </select>
+  
+  
 </mapper>
   
   

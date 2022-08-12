@@ -9,19 +9,19 @@
 
 <!-- 로그인성공 메세지  -->
 <script type="text/javascript">
-$(document).ready(function(){ 
+/* $(document).ready(function(){ 
 	if(${LoginProcess != null}){
 		alert("${LoginProcess}");	
 		
 	}	  
-});
+}); */
 
 <!-- 로그아웃성공 메세지  -->
-$(document).ready(function(){ 
+/* $(document).ready(function(){ 
 	if(${LogoutProcess != null}){
 		alert("${LogoutProcess}");	
 	}	  
-});
+}); */
 <!-- 위시리스트 담기 실패 메세지  -->
 $(document).ready(function(){ 
 	if(${WishInsertFail != null}){

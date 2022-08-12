@@ -15,10 +15,14 @@ public class ReserveDTO {
 	private Date revDate1;
 	private Date revDate2;
 	
+	private int cNum;
+	
 	private int dateCnt;
 	private int totalPrice;
 	
 	 private String wtotalPrice; 
+	 
+	 private String id;
 
 	   public String getWtotalPrice() {
 	      DecimalFormat formatter = new DecimalFormat("###,###,###,###,###,###");
@@ -28,15 +32,40 @@ public class ReserveDTO {
 	      return wtotalPrice;
 	   }	
 	
+	   
+	   
+
+	
+	public int getcNum() {
+		return cNum;
+	}
+
+
+	public void setcNum(int cNum) {
+		this.cNum = cNum;
+	}
 	
 	
 	
+	
+	public String getId() {
+		return id;
+	}
+	
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
+
+
 	public ReserveDTO() {}
 
 
 
 	public ReserveDTO(int revNum, String revName, String revJumin1, String revJumin2, String revTel, String revAddr,
-			int count, Date revDate1, Date revDate2, int dateCnt, int totalPrice) {
+			int count, Date revDate1, Date revDate2, int dateCnt, int totalPrice, int cNum, String id) {
 		super();
 		this.revNum = revNum;
 		this.revName = revName;
@@ -49,6 +78,8 @@ public class ReserveDTO {
 		this.revDate2 = revDate2;
 		this.dateCnt = dateCnt;
 		this.totalPrice = totalPrice;
+		this.cNum = cNum;
+		this.id = id;
 	}
 
 

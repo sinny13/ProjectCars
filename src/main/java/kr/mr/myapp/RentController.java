@@ -65,7 +65,11 @@ public class RentController {
 	
 	
 	   @RequestMapping("/oneDayCar.do") 
-	      public String DayCar(Model model) {
+	      public String DayCar(Model model, String id) {
+		   
+			MemberDTO mDto = memberMapper.isRented(id);
+			
+			model.addAttribute("mDto", mDto);
 	  
 	      List<VehicleDTO> vehicleList = vehicleMapper.vehicleList();	  
 	      model.addAttribute("vehicleList", vehicleList);
@@ -75,7 +79,11 @@ public class RentController {
 	   }  
 	   
 	   @RequestMapping("/longDayCar.do") 
-	   public String LongDayCar(Model model) {
+	   public String LongDayCar(Model model, String id) {
+		   
+			MemberDTO mDto = memberMapper.isRented(id);
+			
+			model.addAttribute("mDto", mDto);
 		   
 		   List<VehicleDTO> vehicleList = vehicleMapper.vehicleList();	  
 		   model.addAttribute("vehicleList", vehicleList);

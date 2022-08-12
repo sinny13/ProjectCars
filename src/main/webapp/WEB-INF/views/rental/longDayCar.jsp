@@ -243,8 +243,8 @@ color: #BBB;
                                 
                                <div class="col-md-6">
                                                             <!-- 렌트가능 -->
-                              	<c:if test="${sessionScope.userId != null && vDto.status != 'Y'}">
-                                <button onclick="location.href='oneDayRev.do?cNum=${vDto.cNum}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                              	<c:if test="${sessionScope.userId != null && vDto.status != 'Y' && mDto.isRented != 'Y'}">
+                                <button onclick="location.href='longDayRev.do?cNum=${vDto.cNum}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
                                     <i class="fa-solid fa-car-side"></i>렌트하기
                                 </button>
                                 <button onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
@@ -260,6 +260,17 @@ color: #BBB;
                                     <i class="fa-solid fa-heart"></i>관심상품
                                 </button>                                 
                                 </c:if>
+                                
+                                
+                              	<c:if test="${sessionScope.userId != null && mDto.isRented == 'Y'}">
+                                <button onclick="alert('회원님은 이미 예약한 차량이 있습니다.')" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                                    <i class="fa-solid fa-car-side"></i>렌트하기
+                                </button>
+                                <button onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'" class="btn btn-general btn-white" type="submit" data-dismiss="modal">
+                                    <i class="fa-solid fa-heart"></i>관심상품
+                                </button>                                 
+                                </c:if>                                
+                                
                                 
                               	<c:if test="${sessionScope.userId == null && vDto.status != 'Y'}">
                                 <button onclick="javascript:LoginValid()" class="btn btn-general btn-white" type="submit" data-dismiss="modal">

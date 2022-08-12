@@ -8,11 +8,13 @@
 
 <script type="text/javascript">
 	function showMsg(){
-		alert("취소 하시게요?.....");
-		document.location.href="#";
+		let confirm = window.confirm("취소 하시게요?.....");
+		if(confirm == true){
+		document.location.href="revCancle.do";
+		}
 	}
 	function delMsg(){
-		alert("삭제.. 할건가요??");
+		window.confirm("삭제.. 할건가요??");
 		document.location.href="#";
 	}
 </script>
@@ -57,17 +59,24 @@
 				<table class="table table-borderless">
 					<thead>
 						<tr class="table-dark">
-							<th class="col-6"><i class="xi-walk"></i> &nbsp;나의 쇼핑정보</th>
+							<th class="col-6"><i class="xi-walk"></i> &nbsp;나의 예약정보</th>
 							<th class="col-3">
 								<button class="custom-btn btn-5" onclick="location.href='myInvoice.do'"><span>최근 구매내역 보기</span></button>
 							</th>
 						</tr>
 					</thead>
 						<tbody>
+						<c:if test="${hDto == null}">
+						<tr>
+							<td>현재 예약된 차량 이 없습니다. </td>
+						</tr>
+						</c:if>
+						<c:if test="${hDto != null}">						
 						<tr>
 							<td>현재 예약된 차량 : </td>
-							<td>${vDto.cName}</td>
+							<td>${hDto.cName}</td>
 						</tr>
+						</c:if>
 						<tr>
 							<td>교환/반품 주문</td>
 							<td>0건</td>
@@ -80,121 +89,115 @@
 				</table>
 			</div>
 		</div>
+		
+		
+		
+			<c:if test="${hDto == null}">
 			<div class="container mt-5">
-				<h2><i class="xi-cart-o"></i> &nbsp;주문내역</h2>            
+				<h2><i class="xi-cart-o"></i> &nbsp;차량 예약내역</h2>            
 				<table class="table mt-3" style="color:#fff">
 					  <thead>
 						<tr>
-						  <th>주문일자</th>
-						  <th>주문번호</th>
-						  <th>상품명</th>
+						  <th>사진</th>
+						  <th>렌트일자</th>
+						  <th>반납일자</th>
+						  <th>차량명</th>
+						  <th>주문금액</th>
+						  <th>취소</th>
+						</tr>
+					  </thead>
+				</table>
+						<h2 class="text-center">진행중인 주문내역이 없습니다.</h2>
+					<table class="table mt-3" style="color:#fff">
+					  <thead>
+						<tr>
+						  <th></th>				
+						</tr>
+					  </thead>
+				</table>	
+
+				</div>
+				</c:if>
+				
+			<c:if test="${hDto != null}">
+			<div class="container mt-5">
+				<h2><i class="xi-cart-o"></i> &nbsp;나의 예약정보</h2>            
+				<table class="table mt-3" style="color:#fff">
+					  <thead>
+						<tr>
+						  <th>사진</th>
+						  <th>렌트일자</th>
+						  <th>반납일자</th>
+						  <th>차량명</th>
 						  <th>주문금액</th>
 						  <th>취소</th>
 						</tr>
 					  </thead>
 					  <tbody>
 							<tr>
-							  <td>{dto.rentalDate}</td>
-							  <td>{dto.cNum}</td>
-							  <td>{dto.cName}</td>
-							  <td>{dto.price}</td>
+							  <td style="align-items-middle">
+								<img style="widows: 160px; height: 140px" src="${ctx}/resources/file_upload/${hDto.fileName}">
+						  	  </td>							  
+							  <td style="align-items-middle">${hDto.revDate1}</td>
+							  <td>${hDto.revDate2}</td>
+							  <td>${hDto.cName}</td>
+							  <td>${hDto.wtotalPrice}</td>
 							  <td>
 							     <div id="close_btn">
-								 	<button class="close" onclick="location.href='#'; javascript:showMsg()">취소</button>
-								 </div>
-							  </td>
-							</tr>
-							<tr>
-							  <td>{dto.rentalDate}</td>
-							  <td>{dto.cNum}</td>
-							  <td>{dto.cName}</td>
-							  <td>{dto.price}</td>
-							  <td>
-							     <div id="close_btn">
-								 	<button class="close" onclick="location.href='#'; javascript:showMsg()">취소</button>
-								 </div>
-							  </td>
-							</tr>
-							<tr>
-							  <td>{dto.rentalDate}</td>
-							  <td>{dto.cNum}</td>
-							  <td>{dto.cName}</td>
-							  <td>{dto.price}</td>
-							  <td>
-							     <div id="close_btn">
-								 	<button class="close" onclick="location.href='#'; javascript:showMsg()">취소</button>
+								 	<button class="close" onclick="location.href='#'; javascript:showMsg()">예약취소</button>
 								 </div>
 							  </td>
 							</tr>
 					</tbody>
 				</table>
 				</div>
+				</c:if>
 
 				<div class="container mt-5">
 					<div class="wish_header d-flex" style="justify-content: space-between;">
 						<h2><i class="xi-heart"></i> &nbsp;위시리스트</h2>
-					</div>          
+					</div>
+					
+						<c:if test="${wishList == null}">    
+							<div>위시리스트가 없습니다.</div>
+						</c:if>		
+										          
 					<table class="table mt-3" style="color:#fff;">
 					  <thead>
 						<tr>
-						  <th>상품정보</th>
+						  <th>사진</th>
+						  <th>차량정보</th>
 						  <th>가격</th>
 						  <th>예약하기</th>
 						  <th>삭제</th>
 						</tr>
 					  </thead>
 					  <tbody>
+						<c:if test="${wishList != null}">
+      					<c:forEach var="wDtos" items="${wishList}">					  
 						<tr>
 						  <td>
-							<img style="width: 60px; height: 40px;" src="${ctx}/resources/image/cars/람보르기니  가야도르.jpg" alt="#">
-						  	{dto.cName}
+							<img style="widows: 60px; height: 40px" src="${ctx}/resources/file_upload/${wDtos.fileName}">
 						  </td>
 						  <td>
-						  	{dto.price}
+							<p>${wDtos.company} ${wDtos.cName}</p>
 						  </td>
 						  <td>
-					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
-						  </td>
-						  <td>
-                			<div id="close_btn">
-								<button class="close" onclick="location.href='#'; javascript:delMsg()">삭제</button>
-							</div>                			
-						  </td>
-						</tr>
-						<tr>
-						  <td>
-							<img style="width: 60px; height: 40px;" src="${ctx}/resources/image/cars/람보르기니  가야도르.jpg" alt="#">
-						  	{dto.cName}
-						  </td>
-						  <td>
-						  	{dto.price}
+						  	￦ ${wDtos.price}원
 						  </td>
 							<td>
-					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
+					    		<button class="custom-btn btn-5" onclick="location.href='rentalSelector.do?cNum=${wDtos.cNum}&id=${wDtos.id}'">
+					    			<span>예약하기</span>
+					    		</button>
 						  	</td>
 							<td>
-	                			<div id="close_btn">
-									<button class="close" onclick="location.href='#'; javascript:delMsg()">삭제</button>
-								</div>    
+								<button  class="remove custom-btn btn-5" onclick="location.href='deleteWishList.do?cNum=${wDtos.cNum}&id=${wDtos.id}'; javascript:delMsg()">
+									<span>삭제</span>
+								</button>								 
 							</td>
 						</tr>
-						<tr>
-						  <td>
-							<img style="width: 60px; height: 40px;" src="${ctx}/resources/image/cars/람보르기니  가야도르.jpg" alt="#">
-						  	{dto.cName}
-						  </td>
-						  <td>
-						  	{dto.price}
-						  </td>
-							<td>
-					    		<button class="custom-btn btn-5" onclick="location.href='mReservation.do'"><span>예약하기</span></button>
-						  	</td>
-							<td>
-	                			<div id="close_btn">
-									<button class="close" onclick="location.href='#'; javascript:delMsg()">삭제</button>
-								</div>    
-							</td>
-						</tr>
+						</c:forEach>
+						</c:if>
 					</tbody>
 				</table>
 			</div>				  

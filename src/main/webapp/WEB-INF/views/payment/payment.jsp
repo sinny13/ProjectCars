@@ -5,7 +5,7 @@
 
 <link href="https://fonts.googleapis.com/css?family=Muli:400,700,800,900" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="${ctx}/resources/css/payment.css">
-<link rel="stylesheet" href="${ctx}/resources/js/payment.js">
+<script src="${ctx}/resources/js/payment.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 
@@ -406,36 +406,15 @@ color: #BBB;
                    var 
                 </script>
                 
-                <!-- <div class="f30">
-                  <div class="input input--select">
-                    <label for="ccyear" class="input__label">Expiry year <span class="required">(required)</span></label>
-                    <select name="ccyear" id="ccyear" class="input__input">
-                      <option disabled selected>YY</option>
-                      <option value="2017">17</option>
-                      <option value="2018">18</option>
-                      <option value="2019">19</option>
-                      <option value="2020">20</option>
-                      <option value="2021">21</option>
-                      <option value="2022">22</option>
-                      <option value="2023">23</option>
-                    </select>
-                  </div>
-                </div> -->
-                <!-- <div class="f40">
-                  <div class="input">
-                    <svg class="input__icon"><use xlink:href="#icon-help"></use></svg>
-                    <label for="ccsecurity" class="input__label">Security code <span class="required">(required)</span></label>
-                    <input id="ccsecurity" type="text" class="input__input" data-mask="^\d{3,4}$" />
-                    <div class="input__error">Please enter a security code.</div>
-                  </div>
-                </div> -->
+
               </div>
             </div>
 
             <label for="payment-paypal" class="control block">
               <input type="radio" name="payment" id="payment-paypal" value="2" class="control__input" />
               <div class="control__label">
-                신용/체크카드/페이결제
+                신용/체크카드/페이
+
                 <div class="microcopy">credit / check card / pay</div>
  
               </div>
@@ -480,14 +459,19 @@ color: #BBB;
           src="https://cdn.iamport.kr/js/iamport.payment-1.1.2.js"></script>
 
           <div class="form__footer">
+          
+          
             <button class="btn btn--primary js-goto" id="payBtn" onclick="requestPay(${vDto.cNum})">
               <span class="btn__label">결제하기</span>
               <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
             </button>
+            
             <button class="btn btn--transparent secondary js-goto" data-page="2">
 
               <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
             </button>
+            
+            
           </div>
           
         </div>
@@ -508,22 +492,22 @@ color: #BBB;
             function requestPay(cNum) {
 		var current = $("input:radio[name='payment']:checked").val();
                 if(current == '1'){
-                   cashPay();
+                   cashPay(cNum);
                 }
                 else if(current == '2'){
-                   cardPay();
+                   cardPay(cNum);
                 }
                 
              };
              
            
-             function cashPay(){
-                location.href = "http://localhost:8080/web/bankPaymentOk.do"
-             	/* location.href = "bankPaymentOk.do" */
+             function cashPay(cNum){              
+                 alert(cNum);  
+                location.href = "http://localhost:8080/web/bankPaymentOk.do?cNum="+cNum+"&id="+mId;
              };
                         
             
-            function cardPay() {
+            function cardPay(cNum) {
             IMP.init('iamport'); //iamport 대신 자신의 "가맹점 식별코드"를 사용
             IMP.request_pay({
               pg: "inicis",
@@ -540,9 +524,8 @@ color: #BBB;
               console.log(rsp);
               if (rsp.success) {
                 var msg = '결제가 완료되었습니다.';
-                /* alert(msg); */
-                alert(mId);
-                
+                alert(mId);                
+                alert(cNum);                
                 location.href = "paymentOk.do?cNum="+cNum+"&id="+mId;
                 
                 
@@ -592,7 +575,6 @@ color: #BBB;
     <strong style="font-family: LeferiPoint-WhiteObliqueA; font-size: 15px; color: #BBB">${vDto.company} ${vDto.cName}</strong>
     
     <div class="collapser">
-      <!-- <a href="#" class="collapser__label">Add a coupon code</a> -->
       <div class="collapser__content">
         
         <div class="f">
@@ -613,11 +595,7 @@ color: #BBB;
     </div>
     
     <div class="f">
-<!--       <div class="input f70">
-        <label for="discount" class="input__label">Discount code</label>
-        <input id="discount" type="text" class="input__input" />
-      </div>
-      <button class="btn f30">Apply</button> -->
+
       
       <table class="pricing">
         <tbody>
@@ -627,82 +605,22 @@ color: #BBB;
 							<td class="pricing__label">1일 비용 : </td>
 							<td class="pricing__price">￦ ${vDto.wprice} 원</td>
 						</tr>
-						<!-- <tr>
-            <td>image</td>
-            <td class="pricing__label">Triptych Canvas Print (36" x 24")</td>
-            <td class="pricing__price">$276.66</td>
-          </tr> -->
 					</tbody>
 				</table>
 
 				<table class="pricing">
 					<tbody>
-						<!-- <tr>
-            <td class="pricing__label">Subtotal</td>
-            <td class="pricing__price">$306.66</td>
-          </tr>
-          <tr>
-            <td class="pricing__label">Gift cards</td>
-            <td class="pricing__price">-$50.00</td>
-          </tr>
-          <tr>
-            <td class="pricing__label">Discount <small>(-30%)</small></td>
-            <td class="pricing__price">-$91.99</td>
-          </tr>
-          <tr>
-            <td class="pricing__label">Shipping</td>
-            <td class="pricing__price">$8.00</td>
-          </tr>
-          <tr>
-            <td class="pricing__label">Tax <small>(13%)</small></td>
-            <td class="pricing__price">$28.95</td>
-          </tr> -->
 					</tbody>
 					<tfoot>
 						<tr class="pricing__total">
 							<td class="pricing__label">Total</td>
 							<td class="pricing__price"><span class="currency">￦</span> <b>${rDto.wtotalPrice}원</b></td>
 						</tr>
-						<!-- <tr class="pricing__total-localized">
-            <td class="pricing__label">Total in EUR</td>
-            <td class="pricing__price"><span class="currency">EUR</span> <b>€ 211.36</b></td>
-          </tr> -->
 					</tfoot>
 				</table>
 			</div>
 
-			<!-- <header class="header">
-      <h2>Shipping summary</h2>
-    </header>
-    <p class="microcopy">A summary of your shipping and payment selections.</p> -->
 
-			<!-- <table>
-      <tbody>
-        <tr>
-          <td class="pricing__label">Shipping address</td>
-          <td class="pricing__price">John Appleseed, 123 Main Street, Ottawa, Ontario, K1K 1K1, Canada</td>
-          <td>Edit</td>
-        </tr>
-        <tr>
-          <td class="pricing__label">Shipping method</td>
-          <td class="pricing__price">Free shipping</td>
-          <td>Edit</td>
-        </tr>
-      </tbody>
-    </table> -->
-
-<!--     <div class="summaries">
-      <div class="summary block">
-        <div class="summary__title">Shipping address</div>
-        <div class="summary__content">John Appleseed, 123 Main Street, Ottawa, Ontario, K1K 1K1, Canada</div>
-        <div class="summary__extra primary js-goto" data-page="1">Edit</div>
-      </div>
-      <div class="summary block">
-        <div class="summary__title">Shipping method</div>
-        <div class="summary__content">Free shipping</div>
-        <div class="summary__extra primary js-goto" data-page="2">Edit</div>
-      </div>
-    </div> -->
     
   </div>
 </div>

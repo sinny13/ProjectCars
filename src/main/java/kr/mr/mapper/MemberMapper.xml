@@ -49,15 +49,21 @@
   
   <!-- 각 회원의 차량렌트여부 -->  
   <select id="isRented" resultType="memberDTO">
-<!--     SELECT isRented
-  	FROM car INNER JOIN member 
-  	ON car.cNum = member.cNum
-  	WHERE isRented = "Y"; -->
   	SELECT isRented
   	FROM car INNER JOIN member 
   	ON car.cNum = member.cNum
   	WHERE member.id = #{id};
   </select>
+  
+  
+    <!-- 멤버 isRented초기화 -->
+  <update id="memberisRentedToNull" parameterType="memberDTO">    
+        update member set isRented = null 
+        where isRented = "Y" or isRented = "N";
+  </update>
+  
+  
+  
   
   
   

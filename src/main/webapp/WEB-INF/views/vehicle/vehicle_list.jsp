@@ -60,8 +60,8 @@ $(document).ready(function(){
 
 
 
-<div class="container carList bg-dark w-90 mt-5 border shadow-sm p-5" >
-	<h3 style="color: #FFFFF">등록 차량 목록</h3>
+<div class="container carList bg-white w-90 mt-5 border shadow-sm p-5" >
+	<h3 style="color: #111">등록 차량 목록</h3>
 	<table class="table" style="vertical-align:middle; color: #111;">
 		<thead>
 			<tr>

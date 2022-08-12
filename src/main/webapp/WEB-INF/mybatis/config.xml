@@ -12,5 +12,6 @@
   	<typeAlias type="kr.mr.model.WishDTO" alias="wishDTO"/>
   	<typeAlias type="kr.mr.model.ReserveDTO" alias="reserveDTO"/>
   	<typeAlias type="kr.mr.model.ImageDTO" alias="imageDTO"/>
+  	<typeAlias type="kr.mr.model.RevHistoryDTO" alias="revHistoryDTO"/>
   </typeAliases>
 </configuration>
