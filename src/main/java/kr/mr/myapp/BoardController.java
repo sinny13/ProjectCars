@@ -51,15 +51,15 @@ public class BoardController {
 		
 		model.addAttribute("list", list);
 		
-		return "board/board_list"; // boardList.jsp에서 사용하기 위해 반환
+		return "board/boardList"; // boardList.jsp에서 사용하기 위해 반환
 	}
 	
-	
+//	@GetMapping("/register.do")
 	@RequestMapping(value="/boardRegister.do", method=RequestMethod.GET)
 	// GET : html <body>의 내용을 담아서 보낼때 사용
 	public String registerForm(
 			@ModelAttribute("viewPage") int viewPage) {
-		return "board/board_register"; // 글쓰기
+		return "board/boardRegister"; // 글쓰기
 	}
 	@RequestMapping(value="/boardRegister.do", method=RequestMethod.POST)
 	// POST : html <body>의 내용 없이 보낼 때 사용
@@ -76,7 +76,7 @@ public class BoardController {
 		model.addAttribute("board", board);
 		model.addAttribute("viewPage", viewPage);
 		
-		return "board/board_view";
+		return "board/boardView";
 		
 	}
 	
@@ -85,7 +85,7 @@ public class BoardController {
 		BoardVO board = service.view(bvo.getBid(), "modify");
 		model.addAttribute("board", board);
 		
-		return "board/board_modify"; // modify.jsp
+		return "board/boardModify"; // modify.jsp
 	}
 	
 	@RequestMapping(value="/boardModify.do", method=RequestMethod.POST)
@@ -98,7 +98,7 @@ public class BoardController {
 		model.addAttribute("searchType", board.getSearchType());
 		
 		// redirect:접두어가 붙으면 스프링에서 내부적으로
-		// response.sendRedirect() 처리해 줌
+		// response.sendRedirect()와 같은 기능을 처리해 줌
 		return "redirect:/boardList.do";
 	}
 	
