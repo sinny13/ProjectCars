@@ -25,7 +25,7 @@
                 </tr>                           
                 <tr>                            
                     <td>비밀번호</td>           
-                    <td><input type="text" class="form-control" style="width:400px; margin:auto;" id="floatingInputValue" name="pw" value="${member.pw}"></td>    
+                    <td><input type="text" class="form-control" style="width:400px; margin:auto;" id="floatingInputValue" name="pw" value="" placeholder="***********"></td>    
                 </tr>                           
                 <tr>                            
                     <td style="color: cornflowerblue;">이름</td>               

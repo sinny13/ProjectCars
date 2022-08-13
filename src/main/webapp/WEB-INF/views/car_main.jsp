@@ -17,7 +17,7 @@
     
     <!-- MyCss -->
    <link rel="stylesheet" href="${ctx}/resources/css/font.css">
-    <link rel="stylesheet" href="${ctx}/resources/css/car_main.css">
+    <link rel="stylesheet" href="${ctx}/resources/css/car_main.css?carMain">
    <link rel="stylesheet" href="${ctx}/resources/css/main.css">
    
 
@@ -104,7 +104,7 @@
 <!-- 렌트카 차량소개-->
 <div class="contatiner sentence text-center m-0 p-0">
    <h3>Company Policy</h3>
-   <p>회사 규약 / 안내사항</p>
+   <p>유의사항/안내사항</p>
 </div>
 
 <div id="sectionNotice">
@@ -123,8 +123,8 @@
                             <p>렌트시 필요한 보험 및 유의사항 안내</p>
                             <div class="btn-bar">
                                 <a href="noticeList.do" class="px-btn-arrow">
-                                    <span>Read More</span>
-                                    <i class="arrow"></i>
+                                    <span style="color:#c36f51;"><strong>Read More</strong></span>
+                                    <i class="arrow" style="color:#c36f51;"></i>
                                 </a>
                             </div>
                         </div>
@@ -142,8 +142,8 @@
                             <p>1일렌트 렌트카 대여 조건 및 안내사항</p>
                             <div class="btn-bar">
                                 <a href="noticeDayRent.do" class="px-btn-arrow">
-                                    <span>Read More</span>
-                                    <i class="arrow"></i>
+                                    <span style="color:#c36f51;"><strong>Read More</strong></span>
+                                    <i class="arrow" style="color:#c36f51;"></i>
                                 </a>
                             </div>
                         </div>
@@ -161,8 +161,8 @@
                             <p>장기렌트 렌트카 대여 조건 및 안내사항</p>
                             <div class="btn-bar">
                                 <a href="noticeLongRent.do" class="px-btn-arrow">
-                                    <span>Read More</span>
-                                    <i class="arrow"></i>
+                                    <span style="color:#c36f51;"><strong>Read More</strong></span>
+                                    <i class="arrow" style="color:#c36f51;"></i>
                                 </a>
                             </div>
                         </div>
@@ -177,7 +177,7 @@
 
 <div class="contatiner sentence text-center m-0 p-0">
    <h3>Q&A</h3>
-   <p>자주묻는질문 / 보험사 배너</p>
+   <p>자주묻는질문 / 보험사</p>
 </div>
 
 
@@ -198,7 +198,7 @@
         </h2>
         <div id="flush-collapse1" class="accordion-collapse collapse" aria-labelledby="flush-heading1" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body" style="color:#fff">
-            A. 보증금은 계약 종료시 환급받으실 수 있고, 차량 인수시 인수비용에서 <code>보증금을 뺀 나머지 금액</code> 만 납부하시면 인수 가능합니다.
+            A. 보증금은 계약 종료시 환급받으실 수 있고, 차량 인수시 인수비용에서 <code style="color:#c36f51;">보증금을 뺀 나머지 금액</code> 만 납부하시면 인수 가능합니다.
           </div>
         </div>
       </div>
@@ -224,8 +224,8 @@
         </h2>
         <div id="flush-collapse3" class="accordion-collapse collapse" aria-labelledby="flush-heading3" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body" style="color:#fff">
-            A. 개인 : 계약자 본인, 계약자 직계가족, 계약자 지정인(<code>2인까지 가능</code>)
-            사업자 : 계약자 본인, 계약자 직계가족, 사업체/법인의 임직원, 계약자 지정인(<code>2인까지 가능</code>)
+            A. 개인 : 계약자 본인, 계약자 직계가족, 계약자 지정인(<code style="color:#c36f51;">2인까지 가능</code>)
+            사업자 : 계약자 본인, 계약자 직계가족, 사업체/법인의 임직원, 계약자 지정인(<code style="color:#c36f51;">2인까지 가능</code>)
           </div>
         </div>
       </div>
@@ -238,7 +238,7 @@
         </h2>
         <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body" style="color:#fff">
-            A. 렌터카는 피보험자가 <code>렌터카 회사 명의</code>로 가입되기 때문에 사고로 인한 보험료 할증은 없고 사고로 인한 월 대여료는 인상되지 않습니다. 
+            A. 렌터카는 피보험자가 <code style="color:#c36f51;">렌터카 회사 명의</code>로 가입되기 때문에 사고로 인한 보험료 할증은 없고 사고로 인한 월 대여료는 인상되지 않습니다. 
           </div>
         </div>
       </div>
@@ -251,7 +251,7 @@
         </h2>
         <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body" style="color:#fff">
-            A. 장기렌트 이용 시 차량의 사고나 고장으로 인해 수리가 필요한 경우, <code>계약한 렌트회사 사고담당자</code>에게 문의하시면
+            A. 장기렌트 이용 시 차량의 사고나 고장으로 인해 수리가 필요한 경우, <code style="color:#c36f51;">계약한 렌트회사 사고담당자</code>에게 문의하시면
             바로 조치받으실 수 있습니다. 
           </div>
         </div>
@@ -265,7 +265,7 @@
         </h2>
         <div id="flush-collapse6" class="accordion-collapse collapse" aria-labelledby="flush-heading6" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body" style="color:#fff">
-            A. 장기렌트의 경우 <code>사업자 등록증</code>을 가지고 있는 계약자라면 누구나 비용처리 가능합니다. 또한 경차, 승합자등 부가세 환급차량의 경우
+            A. 장기렌트의 경우 <code style="color:#c36f51;">사업자 등록증</code>을 가지고 있는 계약자라면 누구나 비용처리 가능합니다. 또한 경차, 승합자등 부가세 환급차량의 경우
             부가세 환급도 가능합니다. 
           </div>
         </div>
@@ -273,8 +273,8 @@
 
    <!-- card body -->
    
-    <div class="frame" id="faqBtn">
-        <button class="custom-btn btn-12" onclick="location.href='noticeFaq.do';"><span>Click!</span><span>FAQ 질문 더 보기</span></button>
+    <div id="faqBtn">
+        <button class="custom-btn" onclick="location.href='noticeFaq.do';">질문 더 보기</button>
     </div>
     
       </div>
@@ -287,7 +287,7 @@
 
 <div id="sectionFAQ" class="FAQ" style="width:660px; height:450px; margin: auto;">
     <div class="FAQcard">
-       <h5 class="card-header">보험사 배너</h5>
+       <h5 class="card-header">보험사</h5>
     </div>
    <div class="card-body" style="margin: auto">
       <a href="https://direct.hi.co.kr/">

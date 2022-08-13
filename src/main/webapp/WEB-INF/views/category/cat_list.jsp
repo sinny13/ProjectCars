@@ -14,15 +14,15 @@ $(document).ready(function(){  /* CatRegOk 에서 카테고리가 수정되었�
 
 
 
-<div class="container carList bg-white w-90 mt-5 border shadow-sm p-5" >
-   <h3 style="color: #111">카테고리 리스트</h3>
-   <table class="table" style="vertical-align:middle; color: #111;">
+<div class="container carList bg-dark mt-5 border shadow-sm p-5" style="width:1000px;">
+   <h3>카테고리 리스트</h3>
+   <table class="table" style="vertical-align:middle; color: #fff;">
       <thead>
          <tr>   
-            <th>번호</th>
-            <th>코드</th>
-            <th>카테고리명</th>
-            <th>삭제</th>
+            <th><strong>번호</strong></th>
+            <th><strong>코드</strong></th>
+            <th><strong>카테고리명</strong></th>
+            <th><strong>삭제</strong></th>
          </tr>
       </thead>
       <tbody>
@@ -31,7 +31,7 @@ $(document).ready(function(){  /* CatRegOk 에서 카테고리가 수정되었�
                   <td>${dto.cat_num}</td>
                   <td>${dto.cat_code}</td>
                   <td>${dto.cat_name}</td>
-                  <td><input type="button" value="삭제" class="btn btn-danger" onclick="deleteCat(${dto.cat_num})"/></td>
+                  <td><input type="button" value="삭제" class="btn btn-outline-danger" onclick="deleteCat(${dto.cat_num})"/></td>
                </tr>   
                </c:forEach>
          </tbody>

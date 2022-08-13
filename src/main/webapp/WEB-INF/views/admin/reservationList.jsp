@@ -13,18 +13,18 @@
 
 
 
-<div class="container carList bg-white w-90 mt-5 border shadow-sm p-5" >
-	<h3 style="color: #111">렌트 현황</h3>
-	<table class="table" style="vertical-align:middle; color: #111;">
+<div class="container carList bg-dark w-90 mt-5 border shadow-sm p-5" style="width:1000px;">
+	<h3 style="color: #fff">렌트 현황</h3>
+	<table class="table" style="vertical-align:middle; color: #fff;">
 		<thead>
 			<tr>
-				<th>차량번호</th>
-				<th>차량명</th>
-				<th>이름</th>
-				<th>전화</th>
-				<th>렌트일</th>
-				<th>반납일</th>
-				<th>총가격</th>
+				<th><strong>차량번호</strong></th>
+				<th><strong>차량명</strong></th>
+				<th><strong>이름</strong></th>
+				<th><strong>전화</strong></th>
+				<th><strong>렌트일</strong></th>
+				<th><strong>반납일</strong></th>
+				<th><strong>총가격</strong></th>
 				
 			</tr>
 		</thead>

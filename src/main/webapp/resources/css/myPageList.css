@@ -16,7 +16,7 @@
 
 /* btn */
 
-
+/* 
 #myPageList .custom-btn {
     width: 130px;
     height: 40px;
@@ -35,10 +35,11 @@
     outline: none;
     border: 1px solid red;
     
-  }
+  } */
 
 /* 5 */
-#myPageList .btn-5 {
+
+/* #myPageList .btn-5 {
    width: 130px;
    height: 40px;
    line-height: 42px;
@@ -51,8 +52,8 @@
     color: #fff;
     background: transparent;
      box-shadow:none;
-  }
-#myPageList .btn-5:before,
+  } */
+/* #myPageList .btn-5:before,
 #myPageList .btn-5:after{
     content:'';
     position:absolute;
@@ -78,7 +79,7 @@
     width:100%;
     transition:800ms ease all;
   }
-  
+   */
   
 /* close btn */
 
@@ -96,7 +97,7 @@
 }
 .close:hover,
 .close:focus {
-  box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+  box-shadow: inset -5em 0 0 0 var(--hover), inset 5em 0 0 0 var(--hover);
 }
 
 
@@ -117,12 +118,15 @@
 
 
 #close_btn button {
+	 width: 130px;
+    height: 40px;
   background: none;
   border: 1px solid;
-  font: inherit;
+  /* font: inherit; */
   line-height: 1;
-  margin: 0.5em;
-  padding: 1em 2em;
+  margin: ;
+ 
+  padding: 1em 2em; 
 }
 
 

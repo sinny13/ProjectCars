@@ -60,21 +60,21 @@ $(document).ready(function(){
 
 
 
-<div class="container carList bg-white w-90 mt-5 border shadow-sm p-5" >
-   <h3 style="color: #111">등록 차량 목록</h3>
-   <table class="table" style="vertical-align:middle; color: #111;">
+<div class="container carList bg-dark w-90 mt-5 border shadow-sm p-5" >
+   <h3 style="color: #fff">등록 차량 목록</h3>
+   <table class="table" style="vertical-align:middle; color: #fff;">
       <thead>
          <tr>
-            <th>번호</th>
-            <th>차량명</th>
-            <th>이미지</th>
-            <th>가격</th>
-            <th>카테고리</th>
-            <th>색상</th>
-            <th>제조사</th>
-            <th>분류</th>
+            <th><strong>번호</strong></th>
+            <th><strong>차량명</strong></th>
+            <th><strong>이미지</strong></th>
+            <th><strong>가격</strong></th>
+            <th><strong>카테고리</strong></th>
+            <th><strong>색상</strong></th>
+            <th><strong>제조사</strong></th>
+            <th><strong>분류</strong></th>
             <!-- <th>차량소개</th> -->
-            <th>수정</th>
+            <th><strong>수정</strong></th>
          </tr>
       </thead>
       <tbody>      
@@ -98,9 +98,9 @@ $(document).ready(function(){
             <%-- <td>${vDto.contents}</td> --%>
             <td>
                <div class="container" >
-               <a href="javaScript:updateVehicle('${vDto.cNum}','${vDto.category_fk}')" style="width: 100% " class="btn btn-primary btn-sm m-1" >수정</a>
-               <a href="javaScript:deleteVehicle('${vDto.cNum}','${vDto.fileName}')" style="width: 100%" class="btn btn-danger btn-sm m-1">삭제</i></a>
-               <a href="imageInput.do?cNum=${vDto.cNum}" style="width: 100%" class="btn btn-info btn-sm m-1">이미지업로드</a>
+               <a href="javaScript:updateVehicle('${vDto.cNum}','${vDto.category_fk}')" style="width: 100% " class="btn btn-outline-white btn-sm m-1" >수정</a>
+               <a href="javaScript:deleteVehicle('${vDto.cNum}','${vDto.fileName}')" style="width: 100%" class="btn btn-outline-danger btn-sm m-1">삭제</i></a>
+               <a href="imageInput.do?cNum=${vDto.cNum}" style="width: 100%" class="btn btn-outline-white btn-sm m-1">이미지업로드</a>
                </div>               
             </td>
       </c:forEach>

@@ -1,11 +1,11 @@
 @charset "UTF-8";
-
+/* 
 body{
     background-color: #111;
     color: #fff;
     font-size: 20px;
 }
-
+ */
 .container{
     margin: auto;
 }
@@ -30,6 +30,16 @@ i{
     margin-bottom: 30px;
 }
 
+h1{
+	font-size: 28px;
+}
+
+p{
+	fint-size: 16px;
+}
+
+
+
 /* scrollUp */
 
 #scrollUp, #back-top {
@@ -45,13 +55,14 @@ i{
   border-radius: 50%;
   line-height: 48px;
   border: 2px solid transparent;
-  box-shadow: 0 0 10px 3px rgba(155, 85, 170, 0.550);
+  box-shadow: 0 0 10px 3px #c36f51;
 }
 
 @media (max-width: 575px) {
 
   #scrollUp, #back-top {
     right: 16px;
+    background-color:#c36f51;
   }
 }
 

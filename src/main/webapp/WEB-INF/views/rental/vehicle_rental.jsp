@@ -161,13 +161,13 @@
 	<table>
 	  <c:forEach var="vehicle" items="${vehicleList}">
 	  
-	    <c:if test="${i % j == 0 }">
+	   <c:if test="${i % j == 0 }">
 	    <tr>
-	    </c:if>
+	    </c:if> 
 	    
 	    <c:if test="${vehicle.cSpec eq vDto.cSpec}">
 	    <td class="my-5">
-      <div class="card mb-5" style="display:flex; max-height:300px ;max-width:350px;min-width: 350px">
+    		 <div class="card mb-5" style="display:flex; max-height:300px ;max-width:350px;min-width: 350px">
         		<ul class="image-list"> 
         			<li class="image-item">
         				<a href="vehicleRental.do?cNum=${vehicle.cNum}">
@@ -179,11 +179,11 @@
         			<h4>${vehicle.company} - ${vehicle.cName}</h4>
         			<p class="price">${vehicle.price}원</p>
         		</div>   	
-      </div>
-      </td>			
+     		 </div>
+     	 </td>			
 	    </c:if>
 	    
-	    
+	   
 	    <c:if test="${i%j == j-1}">
 	    </tr>
 	    </c:if>

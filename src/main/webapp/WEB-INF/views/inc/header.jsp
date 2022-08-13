@@ -257,9 +257,9 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
             <a class="letter" href="reservationList.do">렌트 현황</a>
             <hr class="dropdown-divider"/>
         </li>        
-        <li class="nav-item ">
+<!--         <li class="nav-item ">
             <a class="letter" href="memberLogout.do">로그아웃</a>
-        </li>
+        </li> -->
       </ul> 
       </li> 
       </ul>

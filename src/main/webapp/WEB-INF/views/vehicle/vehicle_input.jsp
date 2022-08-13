@@ -5,7 +5,7 @@
 <%@ include file="../inc/header.jsp" %>
 
 <div class="container mt-5 d-flex justify-content-center">
-      <div class = "w-50 border rounded p-5 shadow">
+      <div class = "w-50 border rounded p-5 shadow bg-dark">
          <form name="uploadForm" action="<c:url value='/vehicleInsert.do'/>" method="post" enctype="multipart/form-data">
             <h3 class="text-center">차량 등록</h3>
                
@@ -71,8 +71,8 @@
          <table class="text-center justify-content-center form-group mt-3">
          <tr>
                <td colspan="2" class="text-center">
-                  <input type="submit" class="text-center btn btn-sm btn-primary" value="차량등록"/>
-                  <a href="home.do" style="width: 15%" class="text-center btn btn-sm btn-info">메인으로</a>
+                  <input type="submit" class="text-center btn btn-sm btn-outline-white" value="차량등록"/>
+                  <a href="home.do" style="width: 15%" class="text-center btn btn-sm btn-outline-white">메인으로</a>
                </td>
             </tr>
             </table>

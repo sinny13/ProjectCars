@@ -5,7 +5,7 @@
 
 <!-- Personal CSS -->
 <link rel="stylesheet" href="${ctx}/resources/css/noticeList.css">
-<link rel="stylesheet" href="${ctx}/resources/css/noticeRent.css">
+
 
 
 <script type="text/javascript" src="${ctx}/resources/js/mdb.min.js"></script>
@@ -19,7 +19,7 @@
     </div>
     <div class="inner">
       <div class="cat">
-        <h1><i class="xi-caret-right"></i>자격요건</h1>
+        <h1><i class="xi-caret-right"></i><strong>자격요건</strong></h1>
       </div>
       <div class="d-flex">
         <div class="person me-5">
@@ -47,7 +47,7 @@
 
       </div>
       <div class="cat">
-        <h1><i class="xi-caret-right"></i>보상제도</h1>
+        <h1><i class="xi-caret-right"></i><strong>보상제도</strong></h1>
       </div>
       <div>
         <p>
@@ -61,7 +61,7 @@
         </p>
       </div>
       <div class="cat">
-        <h1><i class="xi-caret-right"></i>기타안내</h1>
+        <h1><i class="xi-caret-right"></i><strong>기타안내</strong></h1>
       </div>
       <div>
         <p>
@@ -81,9 +81,9 @@
         </p>
       </div>
     </div>
-    <div id="back-top" >
+<!--     <div id="back-top" >
    		<a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-	</div>
+	</div> -->
   </div>
 </body>
 

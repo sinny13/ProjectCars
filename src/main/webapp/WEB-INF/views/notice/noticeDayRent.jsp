@@ -5,7 +5,7 @@
 
 <!-- Personal CSS -->
 <link rel="stylesheet" href="${ctx}/resources/css/noticeList.css">
-<link rel="stylesheet" href="${ctx}/resources/css/noticeRent.css">
+
 
 
 <script type="text/javascript" src="${ctx}/resources/js/mdb.min.js"></script>
@@ -19,7 +19,7 @@
     </div>
         
     <div id="section1" class="container-fluid" style="padding:100px 20px;">
-      <h1><i class="xi-lightbulb"></i> &nbsp;렌트카 대여 조건 및 운전자격</h1>
+      <h1><i class="xi-lightbulb"></i> &nbsp;<strong>렌트카 대여 조건 및 운전자격</strong></h1>
       <p><i class="xi-label"></i> &nbsp;승용, SUV, 카니발(9인승) : 만26세이상 ㅣ 2종보통면허이상 ㅣ 운전경력1년이상</p>
       <p><i class="xi-label"></i> &nbsp;올뉴카니발(11인승), 스타렉스, 쏠라티 : 만26세이상 ㅣ 1종보통면허이상 ㅣ 운전경력1년이상</p>
       <p><i class="xi-label"></i> &nbsp;운전면허증 필수지참(제2운전자 동일)</p>
@@ -31,12 +31,12 @@
     </div>
     
     <div id="section2" class="container-fluid" style="padding:100px 20px;">
-      <h1><i class="xi-lightbulb"></i> &nbsp;연료 및 반납 시간 초과 안내</h1>
+      <h1><i class="xi-lightbulb"></i> &nbsp;<strong>연료 및 반납 시간 초과 안내</strong></h1>
       <p><i class="xi-label"></i> &nbsp;차량반납 시 연료양은 인수받으실 때의 연료량과 동일하게 채워진 후 반납</p>
         <p><i class="xi-subdirectory-arrow"></i> &nbsp;연료량 미달 시 추가금이 발생</p>
         <p><i class="xi-subdirectory-arrow"></i> &nbsp;LPG : 10%당 10,000원</p>
         <p><i class="xi-subdirectory-arrow"></i> &nbsp;휘발유 및 경유 : 1칸(총8칸, 1/8칸) 당 20,000원</p>
-      <p style="color:red">※ 연료 남을 경우 환급 불가</p>
+      <p style="color:#c36f51">※ 연료 남을 경우 환급 불가</p>
       <p><i class="xi-label"></i> &nbsp;반납 시간 초과 : 추가요금 발생(현장결제)</p>
         <p><i class="xi-subdirectory-arrow"></i> &nbsp;승용 : 1시간 5,000원</p>
         <p><i class="xi-subdirectory-arrow"></i> &nbsp;승합, SUV : 1시간 10,000원</p>
@@ -47,24 +47,24 @@
       <p><i class="xi-label"></i> &nbsp;이용당일 NO SHOW → 취소 및 환불 불가.</p>
       <p><i class="xi-label"></i> &nbsp;운행 중 발생하는 교통 법규 위반, 단독사고는 임차인의 귀책입니다.</p>
       <p><i class="xi-label"></i> &nbsp;차 대 차 사고 외 단독 사고 차량 고장 / 파손 부분은 대여자가 원래 상태로 복원해야 하며 휴차료, 감가상각비가 청구될 수 있습니다.</p>
-      <p style="color:red">※ 출고 후 임차인의 과실 or 관리 부주의(방전, 키 분실등)로 발생 현장 출동 서비스 요청 시 비용 고객 부담</p>
+      <p style="color:#c36f51">※ 출고 후 임차인의 과실 or 관리 부주의(방전, 키 분실등)로 발생 현장 출동 서비스 요청 시 비용 고객 부담</p>
       <p><i class="xi-label"></i> &nbsp;차내 흡연으로 인한 악취 발생 시, 스팀 세차 비용(20만원)이 부과됩니다.</p>
     </div>
     
     <div id="section3" class="container-fluid" style="padding:100px 20px;">
-      <h1><i class="xi-lightbulb"></i> &nbsp;보험안내</h1>
+      <h1><i class="xi-lightbulb"></i> &nbsp;<strong>보험안내</strong></h1>
       <p><i class="xi-label"></i> &nbsp;모든 차종이 기본 종합보험(대인,대물,자손) 가입 되어 있으며, 자차 보험은 가입 되어 있지 않습니다. 운전자(임차인)가 별도 가입하여야 합니다.</p>
 
     </div>
 
     <div id="section4" class="container-fluid" style="padding:100px 20px;">
-      <h1><i class="xi-lightbulb"></i> &nbsp;보험 보상 범위</h1>
+      <h1><i class="xi-lightbulb"></i> &nbsp;<strong>보험 보상 범위</strong></h1>
       <p><i class="xi-label"></i> &nbsp;대인 : 무한 / 대물 : 1억 / 자손 : 1천5백만원</p>
       <p><i class="xi-label"></i> &nbsp;자차 : 운전자(임차인) 별도 추가 가입 : 렌트카 공제</p>
     </div>
 
     <div id="section5" class="container-fluid" style="padding:100px 20px;">
-      <h1><i class="xi-lightbulb"></i> &nbsp;자차 보험 안내</h1>
+      <h1><i class="xi-lightbulb"></i> &nbsp;<strong>자차 보험 안내</strong></h1>
       <p><i class="xi-label"></i> &nbsp;대여기간 연장 & 초과 이용 시간 발생 시 자차 보험은 자동 연장되며, 보험료는 日단위로 청구됩니다.</p>
       <p><i class="xi-label"></i> &nbsp;자차보험료는 연장 & 추가 이용 시간 발생 이전 결제 해야만 보험 보상 가능</p>
       <p><i class="xi-label"></i> &nbsp;보험료를 미납하신 경우 사고 발생시 보상 받을 수 없습니다.</p>
@@ -75,7 +75,7 @@
     </div>
 
     <div id="section6" class="container-fluid" style="padding:100px 20px;">
-      <h1><i class="xi-lightbulb"></i> &nbsp;차량 손해 면책 제도 안내</h1>
+      <h1><i class="xi-lightbulb"></i> &nbsp;<strong>차량 손해 면책 제도 안내</strong></h1>
       <p><i class="xi-label"></i> &nbsp;모든 차종이 기본 종합보험(대인,대물,자손) 가입 되어 있으며, 자차 보험은 가입 되어 있지 않습니다. (운전자 별도 가입 필요)</p>
       <p><i class="xi-label"></i> &nbsp;차량 손해 면책 제도(자차 보험, 본인부담금) 관련 세부 사항은 차량 인수 시 문의</p>
       <p><i class="xi-label"></i> &nbsp;다음의 사항은 어떠한 상황에도 보험 보상 처리(면책)가 불가합니다.</p>
@@ -91,7 +91,7 @@
     </div>
 
     <div id="section7" class="container-fluid" style="padding:100px 20px;">
-      <h1><i class="xi-lightbulb"></i> &nbsp;배, 반차 정보</h1>
+      <h1><i class="xi-lightbulb"></i> &nbsp;<strong>배, 반차 정보</strong></h1>
       <p><i class="xi-label"></i> &nbsp;배반차 가능시간 08:30 ~ 20:00</p>
       <p><i class="xi-label"></i> &nbsp;지점 방문 차량 인수 및 반납</p>
       <p><i class="xi-label"></i> &nbsp;8:30 이전, 20:00 이후 반납 불가</p>
@@ -101,9 +101,9 @@
         <p><i class="xi-subdirectory-arrow"></i> &nbsp;수입차량 이용시 시간당 2만원 추가</p>
         <p><i class="xi-subdirectory-arrow"></i> &nbsp;위반 시 : 추가 비용 발생</p>
     </div>
-    <div id="back-top" >
+<!--     <div id="back-top" >
    		<a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-	</div>
+	</div> -->
   </div>
 </body>
 
