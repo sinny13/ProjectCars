@@ -240,7 +240,7 @@
                >
           <source
                   class="h-100"
-                  src="${ctx}/resources/video/GENESIS G80 Launching.mp4"
+                  src="${ctx}/resources/video/Rolls-Royce Phantom.mp4"
                   type="video/mp4"
                   />
         </video>
@@ -249,8 +249,9 @@
                class="d-flex justify-content-center align-items-center h-100"
                >
             <div class="text-white text-center">
-              <h2>올 여름 여러분이 상상하는 차가 옵니다</h2>
-              <p>제네시스 G80</p>
+              <h2>Rolls-Royce Phantom</h2>
+              <p><!-- Don't hesitate -->
+					Just ride it</p>
               <a
                  class="btn btn-outline-light btn-lg m-2"
                 href="home.do">

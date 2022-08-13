@@ -34,9 +34,14 @@
 					<thead>
 						<tr class="table-dark">
 							<th class="col-6"><i class="xi-walk"></i> &nbsp;${sessionScope.userName}님의 정보</th> 
-							<th class="col-3">
-								<button class="custom-btn btn-5" onclick="location.href='myMemberModify.do?mId=${member.id}'"><span>상세정보 보기</span></button>
+							<th class="col-3" id="close_btn" >
+								<button class="close" onclick="location.href='myMemberModify.do?mId=${member.id}'"><span>상세정보</span></button>
 							</th>
+							
+							<!-- <div id="close_btn">
+								<button class="close" onclick="location.href='#'; javascript:showMsg()">예약취소</button>
+							</div> -->
+							
 						</tr>
 					</thead>
 					<tbody>
@@ -60,8 +65,8 @@
 					<thead>
 						<tr class="table-dark">
 							<th class="col-6"><i class="xi-walk"></i> &nbsp;나의 예약정보</th>
-							<th class="col-3">
-								<button class="custom-btn btn-5" onclick="location.href='myInvoice.do'"><span>최근 구매내역 보기</span></button>
+							<th class="col-3" id="close_btn" >
+								<button class="close" onclick="location.href='myMemberModify.do?mId=${member.id}'"><span>상세정보</span></span></button>
 							</th>
 						</tr>
 					</thead>
@@ -71,12 +76,7 @@
 							<td>현재 예약된 차량 이 없습니다. </td>
 						</tr>
 						</c:if>
-<%-- 						
-						<c:if test="${hDto.status == 'N' && hDto != null}">
-						<tr>
-							<td>현재 예약된 차량 이 없습니다. </td>
-						</tr>
-						</c:if> --%>
+
 						
 						<c:if test="${hDto != null}">						
 						<tr>
@@ -102,9 +102,9 @@
 			<c:if test="${hDto == null}">
 			<div class="container mt-5">
 				<h2><i class="xi-cart-o"></i> &nbsp;차량 예약내역</h2>            
-				<table class="table mt-3" style="color:#fff">
+				<table class="table mt-3" style="color:#fff font-size: 20px font-weight: bold">
 					  <thead>
-						<tr>
+						<tr >
 						  <th>사진</th>
 						  <th>렌트일자</th>
 						  <th>반납일자</th>
@@ -190,16 +190,18 @@
 							<p>${wDtos.company} ${wDtos.cName}</p>
 						  </td>
 						  <td>
-						  	￦ ${wDtos.price}원
+						  	￦ ${wDtos.wprice}원
 						  </td>
-							<td>
-					    		<button class="custom-btn btn-5" onclick="location.href='rentalSelector.do?cNum=${wDtos.cNum}&id=${wDtos.id}'">
-					    			<span>예약하기</span>
+						  	
+						  
+							<td class="col-3" id="close_btn" >
+					    		<button class="close" onclick="location.href='rentalSelector.do?cNum=${wDtos.cNum}&id=${wDtos.id}'">
+					    			예약하기
 					    		</button>
 						  	</td>
-							<td>
-								<button  class="remove custom-btn btn-5" onclick="location.href='deleteWishList.do?cNum=${wDtos.cNum}&id=${wDtos.id}'; javascript:delMsg()">
-									<span>삭제</span>
+							<td class="col-3" id="close_btn" >
+								<button  class="close" onclick="location.href='deleteWishList.do?cNum=${wDtos.cNum}&id=${wDtos.id}'; javascript:delMsg()">
+									삭제
 								</button>								 
 							</td>
 						</tr>

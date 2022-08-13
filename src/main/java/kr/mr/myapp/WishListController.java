@@ -87,7 +87,7 @@ public class WishListController {
 		}
 		   
 		   
-		   return "wish/wish_list"; 
+		   return "mypage/myPageList"; 
 		   }
 		   
 

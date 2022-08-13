@@ -111,30 +111,36 @@
 
 	<body style="background-color:#111; color:#fff">
 	<form action="longdaypayment.do?price=${vDto.price}" method="post" name="revForm">
-    <div class="container p-3 my-5 bg-secondary text-white">
+    <div class="container p-3 my-5 bg-secondary text-white" >
         <h1>렌트 예약</h1>
         <input value="${sessionScope.userId}" name="id" type="hidden">
     </div>
-    <div class="container">
-        <table class="table" style="color: #fff;">
+    <div class="container" >
+        <table class="table" style="color: #fff; " >
             <thead>
                 <tr class="table-dark">
                     <th>즉시렌트</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+               <%--  <tr>
                     <td>차량번호</td>
                     <td>
                     	<input value="${vDto.cNum}" name="cNum" type="hidden" class="form-control" id="exampleFormControlInput1">
                     </td>
+                </tr> --%>
+                
+                
+                <tr>
+                    
+                   <input value="${vDto.cNum}" type="hidden" name="cNum" class="form-control" id="exampleFormControlInput1" readonly>
                 </tr>
                 <tr>
                     <td>모델</td>
                     
-                    <td>
+                    <td style="text-align: left;">
                     	<img src="${ctx}/resources/file_upload/${vDto.fileName}"
-                    	 style="max-width: 300px; min-width:150px; max-height:auto; min-height: auto;">
+                    	 style="max-width: 400px; min-width:150px; max-height:auto; min-height: auto;">
                     </td>
                 </tr>
                 <tr>
@@ -154,34 +160,41 @@
                     <td>렌트지역</td>
                     <td>
                         <div class="form-check d-flex">
-                            <input name="revAddr" class="form-check-input" type="radio" id="flexRadioDefault1">
-							</br>
-                            <label class="form-check-label" for="flexRadioDefault1">
-                              서구본점
-                            </label>
-
-                            <input name="revAddr" class="form-check-input" type="radio" id="flexRadioDefault1">
-							</br>	
-                            <label class="form-check-label" for="flexRadioDefault1">
-                              유성점
-                            </label>
-                            <input name="revAddr" class="form-check-input" type="radio" id="flexRadioDefault1">
-                            </br>
-                            <label class="form-check-label" for="flexRadioDefault1">
-                              중구점
-                            </label>
+                            
+                            <div>
+	                            <input name="revAddr" class="form-check-input" type="radio" id="flexRadioDefault1">
+								
+	                            <label class="form-check-label" style="margin-right:50px" for="flexRadioDefault1">
+	                              둔산본점
+	                            </label>
+                            </div>
+                            <div>
+	                            <input name="revAddr" class="form-check-input" type="radio" id="flexRadioDefault1">
+								
+	                            <label class="form-check-label" style="margin-right:50px"  for="flexRadioDefault1">
+	                              유성점
+	                            </label>
+	                        </div>
+                            <div>
+	                            <input name="revAddr" class="form-check-input" type="radio" id="flexRadioDefault1">
+								
+	                            <label class="form-check-label" for="flexRadioDefault1">
+	                              월평점
+	                            </label>
+                            </div>
+                            
                           </div>
                     </td>
 
                 </tr>
-                <tr>
+                <tr >
                     <td>사용일시</td>
-                    <td><input type="text" name="datepicker1" id="datepicker1" value='<%=today%>' readonly></td>
-                    <td><i class="fa-solid fa-calendar-days"></i> 반납일 <input type="text" name="datepicker2" id="datepicker2" placeholder="날짜선택"></td>
+                    <td style="padding-right: 180px;padding-left: 0px;"><i class="fa-solid fa-calendar-days" ></i> 렌트일  <input type="text" name="datepicker1" id="datepicker1" value='<%=today%>' readonly></td>
+                    <td style="padding-right: 180px;padding-left: 0px;"><i class="fa-solid fa-calendar-days" ></i> 반납일  <input type="text" name="datepicker2" id="datepicker2" placeholder="날짜선택"></td>
                 </tr>
                <tr>
                     <td>가격</td>
-					<td><span>${vDto.wprice}원</span></td>
+					<td style="text-align: left;"><span>${vDto.wprice}원</span></td>
 				</tr>                 
             </tbody>
         </table> 

@@ -21,7 +21,5 @@ function loginChk(){
 		return;
 	}
 	
-
-	
 	document.loginForm.submit();
 }	

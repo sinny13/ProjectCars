@@ -25,8 +25,20 @@ public class RevHistoryDTO {
 	
 	private String wtotalPrice; 
 	
-	
+	// 은행계좌용SQl에는 없음
+	private String account;
 
+    public String getAccount() {
+		return account;
+	}
+
+
+	public void setAccount(String account) {
+		this.account = account;
+	}
+	
+	
+	// 날짜차이계산
 	public int getDateCnt() {
 		return dateCnt;
 	}
@@ -36,11 +48,13 @@ public class RevHistoryDTO {
 		this.dateCnt = dateCnt;
 	}
 	
-
 	
 
 
-    public String getWtotalPrice() {
+
+
+
+	public String getWtotalPrice() {
        DecimalFormat formatter = new DecimalFormat("###,###,###,###,###,###");
        int totalPrice = getTotalPrice();
        String wtotalPrice = formatter.format(totalPrice);

@@ -1,5 +1,7 @@
 package kr.mr.model;
 
+import java.text.DecimalFormat;
+
 public class WishDTO {
 	
 	private int wID;
@@ -13,7 +15,17 @@ public class WishDTO {
 	private String price; // 차량\
 	private String fileName; // 차량\
 
-	
+    private String wprice; 
+	    
+	   
+
+	   public String getWprice() {
+	      DecimalFormat formatter = new DecimalFormat("###,###,###,###");
+	      int price = Integer.parseInt(getPrice());
+	      String wprice = formatter.format(price);
+	      
+	      return wprice;
+	   }
 	
 
 	public WishDTO() {}

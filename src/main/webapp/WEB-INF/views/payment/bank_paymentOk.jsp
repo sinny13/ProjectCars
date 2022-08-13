@@ -50,16 +50,16 @@
                   <tr>
                     <th class="desc">입금계좌</th>
                     <th class="id">예금주</th>
-                    <!-- <th class="qty">Quantity</th> -->
+                    <th class="id">입금자명</th>
                     <th class="amt">입금금액</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="item">
-                    <td class="desc">우리은행 : 523-16-15-2361</td>
+                    <td class="desc">${rDto.account}</td>
+                    <td class="id num">렌트카대표님</td>
                     <td class="id num">${sessionScope.userName}</td>
-                    <!-- <td class="qty">1</td> -->
-                    <td class="amt">₩300,000,000</td>
+                    <td class="amt">￦ ${rDto.wtotalPrice}원</td>
                   </tr>
                 </tbody>
               </table>
@@ -83,7 +83,7 @@
                 </tr> -->
                 <tr class="total">
                   <td>Total</td>
-                  <td>₩300,000,000</td>
+                  <td>￦ ${rDto.wtotalPrice}원</td>
                 </tr>
               </table>
             </td>

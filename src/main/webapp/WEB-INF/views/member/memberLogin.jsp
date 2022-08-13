@@ -31,6 +31,9 @@
     <link rel="stylesheet" href="resources/css/mdb.min.css" />
     <!-- Font -->
     <link rel="stylesheet" href="${ctx}/resources/css/font.css">
+    
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
     <!-- 로그인 리소스 -->
 	<script type="text/javascript" src="${ctx}/resouces/js/login.js"></script>
 	<link rel="stylesheet" href="${ctx}/resources/css/login.css">
@@ -54,22 +57,22 @@
 
 
 
-<!-- 로그인실패 메세지  -->
-<script type="text/javascript">
-/* $(document).ready(function(){ 
-	if(${LoginProcess != null}){
-		alert("로그인에 실패했습니다);	
-		
-	}	  
-}); */
 
-<c:if test="${LoginProcess != null}">
-	alert("로그인에 실패했습니다.")
-</c:if>
+<!-- 로그인 메세지  -->
+<script type="text/javascript">
+
+$(document).ready(function(e){ 
+if(${LoginProcess == 'Fail'}){
+	document.getElementById("loginFail").innerHTML = "아이디 또는 비밀번호를 잘못 입력했습니다."
+}	  
+});
+
+/* $(document).ready(function(e){
+    $("loginReload").load(window.location.href + "loginReload");
+} */
 
 </script>
 
-    
 
 <div class="container">
  <!-- Navbar -->
@@ -149,7 +152,9 @@
 			<input type="text" placeholder="아이디 입력" id="id" name="id" class="input" />
 			<input type="password" placeholder="비밀번호 입력" id="name" name="pw" class="input" />
 			<a href="#" class="link" onclick="javascript:alert('기능 미구현 추후 작업예정입니다')">비밀번호 찾기</a>
-			<button type="button" class="btn" onclick="loginChk()">로그인</button>
+			<p id='loginFail' style="color: red ;font-size: 0.9rem"></p>
+			<p id="loginReload"></p>
+			<button type="button" class="btn" onclick="loginChk() ;">로그인</button>
 		</form>
 	</div>
 
@@ -169,3 +174,4 @@
 </div >
 
 
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>

@@ -40,7 +40,7 @@
 h1,h2,h3,h4,h5,h6,p{
 font-family: LeferiPoint-WhiteObliqueA;
 
-font-size: 40px;
+font-size: 30px;
 
 
 
@@ -68,7 +68,7 @@ font-size: 40px;
         <section class="resume-section p-3 p-lg-5 d-flex  flex-column" id="portfolio"> 
             <div class="row my-auto">
                 <div class="col-md-12">
-                <div class="port-head-cont">
+                <div class="port-head-cont"style=" font-family: 'LeferiPoint-WhiteObliqueA';">
                     <button class="btn btn-general btn-green filter-b" data-filter="all">All</button>
                     <button class="btn btn-general btn-green filter-b" data-filter="100">스포츠 카 </button>
                     <button class="btn btn-general btn-green filter-b" data-filter="200">세단</button> 
@@ -81,22 +81,32 @@ font-size: 40px;
             
             <div class="row my-auto" style=" padding-left:120px; padding-right:120px;">
             <c:forEach var="vDto" items="${vehicleList}"> 
+            
             <c:if test="${vDto.status != 'Y'}">  
                 <div class="col-sm-4 portfolio-item filter ${vDto.category_fk}">
                     <a class="portfolio-link" href="vehicleRental.do?cNum=${vDto.cNum}&cSpec='recommand'" > 
                         
-                        <div class="caption-port">
+                    <div class="caption-port">
                            
                      <div class="simpletxt">
 
-                        <h3 class="name">${vDto.cName}</h3>
+                       <%--  <h3 class="name">${vDto.cName}</h3> --%>
+		                      <div>
+		                        <h2 style="text-align: center;color: #c36f51;padding-top: 15px;margin-top: 20px; opacity: 0.7;" class="text-white p-1">${vDto.cName}</h2>
+		                     </div>
+                       
+                       
                         <p style="margin:15px; white-space: nowrap; overflow:hidden; text-overflow:ellipsis; ">"${vDto.contents}"</p>
-                         <h4 class="price"> ￦ ${vDto.wprice}원</h4>
+                        
+                        <%--  <h4 class="price"> ￦ ${vDto.wprice}원</h4> --%>
+                         
                          <button>READ MORE</button><br>
-                         <div class="wishtxt">
+                         
+                         <!-- <div class="wishtxt">
                             <p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
                             <p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-                         </div>
+                       
+                         </div> -->
                      </div>
                         </div>
                         <img class="img-fluid" src="${ctx}/resources/file_upload/${vDto.fileName}" style="max-width: 100%; min-width:150px; max-height:auto; min-height: 300px; margin:auto; ">  
@@ -106,13 +116,13 @@ font-size: 40px;
              
             <c:if test="${vDto.status == 'Y'}">  
                 <div id="element" class="col-sm-4 portfolio-item filter ${vDto.category_fk}">
-                    <a class="portfolio-link" href="#portfolioModal${vDto.cNum}" data-toggle="modal"> 
+                    <a class="portfolio-link" href="vehicleRental.do?cNum=${vDto.cNum}" > 
                         
                         <div class="caption-port" style="opacity: 1;">
                            
-                     <div>
-                        <h2 style="color: #c36f51" class="text-white p-1">렌트중</h2>
-                     </div>
+		                     <div>
+		                        <h2 style="text-align: center;color: #c36f51;padding-top: 15px;margin-top: 25px; opacity: 0.7;" class="text-white p-1">RENTED</h2>
+		                     </div>
                         </div>
                         <img class="img-fluid" src="${ctx}/resources/file_upload/${vDto.fileName}" style="max-width: 100%; min-width:150px; max-height:auto; min-height: 300px; margin:auto; ">  
                     </a> 
@@ -126,6 +136,40 @@ font-size: 40px;
             </div> 
         </section>
       </div>
+
+
+<script>
+    $(document).ready(function(){
+
+    $(".filter-b").click(function(){
+        var value = $(this).attr('data-filter');
+        if(value == "all")
+        { 
+            $('.filter').show('1000');
+        }
+        else
+        { 
+            $(".filter").not('.'+value).hide('3000');
+            $('.filter').filter('.'+value).show('3000');
+        }
+    });
+    
+    if ($(".filter-b").removeClass("active")) {
+      $(this).removeClass("active");
+    }
+    $(this).addClass("active");
+    });
+
+    // SKILLS
+    $(function () {
+        $('.counter').counterUp({
+            delay: 10,
+            time: 2000
+        });
+
+    });
+</script> 
+
 
 
 
