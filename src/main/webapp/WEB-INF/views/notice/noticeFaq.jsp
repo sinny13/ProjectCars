@@ -118,7 +118,7 @@
         </h2>
         <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body">
-            A. 네, <code>여러 대</code> 예약 가능합니다.
+            A. 아니오, 한 아이디로 <code>한 대</code>의 차만 예약 가능합니다.
           </div>
         </div>
       </div>

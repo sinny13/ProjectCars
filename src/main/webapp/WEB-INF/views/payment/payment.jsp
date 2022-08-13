@@ -502,7 +502,7 @@ color: #BBB;
              
            
              function cashPay(cNum){              
-                 alert(cNum);  
+                 /* alert(cNum); */  
                 location.href = "http://localhost:8080/web/bankPaymentOk.do?cNum="+cNum+"&id="+mId;
              };
                         
@@ -524,8 +524,8 @@ color: #BBB;
               console.log(rsp);
               if (rsp.success) {
                 var msg = '결제가 완료되었습니다.';
-                alert(mId);                
-                alert(cNum);                
+                /* alert(mId);                
+                alert(cNum);   */              
                 location.href = "paymentOk.do?cNum="+cNum+"&id="+mId;
                 
                 
