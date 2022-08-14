@@ -9,6 +9,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 
+
+
+
+
 <script type="text/javascript">
 
 
@@ -377,35 +381,17 @@ color: #BBB;
                     <label for="ccmonth" class="input__label">
                       <!-- <span class="required">(required)</span> -->
                     </label>
-                    <select name="ccmonth" id="ccmonth" class="input__input">
+                    <select name="bank" id="ccmonth" class="input__input">
                       <option disabled selected>입금은행을 선택하세요</option>
-                      <option value="1">농협 : 354-1571-9069-42</option>
-                      <option value="2">신한은행 : 10033-72-762-286</option>
-                      <option value="3">우리은행 : 007-34-6864-714</option>
-                      <!-- <option value="2">02 - February</option>
-                      <option value="3">03 - March</option>
-                      <option value="4">04 - April</option>
-                      <option value="5">05 - May</option>
-                      <option value="6">06 - June</option>
-                      <option value="7">07 - July</option>
-                      <option value="8">08 - August</option>
-                      <option value="9">09 - September</option>
-                      <option value="10">10 - October</option>
-                      <option value="11">11 - November</option>
-                      <option value="12">12 - December</option> -->
+                      <option value="농협 : 354-1571-9069-42">농협 : 354-1571-9069-42</option>
+                      <option value="신한은행 : 10033-72-762-286">신한은행 : 10033-72-762-286</option>
+                      <option value="우리은행 : 007-34-6864-714">우리은행 : 007-34-6864-714</option>
+                      <option value="국민은행 : 730711-09-573374">국민은행 : 730711-09-573374</option>
+                      <option value="하나은행 : 16172-614-72914">하나은행 : 16172-614-72914</option>
+                      <option value="카카오뱅크 : 228-34-537-25114">카카오뱅크 : 228-34-537-25114</option>
                     </select>
                   </div>
                 </div>
-                
-                <script>
-                   var bank = document.getElementById("ccmonth");
-                   var paybank = bank.options[bank.selectedIndex].value;
-
-                   alert(paybank);
-                   
-                   var 
-                </script>
-                
 
               </div>
             </div>
@@ -460,9 +446,10 @@ color: #BBB;
 
           <div class="form__footer">
           
-          
-            <button class="btn btn--primary js-goto" id="payBtn" onclick="requestPay(${vDto.cNum})">
+          <!-- <button class="btn__label" onclick="test()">테스트</<button class="btn__label">> -->
+            <button class="btn btn--primary js-goto" id="payBtn" onclick="requestPay(${vDto.cNum},${rDto.totalPrice})">
               <span class="btn__label">결제하기</span>
+              
               <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
             </button>
             
@@ -484,37 +471,56 @@ color: #BBB;
             var IMP = window.IMP; // 생략가능
             IMP.init('imp52074203'); 
             
+/*             
+  // 은행 계좌 넘기기 테스트용           
+            function test() {
+                var bank = document.getElementById("ccmonth");
+                var paybank = bank.options[bank.selectedIndex].value;
 
-
+                alert(paybank);
+                alert(account);
+                
+			}
+ */
 
 
             
-            function requestPay(cNum) {
+            function requestPay(cNum,totalPrice) {
 		var current = $("input:radio[name='payment']:checked").val();
+
                 if(current == '1'){
-                   cashPay(cNum);
+                   cashPay(cNum,totalPrice);
                 }
                 else if(current == '2'){
-                   cardPay(cNum);
+                   cardPay(cNum,totalPrice);
                 }
                 
              };
              
            
+<<<<<<< HEAD
              function cashPay(cNum){              
                  /* alert(cNum); */  
                 location.href = "http://localhost:8080/web/bankPaymentOk.do?cNum="+cNum+"&id="+mId;
+=======
+             function cashPay(cNum,totalPrice){
+            	// 은행넘기기 
+ 	            var bank = document.getElementById("ccmonth");
+                var account = bank.options[bank.selectedIndex].value;
+            	alert(account); 
+                location.href = "http://localhost:8080/web/bankPaymentOk.do?cNum="+cNum+"&id="+mId+"&totalPrice="+totalPrice+"&account="+account;
+>>>>>>> branch 'branch20' of https://github.com/sinny13/ProjectCars.git
              };
                         
             
-            function cardPay(cNum) {
+            function cardPay(cNum,totalPrice) {
             IMP.init('iamport'); //iamport 대신 자신의 "가맹점 식별코드"를 사용
             IMP.request_pay({
               pg: "inicis",
               pay_method: "card",
               merchant_uid : 'merchant_'+new Date().getTime(),
               name : '결제테스트',
-              amount : 100,
+              amount : totalPrice,
               buyer_email : 'iamport@siot.do',
               buyer_name : '구매자',
               buyer_tel : '010-1234-5678',
@@ -524,8 +530,12 @@ color: #BBB;
               console.log(rsp);
               if (rsp.success) {
                 var msg = '결제가 완료되었습니다.';
+<<<<<<< HEAD
                 /* alert(mId);                
                 alert(cNum);   */              
+=======
+                alert(msg);                         
+>>>>>>> branch 'branch20' of https://github.com/sinny13/ProjectCars.git
                 location.href = "paymentOk.do?cNum="+cNum+"&id="+mId;
                 
                 
@@ -536,6 +546,7 @@ color: #BBB;
             	  var msg = '결제에 실패하였습니다.';
                   msg += '에러내용 : ' + rsp.error_msg;
                   alert(msg);
+                  location.reload();
               }
             
             });

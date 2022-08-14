@@ -267,10 +267,10 @@ public class RevController {
 	   
 	   
 	   @RequestMapping("/bankPaymentOk.do") 
-	   public String bankpaymentOk(VehicleDTO vDto, MemberDTO mDto, String id, Model model,int cNum) {
+	   public String bankpaymentOk(VehicleDTO vDto, MemberDTO mDto,RevHistoryDTO rDto,String account , String id, Model model,int cNum) {
 		   
 			  
-int cnt = vehicleMapper.vehicleStatusY(cNum);
+		   int cnt = vehicleMapper.vehicleStatusY(cNum);
 		   
 		   if(cnt>0) {
 			   
@@ -298,7 +298,10 @@ int cnt = vehicleMapper.vehicleStatusY(cNum);
 			vehicleMapper.vehicleGetter(cNum);
 			model.addAttribute("vDto", vDto);
 			
+			rDto = mypageMapper.revHistory(id);		
+			rDto.setAccount(account);
 			
+			model.addAttribute("rDto", rDto);
 			
 			
 			System.out.println("status : "+vDto.getStatus());

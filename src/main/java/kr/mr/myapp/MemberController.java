@@ -123,7 +123,7 @@ public class MemberController {
 	}
 
 	@RequestMapping("/memberLoginOK.do")
-	public String loginProcess(MemberDTO dto,HttpSession session){
+	public String loginProcess(MemberDTO dto,HttpSession session ,Model model , HttpServletRequest request){
 		
 		MemberDTO mDto = memberMapper.memberLogin(dto);
 		
@@ -145,16 +145,17 @@ public class MemberController {
 			session.setAttribute("userId", userId); // id저장
 			session.setAttribute("userName", userName); // 이름 저장
 			session.setAttribute("isAccount", "client");  // 멤버계정일때 (계정구분)
+			/* session.setMaxInactiveInterval(1000000000); */
 			
 			System.out.println("로그인성공");
-			session.setAttribute("LoginProcess", "로그인성공!"+userName+"님 환영합니다!"); // 로그인 성공 메세지			
+			request.setAttribute("LoginProcess", "Success"); // 로그인 성공 메세지			
 			
 			
 		}else{ // 로그인 실패
 
 		System.out.println("로그인에 실패했습니다");
-		session.setAttribute("LoginProcess", "로그인에 실패했습니다!"); // 로그인 성공-실패 메세지
-		
+		request.setAttribute("LoginProcess", "Fail"); // 로그인 성공-실패 메세지
+		/* session.setMaxInactiveInterval(1000000000); */
 		return "member/memberLogin";
 	}
 

@@ -35,10 +35,18 @@ function inputChk(){
 		return;
 	}
 	
-	/* 전화번호 공백 */
-	if(document.joinForm.tel.value == 0 ){
-		alert("전화번호를 입력하세요");
-		joinForm.tel.focus();
+	/* 나이공백 */
+	if(document.joinForm.age.value == 0 ){
+		alert("나이를 입력하세요");
+		joinForm.age.focus();
+		return;
+	}
+	
+	/* 운전자 가입 나이 약관 */
+	let memberAge = parseInt(document.joinForm.age.value);
+	if(document.joinForm.age.value < 22 ){
+		alert("만 21세 부터 회원가입 가능합니다.");
+		joinForm.age.focus();
 		return;
 	}
 	
@@ -48,6 +56,14 @@ function inputChk(){
 		joinForm.email.focus();
 		return;
 	}
+	
+	/* 전화번호 공백 */
+	if(document.joinForm.tel.value == 0 ){
+		alert("전화번호를 입력하세요");
+		joinForm.tel.focus();
+		return;
+	}
+	
 	
 	/* 주소공백 */
 	if(document.joinForm.zipcode.value == 0 ){
