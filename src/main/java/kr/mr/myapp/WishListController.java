@@ -10,9 +10,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.mr.mapper.MemberMapper;
+import kr.mr.mapper.MyPageMapper;
 import kr.mr.mapper.VehicleMapper;
 import kr.mr.mapper.WishMapper;
 import kr.mr.model.CategoryDTO;
+import kr.mr.model.MemberDTO;
+import kr.mr.model.RevHistoryDTO;
 import kr.mr.model.VehicleDTO;
 import kr.mr.model.WishDTO;
 
@@ -22,6 +26,12 @@ public class WishListController {
 	
 	@Autowired
 	   private WishMapper wishMapper;
+	
+	@Autowired
+	private MyPageMapper mypageMapper;
+	
+	@Autowired
+	private MemberMapper memberMapper;
 	   
 	   
 	   @RequestMapping("/wishList.do") 
@@ -52,10 +62,6 @@ public class WishListController {
 		   
 		   
 		   
-		   
-		   
-		   
-		   
 		   }else {
 			   System.out.println("로그인안하면 실패!");
 			   
@@ -68,6 +74,38 @@ public class WishListController {
 	   
 	   @RequestMapping("/deleteWishList.do") 
 	   public String deleteWishList(int cNum,String id, Model model) {
+		   
+
+		   int n = wishMapper.deleteWishList(cNum);
+	
+		   
+		   if(n>0) {
+			   
+			   
+			   List<WishDTO> wishList =  wishMapper.wishList2(id);
+			   
+			   model.addAttribute("wishList", wishList);
+			 
+			   
+			   RevHistoryDTO hDto = mypageMapper.revHistory2(id);
+				  
+			   model.addAttribute("hDto", hDto);
+			   
+			   MemberDTO member = memberMapper.memberGetter(id);		
+				model.addAttribute("member", member);
+			   
+			   
+		   }else {
+			
+		}
+		   
+		   
+		  return "mypage/myPageList"; 
+		
+		   }
+		   
+	   @RequestMapping("/deleteWishListPage.do") 
+	   public String deleteWishListPage(int cNum,String id, Model model) {
 		   
 
 		   int n = wishMapper.deleteWishList(cNum);
@@ -87,9 +125,7 @@ public class WishListController {
 		}
 		   
 		   
-		   return "mypage/myPageList"; 
+		   return "wish/wish_list"; 
 		   }
-		   
-
 
 	}

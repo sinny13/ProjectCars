@@ -35,12 +35,9 @@
 						<tr class="table-dark">
 							<th class="col-6"><i class="xi-walk"></i> &nbsp;${sessionScope.userName}님의 정보</th> 
 							<th class="col-3" id="close_btn" >
-								<button class="close" onclick="location.href='myMemberModify.do?mId=${member.id}'"><span>상세정보</span></button>
+								<button class="close"  style="font-size: 16px" onclick="location.href='myMemberModify.do?mId=${member.id}'">상세정보</button>
 							</th>
 							
-							<!-- <div id="close_btn">
-								<button class="close" onclick="location.href='#'; javascript:showMsg()">예약취소</button>
-							</div> -->
 							
 						</tr>
 					</thead>
@@ -66,7 +63,7 @@
 						<tr class="table-dark">
 							<th class="col-6"><i class="xi-walk"></i> &nbsp;나의 예약정보</th>
 							<th class="col-3" id="close_btn" >
-								<button class="close" onclick="location.href='myMemberModify.do?mId=${member.id}'"><span>상세정보</span></span></button>
+								<button class="close" style="font-size: 16px" onclick="location.href='myMemberModify.do?mId=${member.id}'">상세정보</button>
 							</th>
 						</tr>
 					</thead>
@@ -80,17 +77,17 @@
 						
 						<c:if test="${hDto != null}">						
 						<tr>
-							<td>현재 예약된 차량 : </td>
-							<td>${hDto.cName}</td>
+							<td>예약 차량</td>
+							<td>${hDto.company}</td>
 						</tr>
 						</c:if>
 						<tr>
-							<td>교환/반품 주문</td>
-							<td>0건</td>
+							<td>컬러</td>
+							<td>${hDto.color}</td>
 						</tr>
 						<tr>
-							<td>나의 Point</td>
-							<td>0 P</td>
+							<td>예약일수</td>
+							<td>${hDto.dateCnt}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -143,7 +140,7 @@
 					  <tbody>
 							<tr>
 							  <td style="align-items-middle">
-								<img style="widows: 160px; height: 140px" src="${ctx}/resources/file_upload/${hDto.fileName}">
+								<img style="width: 200px; height: 140px" src="${ctx}/resources/file_upload/${hDto.fileName}">
 						  	  </td>							  
 							  <td style="align-items-middle">${hDto.revDate1}</td>
 							  <td>${hDto.revDate2}</td>
@@ -153,6 +150,11 @@
 							     <div id="close_btn">
 								 	<button class="close" onclick="location.href='#'; javascript:showMsg()">예약취소</button>
 								 </div>
+								 
+								
+						  	</td>
+								 
+								 
 							  </td>
 							</tr>
 					</tbody>
@@ -184,7 +186,7 @@
       					<c:forEach var="wDtos" items="${wishList}">					  
 						<tr>
 						  <td>
-							<img style="widows: 60px; height: 40px" src="${ctx}/resources/file_upload/${wDtos.fileName}">
+							<img style="width: 200px; height: 120px" src="${ctx}/resources/file_upload/${wDtos.fileName}">
 						  </td>
 						  <td>
 							<p>${wDtos.company} ${wDtos.cName}</p>
@@ -192,14 +194,14 @@
 						  <td>
 						  	￦ ${wDtos.wprice}원
 						  </td>
-						  	
+						 
 						  
-							<td class="col-3" id="close_btn" >
+							<td class="col-3" id="close_btn"  style="width:250px">
 					    		<button class="close" onclick="location.href='rentalSelector.do?cNum=${wDtos.cNum}&id=${wDtos.id}'">
 					    			예약하기
 					    		</button>
 						  	</td>
-							<td class="col-3" id="close_btn" >
+							<td class="col-3" id="close_btn" style="width:250px">
 								<button  class="close" onclick="location.href='deleteWishList.do?cNum=${wDtos.cNum}&id=${wDtos.id}'; javascript:delMsg()">
 									삭제
 								</button>								 
