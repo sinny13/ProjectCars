@@ -4,7 +4,7 @@
    
 <%@ include file="../inc/header.jsp" %>
 
-<div class="container mt-5">
+<div class="container mt-5 bg-dark">
 	<div class="w-120 p-5 border">
 		<form id="moveForm" method="post" action="<c:url value='boardModify.do'/>">
 			<input type="hidden" name="viewPage" value="${viewPage}"/>
@@ -43,8 +43,8 @@
 			</div>
 
 			<div class="form-group mt-4">
-				<button type="submit" id="btn-modify" class="btn btn-primary me-2">수정완료</button>
-				<button type="button" id="btn-list" data-link="list" onclick="location.href='boardList.do'" class="btn btn-secondary">글목록</button>
+				<button type="submit" id="btn-modify" class="btn btn-outline-white me-2">수정완료</button>
+				<button type="button" id="btn-list" data-link="list" onclick="location.href='boardList.do'" class="btn btn-outline-white">글목록</button>
 			</div>
 		</form>
 	</div>

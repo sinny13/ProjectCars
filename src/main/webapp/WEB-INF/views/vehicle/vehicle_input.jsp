@@ -72,7 +72,7 @@
          <tr>
                <td colspan="2" class="text-center">
                   <input type="submit" class="text-center btn btn-sm btn-outline-white" value="차량등록"/>
-                  <a href="home.do" style="width: 15%" class="text-center btn btn-sm btn-outline-white">메인으로</a>
+                  <a href="home.do" style="width: 21%" class="text-center btn btn-sm btn-outline-white">메인으로</a>
                </td>
             </tr>
             </table>

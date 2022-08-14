@@ -237,12 +237,12 @@ function duplicateChk(data){
         
         <div class="box2">
           <div><label>이메일:</label></div>
-			<input class="form-control mb-2" type="text" name="email" placeholder="이메일을 입력하세요">
+			<input class="form-control mb-2" type="text" name="email" placeholder="xxxx@asdf.com">
         </div>
         
         <div class="box2">
           <div><label>전화번호:</label></div>
-			<input class="form-control mb-2" type="text" name="tel" placeholder="전화번호를 입력하세요">
+			<input class="form-control mb-2" type="text" name="tel" placeholder="010-1111-0000">
         </div>
 		<!-- 주소  -->
 		<div class="row m-0 mb-2">

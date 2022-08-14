@@ -97,11 +97,21 @@
          sf.submit();
       });
    });
+   
+   
+   
+   function adminChk(){
+	   if(${sessionScope.userId != 'admin'}){
+		   alert("관리자가 아닙니다.");
+		   location.replace('memberLogin.do');
+	   }
+	   
+   }
 </script>
 
 
 
-<div class="container mt-5">
+<div class="container mt-5 p-3 border bg-dark">
 <h3>공지사항</h3>
 	<div>
 		<form action="boardList.do" method="get" id="moveForm"><!-- 검색 데이터 객체 -->
@@ -140,17 +150,16 @@
 <!-- BoardController : BoardPaging bp = new BoardPaging(totalCnt, viewPage, cntPerPage); -->
 <div class="m-0 my-1"><b>${bp.viewPage}</b> / ${bp.totalPage} pages</div><!-- 현재 페이지 -->
 	<table class="table table-hover">
-	   <thead style="background:#1111; color:white">
+	   <thead style="background:#1111; color:white;">
 	      <tr>
-	         <th>번호</th>
-	         <th>제목</th>
-	         <th>글쓴이</th>
-	         <th>등록일</th>  
-	         <th>조회수</th>
-	         
+	         <th><b>번호</b></th>
+	         <th><b>제목</b></th>
+	         <th><b>글쓴이</b></th>
+	         <th><b>작성날짜</b></th>  
+	         <th><b>조회수</b></th>	         
 	      </tr>
 	   </thead>
-	   <tbody style="color:white"><!-- 게시판 글 리스트 제공  -->
+	   <tbody style="color:white;"><!-- 게시판 글 리스트 제공  -->
 	      <c:set var="bno" value="${bp.startRowNum}"/>
 	      <c:forEach var="lvo" items="${list}"><!-- 선언 -->
 	      <tr>
@@ -202,7 +211,7 @@
 	</ul>
 	
 	<div class="text-center">
-		<button class="btn btn-outline-white" id="btn-write">글쓰기</button>
+		<button class="btn btn-outline-white" onclick="adminChk()" id="btn-write">글쓰기</button>
 	</div>
 </div>
 
