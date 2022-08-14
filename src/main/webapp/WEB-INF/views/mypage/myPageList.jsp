@@ -64,9 +64,9 @@
 				<table class="table table-borderless">
 					<thead>
 						<tr class="table-dark">
-							<th class="col-6"><i class="xi-walk"></i> &nbsp;나의 예약정보</th>
-							<th class="col-3" id="close_btn" >
-								<button class="close" onclick="location.href='myMemberModify.do?mId=${member.id}'"><span>상세정보</span></span></button>
+							<th class="col-6"><i class="xi-walk" style="padding-top:17px;"></i> &nbsp;나의 예약정보</th>
+							<th class="col-3">
+								<!-- <button class="custom-btn btn-5" onclick="location.href='myInvoice.do'"><span>최근 구매내역 보기</span></button> -->
 							</th>
 						</tr>
 					</thead>

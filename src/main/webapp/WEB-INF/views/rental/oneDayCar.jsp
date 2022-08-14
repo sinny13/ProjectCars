@@ -90,23 +90,15 @@ font-size: 30px;
                            
                      <div class="simpletxt">
 
-                       <%--  <h3 class="name">${vDto.cName}</h3> --%>
-		                      <div>
-		                        <h2 style="text-align: center;color: #c36f51;padding-top: 15px;margin-top: 20px; opacity: 0.7;" class="text-white p-1">${vDto.cName}</h2>
-		                     </div>
-                       
-                       
-                        <p style="margin:15px; white-space: nowrap; overflow:hidden; text-overflow:ellipsis; ">"${vDto.contents}"</p>
-                        
-                        <%--  <h4 class="price"> ￦ ${vDto.wprice}원</h4> --%>
-                         
+                        <h2 class="name" style="color: white; text-decoration:none">${vDto.cName}</h3>
+                        <%-- <p style="margin:15px; white-space: nowrap; overflow:hidden; text-overflow:ellipsis; ">"${vDto.contents}"</p> --%>
+                        <%--  <h4 class="price"> ￦ ${vDto.wprice}원</h4>
                          <button>READ MORE</button><br>
                          
                          <!-- <div class="wishtxt">
                             <p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
                             <p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-                       
-                         </div> -->
+                         </div> --%>
                      </div>
                         </div>
                         <img class="img-fluid" src="${ctx}/resources/file_upload/${vDto.fileName}" style="max-width: 100%; min-width:150px; max-height:auto; min-height: 300px; margin:auto; ">  
