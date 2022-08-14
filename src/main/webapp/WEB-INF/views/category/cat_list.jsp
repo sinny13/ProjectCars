@@ -31,7 +31,7 @@ $(document).ready(function(){  /* CatRegOk 에서 카테고리가 수정되었�
                   <td>${dto.cat_num}</td>
                   <td>${dto.cat_code}</td>
                   <td>${dto.cat_name}</td>
-                  <td><input type="button" value="삭제" class="btn btn-danger" onclick="deleteCat(${dto.cat_num})"/></td>
+                  <td><input type="button" value="삭제" class="btn btn-outline-danger" onclick="deleteCat(${dto.cat_num})"/></td>
                </tr>   
                </c:forEach>
          </tbody>

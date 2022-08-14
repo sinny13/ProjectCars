@@ -98,8 +98,8 @@ $(document).ready(function(){
             <%-- <td>${vDto.contents}</td> --%>
             <td>
                <div class="container" >
-               <a href="javaScript:updateVehicle('${vDto.cNum}','${vDto.category_fk}')" style="width: 100% " class="btn btn-primary btn-sm m-1" >수정</a>
-               <a href="javaScript:deleteVehicle('${vDto.cNum}','${vDto.fileName}')" style="width: 100%" class="btn btn-danger btn-sm m-1">삭제</i></a>
+               <a href="javaScript:updateVehicle('${vDto.cNum}','${vDto.category_fk}')" style="width: 100% " class="btn btn-outline-white btn-sm m-1" >수정</a>
+               <a href="javaScript:deleteVehicle('${vDto.cNum}','${vDto.fileName}')" style="width: 100%" class="btn btn-outline-danger btn-sm m-1">삭제</i></a>
                <a href="imageInput.do?cNum=${vDto.cNum}" style="width: 100%" class="btn btn-info btn-sm m-1">이미지업로드</a>
                </div>               
             </td>

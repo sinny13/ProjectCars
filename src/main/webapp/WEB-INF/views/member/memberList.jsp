@@ -44,7 +44,7 @@
             <td>${dto.jibunAddr} / ${dto.detailAddr}</td>
             <td>
             <input type="button" value="삭제" 
-                  class="btn btn-danger" 
+                  class="btn btn-outline-danger" 
                   onclick="deleteMem(${dto.no})" disabled/>
              </td>
             
