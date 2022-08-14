@@ -96,7 +96,7 @@
       	</div>
     
 		<!-- 로그인상태 & 차량 미예약의 경우 -->  
- 		<c:if test="${mDto.isRented != 'Y' && sessionScope.userId!= null}">
+ 		<c:if test="${sessionScope.userId!= null && vDto.status != 'Y' && mDto.isRented != 'Y'}">
         <button class="add-to-cart" onclick="location.href='rentalSelector.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'">
         		렌트카 예약하기
         </button>
@@ -105,9 +105,18 @@
         </button>        
         </c:if>
         
-    	<!-- 로그인상태 & 이미차량을예약한경우 -->           
-        <c:if test="${sessionScope.userId != null && mDto.isRented == 'Y'}">
-        <button class="add-to-cart" onclick='javascript:alert("차량은 1대만 구매 가능합니다. ")'>
+    	<!-- 로그인상태 & 해당 회원이 이미차량을예약한경우 -->              
+        <c:if test="${sessionScope.userId != null && mDto.isRented == 'Y'}">       
+        <button class="add-to-cart" onclick='javascript:alert("차량은 1대만 렌트 가능합니다. ")'>
+        		렌트카 예약하기
+        </button>     
+        <button  class="add-to-cart" onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'">
+        		관심상품
+        </button>             
+        </c:if>        
+    	<!-- 로그인상태 & 다른회원이 차량을 이미 예약한경우 -->           
+        <c:if test="${sessionScope.userId != null && mDto.isRented != 'Y' && vDto.status == 'Y'}"> 
+        <button class="add-to-cart" onclick='javascript:alert("이미 예약중인 차량입니다. ")'>
         		렌트카 예약하기
         </button>     
        <button  class="add-to-cart" onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'">
