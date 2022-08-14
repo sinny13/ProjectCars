@@ -35,7 +35,7 @@
 						<tr class="table-dark">
 							<th class="col-6"><i class="xi-walk"></i> &nbsp;${sessionScope.userName}님의 정보</th> 
 							<th class="col-3" id="close_btn" >
-								<button class="close" onclick="location.href='myMemberModify.do?mId=${member.id}'"><span>상세정보</span></button>
+								<button class="close btn-sm" onclick="location.href='myMemberModify.do?mId=${member.id}'"><span>상세정보</span></button>
 							</th>
 							
 							<!-- <div id="close_btn">
@@ -102,15 +102,15 @@
 			<c:if test="${hDto == null}">
 			<div class="container mt-5">
 				<h2><i class="xi-cart-o"></i> &nbsp;차량 예약내역</h2>            
-				<table class="table mt-3" style="color:#fff font-size: 20px font-weight: bold">
+				<table class="table mt-3" >
 					  <thead>
-						<tr >
-						  <th>사진</th>
-						  <th>렌트일자</th>
-						  <th>반납일자</th>
-						  <th>차량명</th>
-						  <th>주문금액</th>
-						  <th>취소</th>
+						<tr>
+						  <th><strong style="color:#fff">사진</strong></th>
+						  <th><strong style="color:#fff">렌트일자</strong></th>
+						  <th><strong style="color:#fff">반납일자</strong></th>
+						  <th><strong style="color:#fff">차량명</strong></th>
+						  <th><strong style="color:#fff">주문금액</strong></th>
+						  <th><strong style="color:#fff">취소</strong></th>
 						</tr>
 					  </thead>
 				</table>

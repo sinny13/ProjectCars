@@ -90,7 +90,8 @@ font-size: 30px;
                            
                      <div class="simpletxt">
 
-                        <h2 class="name" style="color: white; text-decoration:none">${vDto.cName}</h3>
+                        <h2 class="name" style="color: white;">${vDto.company}</h3>
+                        <h2 class="name" style="color: white;">${vDto.cName}</h3>
                         <%-- <p style="margin:15px; white-space: nowrap; overflow:hidden; text-overflow:ellipsis; ">"${vDto.contents}"</p> --%>
                         <%--  <h4 class="price"> ￦ ${vDto.wprice}원</h4>
                          <button>READ MORE</button><br>
