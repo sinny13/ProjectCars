@@ -42,11 +42,7 @@
         
     h1,h2,h3,h4,h5,h5,p{   
    		font-family: LeferiPoint-WhiteObliqueA;
-   		
-   		
   </style>
-  
-
   
   	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 	<link rel="stylesheet" href="${ctx}/resources/css/hover/button.css">

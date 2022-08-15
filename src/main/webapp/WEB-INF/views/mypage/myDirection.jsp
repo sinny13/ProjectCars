@@ -7,7 +7,6 @@
 
 <h2 style="text-align:center; margin-top:50px;"><strong><i class="xi-map"></i>&nbsp;오시는 길</strong></h2>
 
-
 <div class="container" style="border:2px solid white; background-color:#212529;">
 
 	<div id="map" style="width:1319px; height:460px; margin-left:-12px;"></div>

@@ -101,8 +101,8 @@
 
 
 
-<div class="container mt-5">
-<h3>공지사항</h3>
+<div class="container mt-5 p-3 border bg-dark">
+<h3 style="color:white">공지사항</h3>
 	<div>
 		<form action="boardList.do" method="get" id="moveForm"><!-- 검색 데이터 객체 -->
 		   <input type="hidden" name="viewPage" value="${bp.viewPage}"/>
@@ -115,7 +115,7 @@
 		   
 		      <!-- 검색 >> BoardMapper.java -->
  		      <select class="form-select me-2" name="searchType" 
-		         style="width:100px">
+		         style="width:100px; background:#212529; color:white;">
 		         <option
 		            <c:out value="${vo.searchType == null ? 'selected':''}"/>>선택</option>
 		         <option value="S"
@@ -129,11 +129,11 @@
 		      <!-- 검색창 -->
 		      <input class="form-control rounded-0 rounded-start" type="text" 
 		         id="keyWord" name="keyWord" placeholder="Search" 
-		         style="width:250px" value="${vo.keyWord}"> <!-- DB에 저장된 데이터와 비교 -->
+		         style="width:250px; background:#212529; color:white;" value="${vo.keyWord}"> <!-- DB에 저장된 데이터와 비교 -->
 		         
 		      <!-- 검색버튼 -->
 		      <button id="btn-search " class="btn btn-outline-success rounded-0 rounded-end" 
-		         style="width:40px; background:#138496; color:white" ><i class="fa fa-search"></i></button> 
+		         style="width:40px; background:#212529; color:white" ><i class="fa fa-search"></i></button> 
 		   </div>
 		</form>
 	</div>

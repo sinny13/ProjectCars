@@ -84,19 +84,12 @@
         <div class="description">
         <p>${vDto.contents}</p>
         <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+        
+    
       	</div>
     
 		<!-- 로그인상태 & 차량 미예약의 경우 -->  
- 		<c:if test="${sessionScope.userId!= null && vDto.status != 'Y' && mDto.isRented != 'Y'}">
+ 		<c:if test="${mDto.isRented != 'Y' && sessionScope.userId!= null}">
         <button class="add-to-cart" onclick="location.href='rentalSelector.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'">
         		렌트카 예약하기
         </button>
@@ -105,18 +98,9 @@
         </button>        
         </c:if>
         
-    	<!-- 로그인상태 & 해당 회원이 이미차량을예약한경우 -->              
-        <c:if test="${sessionScope.userId != null && mDto.isRented == 'Y'}">       
-        <button class="add-to-cart" onclick='javascript:alert("차량은 1대만 렌트 가능합니다. ")'>
-        		렌트카 예약하기
-        </button>     
-        <button  class="add-to-cart" onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'">
-        		관심상품
-        </button>             
-        </c:if>        
-    	<!-- 로그인상태 & 다른회원이 차량을 이미 예약한경우 -->           
-        <c:if test="${sessionScope.userId != null && mDto.isRented != 'Y' && vDto.status == 'Y'}"> 
-        <button class="add-to-cart" onclick='javascript:alert("이미 예약중인 차량입니다. ")'>
+    	<!-- 로그인상태 & 이미차량을예약한경우 -->           
+        <c:if test="${sessionScope.userId != null && mDto.isRented == 'Y'}">
+        <button class="add-to-cart" onclick='javascript:alert("차량은 1대만 구매 가능합니다. ")'>
         		렌트카 예약하기
         </button>     
        <button  class="add-to-cart" onclick="location.href='wishList.do?cNum=${vDto.cNum}&id=${sessionScope.userId}'">
@@ -144,6 +128,7 @@
     <%-- </c:forEach> --%>
     <%-- </c:forEach> --%>
     
+ <%--    
     
     
     <div class="grid related-products" >
@@ -165,16 +150,17 @@
       </h3>
       </div>
           
-	<c:set var="i" value="0" />
-	<c:set var="j" value="4" />
 	<table>
+	
+		<c:set var="i" value="0" />
+		<c:set var="j" value="6" />
 	  <c:forEach var="vehicle" items="${vehicleList}">
 	  
-	   <c:if test="${i % j == 0 }">
-	    <tr>
+	    <c:if test="${i % j == 0 }">
+	   	 <tr>
 	    </c:if> 
 	    
-	    <c:if test="${vehicle.cSpec eq vDto.cSpec}">
+	    <c:if test="${vehicle.cSpec eq vDto.cSpec}"> 
 	    <td class="my-5">
     		 <div class="card mb-5" style="display:flex; max-height:300px ;max-width:350px;min-width: 350px">
         		<ul class="image-list"> 
@@ -190,14 +176,17 @@
         		</div>   	
      		 </div>
      	 </td>			
-	    </c:if>
 	    
+	   </c:if> 
 	   
-	    <c:if test="${i%j == j-1}">
+	    <c:if test="${i % j == 6}">
 	    </tr>
 	    </c:if>
+	    
 	    <c:set var="i" value="${i+1}" />
 	  </c:forEach>
+	
+	
 	</table>
     </div>    
   </div>    
@@ -205,8 +194,7 @@
 
 
   
-  
-  
+   --%>  
 </main>
 
 <%@ include file="../inc/footer.jsp" %>

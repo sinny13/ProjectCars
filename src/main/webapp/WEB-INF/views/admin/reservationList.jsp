@@ -13,6 +13,7 @@
 
 
 
+
 <div class="container carList bg-dark w-90 mt-5 border shadow-sm p-5" style="width:1000px;">
 	<h3 style="color: #fff">렌트 현황</h3>
 	<table class="table" style="vertical-align:middle; color: #fff;">

@@ -5,9 +5,9 @@
 
 <!-- Personal CSS -->
 <link rel="stylesheet" href="${ctx}/resources/css/noticeList.css">
+<link rel="stylesheet" href="${ctx}/resources/css/noticeRent.css">
 
-
-
+    
 <script type="text/javascript" src="${ctx}/resources/js/mdb.min.js"></script>
 
 <body>
@@ -30,6 +30,7 @@
 <!--     <div id="back-top" >
    		<a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
 	</div> -->
+
   </div>
 </body>
 

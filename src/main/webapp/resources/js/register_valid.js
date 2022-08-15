@@ -35,6 +35,7 @@ function inputChk(){
 		return;
 	}
 	
+
 	/* 나이공백 */
 	if(document.joinForm.age.value == 0 ){
 		alert("나이를 입력하세요");

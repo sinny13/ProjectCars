@@ -9,6 +9,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 
+<<<<<<< HEAD
 
 
 
@@ -540,6 +541,7 @@ color: #BBB;
                   msg += '에러내용 : ' + rsp.error_msg;
                   alert(msg);
                   location.reload();
+
               }
             
             });

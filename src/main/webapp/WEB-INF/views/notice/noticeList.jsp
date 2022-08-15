@@ -6,8 +6,6 @@
 <!-- Personal CSS -->
 <link rel="stylesheet" href="${ctx}/resources/css/noticeList.css">
 
-
-
 <script type="text/javascript" src="${ctx}/resources/js/mdb.min.js"></script>
 
 <body>

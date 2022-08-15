@@ -302,6 +302,7 @@ public class RevController {
 			rDto.setAccount(account);
 			
 			model.addAttribute("rDto", rDto);
+
 			
 			
 			System.out.println("status : "+vDto.getStatus());

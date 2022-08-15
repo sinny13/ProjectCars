@@ -16,13 +16,13 @@
  -->
 <!-- <script src="ckeditor/ckeditor.js"></script> -->
 <div class="container d-flex mt-5 justify-content-center">
-   <div class="w-75 shadow p-5 rounded border">
-      <h3>공지사항</h3>
+   <div class="w-75 shadow p-5 border bg-dark">
+      <h3 style="color:white;">공지사항</h3>
       <form id="regForm" method="post" action="<c:url value='boardRegister.do'/>">
          <input type="hidden" name="id" value="${sessionScope.userId}"/>
          
          <div class="form-group"class="form-control" id="writer" name="writer">
-            <label for="writer">글쓴이 ${sessionScope.userName}</label>
+            <label for="writer" >글쓴이</label>
             <%--<input type="text" class="form-control" id="writer"
                name="writer" placeholder="이름을 입력하세요"/>--%>
           	<input type="text" class="form-control" id="writer"
@@ -34,13 +34,13 @@
          </div>
          <div class="form-group">
             <label for="contents">내용</label>
-            <textarea class="form-control" id="contents" 
-               name="contents" rows="3"></textarea>
+            <textarea class="form-control col-sm-100" id="contents" 
+               name="contents" rows="10"></textarea>
           </div>
           
          <div class="form-group mt-4">
-            <button type="submit" onclick="regBoardChk()" class="btn btn-secondary">등록</button>
-            <button type="button" id="btn-list" class="btn btn-secondary" onclick="location.href='boardList.do'">글목록</button>
+            <button type="submit" onclick="regBoardChk()" class="btn btn-outline-white">등록</button>
+            <button type="button" id="btn-list" class="btn btn-outline-white" onclick="location.href='boardList.do'">글목록</button>
          </div>
       </form>
 

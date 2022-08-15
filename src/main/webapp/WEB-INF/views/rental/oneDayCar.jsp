@@ -90,19 +90,18 @@ font-size: 30px;
                            
                      <div class="simpletxt">
 
-
-                       <%--  <h3 class="name">${vDto.cName}</h3> --%>
 		                      <div>
 		                        <h2 style="text-align: center;color: #c36f51;padding-top: 15px;margin-top: 20px; opacity: 0.7;" class="text-white p-1">${vDto.cName}</h2>
 		                     </div>
                        
                        
-                        <p style="margin:15px; white-space: nowrap; overflow:hidden; text-overflow:ellipsis; ">"${vDto.contents}"</p>
+                      <%--   <p style="margin:15px; white-space: nowrap; overflow:hidden; text-overflow:ellipsis; ">"${vDto.contents}"</p> --%>
                         
                         <%--  <h4 class="price"> ￦ ${vDto.wprice}원</h4> --%>
                          
 
                          <button>READ MORE</button><br>
+                         <h3 class="name">ParamountMotors</h3>
                          
                          <!-- <div class="wishtxt">
                             <p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
@@ -122,7 +121,7 @@ font-size: 30px;
                         <div class="caption-port" style="opacity: 1;">
                            
 		                     <div>
-		                        <h2 style="text-align: center;color: #c36f51;padding-top: 15px;margin-top: 25px; opacity: 0.7;" class="text-white p-1">RENTED</h2>
+		                        <h2 style="text-align: center;color: #c36f51;padding-top: 15px;margin-top: 25px; opacity: 0.7;" class="text-white p-1">BEING RENTED</h2>
 		                     </div>
                         </div>
                         <img class="img-fluid" src="${ctx}/resources/file_upload/${vDto.fileName}" style="max-width: 100%; min-width:150px; max-height:auto; min-height: 300px; margin:auto; ">  

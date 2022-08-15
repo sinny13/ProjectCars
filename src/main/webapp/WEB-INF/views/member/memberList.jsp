@@ -6,6 +6,7 @@
     
 <%@ include file="../inc/header.jsp" %>
 
+<<<<<<< HEAD
 <style>
 	a{
 		color:#fff;
@@ -44,7 +45,7 @@
       <c:forEach var="dto" items="${list}">
          <tr>
             <td>${dto.no}</td>
-            <td><a href="myMemberModify.do?mId=${dto.id}">${dto.id}</a></td>
+            <td><a href="memberInfo.do?no=${dto.no}">${dto.id}</a></td>
             <td>${dto.pw}</td>
             <td>${dto.name}</td>
             <td>${dto.age}</td>

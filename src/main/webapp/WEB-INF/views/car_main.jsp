@@ -45,7 +45,7 @@
                  <img src="${ctx}/resources/file_upload/${vDto.fileName}" 
                  style=" opacity: 0.5 ; max-width: 100%; min-width:150px; max-height:auto; min-height: 300px;">
                  <!-- <a href="#"><i class="ti-instagram"></i></a> -->
-                 <a  href="vehicleRental.do?cNum=${vDto.cNum}&cSpec='${vDto.cSpec}'"><i><h1>렌트중</h1></i></a>                               
+                 <a  href="vehicleRental.do?cNum=${vDto.cNum}&cSpec='${vDto.cSpec}'"><i><h1>BEING RENTED</h1></i></a>                               
                 </c:if>
                </div>
 			 </c:forEach>

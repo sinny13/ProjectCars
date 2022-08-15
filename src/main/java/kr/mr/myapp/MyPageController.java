@@ -2,12 +2,14 @@ package kr.mr.myapp;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.mr.mapper.MemberMapper;
 import kr.mr.mapper.MyPageMapper;
@@ -73,9 +75,26 @@ public class MyPageController {
 	
 	// 상세정보 수정완료
 	@RequestMapping("/myMemberModifyOk.do")
-	public String myMemberModifyOk(Model model,MemberDTO member) {
+	public String myMemberModifyOk(@RequestParam String pwOld, Model model,MemberDTO member, HttpServletRequest request) {
 		
-		
+	  
+        String pw = request.getParameter("pw"); 
+        System.out.println("pw :" + pw);
+      
+        String pwOld1 = request.getParameter("pwOld"); 
+        System.out.println("pwOld :" + pwOld1);
+		/*
+		 * if(pw !=null ) { member.setPw(pw);
+		 * 
+		 * }else if(pwOld1 != null){ member.setPw(pwOld1); }
+		 */
+      if(pw == null || pw == "") {
+    	  member.setPw(pwOld1);
+    	}else {
+    		
+    		member.setPw(pw);
+    	}
+      
 		
 		int n = memberMapper.memberUpdate(member);		
 		

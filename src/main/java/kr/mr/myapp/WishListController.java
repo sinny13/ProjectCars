@@ -104,6 +104,7 @@ public class WishListController {
 		
 		   }
 		   
+	   
 	   @RequestMapping("/deleteWishListPage.do") 
 	   public String deleteWishListPage(int cNum,String id, Model model) {
 		   

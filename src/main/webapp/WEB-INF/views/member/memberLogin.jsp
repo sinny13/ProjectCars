@@ -3,6 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 
+    
+
+
 
 <!DOCTYPE html>
 <html lang="kr">
@@ -31,7 +34,6 @@
     <link rel="stylesheet" href="resources/css/mdb.min.css" />
     <!-- Font -->
     <link rel="stylesheet" href="${ctx}/resources/css/font.css">
-    
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
     <!-- 로그인 리소스 -->

@@ -6,7 +6,7 @@
 <%@ include file="../inc/header.jsp" %>
 
 <div class="container mt-5">
-   <div class="w-120 p-5 rounded border">
+   <div class="w-120 p-5 border bg-dark">
       <h5>${board.subject}</h5>
       
       <!-- 검색했을 때 해당 게시글 정보를 list로 넘겨줌 -->
@@ -23,7 +23,7 @@
             <input type="text" size=1 class="form-control" id="bid" 
                name="bid" disabled value="${board.bid}"/>
          </div>
-         <div class="form-group">
+         <div class="form-group px-2">
             <label for="writer">글쓴이</label>
             <input type="text" size=8 maxlength=8 class="form-control" id="writer" 
                name="writer" disabled value="${board.writer}"/>
@@ -34,13 +34,13 @@
          </div> --%>
       </div>
       
-      <div class="form-group border">
+      <div class="form-group">
          <label for="subject">제목</label>
          <input type="text" class="form-control" id="subject" 
             name="subject" disabled value="${board.subject}"/>
       </div>
 
-      <div class="form-group border">
+      <div class="form-group">
          <label for="contents">내용</label>
          <textarea class="form-control col-sm-100" id="contents" 
             name="contents" rows="10" disabled><c:out value="${board.contents}" escapeXml="false"/></textarea>
@@ -48,16 +48,16 @@
       <div class="form-group mt-4">
          <c:if test="${sessionScope.userId !=null && sessionScope.userId !=''}">
             <c:if test="${sessionScope.userId == 'admin'}"> <!-- board.id -->
-               <button type="submit" id="btn-modify" class="btn btn-primary me-2">수정하기</button>
-               <button type="button" id="btn-delete"  data-link="remove" class="btn btn-primary me-2">삭제하기</button>
+               <button type="submit" id="btn-modify" class="btn btn-outline-white me-2">수정하기</button>
+               <button type="button" id="btn-delete"  data-link="remove" class="btn btn-outline-white me-2">삭제하기</button>
                      
             </c:if>
             <c:if test="${sessionScope.userId != 'admin'}">
-               <button type="submit" id="btn-modify" class="btn btn-primary me-2" disabled>수정하기</button>
-               <button type="button" id="btn-delete"  data-link="remove" class="btn btn-primary me-2" disabled>삭제하기</button>
+               <button type="submit" id="btn-modify" class="btn btn-outline-white me-2" disabled>수정하기</button>
+               <button type="button" id="btn-delete"  data-link="remove" class="btn btn-outline-white me-2" disabled>삭제하기</button>
             </c:if>
          </c:if>
-         <button type="button" id="btn-list" class="btn btn-primary me-2">글목록</button>
+         <button type="button" id="btn-list" class="btn btn-outline-white me-2">글목록</button>
       </div>
       <!-------------------- 댓글 UI ------------------>
 <%--       <div class="mt-5 d-flex justify-content-between mb-2">
