@@ -6,7 +6,7 @@
     
 <%@ include file="../inc/header.jsp" %>
 
-<<<<<<< HEAD
+
 <style>
 	a{
 		color:#fff;
