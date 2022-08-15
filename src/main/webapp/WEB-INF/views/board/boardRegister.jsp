@@ -18,7 +18,7 @@
 <div class="container d-flex mt-5 justify-content-center">
    <div class="w-75 shadow p-5 border bg-dark">
       <h3 style="color:white;">공지사항</h3>
-      <form name="regForm" method="post" onsubmit="return regBoardChk()" action="<c:url value='boardRegister.do'/>">
+      <form id="regForm" method="post" action="<c:url value='boardRegister.do'/>">
          <input type="hidden" name="id" value="${sessionScope.userId}"/>
          
          <div class="form-group"class="form-control" id="writer" name="writer">
@@ -39,7 +39,7 @@
           </div>
           
          <div class="form-group mt-4">
-            <button type="button" class="btn btn-outline-white">등록</button>
+            <button type="submit" class="btn btn-outline-white">등록</button>
             <button type="button" id="btn-list" class="btn btn-outline-white" onclick="location.href='boardList.do'">글목록</button>
          </div>
       </form>
@@ -93,10 +93,9 @@
 
 
 
-<script type="text/javascript" src="${ctx}/resouces/js/board.js">
 
 <!-- (미구현)게시판 유효성 -->
-	function regBoardChk(){
+/* 	function regBoardChk(){
 	
 		/* 제목 */
 		var subject = document.forms[0].subject.value;
@@ -112,7 +111,7 @@
 			document.forms[0].contents.focus();
 			return false;
 		}
-	}
+	} */
 
 
 </script>
