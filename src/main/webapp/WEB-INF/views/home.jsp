@@ -23,7 +23,7 @@
 
 
         <!-- Text at center of ground -->
-        <p style="font-size:50px;">Project Cars</p>
+        <p style="font-size:50px;">asdasdsd</p>
       </div>
       <div id="ground"></div>
     </div>

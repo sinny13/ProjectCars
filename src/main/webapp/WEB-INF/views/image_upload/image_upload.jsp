@@ -12,7 +12,7 @@
 		
 			<form method="post" name="uploadForm" action="<c:url value='uploadImage.do'/>" enctype="multipart/form-data">
 		
-				<h3 class="text-center">파일 업로드</h3>
+				<h3 class="text-center ">파일 업로드</h3>
 				
 				<div class="form-group">
 					 <label for=""></label>
@@ -23,17 +23,17 @@
 				<div class="form-group mt-3 d-flex justify-content-end mb-3">
 					<div class="col-md-6 pe-1">
 					 <!-- <label for="">업로드 파일 추가</label> -->
-					 <input type="button" class="form-control btn btn-outline-secondary "  value=" 업로드 파일추가" onclick="fileAppend()"/>
+					 <input type="button" class="form-control btn btn-outline-white "  value=" 업로드 파일추가" onclick="fileAppend()"/>
 					</div>
 					 
 					<div class="col-md-6 ps-1">
-					 <input type="button" class="form-control btn btn-outline-secondary"  value=" 업로드 파일취소" onclick="fileRemove()"/>
+					 <input type="button" class="form-control btn btn-outline-white"  value=" 업로드 파일취소" onclick="fileRemove()"/>
 					</div>
 				</div>
 				
 				<div id="div-file" class="text-center"></div>
 				<div class="form-group mt-3">
-					<button type="submit" class="btn btn-primary form-control">파일 업로드</button>
+					<button type="submit" class="btn btn-outline-white form-control">파일 업로드</button>
 				</div>
 			</form>
 		</div>

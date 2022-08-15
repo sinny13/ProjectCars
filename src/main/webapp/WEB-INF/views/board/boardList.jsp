@@ -179,9 +179,9 @@
 	</table>
 	
 	<!-- 페이지 네비게이션(블럭) -->
-	<ul class="pagination justify-content-center my-5">
+	<ul class="pagination justify-content-center my-5 ">
 	  <li class="page-item ${bp.prevPage <=0 ? 'disabled' : ''}"><!--이전 페이징 블럭이 0이하 일 경우, 이전 버튼 비활성화-->
-	     <a class="page-link" href="${bp.prevPage}">이전</a>
+		     <a class="page-link" href="${bp.prevPage}"><<</a>
 	  </li>
 	  
 	  <c:forEach var="i" begin="${bp.blockStart}" end="${bp.blockEnd}">
@@ -197,7 +197,7 @@
 	  <li class="page-item ${bp.blockEnd >= bp.totalPage ? 'disabled': ''}">
 	  					<!-- 전체게시글 수가 페이징 블럭의 끝번호 보다 작을 경우 disabled(버튼 비활성화) -->
 	  
-	     <a class="page-link" href="${bp.nextPage}">다음</a>
+	     <a class="page-link" href="${bp.nextPage}">>></a>
 	  </li>
 	</ul>
 	

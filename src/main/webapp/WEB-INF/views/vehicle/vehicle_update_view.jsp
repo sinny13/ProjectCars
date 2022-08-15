@@ -150,8 +150,8 @@
             </tr>       
             <tr>
                <td colspan="2" class="text-center">
-                  <input type="submit" class="btn btn-sm btn-primary" value="수정"/>
-                  <a href="vehicleList.do" class="btn btn-sm btn-secondary">목록</a>
+                  <input type="submit" class="btn btn-sm btn-outline-white" value="수정"/>
+                  <a href="vehicleList.do" class="btn btn-sm btn-outline-white">목록</a>
                </td>
             </tr>
          </tbody>
