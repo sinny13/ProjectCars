@@ -101,19 +101,19 @@ $(document).ready(function(){
 	function regBoardChk(){
 	
 		/* 제목 */
-		if(document.regForm.subject.value.lenth == 0){
+		var subject = document.regForm.subject.value;
+		var contents = document.regForm.contents.value;
+		if(subjet == null || subject=""){
 			alert("제목을 입력해주세요.");
-			regForm.subject.focus();
-			return;
+			document.regForm.subject.focus();
+			return false;
 		}
 		/* 내용 */
-		if(document.regForm.subject.value.lenth =< 5){
-			alert("내용을 5글자 이상 입력해주세요.");
-			regForm.contents.focus();
-			return;
+		if(contents == null || contents=""){
+			alert("내용을 입력해주세요.");
+			document.regForm.contents.focus();
+			return false;
 		}
-		
-		regForm.submit();
 	}
 }
 

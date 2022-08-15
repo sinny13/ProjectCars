@@ -5,6 +5,7 @@
    
 <%@ include file="../inc/header.jsp" %>
 
+
 <script type="text/javascript">
 	/* 자바스크립트 코드는 웹 브라우저가 문서의 모든 요소를 로드한 뒤에 실행해야 한다. : $(document).ready(function())
 		- js함수를 사용하기 전에 브라우저가 준비가 되어야 한다는 뜻?(페이지 로딩중..) */
@@ -78,15 +79,6 @@
 	      
       }
       
-      
-      
-      
-      
-      
-      
-    	  
-      
-      
       /************* 검색 ****************/
       var sf = $("#searchForm");/* 88줄 */
       
@@ -102,7 +94,6 @@
       });
    });
 </script>
-
 
 
 <div class="container mt-5 p-3 border bg-dark">
@@ -143,7 +134,7 @@
 	</div>
 <!-- BoardController : BoardPaging bp = new BoardPaging(totalCnt, viewPage, cntPerPage); -->
 <div class="m-0 my-1"><b>${bp.viewPage}</b> / ${bp.totalPage} pages</div><!-- 현재 페이지 -->
-	<table class="table table-hover">
+	<table class="boardtable table table-hover">
 	   <thead style="background:#1111; color:white">
 	      <tr>
 	         <th>번호</th>

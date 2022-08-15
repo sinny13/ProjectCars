@@ -74,12 +74,12 @@ function inputChk(){
 	}
 	
 	/* 전화번호 검사*/
-/*	var telVaild = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
-	if(emailVaild.test(joinForm.tel.value) == false){
+	var telVaild = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+	if(telVaild.test(joinForm.tel.value) == false){
 		alert("올바른 전화번호가 아닙니다.");
-		joinForm.te.focus();
+		joinForm.tel.focus();
 	return false;
-	}*/
+	}
 	
 	
 	/* 주소공백 */
