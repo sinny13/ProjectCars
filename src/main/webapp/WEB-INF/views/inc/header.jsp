@@ -64,7 +64,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
 	function emptyResult(){
 		if($("#searchInput").val()==''){
 			alert("차량을 입력하세요");
-				$("#searchInput").focus();
+				/* $("#searchInput").focus(); */
 				
 		}
 		
@@ -164,8 +164,10 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
   <!-- Container wrapper -->
   <div class="container">   
   	<a class="nav-link" href="${ctx}">
-          <img style="position: relative; width: 100px; alt="로고" src="${ctx}/resources/image/logo/임시로고111.png">
+  		<img style="position: relative; width: 100px; alt="로고" src="${ctx}/resources/image/logo/로고.png">
     </a>  
+    
+    
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">        
     <span class="navbar-toggler-icon"></span>    
   </button>
@@ -275,7 +277,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
       				 	placeholder="차량 검색">
       			<button class="btn btn-light p-2" 
       					name="mName" id="searchButton" 
-      					onclick="emptyResult()" type="submit">
+      					onclick="emptyResult()" type="button">
         			<i class="fas fa-search"></i>
      			</button>
       		</form>

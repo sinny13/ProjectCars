@@ -16,6 +16,10 @@
 	$("#btn-write").click(() => {
          location.href="<c:url value='boardRegister.do?viewPage=${bp.viewPage}'/>";
       })
+	}else if(${sessionScope.userId != 'admin'}){
+		$("#btn-write").click(() => {
+			alert("관리자가 아닙니다.");
+	      })
 	}
 	
 	

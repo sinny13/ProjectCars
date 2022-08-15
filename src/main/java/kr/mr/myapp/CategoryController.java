@@ -66,9 +66,15 @@ public class CategoryController {
 	
 	// 카테고리 삭제
 	@RequestMapping("/catDelete.do")
-	public String categoryDelete(int cat_num) {
+	public String categoryDelete(int cat_num, Model model) {
 		
 		categoryMapper.categoryDel(cat_num);
+		
+        List<CategoryDTO> catList = categoryMapper.categoryList();
+		
+		/* session.setAttribute("catList", catList); */ 
+		model.addAttribute("catList", catList);
+		
 		
 		return "category/cat_list";
 	}

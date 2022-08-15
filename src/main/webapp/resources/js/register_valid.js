@@ -58,12 +58,28 @@ function inputChk(){
 		return;
 	}
 	
+	/* 이메일 검사 */
+	var emailVaild = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+	if(emailVaild.test(joinForm.email.value) == false){
+		alert("올바르지 않은 이메일 형식입니다.");
+		joinForm.email.focus();
+	return false;
+	}
+	
 	/* 전화번호 공백 */
 	if(document.joinForm.tel.value == 0 ){
 		alert("전화번호를 입력하세요");
 		joinForm.tel.focus();
 		return;
 	}
+	
+	/* 전화번호 검사*/
+/*	var telVaild = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+	if(emailVaild.test(joinForm.tel.value) == false){
+		alert("올바른 전화번호가 아닙니다.");
+		joinForm.te.focus();
+	return false;
+	}*/
 	
 	
 	/* 주소공백 */
