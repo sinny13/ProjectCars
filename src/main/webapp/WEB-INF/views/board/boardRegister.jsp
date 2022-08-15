@@ -18,7 +18,7 @@
 <div class="container d-flex mt-5 justify-content-center">
    <div class="w-75 shadow p-5 border bg-dark">
       <h3 style="color:white;">공지사항</h3>
-      <form id="regForm" method="post" action="<c:url value='boardRegister.do'/>">
+      <form name="regForm" method="post" onsubmit="return regBoardChk()" action="<c:url value='boardRegister.do'/>">
          <input type="hidden" name="id" value="${sessionScope.userId}"/>
          
          <div class="form-group"class="form-control" id="writer" name="writer">
@@ -30,7 +30,7 @@
          </div>
          <div class="form-group">
             <label for="subject">제목</label>
-            <input type="text" class="form-control" id="subject" name="subject" placeholder="글 제목을 입력하세요"/>
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="제목을 입력하세요."/>
          </div>
          <div class="form-group">
             <label for="contents">내용</label>
@@ -39,7 +39,7 @@
           </div>
           
          <div class="form-group mt-4">
-            <button type="submit" onclick="regBoardChk()" class="btn btn-outline-white">등록</button>
+            <button type="button" class="btn btn-outline-white">등록</button>
             <button type="button" id="btn-list" class="btn btn-outline-white" onclick="location.href='boardList.do'">글목록</button>
          </div>
       </form>
@@ -96,26 +96,24 @@
 <script type="text/javascript" src="${ctx}/resouces/js/board.js">
 
 <!-- (미구현)게시판 유효성 -->
-$(document).ready(function(){
-	
 	function regBoardChk(){
 	
 		/* 제목 */
-		var subject = document.regForm.subject.value;
-		var contents = document.regForm.contents.value;
+		var subject = document.forms[0].subject.value;
+		var contents = document.forms[0].contents.value;
 		if(subjet == null || subject=""){
 			alert("제목을 입력해주세요.");
-			document.regForm.subject.focus();
+			document.forms[0].subject.focus();
 			return false;
 		}
 		/* 내용 */
 		if(contents == null || contents=""){
 			alert("내용을 입력해주세요.");
-			document.regForm.contents.focus();
+			document.forms[0].contents.focus();
 			return false;
 		}
 	}
-}
+
 
 </script>
 <%@ include file="../inc/footer.jsp" %>
