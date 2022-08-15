@@ -94,9 +94,9 @@
       <!-- Navbar brand -->
       <a
          class="navbar-brand nav-link"
-         href="#ProjectCars"
+         href="#ParamountMotors"
          >
-        <strong>ProjectCars</strong>
+        <strong>ParamountMotors</strong>
       </a>
 <!--       
       <button

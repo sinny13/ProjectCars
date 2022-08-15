@@ -148,7 +148,8 @@
 							  <td>${hDto.wtotalPrice}</td>
 							  <td>
 							     <div id="close_btn">
-								 	<button class="close" onclick="location.href='#'; javascript:showMsg()">예약취소</button>
+								 		
+								 	<button class="close" onclick="location.href='vehicleReturnOk.do?mId=${member.id}'; showMsg()">예약취소</button>
 								 </div>
 								 
 								

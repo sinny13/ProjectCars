@@ -164,7 +164,7 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
   <!-- Container wrapper -->
   <div class="container">   
   	<a class="nav-link" href="${ctx}">
-          <img style="position: relative; width: 100px; alt="로고" src="${ctx}/resources/image/logo/임시로고.png">
+          <img style="position: relative; width: 100px; alt="로고" src="${ctx}/resources/image/logo/임시로고111.png">
     </a>  
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">        
     <span class="navbar-toggler-icon"></span>    
