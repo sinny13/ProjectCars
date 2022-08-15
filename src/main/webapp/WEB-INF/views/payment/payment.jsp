@@ -9,7 +9,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 
-<<<<<<< HEAD
+
 
 
 
@@ -509,13 +509,13 @@ color: #BBB;
              };
                         
             
-            function cardPay(cNum,totalPrice) {
+            function cardPay(cNum,totalPrice,cName) {
             IMP.init('iamport'); //iamport 대신 자신의 "가맹점 식별코드"를 사용
             IMP.request_pay({
               pg: "inicis",
               pay_method: "card",
               merchant_uid : 'merchant_'+new Date().getTime(),
-              name : '결제테스트',
+              name : cName,
               amount : totalPrice,
               buyer_email : 'iamport@siot.do',
               buyer_name : '구매자',

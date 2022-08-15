@@ -24,13 +24,22 @@
     <div class="inner-container">
       <section class="row">
         <div class="callout large invoice-container">
-          <table class="invoice">
+          <table class="invoice" style="background-color:#212529;">
             <tr class="header">
               <!-- <td class="">
                 <img src="http://www.travelerie.com/wp-content/uploads/2014/04/PlaceholderLogoBlue.jpg" alt="Company Name" />
               </td> -->
-              <td class="align-right">
-                <h2>예약 완료</h2>
+                  <!-- Row start -->
+                    <div class="row gutters" style="padding-left:742px;">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="custom-actions-btns mb-5">
+                               <input type="button" value="print" id="print" onclick="window.print()"/>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row end -->   
+              <td class="align-right" style="background-color:#212529;">
+                <h2 style="color:#c36f51; padding-left:320px;">예약 완료</h2>
               </td>
             </tr>
             <tr class="intro"> 
@@ -38,9 +47,9 @@
                 Hello, Philip Brooks.<br>
                 Thank you for your order.
               </td>  -->
-               <td class="text-right">
-                <span class="num">Order #00302</span><br>
-                아래 계좌정보로 입금해 주시면<br>결제 완료처리가 됩니다
+               <td class="text-right" style="padding-left:280px; width:2000px;">
+                <!-- <span class="num">Order #00302</span><br> -->
+                아래 계좌정보로 입금해 주시면<br>　　결제 완료처리가 됩니다
               </td> 
             </tr>
             <tr class="details">
@@ -50,16 +59,16 @@
                   <tr>
                     <th class="desc">입금계좌</th>
                     <th class="id">예금주</th>
-                    <th class="id">입금자명</th>
+                    <!-- <th class="qty">Quantity</th> -->
                     <th class="amt">입금금액</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="item">
-                    <td class="desc">${rDto.account}</td>
-                    <td class="id num">렌트카대표님</td>
+                    <td class="desc">우리은행 : 523-16-15-2361</td>
                     <td class="id num">${sessionScope.userName}</td>
-                    <td class="amt">￦ ${rDto.wtotalPrice}원</td>
+                    <!-- <td class="qty">1</td> -->
+                    <td class="amt">₩300,000,000</td>
                   </tr>
                 </tbody>
               </table>
@@ -83,7 +92,7 @@
                 </tr> -->
                 <tr class="total">
                   <td>Total</td>
-                  <td>￦ ${rDto.wtotalPrice}원</td>
+                  <td>₩300,000,000</td>
                 </tr>
               </table>
             </td>
@@ -107,31 +116,25 @@
             </p>
           </div> -->
         </div>
-        <header class="additional-info">
+        <!-- <header class="additional-info"> -->
             <!-- <a class="button hollow secondary"><i class="ion ion-chevron-left"></i> Go Back to Purchases</a> -->
-            &nbsp;&nbsp;
+           <!--  &nbsp;&nbsp; -->
             
-            <button class='pulse m-3 p-3 justify-content-center' style="width: 100px; height: 50px"  onclick="location.href='home.do'">
-            	홈으로
-            </button>
-            
-            <button class='pulse m-3 p-3 justify-content-center' style="width: 150px; height: 50px"  onclick="location.href='myPageList.do?mId=${sessionScope.userId}'">
-            	마이페이지
-            </button>
+            <div class="revOk" style="padding-left:220px;">
+	            <button class='pulse m-3 p-3 justify-content-center' style="width: 100px; height: 50px; color:#c36f51;" onclick="location.href='home.do'">
+	            	홈으로
+	            </button>
+	            
+	            <button class='pulse m-3 p-3 justify-content-center' style="width: 150px; height: 50px; color:#c36f51; margin:auto;"  onclick="location.href='myPageList.do?mId=${sessionScope.userId}'">
+	            	마이페이지
+	            </button>
+            </div>
  
  
  
  
  
-                                 <!-- Row start -->
-                                <div class="row gutters">
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                        <div class="custom-actions-btns mb-5">
-                                           <input type="button" value="print" id="print" onclick="window.print()"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Row end -->                        
+                                                  
                          
  
  

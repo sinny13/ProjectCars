@@ -21,6 +21,7 @@ public class ReserveDTO {
 	private int totalPrice;
 	
 	 private String wtotalPrice; 
+	 private String account; 
 	 
 	 private String id;
 
@@ -36,6 +37,22 @@ public class ReserveDTO {
 	   
 
 	
+	public String getAccount() {
+		return account;
+	}
+
+
+
+
+
+	public void setAccount(String account) {
+		this.account = account;
+	}
+
+
+
+
+
 	public int getcNum() {
 		return cNum;
 	}
@@ -216,11 +233,25 @@ public class ReserveDTO {
 
 
 
+
+
+	/*
+	 * @Override public String toString() { return "ReserveDTO [revNum=" + revNum +
+	 * ", revName=" + revName + ", revJumin1=" + revJumin1 + ", revJumin2=" +
+	 * revJumin2 + ", revTel=" + revTel + ", revAddr=" + revAddr + ", count=" +
+	 * count + ", revDate1=" + revDate1 + ", revDate2=" + revDate2 + ", cNum=" +
+	 * cNum + ", dateCnt=" + dateCnt + ", totalPrice=" + totalPrice +
+	 * ", wtotalPrice=" + wtotalPrice + ", account=" + account + ", id=" + id + "]";
+	 * }
+	 */
+
+
+
 	@Override
 	public String toString() {
 		return "ReserveDTO [revNum=" + revNum + ", revName=" + revName + ", revJumin1=" + revJumin1 + ", revJumin2="
 				+ revJumin2 + ", revTel=" + revTel + ", revAddr=" + revAddr + ", count=" + count + ", revDate1="
-				+ revDate1 + ", revDate2=" + revDate2 + ", dateCnt=" + dateCnt + ", totalPrice=" + totalPrice + "]";
+				+ revDate1 + ", revDate2=" + revDate2 + ", dateCnt=" + dateCnt + ", totalPrice=" + totalPrice + ", account=" + account + "]";
 	}
 
 
