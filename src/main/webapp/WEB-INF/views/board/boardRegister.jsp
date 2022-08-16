@@ -92,10 +92,10 @@
  
 
 
-
-
 <!-- (미구현)게시판 유효성 -->
-/* 	function regBoardChk(){
+<script type="text/javascript">
+
+function regBoardChk(){
 	
 		/* 제목 */
 		var subject = document.forms[0].subject.value;

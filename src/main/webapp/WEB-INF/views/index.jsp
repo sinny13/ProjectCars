@@ -88,7 +88,7 @@
   <!-- Navbar -->
   <nav
        class="navbar navbar-expand-lg navbar-dark d-none d-lg-block"
-       style="z-index: 2000"
+       style="z-index: 2000 ;margin: 0; padding: 0"
        >
     <div class="container-fluid">
       <!-- Navbar brand -->
@@ -96,7 +96,7 @@
          class="navbar-brand nav-link"
          href="#ParamountMotors"
          >
-        <strong>ParamountMotors</strong>
+        <img style="width: 50px;" src="${ctx}/resources/image/logo/ParamountMotorsLogo.png"></svc>
       </a>
 <!--       
       <button
@@ -215,7 +215,7 @@
                class="d-flex justify-content-center align-items-center h-100"
                >
             <div class="text-white text-center">
-              <h1 class="mb-3">ProjectCars</h1>
+              <h1 class="mb-3">Paramount Motors</h1>
               <h5 class="mb-4">
                  Welcome
               </h5>

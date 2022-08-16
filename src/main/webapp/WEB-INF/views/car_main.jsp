@@ -274,7 +274,7 @@
    <!-- card body -->
    
     <div id="faqBtn">
-        <button class="custom-btn" onclick="location.href='noticeFaq.do';">질문 더 보기</button>
+        <button style="width : 120px; height: 40px " class="custom-btn" onclick="location.href='noticeFaq.do';">질문 더 보기</button>
     </div>
     
       </div>

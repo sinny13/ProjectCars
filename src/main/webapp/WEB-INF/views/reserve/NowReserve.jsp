@@ -189,8 +189,8 @@
                 </tr>
                 <tr >
                     <td>사용일시</td>
-                    <td style="padding-right: 180px;padding-left: 0px;"><i class="fa-solid fa-calendar-days" ></i> 렌트일  <input type="text" name="datepicker1" id="datepicker1" value='<%=today%>' readonly></td>
-                    <td style="padding-right: 180px;padding-left: 0px;"><i class="fa-solid fa-calendar-days" ></i> 반납일  <input type="text" name="datepicker2" id="datepicker2" placeholder="날짜선택"></td>
+                    <td style="padding-right: 210px;padding-left: 0px;"><i class="fa-solid fa-calendar-days" ></i> 렌트일  <input type="text" name="datepicker1" id="datepicker1" value='<%=today%>' readonly></td>
+                    <td style="padding-right: 190px;padding-left: 0px;"><i class="fa-solid fa-calendar-days" ></i> 반납일  <input type="text" name="datepicker2" id="datepicker2" placeholder="날짜선택"></td>
                 </tr>
                <tr>
                     <td>가격</td>

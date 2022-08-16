@@ -12,7 +12,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Project Cars</title>
+    <title>Paramount Motors</title>
     <!-- MDB icon -->
     <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
@@ -69,7 +69,7 @@
          class="navbar-brand nav-link"
          href="${ctx}"
          >
-        <strong>ProjectCars</strong>
+        <strong>Paramount Motors</strong>
       </a>
 
       <div class="collapse navbar-collapse" id="navbarExample01">
