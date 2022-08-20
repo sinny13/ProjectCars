@@ -23,8 +23,6 @@
          
          <div class="form-group"class="form-control" id="writer" name="writer">
             <label for="writer" >글쓴이</label>
-            <%--<input type="text" class="form-control" id="writer"
-               name="writer" placeholder="이름을 입력하세요"/>--%>
           	<input type="text" class="form-control" id="writer"
                name="writer" readonly value="${sessionScope.userName}"/>
          </div>

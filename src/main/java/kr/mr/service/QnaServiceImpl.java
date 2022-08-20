@@ -3,10 +3,12 @@ package kr.mr.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import kr.mr.mapper.QnaMapper;
 import kr.mr.model.QnaVO;
 
+@Service
 public class QnaServiceImpl implements QnaService{
 	
 	@Autowired

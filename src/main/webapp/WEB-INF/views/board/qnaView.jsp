@@ -44,12 +44,12 @@
       </div>
       <div class="form-group mt-4">
          <c:if test="${sessionScope.userId !=null && sessionScope.userId !=''}">
-            <c:if test="${sessionScope.userId == 'admin'}"> <!-- board.id -->
+               <c:if test="${sessionScope.userId == 'test'}"> 
                <button type="submit" id="btn-modify" class="btn btn-outline-white me-2">수정하기</button>
                <button type="button" id="btn-delete"  data-link="remove" class="btn btn-outline-white me-2">삭제하기</button>
                      
             </c:if>
-            <c:if test="${sessionScope.userId != 'admin'}">
+            <c:if test="${sessionScope.userId != 'test'}">
                <button type="submit" id="btn-modify" class="btn btn-outline-white me-2" disabled>수정하기</button>
                <button type="button" id="btn-delete"  data-link="remove" class="btn btn-outline-white me-2" disabled>삭제하기</button>
             </c:if>
