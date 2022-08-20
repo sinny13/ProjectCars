@@ -30,22 +30,22 @@
 	
 	<insert id="insert" parameterType="qnaVO">
 		insert into board_qna(subject, contents, writer, uid)
-		values(#{subject), #{contents), #{writer}, #{uid})
+		values(#{subject}, #{contents}, #{writer}, #{uid})
 	</insert>
 	
-	<select id="view" parameterType="Integer" resultType="qndVO">
-		select * from board_qna where bid=#{bid}
+	<select id="view" parameterType="Integer" resultType="qnaVO">
+		select * from board_qna where qid=#{qid}
 	</select>
 	
 	<delete id="delete" parameterType="Integer">
-		delete from board_qna where bid=#{bid}	
+		delete from board_qna where qid=#{qid}	
 	</delete>
 	
 	<update id="update" parameterType="qnaVO">
-		update board_qna set subject=#{subject}, contents=#{contents} where bid=#{bid}
+		update board_qna set subject=#{subject}, contents=#{contents} where =qid=#{qid}
 	</update>
 	
 	<update id="hitAdd" parameterType="Integer">
-		update board_qna set hit = hit + 1 where bid=#{bid}	
+		update board_qna set hit = hit + 1 where qid=#{qid}	
 	</update>
 </mapper>

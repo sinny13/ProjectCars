@@ -18,7 +18,7 @@ public interface QnaMapper {
 	
 	public int update(QnaVO qna);
 	
-	public void hitAdd(int bid);
+	public void hitAdd(int qid);
 	
 	public int totalCnt(QnaVO qvo);
 }

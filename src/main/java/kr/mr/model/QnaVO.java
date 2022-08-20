@@ -1,6 +1,9 @@
 package kr.mr.model;
 
-import java.sql.Date;
+import java.util.Date;
+
+/*import java.sql.Date;*/
+
 
 public class QnaVO {
 
