@@ -33,7 +33,7 @@
 
 
 	
-	<context:component-scan base-package="kr.mr.myapp" />
+	<context:component-scan base-package="kr.mr.myapp"/>
 	
 	
 	

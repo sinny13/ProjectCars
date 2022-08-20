@@ -19,7 +19,7 @@ public class QnaPaging {
 	
 	public QnaPaging() {}
 	
-	public QnaPaging(int totalCnt, int viewPage, int cntPage) {
+	public QnaPaging(int totalCnt, int viewPage, int cntPerPage) {
 		this.totalCnt = totalCnt;
 		this.cntPerPage = cntPerPage;
 		this.viewPage = viewPage;

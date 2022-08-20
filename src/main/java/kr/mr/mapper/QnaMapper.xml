@@ -25,7 +25,7 @@
 	<select id="getList" resultType="qnaVO">
 		select * from board_qna
 		<include refid="criteria"></include>
-		order by bid DESC limit #{startIndex}, #{cntPerPage}
+		order by qid DESC limit #{startIndex}, #{cntPerPage}
 	</select>
 	
 	<insert id="insert" parameterType="qnaVO">
@@ -42,7 +42,7 @@
 	</delete>
 	
 	<update id="update" parameterType="qnaVO">
-		update board_qna set subject=#{subject}, contents=#{contents} where =qid=#{qid}
+		update board_qna set subject=#{subject}, contents=#{contents} where qid=#{qid}
 	</update>
 	
 	<update id="hitAdd" parameterType="Integer">

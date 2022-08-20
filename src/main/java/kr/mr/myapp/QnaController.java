@@ -2,7 +2,9 @@ package kr.mr.myapp;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,7 @@ import kr.mr.model.QnaPaging;
 import kr.mr.model.QnaVO;
 import kr.mr.service.QnaService;
 
+@Controller
 public class QnaController {
 	
 	@Autowired
@@ -41,13 +44,13 @@ public class QnaController {
 		
 		model.addAttribute("list", list);
 		
-		return "board/qnaList";
+		return "qna/qnaList";
 	}
 	
 	@RequestMapping(value="/qnaRegister.do", method=RequestMethod.GET)
 	public String registerForm(
 			@ModelAttribute("viewPage") int viewPage) {
-		return "board/qnaRegister";
+		return "qna/qnaRegister";
 	}
 	
 	@RequestMapping(value="/qnaRegister.do", method=RequestMethod.POST)
@@ -63,7 +66,7 @@ public class QnaController {
 		model.addAttribute("qna", qna);
 		model.addAttribute("viewPage", viewPage);
 		
-		return "board/qnaView";
+		return "qna/qnaView";
 	}
 	
 	@RequestMapping(value="/qnaModify.do", method=RequestMethod.GET)
@@ -71,7 +74,7 @@ public class QnaController {
 		QnaVO qna = service.view(qvo.getQid(), "modify");
 		model.addAttribute("qna", qna);
 		
-		return "board/qnaModify";
+		return "qna/qnaModify";
 	}
 	
 	@RequestMapping(value="/qnaModify.do", method=RequestMethod.POST)
