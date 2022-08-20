@@ -218,6 +218,9 @@ integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00
         <ul class="dropdown-menu shadow">
         <li class="letter">
 			<a class="letter" href='boardList.do'>공지사항</a>
+		</li>
+		 <li class="qna">
+			<a class="letter" href="qna.do">　Q&A</a>
 			<hr class="dropdown-divider"/>
 		</li>
         <li class="letter">
