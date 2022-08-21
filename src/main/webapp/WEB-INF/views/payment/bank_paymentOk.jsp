@@ -54,21 +54,21 @@
             </tr>
             <tr class="details">
             <td colspan="2">
-              <table>
+              <table style="width:850px">
                 <thead>
                   <tr>
-                    <th class="desc">입금계좌</th>
+                    <th class="desc" style="padding-left:30px">입금계좌</th>
                     <th class="id">예금주</th>
-                    <!-- <th class="qty">Quantity</th> -->
-                    <th class="amt">입금금액</th>
+                    <th class="user" style="padding-left:50px">입금자명</th>
+                    <th class="amt" style="padding-right:50px">입금금액</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="item">
-                    <td class="desc">${rDto.account}</td>
-                    <td class="id num">렌트카대표님</td>
-                    <td class="id num">${sessionScope.userName}</td>
-                    <td class="amt">￦ ${rDto.wtotalPrice}원</td>
+                  <tr class="item" style="width:20px">
+                    <td class="desc" style="padding-left:30px">${rDto.account}</td>
+                    <td class="id">ParamountMotors</td>
+                    <td class="user" style="padding-left:50px">${sessionScope.userName}</td>
+                    <td class="amt" style="padding-right:30px">￦ ${rDto.wtotalPrice}원</td>
                   </tr>
                 </tbody>
               </table>
@@ -90,9 +90,9 @@
                   <td class="num">Tax (7%)</td>
                   <td class="num">$7.00</td>
                 </tr> -->
-                <tr class="total">
+                <tr class="total" style="font-size:15px">
                   <td>Total</td>
-                  <td>￦ ${rDto.wtotalPrice}원</td>
+                  <td style="padding-right:40px">￦ ${rDto.wtotalPrice}</td>
                 </tr>
               </table>
             </td>

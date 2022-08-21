@@ -8,7 +8,7 @@
 
 
 <!-- 로그인 리소스 -->
-<link rel="stylesheet" href="${ctx}/resources/css/memberRegister.css">
+<%-- <link rel="stylesheet" href="${ctx}/resources/css/memberRegister.css"> --%>
 <link rel="stylesheet" href="${ctx}/resources/css/hover/button.css">
 <!-- 유효성JS -->
 <script type="text/javascript" src="${ctx}/resources/js/register_valid.js"></script>
@@ -209,7 +209,7 @@ function duplicateChk(data){
               </div>
               
               <div class="col-md-4 pe-0">
-            <input class="form-control btn btn-outline-secondary" 
+            <input class="form-control btn btn-outline-white" 
                   type="button" value="중복확인" onclick="idChk()"/>
            </div>
         </div>      
@@ -250,7 +250,7 @@ function duplicateChk(data){
 				<input class="form-control form-control-sm mb-2" type="text" name= "zipcode" id="zipcode" placeholder="우편번호" />
 			</div>
 			<div class="col-md-5">
-				<a class="btn btn-sm btn-outline-secondary" href="javascript:sample4_execDaumPostcode()">우편번호 찾기</a>
+				<a class="btn btn-sm btn-outline-white" href="javascript:sample4_execDaumPostcode()">우편번호 찾기</a>
 			</div>
 		</div>
 		<input  class="form-control mb-2" type="text" name="roadAddr" id="roadAddr" placeholder="도로명주소" >
@@ -260,8 +260,8 @@ function duplicateChk(data){
 		
 		<div class="text-center mt-3">
 		<!-- <input type="button" value="회원가입" class="btn btn-primary" onclick="inputChk()"> -->
-		<button type='button' onclick="inputChk()" class="pulse">가입</button>
-		<button type="reset" class="pulse">취소</button>
+		<button type='button' onclick="inputChk()" class="pulse" style="color:#c36f51; padding:5px">가입</button>
+		<button type="reset" class="pulse" style="color:#c36f51; padding:5px">취소</button>
 		</div>
         
       </form>

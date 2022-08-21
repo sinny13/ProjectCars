@@ -448,7 +448,7 @@ color: #BBB;
           <div class="form__footer">
           
           <!-- <button class="btn__label" onclick="test()">테스트</<button class="btn__label">> -->
-            <button class="btn btn--primary js-goto" id="payBtn" onclick="requestPay(${vDto.cNum},${rDto.totalPrice})">
+            <button class="btn btn--primary js-goto" id="payBtn" onclick="requestPay(${vDto.cNum},${rDto.totalPrice},'람보르기니 아벤타도르')">
               <span class="btn__label">결제하기</span>
               
               <svg class="btn__loader" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg>
@@ -469,39 +469,26 @@ color: #BBB;
 
 
           <script>
-            var IMP = window.IMP; // 생략가능
+            var IMP = window.IMP; 
             IMP.init('imp52074203'); 
-            
-/*             
-  // 은행 계좌 넘기기 테스트용           
-            function test() {
-                var bank = document.getElementById("ccmonth");
-                var paybank = bank.options[bank.selectedIndex].value;
-
-                alert(paybank);
-                alert(account);
-                
-			}
- */
 
 
             
-            function requestPay(cNum,totalPrice) {
+            function requestPay(cNum,totalPrice, cName) {
 		var current = $("input:radio[name='payment']:checked").val();
 
                 if(current == '1'){
                    cashPay(cNum,totalPrice);
                 }
                 else if(current == '2'){
-                   cardPay(cNum,totalPrice);
+                   cardPay(cNum,totalPrice, cName);
                 }
                 
              };
              
            
 
-             function cashPay(cNum,totalPrice){
-            	// 은행넘기기 
+             function cashPay(cNum,totalPrice){ 
  	            var bank = document.getElementById("ccmonth");
                 var account = bank.options[bank.selectedIndex].value;
             	alert(account); 
@@ -510,7 +497,7 @@ color: #BBB;
                         
             
             function cardPay(cNum,totalPrice,cName) {
-            IMP.init('iamport'); //iamport 대신 자신의 "가맹점 식별코드"를 사용
+            IMP.init('imp52074203');
             IMP.request_pay({
               pg: "inicis",
               pay_method: "card",
@@ -526,16 +513,11 @@ color: #BBB;
               console.log(rsp);
               if (rsp.success) {
                 var msg = '결제가 완료되었습니다.';
-                
-                /* alert(mId);                
-                alert(cNum);   */     
+                  
                 
                 location.href = "paymentOk.do?cNum="+cNum+"&id="+mId;
                 
-                
-/*         		document.prodFrm.action="cartAdd.do?pNum="+pNum;
-        		document.prodFrm.submit(); */
-                
+
               } else {
             	  var msg = '결제에 실패하였습니다.';
                   msg += '에러내용 : ' + rsp.error_msg;

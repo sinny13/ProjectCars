@@ -43,28 +43,4 @@
 </div>
                
                
-               
-               
-<script type="text/javascript">
-
-function regBoardChk(){
-	
-		/* 제목 */
-		var subject = document.forms[0].subject.value;
-		var contents = document.forms[0].contents.value;
-		if(subjet == null || subject=""){
-			alert("제목을 입력해주세요.");
-			document.forms[0].subject.focus();
-			return false;
-		}
-		/* 내용 */
-		if(contents == null || contents=""){
-			alert("내용을 입력해주세요.");
-			document.forms[0].contents.focus();
-			return false;
-		}
-	} */
-
-
-</script>
 <%@ include file="../inc/footer.jsp" %>

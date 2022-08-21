@@ -180,11 +180,8 @@
 	  </li>
 	  
 	  <c:forEach var="i" begin="${bp.blockStart}" end="${bp.blockEnd}">
-	  <!-- 선언된 i범위 : begin부터 end까지 
-		begin : 반복(c:forEach)에 사용될 첫 번째 항목의 index 
-		end : 반복에 사용될 마지막 항목의 index -->
-	  
-	     <li class="page-item ${bp.viewPage == i ? 'active':''}"><!-- 현재 페이지가 i일 경우 active(현재위치표시역할) -->
+	 
+	     <li class="page-item ${bp.viewPage == i ? 'active':''}">
 	        <a class="page-link" style="color:white" href="${i}">${i}</a><!-- i로 페이지 이동 -->
 	     </li>
 	  </c:forEach>
